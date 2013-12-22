@@ -1,0 +1,64 @@
+{% extends 'base/boilerplate.html' %}
+
+{% load i18n static base_tags %}
+
+{% block extra_css %}
+<link href="{% static 'base/css/style.css' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container" id="container">
+
+  <div class="row top">
+    <div class="col-lg-8 col-md-8 col-sm-7 col-left">
+      <div class="name">
+        <a href="{% url 'pages:page' 'index' %}">
+          {% trans 'Smaller Things from an Insignificant One' %}
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-5 col-right">
+      {% sidebar_tabs %}
+    </div>
+  </div>
+
+  <div class="row bottom">
+    <div class="col-lg-8 col-md-8 col-sm-7 col-left">
+
+      {% block content %}
+
+      <div>
+        <section>
+          {% block content_main %}{% endblock %}
+        </section>
+      </div>
+
+      {% endblock %}
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-5 col-right">
+      <div id="scroll-shadow"></div>
+
+      {% block sidebar %}
+
+      <h1 class="visible-xs section-header">{% block sidebar_title %}{% endblock %}</h1>
+      <h1 class="visible-xs text-center spacer">___</h1>
+
+      {% block sidebar_content %}
+      {% include 'base/includes/sidebar.html' %}
+      {% endblock %}
+
+      {% endblock %}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'base/js/main.js' %}"></script>
+{% endblock %}

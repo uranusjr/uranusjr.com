@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+
+{% load i18n static %}
+
+{% block content_main %}
+
+<div class="row text-center">
+  <div class="col-lg-12">
+    <!--activity image-->
+    {% if page.image %}
+    <img class="img-responsive" src="{{ page.image.url }}" alt="{{ page.title }}">
+    {% endif %}
+
+    <!--activity title -->
+    <h1>{{ page.title }}</h1>
+    <h1 class="spacer">____</h1>
+
+    <!--activity descritpion-->
+    <p class="work">{{ page.short_description }}</p>
+    {{ page.content|linebreaks }}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block sidebar %}
+<section>
+  <div class="row">
+    <div class="col-lg-12">
+
+      <!--panel contact-->
+      <div class="panel panel-default item">
+        <div class="panel-body">
+          <h4 class="item-title">{% trans 'Find me on' %}</h4>
+          <hr>
+          <!--social networks-->
+          <div class="item-social text-center">
+            <a href="#">
+              <img class="social" alt="Facebook"
+                src="{% static 'base/img/icon/icon-facebook.png' %}">
+            </a>
+            <a href="#">
+              <img class="social" alt="Twitter"
+                src="{% static 'base/img/icon/icon-twitter.png' %}">
+            </a>
+            <a href="#">
+              <img class="social" alt="Google plus"
+                src="{% static 'base/img/icon/icon-google.png' %}">
+            </a>
+            <a href="#">
+              <img class="social" alt="Linkedin"
+                src="{% static 'base/img/icon/icon-linkedin.png' %}">
+            </a>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="panel-body">
+          <h4 class="item-title">{% trans '...or just write to' %}</h4>
+          <div class="text-center">
+            <p><a href="mailto:uranusjr@gmail.com">uranusjr@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

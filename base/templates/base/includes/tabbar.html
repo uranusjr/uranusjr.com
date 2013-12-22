@@ -1,0 +1,19 @@
+{% load static %}
+
+<nav>
+  <ul class="list-inline" id="menu">
+    {% for slug, name, active in tabs %}
+      <li{% if active %} class="active"{% endif %}><a href="{{ slug }}/">{{ name }}</a></li>
+    {% endfor %}
+    <li class="last">
+      <a href="#">
+        <img class="social" alt="facebook"
+          src="{% static 'base/img/icon/icon-facebook.png' %}">
+      </a>
+      <a href="#">
+        <img class="social" alt="twitter"
+          src="{% static 'base/img/icon/icon-twitter.png' %}">
+      </a>
+    </li>
+  </ul>
+</nav>

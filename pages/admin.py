@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from django.conf import settings
 from django.contrib import admin
 from .models import Page
 
@@ -26,6 +25,8 @@ class PageAdmin(admin.ModelAdmin):
         css = {
             'all': ('base/css/markitup.css',)
         }
-        js = (''.join([settings.STATIC_URL, 'filebrowser/js/AddFileBrowser.js']),)
+        js = (
+            'filebrowser/js/AddFileBrowser.js',
+        )
 
 admin.site.register(Page, PageAdmin)

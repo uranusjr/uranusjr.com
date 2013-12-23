@@ -106,7 +106,7 @@ MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER
 
 MARKITUP_AUTO_PREVIEW = True
 
-MARKITUP_SET = '3rdparty/markitup/sets/markdown-filebrowser'
+MARKITUP_SET = '3rdparty/markitup/sets/markdown-fb'
 
 JQUERY_URL = '3rdparty/jquery/js/jquery.js'
 

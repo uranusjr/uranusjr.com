@@ -1,1 +1,43 @@
 {% extends 'base/base.html' %}
+
+{% load i18n %}
+
+{% block content_main %}
+
+<h1>{{ post.title }}</h1>
+<h1 class="spacer">___</h1>
+
+<!--article date-->
+<p class="article-date">{{ post.published_at }}</p>
+
+<!--article tags-->
+<p class="article-tags">
+  {% for tag in post.tags.all %}
+  <a href="#">{{ tag.title }}</a>
+  {% if not forloop.last %} ,{% endif %}
+  {% endfor %}
+</p>
+
+<!--article content-->
+<div class="article-description">
+  {{ post.content }}
+</div>
+
+<!--navigation-->
+{% with previous=post.previous next=post.next %}
+<ul class="pager">
+  <li class="previous{% if not previous %} disabled{% endif %}">
+    <a href="{% if previous %}{{ previous.get_absolute_url }}{% else %}#{% endif %}">
+      &lt; {% trans 'Prev' %}
+    </a>
+  </li>
+  <li class="next{% if not next %} disabled{% endif %}">
+    <a href="{% if next %}{{ next.get_absolute_url }}{% else %}#{% endif %}">
+      {% trans 'Next' %} &gt;
+    </a>
+  </li>
+</ul>
+{% endwith %}
+<hr>
+
+{% endblock %}

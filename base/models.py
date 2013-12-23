@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-import datetime
 from django.db import models
+from django.utils.timezone import now
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 from markitup.fields import MarkupField
@@ -55,7 +55,7 @@ class Tag(models.Model):
 class Element(models.Model):
 
     title = models.CharField(max_length=50)
-    slug = models.SlugField()
+    slug = models.CharField(max_length=100)
 
     class Meta:
         abstract = True
@@ -73,13 +73,13 @@ class DisplayableManager(models.Manager):
     def published(self):
         return self.get_queryset().filter(
             state__in=(Displayable.STATE_PUBLIC, Displayable.STATE_PRIVATE),
-            published_at__lte=datetime.date.today(),
+            published_at__lte=now(),
         )
 
     def public(self):
         return self.get_queryset().filter(
             state=Displayable.STATE_PUBLIC,
-            published_at__lte=datetime.date.today(),
+            published_at__lte=now(),
         )
 
 
@@ -96,7 +96,7 @@ class Displayable(Element):
     )
 
     state = models.CharField(max_length=7, choices=STATES, default=STATE_DRAFT)
-    published_at = models.DateField(default=datetime.date.today)
+    published_at = models.DateTimeField(default=now)
     short_description = models.CharField(max_length=200)
     content = MarkupField(blank=True)
 

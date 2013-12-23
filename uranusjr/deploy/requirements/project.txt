@@ -1,5 +1,0 @@
-django
-django-compressor
-django-markdown
-south
-pillow

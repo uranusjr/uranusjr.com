@@ -1,5 +1,5 @@
 """
-Django settings for uranusjr project.
+Django settings for uranusjr.com
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -28,6 +28,7 @@ INSTALLED_APPS = (
     'south',
     'compressor',
     'grappelli',
+    'markitup',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,9 +57,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-ROOT_URLCONF = 'uranusjr.urls'
+ROOT_URLCONF = '__.urls'
 
-WSGI_APPLICATION = 'uranusjr.wsgi.application'
+WSGI_APPLICATION = '__.wsgi.application'
 
 
 # Database
@@ -90,4 +91,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MARKDOWN_EDITOR_SKIN = 'simple'
+MARKITUP_FILTER = ('markdown2.markdown', {'extras': [
+    'pyshell', 'fenced-code-blocks', 'wiki-tables', 'smarty-pants'
+]})
+
+MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER
+
+MARKITUP_AUTO_PREVIEW = True
+
+MARKITUP_SKIN = 'markitup/skins/markitup'
+
+JQUERY_URL = '3rdparty/jquery/js/jquery.js'

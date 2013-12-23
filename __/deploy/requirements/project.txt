@@ -1,0 +1,7 @@
+django
+django-grappelli
+django-compressor
+south
+pillow
+django-markitup
+markdown2

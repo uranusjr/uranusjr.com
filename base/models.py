@@ -6,6 +6,7 @@ import datetime
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
+from markitup.fields import MarkupField
 
 
 @python_2_unicode_compatible
@@ -97,7 +98,7 @@ class Displayable(Element):
     state = models.CharField(max_length=7, choices=STATES, default=STATE_DRAFT)
     published_at = models.DateField(default=datetime.date.today)
     short_description = models.CharField(max_length=200)
-    content = models.TextField(blank=True)
+    content = MarkupField(blank=True)
 
     objects = DisplayableManager()
 

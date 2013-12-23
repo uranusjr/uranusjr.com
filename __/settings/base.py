@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 
 DEBUG = False
@@ -27,7 +27,9 @@ INSTALLED_APPS = (
     'base',
     'south',
     'compressor',
+    'grappelli.dashboard',
     'grappelli',
+    'filebrowser',
     'markitup',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -91,6 +93,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+
+
+# MarkItUp!
+
 MARKITUP_FILTER = ('markdown2.markdown', {'extras': [
     'pyshell', 'fenced-code-blocks', 'wiki-tables', 'smarty-pants'
 ]})
@@ -99,4 +106,16 @@ MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER
 
 MARKITUP_AUTO_PREVIEW = True
 
+MARKITUP_SET = '3rdparty/markitup/sets/markdown-filebrowser'
+
 JQUERY_URL = '3rdparty/jquery/js/jquery.js'
+
+
+# Grappelli
+
+GRAPPELLI_INDEX_DASHBOARD = '__.dashboard.CustomIndexDashboard'
+
+
+# FileBrowser
+
+FILEBROWSER_DIRECTORY = 'uploads/'

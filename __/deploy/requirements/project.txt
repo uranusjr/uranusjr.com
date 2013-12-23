@@ -5,3 +5,6 @@ south
 pillow
 django-markitup
 markdown2
+
+# FileBrowser breaks in DJango 1.6. Fetch from trunk until 3.5.3 is out
+git+https://github.com/sehmaschine/django-filebrowser.git@master#egg=django-filebrowser

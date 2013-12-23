@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="item-choice">
   {% block sidebar_filter %}{% endblock %}
 </div>
@@ -5,5 +7,5 @@
 {% block sidebar_items %}{% endblock %}
 
 <a class="btn btn-block scroll-top visible-xs">
-  <img src="img/icon/icon-chevron.png" alt="Scroll top">
+  <img src="{% static 'base/img/icon/icon-chevron.png' %}" alt="Scroll top">
 </a>

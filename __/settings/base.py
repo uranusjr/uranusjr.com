@@ -99,6 +99,4 @@ MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER
 
 MARKITUP_AUTO_PREVIEW = True
 
-MARKITUP_SKIN = 'markitup/skins/markitup'
-
 JQUERY_URL = '3rdparty/jquery/js/jquery.js'

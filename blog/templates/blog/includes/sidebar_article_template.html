@@ -1,0 +1,12 @@
+<div class="media">
+  <a class="pull-left" href="<%= post.url %>">
+    <img class="media-object" alt="miniature-article"
+      src="/static/base/img/blog/article-min-7.png">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= post.title %></h4>
+    <p class="article-category"><%= post.category.title %></p>
+    <p class="article-date"><%= post.published_at %></p>
+    <p class="article-description"><%= post.short_description %></p>
+  </div>
+</div>

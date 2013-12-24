@@ -2,17 +2,28 @@
 # -*- coding: utf-8
 
 from __future__ import division
-import math
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
-from tastypie import resources
+from tastypie import resources, fields
 from tastypie.exceptions import ImmediateHttpResponse
 from tastypie.http import HttpNotFound
 from tastycrust.resources import ActionResourceMixin, action
-from .models import Post
+from .models import Post, Category
+
+
+class CategoryResource(resources.ModelResource):
+    class Meta:
+        queryset = Category.objects.all()
+        resource_name = 'blog/category'
+        fields = ['title']
 
 
 class PostResource(ActionResourceMixin, resources.ModelResource):
+
+    category = fields.ToOneField(
+        CategoryResource, attribute='category', full=True
+    )
+
     class Meta:
         queryset = Post.objects.published()
         resource_name = 'blog/post'

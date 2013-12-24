@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% load work_tags %}
+
+{% block title %}{{ work.title }}{% endblock %}
+
+{% block content_main %}
+
+<div class="row text-center">
+  <div class="col-lg-12">
+    <!--activity image-->
+    {% if work.image %}
+    <img class="img-responsive" src="{{ work.image.url }}" alt="{{ work.title }}">
+    {% endif %}
+
+    <!--activity title -->
+    <h1>{{ work.title }}</h1>
+    <h1 class="spacer">____</h1>
+
+    <!--activity descritpion-->
+    <p class="work">{{ work.short_description }}</p>
+    {{ work.content }}
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block sidebar_content %}
+{% work_sidebar %}
+{% endblock %}

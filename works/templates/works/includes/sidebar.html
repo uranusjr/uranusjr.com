@@ -1,0 +1,53 @@
+{% extends 'base/includes/sidebar.html' %}
+
+{% load static %}
+
+{% block sidebar_filter %}
+
+<a href="#" class="filter" data-filter="all">All</a>
+{% for tag in tags %}
+  <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
+{% endfor %}
+
+{% endblock %}
+
+{% block sidebar_items %}
+
+<section class="row" id="Grid">
+  {% for work in works %}
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 mix {{ work.tag_slugs|join:' ' }}">
+    <div class="panel panel-default item">
+      <div class="panel-heading">
+        <a href="{{ work.get_absolute_url }}">
+          <!--work image-->
+          <img class="img-responsive item-img" alt="{{ work.title }}"
+            src="{% static 'base/img/work/projet-example-1.png' %}">
+        </a>
+      </div>
+      <div class="panel-body">
+        <!--work title-->
+        <a href="project-example.html"><h4 class="item-title">{{ work.title }}</h4></a>
+
+        <!--work category-->
+        <p class="item-category">{{ work.category.title }}</p>
+
+        <!--work short description-->
+        <div class="item-description">
+          {{ work.content }}
+        </div>
+        <hr>
+
+        <!--work tags-->
+        <p class="item-tags">
+          {% for tag in work.tags.all %}
+          <a href="#">{{ tag.name }}</a>{% if not forloop.last %} ,{% endif %}
+          {% endfor %}
+        </p>
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

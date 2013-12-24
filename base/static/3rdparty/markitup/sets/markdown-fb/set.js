@@ -1,15 +1,4 @@
-// -------------------------------------------------------------------
-// markItUp!
-// -------------------------------------------------------------------
-// Copyright (C) 2008 Jay Salvat
-// http://markitup.jaysalvat.com/
-// -------------------------------------------------------------------
-// MarkDown tags example
-// http://en.wikipedia.org/wiki/Markdown
-// http://daringfireball.net/projects/markdown/
-// -------------------------------------------------------------------
-// Feel free to add more tags
-// -------------------------------------------------------------------
+// Modified from the original MarkDown set to add FileBrowser support
 
 // From http://stackoverflow.com/questions/946534/
 $.fn.extend({

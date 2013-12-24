@@ -12,5 +12,10 @@ def page(request, slug, template='pages/page.html'):
         page = Page.objects.published().get(slug=slug)
     except Page.DoesNotExist:
         raise Http404
-    templates = ['pages/{slug}.html'.format(slug=slug), template]
+    parent = page
+    templates = []
+    while parent:
+        templates.append('pages/{slug}.html'.format(slug=parent.slug))
+        parent = parent.parent
+    templates.append(template)
     return render(request, templates, {'page': page})

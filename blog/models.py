@@ -43,11 +43,10 @@ class Post(Displayable):
     def next(self):
         filters = {
             'published_at__gte': self.published_at,
-            'pk__ne': self.pk,
         }
         try:
-            public = Post.objects.public()
-            post = public.filter(**filters).order_by('published_at')[0]
+            others = Post.objects.public().exclude(pk=self.pk)
+            post = others.filter(**filters).order_by('published_at')[0]
         except IndexError:
             post = None
         return post
@@ -55,11 +54,10 @@ class Post(Displayable):
     def previous(self):
         filters = {
             'published_at__lt': self.published_at,
-            'pk__ne': self,
         }
         try:
-            public = Post.objects.public()
-            post = public.filter(**filters).order_by('-published_at')[0]
+            others = Post.objects.public().exclude(pk=self.pk)
+            post = others.filter(**filters).order_by('-published_at')[0]
         except IndexError:
             post = None
         return post

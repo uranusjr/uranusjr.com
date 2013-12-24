@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
+from base.admin import DisplayableAdmin
 from .models import Page
 
 
-class ExtraHeadersInline(admin.TabularInline):
+class ExtraHeadersInline(DisplayableAdmin):
     model = Page.extra_header_paths.through
 
 
@@ -21,12 +22,5 @@ class PageAdmin(admin.ModelAdmin):
         ('Page options', {'fields': ('slug', 'parent')})
     )
 
-    class Media:
-        css = {
-            'all': ('base/css/markitup.css',)
-        }
-        js = (
-            'filebrowser/js/AddFileBrowser.js',
-        )
 
 admin.site.register(Page, PageAdmin)

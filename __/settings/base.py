@@ -115,6 +115,8 @@ JQUERY_URL = '3rdparty/jquery/js/jquery.js'
 
 GRAPPELLI_INDEX_DASHBOARD = '__.dashboard.CustomIndexDashboard'
 
+GRAPPELLI_ADMIN_TITLE = 'Smaller Things'
+
 
 # FileBrowser
 

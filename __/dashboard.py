@@ -1,10 +1,5 @@
-"""
-This file was generated with the customdashboard management command and
-contains the class for the main dashboard.
-
-To activate your index dashboard add the following to your settings.py::
-    GRAPPELLI_INDEX_DASHBOARD = 'uranusjr.com.dashboard.CustomIndexDashboard'
-"""
+#!/usr/bin/env python
+# -*- coding: utf-8
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -14,7 +9,7 @@ from grappelli.dashboard import modules, Dashboard
 
 class CustomIndexDashboard(Dashboard):
     """
-    Custom index dashboard for www.
+    Custom index dashboard for uranusjr.com.
     """
 
     def init_with_context(self, context):
@@ -23,7 +18,31 @@ class CustomIndexDashboard(Dashboard):
             _('Applications'),
             collapsible=False,
             column=1,
-            exclude=('django.contrib.*',),
+            exclude=('django.contrib.auth.*', 'blog.*', 'works.*', 'pages.*'),
+        ))
+
+        # append an app list module for "Administration"
+        self.children.append(modules.ModelList(
+            _('Blog'),
+            column=1,
+            collapsible=False,
+            models=('blog.*',),
+        ))
+
+        # append an app list module for "Administration"
+        self.children.append(modules.ModelList(
+            _('Works'),
+            column=1,
+            collapsible=False,
+            models=('works.*',),
+        ))
+
+        # append an app list module for "Administration"
+        self.children.append(modules.ModelList(
+            _('Pages'),
+            column=1,
+            collapsible=False,
+            models=('pages.*',),
         ))
 
         # append an app list module for "Administration"
@@ -37,7 +56,7 @@ class CustomIndexDashboard(Dashboard):
         # append another link list module for "support".
         self.children.append(modules.LinkList(
             _('Media Management'),
-            column=2,
+            column=3,
             collapsible=False,
             children=[
                 {

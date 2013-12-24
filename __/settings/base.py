@@ -121,3 +121,8 @@ GRAPPELLI_ADMIN_TITLE = 'Smaller Things'
 # FileBrowser
 
 FILEBROWSER_DIRECTORY = 'uploads/'
+
+
+# Tastypie
+
+TASTYPIE_DEFAULT_FORMATS = ["json"]

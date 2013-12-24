@@ -3,16 +3,16 @@
         "model": "works.category",
         "pk": 1,
         "fields": {
-            "title": "C++",
-            "slug": "cpp"
+            "title": "Desktop Application",
+            "slug": "desktop-application"
         }
     },
     {
         "model": "works.category",
         "pk": 2,
         "fields": {
-            "title": "Python",
-            "slug": "python"
+            "title": "Library",
+            "slug": "library"
         }
     },
     {
@@ -46,7 +46,7 @@
             "name": "Django",
             "slug": "django"
         }
-    },
+    }
     {
         "model": "works.work",
         "pk": 1,

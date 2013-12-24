@@ -13,12 +13,12 @@ def sidebar_tabs(context):
     request = context['request']
 
     def is_active(slug):
-        return request.path.startswith('{slug}/'.format(slug=slug))
+        return request.path.startswith('/{slug}'.format(slug=slug))
 
     TABS = (    # slug, name
-        ('', _('about'), is_active('')),
-        ('blog', _('blog'), is_active('blog')),
-        ('work', _('work'), is_active('work')),
+        ('', _('about'), request.path == '/'),
+        ('blog/', _('blog'), is_active('blog')),
+        ('work/', _('work'), is_active('work')),
     )
     context['tabs'] = TABS
     return context

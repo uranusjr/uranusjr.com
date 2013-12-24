@@ -3,7 +3,7 @@
 <nav>
   <ul class="list-inline" id="menu">
     {% for slug, name, active in tabs %}
-      <li{% if active %} class="active"{% endif %}><a href="{{ slug }}/">{{ name }}</a></li>
+      <li{% if active %} class="active"{% endif %}><a href="/{{ slug }}">{{ name }}</a></li>
     {% endfor %}
     <li class="last">
       <a href="#">

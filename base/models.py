@@ -38,6 +38,7 @@ class ExtraPath(models.Model):
 class Tag(models.Model):
 
     name = models.CharField(max_length=50)
+    slug = models.SlugField(unique=True)
 
     class Meta:
         abstract = True
@@ -55,7 +56,7 @@ class Tag(models.Model):
 class Element(models.Model):
 
     title = models.CharField(max_length=50)
-    slug = models.CharField(max_length=100)
+    slug = models.CharField(max_length=100, unique=True)
 
     class Meta:
         abstract = True

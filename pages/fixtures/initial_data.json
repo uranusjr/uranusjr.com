@@ -1,0 +1,22 @@
+[
+    {
+        "model": "pages.page",
+        "pk": 1,
+        "fields": {
+            "title": "Hi, I'm Tzu-ping Chung",
+            "short_description": "aka @uranusjr",
+            "state": "public",
+            "slug": "index"
+        }
+    },
+    {
+        "model": "pages.page",
+        "pk": 2,
+        "fields": {
+            "title": "What I Do",
+            "short_description": " ",
+            "state": "public",
+            "slug": "work"
+        }
+    }
+]

@@ -1,0 +1,76 @@
+[
+    {
+        "model": "works.category",
+        "pk": 1,
+        "fields": {
+            "title": "C++",
+            "slug": "cpp"
+        }
+    },
+    {
+        "model": "works.category",
+        "pk": 2,
+        "fields": {
+            "title": "Python",
+            "slug": "python"
+        }
+    },
+    {
+        "model": "works.Tag",
+        "pk": 1,
+        "fields": {
+            "name": "C++",
+            "slug": "cpp"
+        }
+    },
+    {
+        "model": "works.Tag",
+        "pk": 2,
+        "fields": {
+            "name": "Qt",
+            "slug": "qt"
+        }
+    },
+    {
+        "model": "works.Tag",
+        "pk": 3,
+        "fields": {
+            "name": "Python",
+            "slug": "python"
+        }
+    },
+    {
+        "model": "works.Tag",
+        "pk": 4,
+        "fields": {
+            "name": "Django",
+            "slug": "django"
+        }
+    },
+    {
+        "model": "works.work",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "tags": [1, 2],
+            "work_type": "github",
+            "title": "Qelly",
+            "slug": "qelly",
+            "state": "public",
+            "short_description": "Beautiful cross-platform BBS client."
+        }
+    },
+    {
+        "model": "works.work",
+        "pk": 2,
+        "fields": {
+            "category": 2,
+            "tags": [3, 4],
+            "work_type": "github",
+            "title": "Django MoSQL",
+            "slug": "django-mosql",
+            "state": "public",
+            "short_description": "Do what Django's ORM can't."
+        }
+    }
+]

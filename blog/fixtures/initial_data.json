@@ -1,0 +1,52 @@
+[
+    {
+        "model": "blog.category",
+        "pk": 1,
+        "fields": {
+            "title": "Programming",
+            "slug": "programming"
+        }
+    },
+    {
+        "model": "blog.tag",
+        "pk": 1,
+        "fields": {
+            "name": "Python",
+            "slug": "python"
+        }
+    },
+    {
+        "model": "blog.tag",
+        "pk": 2,
+        "fields": {
+            "name": "Python 3",
+            "slug": "python-3"
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 1,
+        "fields": {
+            "title": "寫出能在 Python 2 直譯器執行的 Python 3 程式",
+            "short_description": "我前陣子在 Facebook 發了一個動態，然後 Tim Hsu 就在下面留言表示想聽 six 的東西。six 是個好東西（很重要所以再說一遍），我不排斥分享一些心得，不過一來 six 很短，二來要準備 talk 很麻煩，三來沒什麼機會可以講，四來可能也沒有太多人想聽我講話，所以最後決定不如更新一下好久沒動的 blog。",
+            "state": "public",
+            "published_at": "2013-12-20 11:34",
+            "category": 1,
+            "tags": [1, 2],
+            "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter"
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 2,
+        "fields": {
+            "title": "寫出能在 Python 2 直譯器執行的 Python 3 程式：良好的 Coding Style",
+            "short_description": "在上一篇文章結束前，我列出了 Python 3 與 Python 2 不相容的主要原因，並將它們分成三類：",
+            "state": "public",
+            "published_at": "2013-12-20 13:28",
+            "category": 1,
+            "tags": [1, 2],
+            "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter-2"
+        }
+    }
+]

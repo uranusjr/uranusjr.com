@@ -84,7 +84,6 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
             b_count = before.count()
             a_count = after.count()
             offset = limit // 2
-            print b_count, a_count, offset
             if b_count < offset:    # Not enough entries before
                 # Extend after
                 latest = after[limit - b_count - 2]

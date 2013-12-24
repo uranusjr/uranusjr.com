@@ -34,13 +34,17 @@ class Post(Displayable):
     class Meta:
         verbose_name = _('blog post')
         verbose_name_plural = _('blog posts')
+        ordering = ['-published_at', 'pk']
         get_latest_by = 'published_at'
 
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={'slug': self.slug})
 
     def next(self):
-        filters = {'published_at__gt': self.published_at}
+        filters = {
+            'published_at__gte': self.published_at,
+            'pk__ne': self.pk,
+        }
         try:
             public = Post.objects.public()
             post = public.filter(**filters).order_by('published_at')[0]
@@ -49,7 +53,10 @@ class Post(Displayable):
         return post
 
     def previous(self):
-        filters = {'published_at__lt': self.published_at}
+        filters = {
+            'published_at__lt': self.published_at,
+            'pk__ne': self,
+        }
         try:
             public = Post.objects.public()
             post = public.filter(**filters).order_by('-published_at')[0]

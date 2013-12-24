@@ -46,7 +46,7 @@
             "name": "Django",
             "slug": "django"
         }
-    }
+    },
     {
         "model": "works.work",
         "pk": 1,

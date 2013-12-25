@@ -6,6 +6,7 @@
 
 {% block extra_css %}
 {{ block.super }}
+<link rel="stylesheet" href="{% static 'blog/css/post.css' %}" media="screen">
 <link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}" media="screen">
 {% endblock %}
 
@@ -21,8 +22,11 @@
 <!--article tags-->
 <p class="article-tags">
   {% with category=post.category %}
+  {% trans 'Category: ' %}
   <a href="#" class="filter" data-filter="{{ category.slug }}">{{ category.title }}</a>
   {% endwith %}
+  <br>
+  {% if post.tags.all %}{% trans 'Tags: ' %}{% endif %}
   {% for tag in post.tags.all %}
   <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
   {% if not forloop.last %} ,{% endif %}

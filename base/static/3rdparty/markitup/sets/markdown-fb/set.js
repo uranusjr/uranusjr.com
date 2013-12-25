@@ -14,8 +14,8 @@ $.fn.extend({
         var startPos = this.selectionStart;
         var endPos = this.selectionEnd;
         var scrollTop = this.scrollTop;
-        this.value = this.value.substring(0, startPos)
-          + myValue + this.value.substring(endPos, this.value.length);
+        this.value = this.value.substring(0, startPos) + myValue +
+          this.value.substring(endPos, this.value.length);
         $(this).focus();
         this.selectionStart = startPos + myValue.length;
         this.selectionEnd = startPos + myValue.length;
@@ -32,13 +32,16 @@ var FileBrowserHelper = {
   markItUp: false,
 
   show: function(markItUp) {
-    var $input = $('<div><input type="text" id="filebrowser_input">'
-      + '<a id="previewlink_filebrowser_input"><div id="preview_filebrowser_input">'
-      + '<img id="previewimage_filebrowser_input"></div></a></div>')
+    var $input = $('<div><input type="text" id="filebrowser_input">' +
+      '<a id="previewlink_filebrowser_input">' +
+      '<div id="preview_filebrowser_input">' +
+      '<img id="previewimage_filebrowser_input"></div></a></div>')
       .appendTo('body').hide();
 
     FileBrowser.show(
-      'filebrowser_input', '/admin/filebrowser/browse/?pop=1&type=', function () {
+      'filebrowser_input',
+      '/admin/filebrowser/browse/?pop=1&type=',
+      function () {
         var path = $('#filebrowser_input').val();
         $(markItUp.textarea).insertAtCaret('![](/media/' + path + ')');
         $input.remove();

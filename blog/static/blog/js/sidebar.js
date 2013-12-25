@@ -5,11 +5,10 @@ $('#Grid').empty();
 var sidebar_cell_template = $('#sidebar_cell_template').html();
 
 function insertPosts(objects, method_name) {
+  var getTagName = function (tag) { return tag.slug; };
   for (var i = 0; i < objects.length; i++) {
     var object = objects[i];
-    var tag_slugs = _.map(object.tags, function (tag) {
-      return tag.slug;
-    });
+    var tag_slugs = _.map(object.tags, getTagName);
     var html = _.template(sidebar_cell_template, {
       'post': object, 'tag_slugs': tag_slugs
     });

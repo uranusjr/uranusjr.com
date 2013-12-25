@@ -2,6 +2,7 @@
 $('.load-more').hide();
 $('.blog').empty();
 
+$.ajaxSetup({'traditional': true});
 $('#Grid').mixitup().mixitup('toList');
 
 function insertPosts(objects, method_name) {
@@ -20,7 +21,7 @@ function insertPosts(objects, method_name) {
 }
 
 // Load initial rows
-$.get(postListUrl + currentPostId + '/near/')
+$.getJSON(postListUrl + currentPostId + '/near/')
   .success(function (data) {
     insertPosts(data.objects, 'append');
 
@@ -44,8 +45,8 @@ $('.load-more').click(function (e) {
   var dir = $(this).data('direction') || '';
   var params = {};
   params[$(this).data('action')] = $(this).data('anchor');
-  params.order_by = dir + 'published_at';
-  $.get(postListUrl, params, function (data) {
+  params.order_by = [dir + 'published_at', dir + 'id'];
+  $.getJSON(postListUrl, params, function (data) {
     insertPosts(data.objects, $(that).data('method'));
 
     // Update "load more" button

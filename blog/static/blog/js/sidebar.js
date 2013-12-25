@@ -21,21 +21,23 @@ function insertPosts(objects, method_name) {
 }
 
 // Load initial rows
-$.getJSON(postListUrl + currentPostId + '/near/')
-  .success(function (data) {
-    insertPosts(data.objects, 'append');
+$.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
+  if (data.objects.length === 0)
+    return;
 
-    // Update "load more" buttons
-    $('.load-more:first').data('anchor', _.first(data.objects).id);
-    $('.load-more:last').data('anchor', _.last(data.objects).id);
-    if (data.meta.next)
-      $('.load-more:last').show();
-    else
-      $('.load-more:last').hide();
-    if (data.meta.previous)
-      $('.load-more:first').show();
-    else
-      $('.load-more:first').hide();
+  insertPosts(data.objects, 'append');
+
+  // Update "load more" buttons
+  $('.load-more:first').data('anchor', _.first(data.objects).id);
+  $('.load-more:last').data('anchor', _.last(data.objects).id);
+  if (data.meta.next)
+    $('.load-more:last').show();
+  else
+    $('.load-more:last').hide();
+  if (data.meta.previous)
+    $('.load-more:first').show();
+  else
+    $('.load-more:first').hide();
 });
 
 // Load more
@@ -46,7 +48,10 @@ $('.load-more').click(function (e) {
   var params = {};
   params[$(this).data('action')] = $(this).data('anchor');
   params.order_by = [dir + 'published_at', dir + 'id'];
-  $.getJSON(postListUrl, params, function (data) {
+  $.getJSON(postListUrl, params).success(function (data) {
+    if (data.objects.length === 0)
+      return;
+
     insertPosts(data.objects, $(that).data('method'));
 
     // Update "load more" button

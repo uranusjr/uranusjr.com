@@ -3,7 +3,6 @@
 
 from __future__ import division
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models import Q
 from tastypie import resources, fields
 from tastypie.exceptions import ImmediateHttpResponse
 from tastypie.http import HttpNotFound
@@ -34,21 +33,53 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
         filtering = {
             'slug': resources.ALL,
             'published_at': resources.ALL,
+            'before': ('exact',),
+            'after': ('exact',),
         }
-        ordering = ['-published_at']
+        ordering = ['published_at']
+
+    def build_filters(self, filters=None):
+        """Override to apply custom filters
+
+        We add two custom filters: "before" and "after". Each of them takes a
+        post pk, and searches posts before and after the post of that post,
+        based on the ['published_at', 'id'] ordering. The custom filters will
+        be applied in ``apply_filters``
+        """
+        before = filters.pop('before', [])
+        after = filters.pop('after', [])
+
+        filters = super(PostResource, self).build_filters(filters)
+
+        if before:
+            post = Post.objects.get(pk=before[0])
+            filters['_before_'] = post.before_query['filter']
+        if after:
+            post = Post.objects.get(pk=after[0])
+            filters['_after_'] = post.after_query['filter']
+        return filters
 
     def apply_filters(self, request, applicable_filters):
-        """Override apply_filters to apply additional filters
+        """Override to apply additional rules to ``obj_get_list``
 
-        We can apply additional filters here because this is only called by
-        ``obj_get_list``. ``obj_get_list`` should only return "public" posts
-        (not "published" posts, which includes private ones), so we need to
-        apply that.
+        ``obj_get_list`` should only return "public" posts (not "published"
+        posts, which includes private ones), so we need to apply that.
+
+        Custom filters built by ``build_filters`` is applied here
         """
+        before_query = applicable_filters.pop('_before_', None)
+        after_query = applicable_filters.pop('_after_', None)
+
         applicable_filters['state'] = Post.STATE_PUBLIC
-        return super(PostResource, self).apply_filters(
+        objects = super(PostResource, self).apply_filters(
             request, applicable_filters,
         )
+
+        if before_query is not None:
+            objects = objects.filter(before_query)
+        if after_query is not None:
+            objects = objects.filter(after_query)
+        return objects
 
     def dehydrate(self, bundle):
         """Inject extra data into the bundle data
@@ -72,15 +103,8 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
         if objects.count() <= limit:    # Not enough entries
             latest = objects.latest()
         else:
-            before = objects.filter(
-                Q(published_at__lt=post.published_at)
-                | Q(published_at=post.published_at, pk__gt=post.pk)
-            ).order_by('-published_at', 'pk')
-            after = objects.filter(
-                Q(published_at__gt=post.published_at)
-                | Q(published_at=post.published_at, pk__lt=post.pk)
-            ).order_by('published_at', '-pk')
-
+            before = post.before()
+            after = post.after()
             b_count = before.count()
             a_count = after.count()
             offset = limit // 2

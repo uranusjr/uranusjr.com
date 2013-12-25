@@ -2,7 +2,9 @@
 $('.load-more').hide();
 $('.blog').empty();
 
-function insertPosts(objects, method_name, initial) {
+$('#Grid').mixitup().mixitup('toList');
+
+function insertPosts(objects, method_name) {
   var getTagName = function (tag) { return tag.slug; };
 
   for (var i = 0; i < objects.length; i++) {
@@ -14,18 +16,13 @@ function insertPosts(objects, method_name, initial) {
     });
     $('.blog')[method_name]($(html));
   }
-  if (initial) {
-    $('#Grid').mixitup();
-  }
-  else {
-    $('#Grid').mixitup('remix', $('.filter.active').data('filter'));
-  }
+  $('#Grid').mixitup('remix', $('.filter.active').data('filter'));
 }
 
 // Load initial rows
 $.get(postListUrl + currentPostId + '/near/')
   .success(function (data) {
-    insertPosts(data.objects, 'append', true);
+    insertPosts(data.objects, 'append');
 
     // Update "load more" buttons
     $('.load-more:first').data('anchor', _.first(data.objects).id);

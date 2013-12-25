@@ -16,4 +16,5 @@
 }
 .blog a:hover {
     color: #428bca;
+    text-decoration: none;
 }

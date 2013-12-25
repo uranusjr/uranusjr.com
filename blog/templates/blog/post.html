@@ -10,7 +10,7 @@
 <h1 class="spacer">___</h1>
 
 <!--article date-->
-<p class="article-date">{{ post.published_at }}</p>
+<p class="article-date">{{ post.published_at|date }}</p>
 
 <!--article tags-->
 <p class="article-tags">
@@ -48,11 +48,11 @@
 
 {% block sidebar_content %}
 <script>
-var post_list_url = '{% url "api_dispatch_list" resource_name="blog/post" api_name="v1" %}';
-var current_post_id = '{{ post.id }}';
+var postListUrl = '{% url "api_dispatch_list" resource_name="blog/post" api_name="v1" %}';
+var currentPostId = '{{ post.id }}';
 </script>
-<script type="text/template" id="sidebar_article_template">
-{% include 'blog/includes/sidebar_article_template.html' %}
+<script type="text/template" id="sidebar_cell_template">
+{% include 'blog/includes/sidebar_post_tmpl.html' %}
 </script>
 {% include 'blog/includes/sidebar.html' %}
 {% endblock %}

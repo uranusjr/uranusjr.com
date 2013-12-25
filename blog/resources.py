@@ -27,7 +27,7 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
         queryset = Post.objects.published()
         resource_name = 'blog/post'
         fields = [
-            'title', 'short_description', 'category', 'tags',
+            'id', 'title', 'short_description', 'category', 'tags',
             'published_at',
         ]
         filtering = {
@@ -35,28 +35,33 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
             'published_at': resources.ALL,
             'before': ('exact',),
             'after': ('exact',),
+            'including': ('exact',),
         }
         ordering = ['published_at']
+        limit = 2
 
     def build_filters(self, filters=None):
         """Override to apply custom filters
 
-        We add two custom filters: "before" and "after". Each of them takes a
-        post pk, and searches posts before and after the post of that post,
-        based on the ['published_at', 'id'] ordering. The custom filters will
-        be applied in ``apply_filters``
+        We add three custom filters: "before", "after", and an optional
+        "including" modifier. Each of the first two takes a post pk, and
+        searches posts before or after the post of that post, based on the
+        ['published_at', 'id'] ordering. "including" serves as an extra
+        flag (default to False).
+
+        The custom filters will be applied in ``apply_filters``.
         """
         before = filters.pop('before', [])
         after = filters.pop('after', [])
-
+        including = True if filters.pop('including', None) else False
         filters = super(PostResource, self).build_filters(filters)
 
         if before:
             post = Post.objects.get(pk=before[0])
-            filters['_before_'] = post.before_query['filter']
+            filters['_before_'] = post.get_before_query(including)['filter']
         if after:
             post = Post.objects.get(pk=after[0])
-            filters['_after_'] = post.after_query['filter']
+            filters['_after_'] = post.get_after_query(including)['filter']
         return filters
 
     def apply_filters(self, request, applicable_filters):
@@ -97,25 +102,23 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
             )
         except ObjectDoesNotExist:
             raise ImmediateHttpResponse(response=HttpNotFound())
-        objects = self.apply_filters(request, {})
 
         limit = self._meta.limit
-        if objects.count() <= limit:    # Not enough entries
-            latest = objects.latest()
+        half_limit = limit // 2
+        tail_count = post.before().count()
+        front_count = post.after().count()
+        if front_count <= half_limit:  # Not enough entries at front
+            offset = 0
+        elif tail_count < half_limit:  # Not enough entries at tail
+            offset = front_count - tail_count - 1
         else:
-            before = post.before()
-            after = post.after()
-            b_count = before.count()
-            a_count = after.count()
-            offset = limit // 2
-            if b_count < offset:    # Not enough entries before
-                # Extend after
-                latest = after[limit - b_count - 2]
-            elif a_count < offset:  # Not enough entries after
-                if a_count > 0:
-                    latest = after[a_count - 1]
-                else:
-                    latest = post
-            else:
-                latest = after[offset - 1]
-        return self.get_list(request, published_at__lte=latest.published_at)
+            offset = front_count - half_limit
+
+        # Round offset to multiple of limit so that we can get complete pages
+        offset = int(round(offset / limit, 0)) * limit
+
+        GET = request.GET.copy()
+        GET['offset'] = offset
+        GET['order_by'] = '-published_at'
+        request.GET = GET
+        return self.get_list(request)

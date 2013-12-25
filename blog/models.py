@@ -41,24 +41,24 @@ class Post(Displayable):
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={'slug': self.slug})
 
-    @property
-    def after_query(self):
-        q = (Q(published_at__gt=self.published_at)
-             | Q(published_at=self.published_at, pk__gt=self.pk))
+    def get_after_query(self, including_self=False):
+        pk_q = Q(pk__gte=self.pk) if including_self else Q(pk__gt=self.pk)
+        q = ((Q(published_at=self.published_at) & pk_q)
+             | Q(published_at__gt=self.published_at))
         return {'filter': q, 'order_by': ('published_at', 'pk')}
 
-    @property
-    def before_query(self):
-        q = (Q(published_at__lt=self.published_at)
-             | Q(published_at=self.published_at, pk__lt=self.pk))
+    def get_before_query(self, including_self=False):
+        pk_q = Q(pk__lte=self.pk) if including_self else Q(pk__lt=self.pk)
+        q = ((Q(published_at=self.published_at) & pk_q)
+             | Q(published_at__lt=self.published_at))
         return {'filter': q, 'order_by': ('-published_at', '-pk')}
 
     def after(self):
-        p = self.after_query
+        p = self.get_after_query()
         return Post.objects.filter(p['filter']).order_by(*p['order_by'])
 
     def before(self):
-        p = self.before_query
+        p = self.get_before_query()
         return Post.objects.filter(p['filter']).order_by(*p['order_by'])
 
     def next(self):

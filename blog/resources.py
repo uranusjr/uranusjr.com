@@ -7,18 +7,26 @@ from tastypie import resources, fields
 from tastypie.exceptions import ImmediateHttpResponse
 from tastypie.http import HttpNotFound
 from tastycrust.resources import ActionResourceMixin, action
-from .models import Post, Category
+from .models import Post, Category, Tag
 
 
 class CategoryResource(resources.ModelResource):
     class Meta:
         queryset = Category.objects.all()
         resource_name = 'blog/category'
-        fields = ['title']
+        fields = ['title', 'slug']
+
+
+class TagResource(resources.ModelResource):
+    class Meta:
+        queryset = Tag.objects.all()
+        resource_name = 'blog/tag'
+        fields = ['name', 'slug']
 
 
 class PostResource(ActionResourceMixin, resources.ModelResource):
 
+    tags = fields.ToManyField(TagResource, attribute='tags', full=True)
     category = fields.ToOneField(
         CategoryResource, attribute='category', full=True
     )

@@ -1,4 +1,5 @@
-<div data-id="<%= post.id %>" class="media">
+<div data-id="<%= post.id %>"
+    class="media mix <%= post.category.slug %> <%= tag_slugs.join(' ') %>">
   <a class="pull-left" href="<%= post.url %>">
     <img class="media-object" alt="miniature-article"
       src="/static/base/img/blog/article-min-7.png">

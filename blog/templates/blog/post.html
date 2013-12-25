@@ -4,6 +4,12 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}" media="screen">
+{% endblock %}
+
+
 {% block content_main %}
 
 <h1>{{ post.title }}</h1>

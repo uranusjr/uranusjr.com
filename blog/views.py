@@ -3,7 +3,7 @@
 
 from django.http import Http404
 from django.shortcuts import render, redirect
-from .models import Post
+from .models import Post, Category, Tag
 
 
 def index(request):
@@ -20,4 +20,10 @@ def post(request, slug, template='blog/post.html'):
         post = Post.objects.published().get(slug=slug)
     except Post.DoesNotExist:
         raise Http404
-    return render(request, template, {'post': post})
+    categories = Category.objects.filter(posts__isnull=False).distinct()
+    tags = Tag.objects.filter(posts__isnull=False).distinct()
+    return render(request, template, {
+        'post': post,
+        'categories': categories,
+        'tags': tags,
+    })

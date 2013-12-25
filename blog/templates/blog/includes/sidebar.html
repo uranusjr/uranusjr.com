@@ -2,14 +2,24 @@
 
 {% load i18n %}
 
+{% block sidebar_filter %}
+<a href="#" class="filter" data-filter="all">{% trans 'All' %}</a>
+{% for category in categories %}
+  <a href="#" class="filter" data-filter="{{ category.slug }}">{{ category.title }}</a>
+{% endfor %}
+{% for tag in tags %}
+  <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
+{% endfor %}
+{% endblock %}
+
 {% block sidebar_items %}
 <a href="#" class="btn btn-default btn-lg btn-block load-more"
-    data-action="after" data-method="prependTo" data-anchor="0">
+    data-action="after" data-method="prepend" data-anchor="0">
   {% trans 'Load more' %}
 </a>
-<section class="blog"></section>
+<section id="Grid" class="blog"></section>
 <a href="#" class="btn btn-default btn-lg btn-block load-more"
-    data-action="before" data-method="appendTo" data-anchor="0">
+    data-action="before" data-method="append" data-anchor="0">
   {% trans 'Load more' %}
 </a>
 {% endblock %}

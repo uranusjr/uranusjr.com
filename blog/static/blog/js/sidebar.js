@@ -1,9 +1,10 @@
 // Clear everything
 $('.load-more').hide();
-$('#Grid').empty();
+$('.blog').empty();
 
-function insertPosts(objects, method_name) {
+function insertPosts(objects, method_name, initial) {
   var getTagName = function (tag) { return tag.slug; };
+
   for (var i = 0; i < objects.length; i++) {
     var object = objects[i];
     var tag_slugs = _.map(object.tags, getTagName);
@@ -11,22 +12,20 @@ function insertPosts(objects, method_name) {
       'post': object, 'tag_slugs': tag_slugs,
       'active': (object.id == currentPostId ? 'active' : '')
     });
-    $(html)[method_name + 'To']($('#Grid'));
+    $('.blog')[method_name]($(html));
   }
-  $('#Grid').mixitup({
-    onMixStart: function () {
-      $('.load-more:last').hide();
-    },
-    onMixEnd: function () {
-      $('.load-more:last').delay(300).fadeIn();
-    }
-  });
+  if (initial) {
+    $('#Grid').mixitup();
+  }
+  else {
+    $('#Grid').mixitup('remix', $('.filter.active').data('filter'));
+  }
 }
 
 // Load initial rows
 $.get(postListUrl + currentPostId + '/near/')
   .success(function (data) {
-    insertPosts(data.objects, 'append');
+    insertPosts(data.objects, 'append', true);
 
     // Update "load more" buttons
     $('.load-more:first').data('anchor', _.first(data.objects).id);
@@ -45,8 +44,10 @@ $.get(postListUrl + currentPostId + '/near/')
 $('.load-more').click(function (e) {
   e.preventDefault();
   var that = this;
+  var dir = $(this).data('direction') || '';
   var params = {};
   params[$(this).data('action')] = $(this).data('anchor');
+  params.order_by = dir + 'published_at';
   $.get(postListUrl, params, function (data) {
     insertPosts(data.objects, $(that).data('method'));
 

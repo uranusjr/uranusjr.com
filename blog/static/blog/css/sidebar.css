@@ -1,6 +1,7 @@
 .item-choice {
     height: 40px;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 .row.bottom .col-right .item-choice .filter {
     display: inline-block;

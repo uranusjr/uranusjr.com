@@ -2,15 +2,14 @@
 $('.load-more').hide();
 $('#Grid').empty();
 
-var sidebar_cell_template = $('#sidebar_cell_template').html();
-
 function insertPosts(objects, method_name) {
   var getTagName = function (tag) { return tag.slug; };
   for (var i = 0; i < objects.length; i++) {
     var object = objects[i];
     var tag_slugs = _.map(object.tags, getTagName);
-    var html = _.template(sidebar_cell_template, {
-      'post': object, 'tag_slugs': tag_slugs
+    var html = _.template($('#sidebar_cell_template').html(), {
+      'post': object, 'tag_slugs': tag_slugs,
+      'active': (object.id == currentPostId ? 'active' : '')
     });
     $(html)[method_name + 'To']($('#Grid'));
   }

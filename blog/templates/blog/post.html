@@ -20,8 +20,11 @@
 
 <!--article tags-->
 <p class="article-tags">
+  {% with category=post.category %}
+  <a href="#" class="filter" data-filter="{{ category.slug }}">{{ category.title }}</a>
+  {% endwith %}
   {% for tag in post.tags.all %}
-  <a href="#">{{ tag.name }}</a>
+  <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
   {% if not forloop.last %} ,{% endif %}
   {% endfor %}
 </p>

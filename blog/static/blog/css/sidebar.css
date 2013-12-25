@@ -7,3 +7,12 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+.blog a {
+    color: #333;
+}
+.row.bottom .col-right section .media {
+    padding: 20px;
+}
+.blog a:hover {
+    color: #428bca;
+}

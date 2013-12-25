@@ -46,7 +46,6 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
             'including': ('exact',),
         }
         ordering = ['published_at']
-        limit = 2
 
     def build_filters(self, filters=None):
         """Override to apply custom filters

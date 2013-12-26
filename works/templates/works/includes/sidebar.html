@@ -4,7 +4,7 @@
 
 {% block sidebar_filter %}
 
-<a href="#" class="filter" data-filter="all">{% trans 'All' %}</a>
+<a href="#" class="filter active" data-filter="all">{% trans 'All' %}</a>
 {% for tag in tags %}
   <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
 {% endfor %}

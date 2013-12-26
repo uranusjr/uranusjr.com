@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% load i18n static %}
+{% load i18n static compress %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -60,10 +60,12 @@
 {% block sidebar_title %}{% trans 'Blog Posts' %}{% endblock %}
 
 {% block sidebar_content %}
+{% compress js %}
 <script>
 var postListUrl = '{% url "api_dispatch_list" resource_name="blog/post" api_name="v1" %}';
 var currentPostId = '{{ post.id }}';
 </script>
+{% endcompress %}
 <script type="text/template" id="sidebar_cell_template">
 {% include 'blog/includes/sidebar_post_tmpl.html' %}
 </script>

@@ -1,4 +1,4 @@
-{% load static %}
+{% load static compress %}
 
 <!DOCTYPE html>
 
@@ -12,10 +12,11 @@
 <meta name="viewport"
   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+{% compress css %}
 <link rel="stylesheet" media="screen"
   href="{% static '3rdparty/bootstrap/css/bootstrap.min.css' %}">
-
 {% block extra_css %}{% endblock %}
+{% endcompress %}
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -32,6 +33,7 @@
 
 {% block body %}{% endblock %}
 
+{% compress js %}
 <script src="{% static '3rdparty/underscore/js/underscore.js' %}"></script>
 <script src="{% static JQUERY_URL %}"></script>
 <script src="{% static '3rdparty/fastclick/js/fastclick.js' %}"></script>
@@ -39,6 +41,7 @@
 <script src="{% static '3rdparty/mixitup/js/jquery.mixitup.min.js' %}"></script>
 
 {% block extra_js %}{% endblock %}
+{% endcompress %}
 
 {% block extra_footer %}{% endblock %}
 

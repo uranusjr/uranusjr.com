@@ -3,7 +3,7 @@ $('.load-more').hide();
 $('.blog').empty();
 
 $.ajaxSetup({'traditional': true});
-$('#Grid').mixitup({'layoutMode': 'toList'});
+$('#Grid').mixitup({'layoutMode': 'list'});
 
 // Filters in sidebar (handled by mixitup)
 $(".item-choice a").click(function (e) {
@@ -22,7 +22,7 @@ function insertPosts(objects, method_name) {
     });
     $('.blog')[method_name]($(html));
   }
-  $('#Grid').mixitup('remix', $('.filter.active').data('filter'));
+  $('#Grid').mixitup('remix', $('.filter.active').data('filter') || 'all');
 }
 
 // Load initial rows

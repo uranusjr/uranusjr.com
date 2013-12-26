@@ -3,6 +3,7 @@
 
 from django.http import Http404
 from django.shortcuts import render, redirect
+from . import feeds
 from .models import Post, Category, Tag
 
 
@@ -27,3 +28,7 @@ def post(request, slug, template='blog/post.html'):
         'categories': categories,
         'tags': tags,
     })
+
+
+posts_rss201rev2 = feeds.PostsRss201rev2Reed()
+posts_atom1 = feeds.PostsAtom1Feed()

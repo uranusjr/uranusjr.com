@@ -43,7 +43,8 @@ var FileBrowserHelper = {
       '/admin/filebrowser/browse/?pop=1&type=',
       function () {
         var path = $('#filebrowser_input').val();
-        $(markItUp.textarea).insertAtCaret('![](/media/' + path + ')');
+        if (path.length)
+          $(markItUp.textarea).insertAtCaret('![](/media/' + path + ')');
         $input.remove();
       }
     );

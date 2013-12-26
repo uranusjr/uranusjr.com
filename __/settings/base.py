@@ -57,6 +57,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
+    '__.context_processors.static',
 )
 
 ROOT_URLCONF = '__.urls'
@@ -108,7 +109,7 @@ MARKITUP_AUTO_PREVIEW = True
 
 MARKITUP_SET = '3rdparty/markitup/sets/markdown-fb'
 
-JQUERY_URL = '3rdparty/jquery/js/jquery.js'
+JQUERY_URL = '3rdparty/jquery/js/jquery-1.10.2.js'
 
 
 # Grappelli

@@ -19,9 +19,14 @@
     <div class="panel panel-default item">
       <div class="panel-heading">
         <a href="{{ work.get_absolute_url }}">
-          <!--work image-->
+          {% if work.image %}
           <img class="img-responsive item-img" alt="{{ work.title }}"
-            src="{% static 'base/img/work/projet-example-1.png' %}">
+            src="{{ work.image.url }}">
+          {% else %}
+          <img class="img-responsive item-img" alt="{{ work.title }}"
+            src="{{ work.get_icon_url }}">
+          {% endif %}
+
         </a>
       </div>
       <div class="panel-body">

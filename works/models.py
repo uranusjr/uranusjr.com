@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
 from filebrowser.fields import FileBrowseField
 from base.models import Element, Displayable, Tag as BaseTag
@@ -55,3 +56,10 @@ class Work(Displayable):
 
     def tag_slugs(self):
         return [tag.slug for tag in self.tags.all()]
+
+    def get_icon_url(self):
+        if self.image:
+            return self.image.url
+        else:
+            path_format = 'base/img/work/work-{work_type}.png'
+            return static(path_format.format(work_type=self.work_type))

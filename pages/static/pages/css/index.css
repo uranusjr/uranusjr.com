@@ -2,3 +2,7 @@
     margin-top: 5px;
     color: #808080;
 }
+.panel.item {
+    padding: 20px;
+    padding-bottom: 50px;
+}

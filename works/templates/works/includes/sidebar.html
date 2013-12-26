@@ -19,14 +19,8 @@
     <div class="panel panel-default item">
       <div class="panel-heading">
         <a href="{{ work.get_absolute_url }}">
-          {% if work.image %}
-          <img class="img-responsive item-img" alt="{{ work.title }}"
-            src="{{ work.image.url }}">
-          {% else %}
           <img class="img-responsive item-img" alt="{{ work.title }}"
             src="{{ work.get_icon_url }}">
-          {% endif %}
-
         </a>
       </div>
       <div class="panel-body">

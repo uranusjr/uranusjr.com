@@ -8,13 +8,18 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+.blog .media-heading {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .blog a {
     color: #333;
 }
+.blog a:hover {
+    text-decoration: none;
+}
 .row.bottom .col-right section .media {
     padding: 20px;
-}
-.blog a:hover {
-    color: #428bca;
-    text-decoration: none;
 }

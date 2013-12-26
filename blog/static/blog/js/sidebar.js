@@ -75,3 +75,19 @@ $('.item-choice').mouseenter(function () {
 }).mouseleave(function () {
   $(this).delay(100).animate({'height': $(this).data('height')}, 300);
 });
+
+// Hover article block expands title
+$('.blog').on('mouseenter', '.media', function () {
+  var ele = $('.media-heading', this);
+  if (ele.data('nowrap-height') === undefined)
+    ele.data('nowrap-height', ele.height());
+  ele.css('white-space', 'normal');
+  if (ele.data('normal-height') === undefined)
+    ele.data('normal-height', ele.height());
+  ele.height(ele.data('nowrap-height')).animate({'height': ele.data('normal-height')});
+}).on('mouseleave', '.media', function () {
+  var ele = $('.media-heading', this);
+  ele.animate({'height': ele.data('nowrap-height')}, function () {
+    $(this).css('white-space', 'nowrap');
+  });
+});

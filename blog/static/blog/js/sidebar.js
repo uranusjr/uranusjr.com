@@ -1,16 +1,15 @@
 // Clear everything
 $('.load-more').hide();
-$('.blog').empty();
+$('.blog').empty().removeData('loaded');
 
 $.ajaxSetup({'traditional': true});
-$('#Grid').mixitup({'layoutMode': 'list'});
 
 // Filters in sidebar (handled by mixitup)
 $(".item-choice a").click(function (e) {
   e.preventDefault();
 });
 
-function insertPosts(objects, method_name) {
+function insertPosts(objects, methodName) {
   var getTagName = function (tag) { return tag.slug; };
 
   for (var i = 0; i < objects.length; i++) {
@@ -20,16 +19,19 @@ function insertPosts(objects, method_name) {
       'post': object, 'tag_slugs': tag_slugs,
       'active': (object.id == currentPostId ? 'active' : '')
     });
-    $('.blog')[method_name]($(html));
+    $('.blog')[methodName]($(html));
   }
-  $('#Grid').mixitup('remix', $('.filter.active').data('filter') || 'all');
+  if ($('.blog').data('loaded')) {
+    $('#Grid').mixitup('remix', $('.filter.active').data('filter'));
+  }
+  else {
+    $('#Grid').mixitup({'layoutMode': 'list'});
+    $('.blog').data('loaded', true);
+  }
 }
 
 // Load initial rows
 $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
-  if (data.objects.length === 0)
-    return;
-
   insertPosts(data.objects, 'append');
 
   // Update "load more" buttons

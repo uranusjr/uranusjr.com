@@ -71,5 +71,6 @@ var currentPostId = '{{ post.id }}';
 {% endblock %}
 
 {% block extra_js %}
+{{ block.super }}
 <script src="{% static 'blog/js/sidebar.js' %}"></script>
 {% endblock %}

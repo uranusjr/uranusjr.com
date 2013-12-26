@@ -29,3 +29,8 @@
 {% block sidebar_content %}
 {% work_sidebar %}
 {% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'works/js/sidebar.js' %}"></script>
+{% endblock %}

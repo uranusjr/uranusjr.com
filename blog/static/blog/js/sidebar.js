@@ -3,7 +3,12 @@ $('.load-more').hide();
 $('.blog').empty();
 
 $.ajaxSetup({'traditional': true});
-$('#Grid').mixitup().mixitup('toList');
+$('#Grid').mixitup({'layoutMode': 'toList'});
+
+// Filters in sidebar (handled by mixitup)
+$(".item-choice a").click(function (e) {
+  e.preventDefault();
+});
 
 function insertPosts(objects, method_name) {
   var getTagName = function (tag) { return tag.slug; };

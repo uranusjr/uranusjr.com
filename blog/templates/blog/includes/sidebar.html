@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block sidebar_filter %}
-<a href="#" class="filter" data-filter="all">{% trans 'All' %}</a>
+<a href="#" class="filter active" data-filter="all">{% trans 'All' %}</a>
 {% for category in categories %}
   <a href="#" class="filter" data-filter="{{ category.slug }}">{{ category.title }}</a>
 {% endfor %}

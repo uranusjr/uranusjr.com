@@ -24,25 +24,17 @@
         </a>
       </div>
       <div class="panel-body">
-        <!--work title-->
         <a href="project-example.html"><h4 class="item-title">{{ work.title }}</h4></a>
-
-        <!--work category-->
         <p class="item-category">{{ work.category.title }}</p>
-
-        <!--work short description-->
         <div class="item-description">
           {{ work.content }}
         </div>
         <hr>
-
-        <!--work tags-->
         <p class="item-tags">
           {% for tag in work.tags.all %}
           <a href="#">{{ tag.name }}</a>{% if not forloop.last %} ,{% endif %}
           {% endfor %}
         </p>
-
       </div>
     </div>
   </div>

@@ -2,7 +2,10 @@
     margin-top: 5px;
     color: #808080;
 }
-.panel.item {
+.panel.item.standalone {
     padding: 20px;
     padding-bottom: 50px;
+}
+#Grid .panel.item {
+    height: 187px;
 }

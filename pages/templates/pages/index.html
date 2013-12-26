@@ -23,13 +23,10 @@
 <section>
   <div class="row">
     <div class="col-lg-12">
-
-      <!--panel contact-->
-      <div class="panel panel-default item">
+      <div class="panel panel-default item standalone">
         <div class="panel-body">
           <h4 class="item-title">{% trans 'Find me on' %}</h4>
           <hr>
-          <!--social networks-->
           <div class="item-social text-center">
             <a href="https://twitter.com/uranusjr" target="_blank">
               <img class="social" alt="Twitter"
@@ -51,11 +48,44 @@
         </div>
         <div class="spacer"></div>
         <div class="panel-body">
-          <h4 class="item-title">{% trans '...or just write to' %}</h4>
+          <h4 class="item-title">{% trans 'or just write to' %}</h4>
+          <hr>
           <div class="text-center">
             <p><a href="mailto:uranusjr@gmail.com">uranusjr@gmail.com</a></p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="row" id="Grid">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+    <div class="panel panel-default item">
+      <div class="panel-heading">
+        <a href="#">
+          <img class="img-responsive item-img" alt="{{ work.title }}"
+            src="{% static 'base/img/work/projet-example-1.png' %}">
+        </a>
+      </div>
+      <div class="panel-body">
+        <a href="project-example.html">
+          <h4 class="item-title">{% trans 'Cool Things About Uranus' %}</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+    <div class="panel panel-default item">
+      <div class="panel-heading">
+        <a href="#">
+          <img class="img-responsive item-img" alt="{{ work.title }}"
+            src="{% static 'base/img/work/projet-example-1.png' %}">
+        </a>
+      </div>
+      <div class="panel-body">
+        <a href="project-example.html">
+          <h4 class="item-title">{% trans 'Behind the Scenes: uranusjr.com' %}</h4>
+        </a>
       </div>
     </div>
   </div>

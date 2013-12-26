@@ -4,6 +4,20 @@
 
 {% block title %}{{ page.title }}{% endblock %}
 
+{% block extra_css %}
+{{ block.super }}
+<link href="{% static 'pages/css/index.css' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content_image %}
+{{ block.super }}
+<div class="text-center image-caption">
+  {% blocktrans %}
+  <strong>Uranus</strong>, taken in 1986 during the NASA/JPL/<em>Voyager 2</em> mission.
+  {% endblocktrans %}
+</div>
+{% endblock %}
+
 
 {% block sidebar %}
 <section>

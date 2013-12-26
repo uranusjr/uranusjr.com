@@ -6,18 +6,22 @@
 
 <div class="row text-center">
   <div class="col-lg-12">
-    <!--activity image-->
-    {% if page.image %}
-    <img class="img-responsive" src="{{ page.image.url }}" alt="{{ page.title }}">
-    {% endif %}
 
-    <!--activity title -->
+    {% block content_image %}
+    {% if page.image %}
+      <img class="img-responsive" src="{{ page.image.url }}" alt="{{ page.title }}">
+    {% endif %}
+    {% endblock %}
+
+    {% block content_title %}
     <h1>{{ page.title }}</h1>
     <h1 class="spacer">____</h1>
+    {% endblock %}
 
-    <!--activity descritpion-->
+    {% block content_detail %}
     <p class="work">{{ page.short_description }}</p>
     {{ page.content }}
+    {% endblock %}
 
   </div>
 </div>

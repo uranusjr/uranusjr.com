@@ -71,6 +71,9 @@ class Element(models.Model):
 
 
 class DisplayableManager(models.Manager):
+
+    use_for_related_fields = True
+
     def published(self):
         return self.get_queryset().filter(
             state__in=(Displayable.STATE_PUBLIC, Displayable.STATE_PRIVATE),

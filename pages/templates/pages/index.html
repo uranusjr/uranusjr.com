@@ -59,35 +59,22 @@
   </div>
 </section>
 <section class="row" id="Grid">
+  {% for page in page.children.public %}
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
     <div class="panel panel-default item">
       <div class="panel-heading">
-        <a href="#">
-          <img class="img-responsive item-img" alt="{{ work.title }}"
+        <a href="{{ page.get_absolute_url }}">
+          <img class="img-responsive item-img" alt="{{ page.title }}"
             src="{% static 'base/img/work/projet-example-1.png' %}">
         </a>
       </div>
       <div class="panel-body">
-        <a href="project-example.html">
-          <h4 class="item-title">{% trans 'Cool Things About Uranus' %}</h4>
+        <a href="{{ page.get_absolute_url }}">
+          <h4 class="item-title">{{ page.title }}</h4>
         </a>
       </div>
     </div>
   </div>
-  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-    <div class="panel panel-default item">
-      <div class="panel-heading">
-        <a href="#">
-          <img class="img-responsive item-img" alt="{{ work.title }}"
-            src="{% static 'base/img/work/projet-example-1.png' %}">
-        </a>
-      </div>
-      <div class="panel-body">
-        <a href="project-example.html">
-          <h4 class="item-title">{% trans 'Behind the Scenes: uranusjr.com' %}</h4>
-        </a>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </section>
 {% endblock %}

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from filebrowser.fields import FileBrowseField
@@ -28,3 +29,6 @@ class Page(Displayable):
     class Meta:
         verbose_name = _('page')
         verbose_name_plural = _('pages')
+
+    def get_absolute_url(self):
+        return reverse('pages:page', kwargs={'slug': self.slug})

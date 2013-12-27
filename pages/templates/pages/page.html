@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% load base_tags %}
+{% load base_tags pages_tags %}
 
 {% block title %}{{ page.title }}{% endblock %}
 
@@ -35,7 +35,7 @@
 {% endblock %}
 
 {% block sidebar_content %}
-{% include 'pages/includes/sidebar.html' %}
+{% sidebar page %}
 {% endblock %}
 
 {% block extra_js %}

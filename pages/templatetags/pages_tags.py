@@ -42,7 +42,7 @@ class SideBarNode(Node):
 
         # Find template to use
         template_paths = [
-            'pages/includes/{slug}_sidebar.html'.format(slug=page.slug),
+            'pages/includes/{slug}_sidebar.html'.format(slug=root.slug),
             'pages/includes/sidebar.html'
         ]
         if self.template_path is not None:

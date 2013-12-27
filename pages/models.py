@@ -37,7 +37,8 @@ class Page(Orderable, Displayable):
         try:
             old_object = Page.objects.get(pk=self.pk)
         except Page.DoesNotExist:
-            # No match, so this is an INSERT; nothing needs to be done
+            # No match, so this is an INSERT; just set the root
+            self._root = self.parent
             pass
         else:
             # This is an UPDATE

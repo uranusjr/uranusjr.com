@@ -10,6 +10,6 @@ register = template.Library()
 
 @register.inclusion_tag('works/includes/sidebar.html')
 def work_sidebar():
-    tags = Tag.objects.filter(works__isnull=False)
+    tags = Tag.objects.filter(works__isnull=False).distinct()
     works = Work.objects.public()
     return {'tags': tags, 'works': works}

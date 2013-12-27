@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% load i18n static compress base_tags blog_tags %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+{% stylesheets post 0 %}
+<link rel="stylesheet" href="{% static 'blog/css/post.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}" media="screen">
+{% endblock %}
+
+{% block sidebar_title %}{% trans 'Blog Posts' %}{% endblock %}
+
+{% block sidebar_content %}
+{% compress js %}
+<script>
+var postListUrl = '{% url "api_dispatch_list" resource_name="blog/post" api_name="v1" %}';
+var currentPostId = '{{ post.id }}';
+</script>
+{% endcompress %}
+<script type="text/template" id="sidebar_cell_template">
+{% include 'blog/includes/sidebar_post_tmpl.html' %}
+</script>
+{% blog_sidebar %}
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+{% javascripts post 1 %}
+<script src="{% static 'blog/js/sidebar.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<h1>{{ post.title }}</h1>
+<h1 class="spacer">___</h1>
+
+<!--article date-->
+<p class="article-date">{{ post.published_at|date }}</p>
+
+<!--article tags-->
+<p class="article-tags">
+  {% with category=post.category %}
+  {% trans 'Category: ' %}
+  <a href="#" class="filter" data-filter="{{ category.slug }}">{{ category.title }}</a>
+  {% endwith %}
+  <br>
+  {% if post.tags.all %}{% trans 'Tags: ' %}{% endif %}
+  {% for tag in post.tags.all %}
+  <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
+  {% if not forloop.last %} ,{% endif %}
+  {% endfor %}
+</p>
+
+<!--article content-->
+<div class="article-description">
+  {{ post.content }}
+</div>
+
+<!--navigation-->
+{% with previous=post.previous next=post.next %}
+<ul class="pager">
+  <li class="previous{% if not previous %} disabled{% endif %}">
+    <a href="{% if previous %}{{ previous.get_absolute_url }}{% else %}#{% endif %}">
+      &lt; {% trans 'Prev' %}
+    </a>
+  </li>
+  <li class="next{% if not next %} disabled{% endif %}">
+    <a href="{% if next %}{{ next.get_absolute_url }}{% else %}#{% endif %}">
+      {% trans 'Next' %} &gt;
+    </a>
+  </li>
+</ul>
+{% endwith %}
+<hr>

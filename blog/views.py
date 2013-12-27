@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.http import Http404
 from django.shortcuts import render, redirect
 from . import feeds
-from .models import Post, Category, Tag
+from .models import Post
 
 
 def index(request):
@@ -22,13 +22,7 @@ def post(request, slug, template='blog/post.html'):
         post = Post.objects.published().get(slug=slug)
     except Post.DoesNotExist:
         raise Http404
-    categories = Category.objects.filter(posts__isnull=False).distinct()
-    tags = Tag.objects.filter(posts__isnull=False).distinct()
-    return render(request, template, {
-        'post': post,
-        'categories': categories,
-        'tags': tags,
-    })
+    return render(request, template, {'post': post})
 
 
 posts_rss201rev2 = feeds.PostsRss201rev2Reed()

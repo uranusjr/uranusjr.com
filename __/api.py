@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8
 
+from __future__ import unicode_literals
 from importlib import import_module
 from tastypie.api import Api
 

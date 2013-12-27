@@ -35,7 +35,8 @@ class SideBarNode(Node):
                 page = None
 
         if page is not None:
-            pages = Page.objects.public().filter(_root=page._root)
+            root = page._root or page
+            pages = Page.objects.public().filter(_root=root)
         else:
             pages = Page.objects.none()
 

@@ -2,8 +2,10 @@
 
 <nav>
   <ul class="list-inline" id="menu">
-    {% for slug, name, active in tabs %}
-      <li{% if active %} class="active"{% endif %}><a href="/{{ slug }}">{{ name }}</a></li>
+    {% for tab in tabs %}
+      <li{% if tab.active %} class="active"{% endif %}>
+        <a href="/{{ tab.slug }}">{{ tab.title }}</a>
+      </li>
     {% endfor %}
     <li class="last">
       <a href="https://twitter.com/uranusjr" target="_blank">

@@ -3,12 +3,14 @@
 
 from __future__ import unicode_literals
 from django.db import models
+from django.db.models import Max
 from django.utils.timezone import now
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.contrib.contenttypes.generic import GenericForeignKey
 from filebrowser.fields import FileBrowseField
 from markitup.fields import MarkupField
+from .utils import get_concrete_base_model
 
 
 @python_2_unicode_compatible
@@ -85,6 +87,33 @@ class Element(models.Model):
             model_name=self._meta.verbose_name.capitalize(),
             title=self.title,
         )
+
+
+class Orderable(models.Model):
+
+    order = models.PositiveIntegerField(
+        blank=True, null=True, verbose_name=_('order')
+    )
+
+    class Meta:
+        abstract = True
+        verbose_name = _('orderable')
+        verbose_name_plural = _('orderables')
+        ordering = ['order', 'pk']
+
+    def save(self, *args, **kwargs):
+        """Provide initial ordering value.
+        """
+        # Find the base contrete model
+        if self.order is None:
+            klass = get_concrete_base_model(type(self), Orderable)
+            max_order = klass.objects.aggregate(
+                max_order=Max('order')
+            )['max_order']
+            if max_order is None:
+                max_order = -1
+            self.order = max_order + 1
+        super(Orderable, self).save(*args, **kwargs)
 
 
 class DisplayableManager(models.Manager):

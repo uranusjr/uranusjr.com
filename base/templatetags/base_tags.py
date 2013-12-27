@@ -3,8 +3,8 @@
 
 from __future__ import unicode_literals
 from django import template
-from django.utils.translation import ugettext as _
 from base.models import ExtraPath
+from pages.models import Page
 
 register = template.Library()
 
@@ -16,11 +16,21 @@ def sidebar_tabs(context):
     def is_active(slug):
         return request.path.startswith('/{slug}'.format(slug=slug))
 
-    TABS = (    # slug, name, is_active
-        ('', _('about'), request.path == '/'),
-        ('blog/', _('blog'), is_active('blog')),
-        ('work/', _('work'), is_active('work')),
-    )
+    root_pages = Page.objects.published().values(
+        'slug', 'title'
+    ).filter(parent=None).exclude(slug='index')
+
+    # slug, name, is_active
+    TABS = [{
+        'slug': '',
+        'title': Page.objects.get(slug='index').title,
+        'is_active': (request.path == '/'),
+    }]
+    TABS += [{
+        'slug': '{slug}/'.format(slug=p['slug']),
+        'title': p['title'],
+        'is_active': is_active(p['slug'])
+    } for p in root_pages]
     context['tabs'] = TABS
     return context
 

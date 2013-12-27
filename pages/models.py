@@ -6,14 +6,14 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from filebrowser.fields import FileBrowseField
-from base.models import Displayable
+from base.models import Displayable, Orderable
 
 
 def _page_image_upload_to(obj, filename):
     return '_'.join([obj.slug, filename])
 
 
-class Page(Displayable):
+class Page(Orderable, Displayable):
 
     parent = models.ForeignKey(
         'pages.Page', blank=True, null=True, related_name='children',
@@ -23,6 +23,7 @@ class Page(Displayable):
     class Meta:
         verbose_name = _('page')
         verbose_name_plural = _('pages')
+        ordering = ['parent__order', 'parent__pk', 'order', 'pk']
 
     def get_absolute_url(self):
         return reverse('pages:page', kwargs={'slug': self.slug})

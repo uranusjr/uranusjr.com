@@ -7,7 +7,7 @@ from django.db import models
 from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
 from filebrowser.fields import FileBrowseField
-from base.models import Element, Displayable, Tag as BaseTag
+from base.models import Element, Orderable, Displayable, Tag as BaseTag
 
 
 class Category(Element):
@@ -22,7 +22,7 @@ class Tag(BaseTag):
         verbose_name_plural = _('work tags')
 
 
-class Work(Displayable):
+class Work(Orderable, Displayable):
 
     TYPE_GITHUB = 'github'
     TYPE_BITBUCKET = 'bitbucket'

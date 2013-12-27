@@ -21,12 +21,11 @@
     {% endblock %}
 
     {% block content_title %}
-    <h1>{{ page.title }}</h1>
+    <h1>{{ page.short_description }}</h1>
     <h1 class="spacer">____</h1>
     {% endblock %}
 
     {% block content_detail %}
-    <p class="work">{{ page.short_description }}</p>
     {{ page.content }}
     {% endblock %}
 

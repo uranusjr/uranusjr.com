@@ -73,8 +73,7 @@ $('.load-more').click(function (e) {
 // Hover filter block
 $('.item-choice').each(function () {
   $(this).data('height', $(this).height() + 3);
-});
-$('.item-choice').mouseenter(function () {
+}).mouseenter(function () {
   $(this).css('height', 'auto');
   var autoHeight = $(this).height();
   $(this).height($(this).data('height'));

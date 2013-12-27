@@ -15,17 +15,12 @@ def page(request, slug, template='pages/page.html'):
     except Page.DoesNotExist:
         raise Http404
 
-    # Find the template to use by traversing the parenting chain. If nobody has
-    # a custom template, use the default 'pages/page.html'
-    parent = page
-    while parent:
-        template_candidate = 'pages/{slug}.html'.format(slug=parent.slug)
-        try:
-            find_template(template_candidate)
-        except TemplateDoesNotExist:
-            parent = parent.parent
-        else:
-            template = template_candidate
-            break
+    custom_template = 'pages/{slug}.html'.format(slug=page.slug)
+    try:
+        find_template(custom_template)
+    except TemplateDoesNotExist:
+        pass
+    else:
+        template = custom_template
 
     return render(request, template, {'page': page})

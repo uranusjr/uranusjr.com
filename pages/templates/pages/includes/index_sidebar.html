@@ -1,0 +1,45 @@
+{% extends 'pages/includes/sidebar.html' %}
+
+{% load i18n static %}
+
+{% block sidebar_items %}
+<section>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default item standalone">
+        <div class="panel-body">
+          <h4 class="item-title">{% trans 'Find me on' %}</h4>
+          <hr>
+          <div class="item-social text-center">
+            <a href="https://twitter.com/uranusjr" target="_blank">
+              <img class="social" alt="Twitter"
+                src="{% static 'base/img/icon/icon-twitter.png' %}">
+            </a>
+            <a href="https://www.facebook.com/uranusjr" target="_blank">
+              <img class="social" alt="Facebook"
+                src="{% static 'base/img/icon/icon-facebook.png' %}">
+            </a>
+            <a href="https://github.com/uranusjr" target="_blank">
+              <img class="social" alt="GitHub"
+                src="{% static 'base/img/icon/icon-github.png' %}">
+            </a>
+            <a href="http://www.linkedin.com/profile/view?id=240657995" target="_blank">
+              <img class="social" alt="Linkedin"
+                src="{% static 'base/img/icon/icon-linkedin.png' %}">
+            </a>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="panel-body">
+          <h4 class="item-title">{% trans 'or just write to' %}</h4>
+          <hr>
+          <div class="text-center">
+            <p><a href="mailto:uranusjr@gmail.com">uranusjr@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ block.super }}
+{% endblock %}

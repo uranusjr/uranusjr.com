@@ -16,7 +16,7 @@ def sidebar_tabs(context):
     def is_active(slug):
         return request.path.startswith('/{slug}'.format(slug=slug))
 
-    root_pages = Page.objects.published().values(
+    root_pages = Page.objects.public().values(
         'slug', 'title'
     ).filter(parent=None).exclude(slug='index')
 

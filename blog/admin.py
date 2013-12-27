@@ -3,7 +3,7 @@
 
 from django.contrib import admin
 from base.admin import DisplayableAdmin
-from .models import Post, Category
+from .models import Post, Category, Tag
 
 
 class PostAdmin(DisplayableAdmin):
@@ -20,5 +20,6 @@ class PostAdmin(DisplayableAdmin):
     filter_horizontal = ('tags',)
 
 
+admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(Post, PostAdmin)

@@ -72,12 +72,10 @@ $('.load-more').click(function (e) {
 
 // Hover filter block
 $('.item-choice').each(function () {
-  $(this).data('height', $(this).height() + 3);
+  var autoHeight = $(this).height() + 5;
+  $(this).data('height-auto', autoHeight).height(50).data('height', 50);
 }).mouseenter(function () {
-  $(this).css('height', 'auto');
-  var autoHeight = $(this).height();
-  $(this).height($(this).data('height'));
-  $(this).animate({'height': autoHeight + 10}, 300);
+  $(this).animate({'height': $(this).data('height-auto')}, 300);
 }).mouseleave(function () {
   $(this).delay(100).animate({'height': $(this).data('height')}, 300);
 });

@@ -18,6 +18,9 @@ class Page(Orderable, Displayable):
     parent = models.ForeignKey(
         'pages.Page', blank=True, null=True, related_name='children',
     )
+    _root = models.ForeignKey(
+        'pages.Page', blank=True, null=True, related_name='descendants',
+    )
     image = FileBrowseField(max_length=200, blank=True)
 
     class Meta:
@@ -27,3 +30,22 @@ class Page(Orderable, Displayable):
 
     def get_absolute_url(self):
         return reverse('pages:page', kwargs={'slug': self.slug})
+
+    def save(self, *args, **kwargs):
+        # Update the page's own, and all its descendants' ``_root``s when the
+        # page switches to another parent
+        try:
+            old_object = Page.objects.get(pk=self.pk)
+        except Page.DoesNotExist:
+            # No match, so this is an INSERT; nothing needs to be done
+            pass
+        else:
+            # This is an UPDATE
+            if old_object.parent != self.parent:
+                if self.parent is None:
+                    new_root = None
+                else:
+                    new_root = self.parent._root
+                self._root = new_root
+                self.descendants.all().update(_root=new_root)
+        return super(Page, self).save(*args, **kwargs)

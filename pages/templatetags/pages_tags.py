@@ -35,7 +35,7 @@ class SideBarNode(Node):
                 page = None
 
         if page is not None:
-            pages = Page.objects.public().filter(parent=page)
+            pages = Page.objects.public().filter(_root=page._root)
         else:
             pages = Page.objects.none()
 
@@ -66,10 +66,11 @@ def sidebar(parser, token):
 
     Usage: ``{% sidebar page template_path %}``
 
-    ``page`` can be a concrete pages.Page object, a string (the page's slug),
-    any type matching the page's pk. ``template_path`` is optional, and
-    defaults to either ``pages/includes/{slug}_sidebar.html`` or
-    ``pages/includes/sidebar.html`` if the former does not exist.
+    A page's sidebar is based on its root parent's all decendants. ``page``
+    can be a concrete pages.Page object, a string (the page's slug), any type
+    matching the page's pk. ``template_path`` is optional, and defaults to
+    ``pages/includes/{slug}_sidebar.html``, or ``pages/includes/sidebar.html``
+    if the former does not exist.
     """
     tokens = token.split_contents()
     tag_name = tokens.pop(0)

@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 from django import template
 from django.utils.translation import ugettext as _
+from base.models import ExtraPath
 
 register = template.Library()
 
@@ -22,3 +23,17 @@ def sidebar_tabs(context):
     )
     context['tabs'] = TABS
     return context
+
+
+@register.inclusion_tag('base/includes/stylesheets.html')
+def stylesheets(obj, link_type):
+    files = ExtraPath.objects.filter(file_type='css', link_type=link_type)
+    return {'files': files}
+
+
+@register.inclusion_tag('base/includes/javascripts.html')
+def javascripts(obj, link_type):
+    files = ExtraPath.objects.filter(
+        file_type='javascript', link_type=link_type
+    )
+    return {'files': files}

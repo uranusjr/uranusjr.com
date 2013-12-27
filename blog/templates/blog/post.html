@@ -1,11 +1,12 @@
 {% extends 'base/base.html' %}
 
-{% load i18n static compress %}
+{% load i18n static compress base_tags %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block extra_css %}
 {{ block.super }}
+{% stylesheets post 0 %}
 <link rel="stylesheet" href="{% static 'blog/css/post.css' %}" media="screen">
 <link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}" media="screen">
 {% endblock %}
@@ -74,5 +75,6 @@ var currentPostId = '{{ post.id }}';
 
 {% block extra_js %}
 {{ block.super }}
+{% javascripts post 1 %}
 <script src="{% static 'blog/js/sidebar.js' %}"></script>
 {% endblock %}

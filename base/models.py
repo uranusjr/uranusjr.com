@@ -6,22 +6,39 @@ from django.db import models
 from django.utils.timezone import now
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
+from django.contrib.contenttypes.generic import GenericForeignKey
+from filebrowser.fields import FileBrowseField
 from markitup.fields import MarkupField
 
 
 @python_2_unicode_compatible
 class ExtraPath(models.Model):
 
-    TYPE_CSS = 'css'
-    TYPE_JAVASCRIPT = 'javascript'
+    FILE_TYPE_CSS = 'css'
+    FILE_TYPE_JAVASCRIPT = 'javascript'
 
-    TYPES = (
-        (TYPE_CSS, _('CSS')),
-        (TYPE_JAVASCRIPT, _('JavaScript')),
+    FILE_TYPES = (
+        (FILE_TYPE_CSS, _('CSS')),
+        (FILE_TYPE_JAVASCRIPT, _('JavaScript')),
     )
 
-    link_type = models.CharField(max_length=10, choices=TYPES)
-    path = models.FilePathField(unique=True)
+    LINK_TYPE_HEADER = 0
+    LINK_TYPE_FOOTER = 1
+
+    LINK_TYPES = (
+        (LINK_TYPE_HEADER, _('Header')),
+        (LINK_TYPE_FOOTER, _('Footer')),
+    )
+
+    file_type = models.CharField(max_length=10, choices=FILE_TYPES)
+    link_type = models.IntegerField(
+        default=LINK_TYPE_HEADER, choices=LINK_TYPES
+    )
+    target = FileBrowseField(max_length=200, extensions=['.css', '.js'])
+
+    owner_type = models.ForeignKey('contenttypes.ContentType')
+    owner_id = models.PositiveIntegerField()
+    owner = GenericForeignKey('owner_type', 'owner_id')
 
     class Meta:
         verbose_name = _('extra path')

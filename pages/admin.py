@@ -6,10 +6,6 @@ from base.admin import DisplayableAdmin
 from .models import Page
 
 
-class ExtraHeadersInline(admin.StackedInline):
-    model = Page.extra_header_paths.through
-
-
 class PageAdmin(DisplayableAdmin):
 
     list_display = ('title', 'short_description', 'state', 'published_at')

@@ -19,12 +19,6 @@ class Page(Displayable):
         'pages.Page', blank=True, null=True, related_name='children',
     )
     image = FileBrowseField(max_length=200, blank=True)
-    extra_header_paths = models.ManyToManyField(
-        'base.ExtraPath', blank=True, related_name='headered_pages'
-    )
-    extra_footer_paths = models.ManyToManyField(
-        'base.ExtraPath', blank=True, related_name='footered_pages'
-    )
 
     class Meta:
         verbose_name = _('page')

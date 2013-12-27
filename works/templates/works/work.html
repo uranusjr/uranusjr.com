@@ -1,8 +1,13 @@
 {% extends 'base/base.html' %}
 
-{% load work_tags %}
+{% load base_tags work_tags %}
 
 {% block title %}{{ work.title }}{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+{% stylesheets page 0 %}
+{% endblock %}
 
 {% block content_main %}
 
@@ -32,5 +37,6 @@
 
 {% block extra_js %}
 {{ block.super }}
+{% javascripts page 1 %}
 <script src="{% static 'works/js/sidebar.js' %}"></script>
 {% endblock %}

@@ -1,6 +1,13 @@
 {% extends 'base/base.html' %}
 
+{% load base_tags %}
+
 {% block title %}{{ page.title }}{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+{% stylesheets page 0 %}
+{% endblock %}
 
 {% block content_main %}
 
@@ -26,4 +33,9 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+{% javascripts page 1 %}
 {% endblock %}

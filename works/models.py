@@ -40,12 +40,6 @@ class Work(Displayable):
     tags = models.ManyToManyField(Tag, related_name='works')
     work_type = models.CharField(max_length=9, choices=TYPES)
     image = FileBrowseField(max_length=200, blank=True)
-    extra_header_paths = models.ManyToManyField(
-        'base.ExtraPath', blank=True, related_name='headered_works'
-    )
-    extra_footer_paths = models.ManyToManyField(
-        'base.ExtraPath', blank=True, related_name='footered_works'
-    )
 
     class Meta:
         verbose_name = _('work')

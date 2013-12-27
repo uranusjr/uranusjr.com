@@ -25,12 +25,6 @@ class Post(Displayable):
 
     category = models.ForeignKey(Category, related_name='posts')
     tags = models.ManyToManyField(Tag, blank=True, related_name='posts')
-    extra_header_paths = models.ManyToManyField(
-        'base.ExtraPath', blank=True, related_name='headered_blog_posts'
-    )
-    extra_footer_paths = models.ManyToManyField(
-        'base.ExtraPath', blank=True, related_name='footered_blog_posts'
-    )
 
     class Meta:
         verbose_name = _('blog post')

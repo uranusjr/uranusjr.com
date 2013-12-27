@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
+from base.admin import DisplayableAdmin
 from .models import Post, Category
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(DisplayableAdmin):
 
     list_display = ('title', 'short_description', 'state', 'published_at')
     list_editable = ('state', 'published_at')
@@ -18,13 +19,6 @@ class PostAdmin(admin.ModelAdmin):
     )
     filter_horizontal = ('tags',)
 
-    class Media:
-        css = {
-            'all': ('base/css/markitup.css',)
-        }
-        js = (
-            'filebrowser/js/AddFileBrowser.js',
-        )
 
 admin.site.register(Category)
 admin.site.register(Post, PostAdmin)

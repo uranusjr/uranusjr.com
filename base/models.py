@@ -47,9 +47,10 @@ class ExtraPath(models.Model):
         verbose_name_plural = _('extra paths')
 
     def __str__(self):
-        return ugettext('{model_name} at {path}').format(
-            model_name=self._meta.verbose_name.capitalize(),
-            path=self.path,
+        return ugettext('{link} {file} at {path}').format(
+            link=self.get_link_type_display(),
+            file=self.get_file_type_display(),
+            path=self.target
         )
 
 
@@ -65,10 +66,7 @@ class Tag(models.Model):
         verbose_name_plural = _('tags')
 
     def __str__(self):
-        return ugettext('{model_name} {name}').format(
-            model_name=self._meta.verbose_name.capitalize(),
-            name=self.name,
-        )
+        return self.name
 
 
 @python_2_unicode_compatible
@@ -83,10 +81,7 @@ class Element(models.Model):
         verbose_name_plural = _('elements')
 
     def __str__(self):
-        return ugettext('{model_name} {title}').format(
-            model_name=self._meta.verbose_name.capitalize(),
-            title=self.title,
-        )
+        return self.title
 
 
 class Orderable(models.Model):

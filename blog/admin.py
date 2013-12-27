@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from base.admin import DisplayableAdmin
+from base.admin import DisplayableAdmin, TagAdmin, ElementAdmin
 from .models import Post, Category, Tag
 
 
@@ -12,7 +12,7 @@ class PostAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at')
     fieldsets = (
         (None, {'fields': (
-            ('title', 'category'), 'short_description', 'tags', 'content'
+            ('title', 'category'), 'short_description', 'tags', 'content',
         )}),
         ('Publishing options', {'fields': ('state', 'published_at')}),
         ('Page options', {'fields': ('slug',)})
@@ -20,6 +20,6 @@ class PostAdmin(DisplayableAdmin):
     filter_horizontal = ('tags',)
 
 
-admin.site.register(Tag)
-admin.site.register(Category)
+admin.site.register(Tag, TagAdmin)
+admin.site.register(Category, ElementAdmin)
 admin.site.register(Post, PostAdmin)

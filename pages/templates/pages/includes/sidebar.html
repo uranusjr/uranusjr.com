@@ -1,0 +1,23 @@
+{% extends 'base/includes/sidebar.html' %}
+
+{% block sidebar_items %}
+<section class="row" id="Grid">
+  {% for page in page.children.public %}
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+    <div class="panel panel-default item">
+      <div class="panel-heading">
+        <a href="{{ page.get_absolute_url }}">
+          <img class="img-responsive item-img" alt="{{ page.title }}"
+            src="{{ page.image.url }}">
+        </a>
+      </div>
+      <div class="panel-body">
+        <a href="{{ page.get_absolute_url }}">
+          <h4 class="item-title">{{ page.title }}</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -17,7 +17,7 @@
 {% endblock %}
 
 
-{% block sidebar %}
+{% block sidebar_content %}
 <section>
   <div class="row">
     <div class="col-lg-12">
@@ -56,23 +56,5 @@
     </div>
   </div>
 </section>
-<section class="row" id="Grid">
-  {% for page in page.children.public %}
-  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-    <div class="panel panel-default item">
-      <div class="panel-heading">
-        <a href="{{ page.get_absolute_url }}">
-          <img class="img-responsive item-img" alt="{{ page.title }}"
-            src="{% static 'base/img/work/projet-example-1.png' %}">
-        </a>
-      </div>
-      <div class="panel-body">
-        <a href="{{ page.get_absolute_url }}">
-          <h4 class="item-title">{{ page.title }}</h4>
-        </a>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</section>
+{{ block.super }}
 {% endblock %}

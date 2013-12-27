@@ -34,6 +34,10 @@
 
 {% endblock %}
 
+{% block sidebar_content %}
+{% include 'pages/includes/sidebar.html' %}
+{% endblock %}
+
 {% block extra_js %}
 {{ block.super }}
 {% javascripts page 1 %}

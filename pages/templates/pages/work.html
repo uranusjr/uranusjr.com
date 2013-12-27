@@ -1,7 +1,13 @@
 {% extends 'pages/page.html' %}
 
-{% load work_tags %}
+{% load static base_tags work_tags %}
 
 {% block sidebar_content %}
 {% work_sidebar %}
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+{% javascripts page 1 %}
+<script src="{% static 'works/js/sidebar.js' %}"></script>
 {% endblock %}

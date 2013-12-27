@@ -36,9 +36,7 @@ class SideBarNode(Node):
 
         if page is not None:
             root = page._root or page
-            pages = Page.objects.public().filter(_root=root)
-        else:
-            pages = Page.objects.none()
+            context['page'] = root
 
         # Find template to use
         template_paths = [
@@ -57,7 +55,6 @@ class SideBarNode(Node):
             except TemplateDoesNotExist:
                 pass
 
-        context['pages'] = pages
         return template.render(context)
 
 

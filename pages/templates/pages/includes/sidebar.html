@@ -2,7 +2,7 @@
 
 {% block sidebar_items %}
 <section class="row" id="Grid">
-  {% for page in page.children.public %}
+  {% for page in page.descendants.public %}
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
     <div class="panel panel-default item">
       <div class="panel-heading">

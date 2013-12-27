@@ -19,7 +19,8 @@ def index(request):
 
 def post(request, slug, template='blog/post.html'):
     try:
-        post = Post.objects.published().get(slug=slug)
+        post = Post.objects.published(
+        ).prefetch_related('tags').select_related('category').get(slug=slug)
     except Post.DoesNotExist:
         raise Http404
     return render(request, template, {'post': post})

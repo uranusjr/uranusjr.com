@@ -17,6 +17,9 @@
     {% block content_image %}
     {% if page.image %}
       <img class="img-responsive" src="{{ page.image.url }}" alt="{{ page.title }}">
+      {% if page.image_caption %}
+      <div class="text-center image-caption">{{ page.image_caption|safe }}</div>
+      {% endif %}
     {% endif %}
     {% endblock %}
 

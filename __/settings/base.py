@@ -132,7 +132,7 @@ GRAPPELLI_ADMIN_TITLE = 'Smaller Things'
 
 # FileBrowser
 
-FILEBROWSER_DIRECTORY = 'uploads/'
+FILEBROWSER_DIRECTORY = ''
 
 
 # Tastypie

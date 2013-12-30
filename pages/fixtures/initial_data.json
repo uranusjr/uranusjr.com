@@ -5,6 +5,8 @@
         "fields": {
             "title": "About",
             "short_description": "Hi, I'm Tzu-ping Chung",
+            "image": "pages/uranus.png",
+            "image_caption": "<strong>Uranus</strong>, taken in 1986 during the NASA/JPL/<em>Voyager 2</em> mission.",
             "slug": "index",
             "state": "public",
             "order": 0,

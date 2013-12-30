@@ -22,6 +22,9 @@ class Page(Orderable, Displayable):
         'pages.Page', blank=True, null=True, related_name='descendants',
     )
     image = FileBrowseField(max_length=200, blank=True)
+    image_caption = models.CharField(
+        max_length=100, blank=True, help_text=_('Can contain HTML tags')
+    )
 
     class Meta:
         verbose_name = _('page')

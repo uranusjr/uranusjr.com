@@ -1,5 +1,6 @@
 body {
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
 }
 .heading {
   font-family: 'Open Sans Condensed', sans-serif;
@@ -13,12 +14,18 @@ ul.pager {
   text-transform: uppercase;
   font-weight: 700 !important;
 }
+blockquote p {
+  font-size: 16px;
+}
 .spacer {
   margin: 0;
   font-size: 60px;
   top: -35px;
   line-height: 20px;
   position: relative;
+}
+.text-justify {
+  text-align: justify;
 }
 .social {
   background-color: #333333;
@@ -267,6 +274,7 @@ body,
   font-size: 24px;
   font-style: italic;
   color: #808080;
+  text-align: center;
 }
 .row.bottom .col-left section {
   padding: 30px 20px;

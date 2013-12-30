@@ -4,12 +4,20 @@
 
 {% block extra_css %}
 {{ block.super }}
+{% if debug %}
+<link href="{% static 'base/less/import.less' %}"
+  rel="stylesheet/less" media="screen">
+{% else %}
 <link href="{% static 'base/css/style.css' %}" rel="stylesheet" media="screen">
+{% endif %}
 {% endblock %}
 
 {% block extra_header %}
 <link rel="stylesheet" media="screen"
   href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic|Open+Sans+Condensed:300,700|Pacifico">
+{% if debug %}
+<script src="{% static '3rdparty/less/js/less-1.5.1.min.js' %}"></script>
+{% endif %}
 {% endblock %}
 
 

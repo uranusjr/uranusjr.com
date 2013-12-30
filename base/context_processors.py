@@ -6,4 +6,8 @@ from django.conf import settings
 
 
 def static(request):
-    return {'JQUERY_URL': settings.JQUERY_URL}
+    less_debug = getattr(settings, 'LESS_DEBUG', settings.DEBUG)
+    return {
+        'JQUERY_URL': settings.JQUERY_URL,
+        'LESS_DEBUG': less_debug,
+    }

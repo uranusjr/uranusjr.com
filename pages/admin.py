@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-from django import forms
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from base.admin import DisplayableAdmin, DisplayableAdminForm
+from base.admin import DisplayableAdmin
 from .models import Page
 
 
@@ -22,16 +21,8 @@ _page_parent_link.short_description = _('parent')
 _page_parent_link.allow_tags = True
 
 
-class PageAdminForm(DisplayableAdminForm):
-    class Meta:
-        widgets = {
-            'image_caption': forms.Textarea
-        }
-
-
 class PageAdmin(DisplayableAdmin):
 
-    form = PageAdminForm
     list_display = (
         'title', 'short_description', 'state', 'published_at',
         _page_parent_link, 'order'

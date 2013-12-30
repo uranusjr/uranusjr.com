@@ -21,6 +21,8 @@
         "fields": {
             "title": "Work",
             "short_description": "What I Do",
+            "image": "pages/taipei.py-dec-2013.png",
+            "image_caption": "<em>We Buy Cheese at a Cheese Shop</em>, <a href=\"http://www.meetup.com/Taipei-py/events/150006542/\" target=\"_blank\">Taipei.py, December 2013</a>. Courtesy <a href=\"http://www.meetup.com/Taipei-py/members/35922882/\" target=\"_blank\">Andy Dai</a>.",
             "slug": "work",
             "state": "public",
             "order": 2,

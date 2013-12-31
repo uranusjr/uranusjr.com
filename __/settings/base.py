@@ -11,8 +11,18 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from __future__ import unicode_literals
 import os
+from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+
+
+def get_env_var(key):
+    try:
+        return os.environ[key]
+    except KeyError:
+        raise ImproperlyConfigured(
+            'Environment variable {key} required.'.format(key=key)
+        )
 
 
 DEBUG = False

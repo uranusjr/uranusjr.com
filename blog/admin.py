@@ -19,7 +19,7 @@ class PostAdmin(DisplayableAdmin):
         ('Page options', {'fields': ('slug',)})
     )
     filter_horizontal = ('tags',)
-    ordering = '-published_at'
+    ordering = ('-published_at',)
 
 
 admin.site.register(Tag, TagAdmin)

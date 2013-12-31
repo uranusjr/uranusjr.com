@@ -40,7 +40,7 @@ class Work(Orderable, Displayable):
     tags = models.ManyToManyField(Tag, related_name='works')
     work_type = models.CharField(max_length=9, choices=TYPES)
     image = FileBrowseField(max_length=200, blank=True)
-    url = models.URLField(blank=True)
+    url = models.URLField(blank=True, verbose_name=_('URL'))
 
     class Meta:
         verbose_name = _('work')

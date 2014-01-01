@@ -5,6 +5,10 @@ from .base import *     # NOQA
 
 ALLOWED_HOSTS = ['uranusjr.com']
 
+ADMINS = (
+    ('Tzu-ping Chung', 'uranusjr@gmail.com'),
+)
+
 SECRET_KEY = get_env_var('SECRET_KEY')
 
 DATABASES = {
@@ -21,3 +25,10 @@ DATABASES = {
 STATIC_ROOT = get_env_var('STATIC_ROOT')
 
 MEDIA_ROOT = get_env_var('MEDIA_ROOT')
+
+# Email settings with Gmail
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = get_env_var('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = get_env_var('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587

@@ -17,12 +17,15 @@ def index(request):
     return redirect(post)
 
 
-def post(request, slug, template='blog/post.html'):
+def post(request, pk, slug='', template='blog/post.html'):
     try:
         post = Post.objects.published(
-        ).prefetch_related('tags').select_related('category').get(slug=slug)
+        ).prefetch_related('tags').select_related('category').get(pk=pk)
     except Post.DoesNotExist:
         raise Http404
+
+    if slug != post.slug:   # StackOverflow-style URL canonization
+        return redirect(post, permanent=True)
     return render(request, template, {'post': post})
 
 

@@ -33,7 +33,7 @@ class Post(Displayable):
         get_latest_by = 'published_at'
 
     def get_absolute_url(self):
-        return reverse('blog:post', kwargs={'slug': self.slug})
+        return reverse('blog:post', kwargs={'pk': self.pk, 'slug': self.slug})
 
     def get_after_query(self, including_self=False):
         pk_q = Q(pk__gte=self.pk) if including_self else Q(pk__gt=self.pk)

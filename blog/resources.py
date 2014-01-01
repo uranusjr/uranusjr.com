@@ -121,8 +121,8 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
         else:
             offset = front_count - half_limit
 
-        # Round offset to multiple of limit so that we can get complete pages
-        offset = int(round(offset / limit, 0)) * limit
+        # Floor offset to multiple of limit so that we can get complete pages
+        offset = offset // limit * limit
 
         GET = request.GET.copy()
         GET['offset'] = offset

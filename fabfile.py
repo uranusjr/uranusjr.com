@@ -14,18 +14,18 @@ except AttributeError:  # Python 3 renames SafeConfigParser to ConfigParser
     ConfigParser = configparser.ConfigParser
 
 
-def get_uwsgi_config():
-    ini_path = os.path.join(os.path.dirname(__file__), 'uwsgi.ini')
-    config = ConfigParser()
-    config.read(ini_path)
-    return config
+def get_uwsgi_config(key):
+    if not hasattr(get_uwsgi_config, '_config'):
+        ini_path = os.path.join(os.path.dirname(__file__), 'uwsgi.ini')
+        get_uwsgi_config._config = ConfigParser()
+        get_uwsgi_config._config.read(ini_path)
+    return get_uwsgi_config._config.get('uwsgi', key)
 
 
 @task
 def deploy():
-    config = get_uwsgi_config()
-    pid_file_path = config.get('uwsgi', 'pidfile')
-    project_dir = '/var/django/dev/uranusjr.com'
+    pid_file_path = get_uwsgi_config('pidfile')
+    project_dir = get_uwsgi_config('chdir')
     with cd(project_dir):
         run('git reset HEAD --hard')
         run('git pull')

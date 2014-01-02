@@ -11,6 +11,14 @@
 <link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}" media="screen">
 {% endblock %}
 
+{% block extra_header %}
+{{ block.super }}
+<link rel="alternate" type="application/atom+xml" href="{% url 'blog:posts_atom1' %}"
+    title="{% trans 'Smaller Things from an Insignificant One' %}">
+<link rel="alternate" type="application/rss+xml" href="{% url 'blog:posts_rss201rev2' %}"
+    title="{% trans 'Smaller Things from an Insignificant One' %}">
+{% endblock %}
+
 {% block sidebar_title %}{% trans 'Blog Posts' %}{% endblock %}
 
 {% block sidebar_content %}

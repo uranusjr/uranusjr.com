@@ -5,8 +5,7 @@
 {% block extra_css %}
 {{ block.super }}
 {% if LESS_DEBUG %}
-<link href="{% static 'base/less/import.less' %}"
-  rel="stylesheet/less" media="screen">
+<link href="{% static 'base/less/import.less' %}" rel="stylesheet/less" media="screen">
 {% else %}
 <link href="{% static 'base/css/style.css' %}" rel="stylesheet" media="screen">
 {% endif %}

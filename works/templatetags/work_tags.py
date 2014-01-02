@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 from django import template
+from django.db.models import Count
 from works.models import Tag, Work
 
 register = template.Library()
@@ -10,7 +11,9 @@ register = template.Library()
 
 @register.inclusion_tag('works/includes/sidebar.html')
 def work_sidebar():
-    tags = Tag.objects.filter(works__isnull=False).distinct()
+    tags = Tag.objects.annotate(
+        work_count=Count('works')
+    ).exclude(work_count=0).order_by('-work_count').distinct()
     works = Work.objects.public()
     works = works.select_related('category').prefetch_related('tags')
     return {'tags': tags, 'works': works}

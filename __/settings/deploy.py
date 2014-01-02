@@ -5,6 +5,13 @@ from .base import *     # NOQA
 
 ALLOWED_HOSTS = ['uranusjr.com']
 
+try:
+    server_ip = get_env_var('SERVER_IP')
+except ImproperlyConfigured:
+    pass
+else:
+    ALLOWED_HOSTS.append(server_ip)
+
 ADMINS = (
     ('Tzu-ping Chung', 'uranusjr@gmail.com'),
 )

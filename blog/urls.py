@@ -10,6 +10,6 @@ urlpatterns = patterns(
     url(r'^$', 'index', name='index'),
     url(r'^post/(?P<pk>\d+)/$', 'post'),
     url(r'^post/(?P<pk>\d+)/(?P<slug>.+?)/$', 'post', name='post'),
-    url(r'^feed/rss201rev2/$', 'posts_rss201rev2', name='post_rss201rev2'),
+    url(r'^feed/rss201rev2/$', 'posts_rss201rev2', name='posts_rss201rev2'),
     url(r'^feed/atom1/$', 'posts_atom1', name='posts_atom1'),
 )

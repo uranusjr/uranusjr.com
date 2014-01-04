@@ -14,6 +14,9 @@ ul.pager {
   text-transform: uppercase;
   font-weight: 700 !important;
 }
+p {
+  margin: 0 0 1em;
+}
 blockquote p {
   font-size: 16px;
 }
@@ -232,7 +235,7 @@ body,
 }
 @media (min-width: 768px) {
   .row.bottom {
-    padding-top: 50px;
+    padding-top: 54px;
   }
 }
 .row.bottom .col-left ul.pager li > a {

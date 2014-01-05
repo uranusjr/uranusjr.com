@@ -39,8 +39,6 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
             'published_at',
         ]
         filtering = {
-            'slug': resources.ALL,
-            'published_at': resources.ALL,
             'before': ('exact',),
             'after': ('exact',),
             'including': ('exact',),

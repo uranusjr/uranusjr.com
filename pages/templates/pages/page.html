@@ -6,7 +6,7 @@
 
 {% block extra_css %}
 {{ block.super }}
-{% stylesheets page 0 %}
+{% stylesheets header page %}
 {% endblock %}
 
 {% block content_main %}
@@ -43,5 +43,5 @@
 
 {% block extra_js %}
 {{ block.super }}
-{% javascripts page 1 %}
+{% javascripts footer page %}
 {% endblock %}

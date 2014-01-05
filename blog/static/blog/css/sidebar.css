@@ -22,3 +22,6 @@
 .row.bottom .col-right section .media {
     padding: 20px;
 }
+.sidebar-grid {
+    padding-top: 0;
+}

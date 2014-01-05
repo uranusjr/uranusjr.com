@@ -50,6 +50,8 @@ $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
 // Load more
 $('.load-more').click(function (e) {
   e.preventDefault();
+  $(this).hide();
+
   var that = this;
   var dir = $(this).data('direction') || '';
   var params = {};
@@ -65,14 +67,12 @@ $('.load-more').click(function (e) {
     $(that).data('anchor', _.last(data.objects).id);
     if (data.meta.next)
       $(that).show();
-    else
-      $(that).hide();
   });
 });
 
 // Hover filter block
 $('.item-choice').each(function () {
-  var autoHeight = $(this).height() + 5;
+  var autoHeight = $(this).height() + 10;
   $(this).data('height-auto', autoHeight).height(50).data('height', 50);
 }).mouseenter(function () {
   $(this).animate({'height': $(this).data('height-auto')}, 300);

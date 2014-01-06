@@ -97,9 +97,10 @@ class Orderable(models.Model):
         ordering = ['order', 'pk']
 
     def save(self, *args, **kwargs):
-        """Provide initial ordering value.
+        """Overriden from Model
+
+        Provides initial ordering value.
         """
-        # Find the base contrete model
         if self.order is None:
             klass = get_concrete_base_model(type(self), Orderable)
             max_order = klass.objects.aggregate(

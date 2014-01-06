@@ -5,6 +5,11 @@ from __future__ import unicode_literals
 
 
 def get_concrete_base_model(model_class, base_class):
+    """Find the concrete base class of a given Django model class
+
+    This method traverses the MRO of a class to find the class nearest to the
+    root that is a Django model, but *not* abstract.
+    """
     try:
         assert (
             not model_class._meta.abstract

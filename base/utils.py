@@ -7,8 +7,10 @@ from __future__ import unicode_literals
 def get_concrete_base_model(model_class, base_class):
     """Find the concrete base class of a given Django model class
 
-    This method traverses the MRO of a class to find the class nearest to the
-    root that is a Django model, but *not* abstract.
+    This method traverses the MRO of ``model_class`` to find the derived Django
+    model class nearest ``base_class`` that is *not* abstract. If there is no
+    such class (i.e. all classes between ``model_class`` and ``base_class`` are
+    either abstract or not a Django model, ``None`` is returned.
     """
     try:
         assert (

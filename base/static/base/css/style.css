@@ -14,6 +14,13 @@ ul.pager {
   text-transform: uppercase;
   font-weight: 700 !important;
 }
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+ul.pager code {
+  text-transform: none;
+}
 p {
   margin: 0 0 1em;
 }
@@ -354,6 +361,9 @@ body,
 .row.bottom .col-right .item-choice a:focus {
   text-decoration: none;
   color: #0d0d0d;
+}
+.row.bottom .col-right .item-choice a code {
+  text-transform: none;
 }
 .row.bottom .col-right .item-choice hr {
   margin-top: 10px;

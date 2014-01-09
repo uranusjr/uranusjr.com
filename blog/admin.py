@@ -22,7 +22,7 @@ class PostAdmin(DisplayableAdmin):
         ('Tags', {
             'fields': ('tags',),
             'classes': ('grp-collapse', 'grp-closed'),
-        })
+        }),
     )
     filter_horizontal = ('tags',)
     ordering = ('-published_at',)

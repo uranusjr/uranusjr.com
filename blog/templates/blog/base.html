@@ -7,8 +7,10 @@
 {% block extra_css %}
 {{ block.super }}
 {% stylesheets header post %}
-<link rel="stylesheet" href="{% static 'blog/css/post.css' %}" media="screen">
-<link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}" media="screen">
+<link href="{% static 'blog/css/post.css' %}"
+    charset="utf-8" media="screen" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'blog/css/sidebar.css' %}"
+    charset="utf-8" media="screen" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block extra_header %}

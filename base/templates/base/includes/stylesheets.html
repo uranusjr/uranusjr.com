@@ -1,3 +1,4 @@
 {% for file in files %}
-<link rel="stylesheet" media="screen" href="{{ file.target.url }}">
+<link href="{{ file.target.url }}"
+    charset="utf-8" media="screen" rel="stylesheet" type="text/css">
 {% endfor %}

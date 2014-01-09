@@ -6342,13 +6342,12 @@ var Showdown={extensions:{}},forEach=Showdown.forEach=function(a,b){if(typeof a.
 
   $(function() {
 
-    var textareas = document.getElementsByClassName('entry-markdown-textarea');
-    if (!textareas.length)
+    if (!document.getElementById('entry-markdown'))
       return;
 
     //var delay;
     var converter = new ShowDown.converter();
-    var editor = CodeMirror.fromTextArea(textareas[0], {
+    var editor = CodeMirror.fromTextArea(document.getElementById('entry-markdown'), {
         mode: 'markdown',
         tabMode: 'indent',
         lineWrapping: true
@@ -6367,6 +6366,7 @@ var Showdown={extensions:{}},forEach=Showdown.forEach=function(a,b){if(typeof a.
 
         editor.on("change", function () {
             updatePreview();
+            $('.entry-markdown-input').val(editor.getValue());
         });
 
         updatePreview();

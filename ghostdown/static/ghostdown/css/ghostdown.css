@@ -1,10 +1,8 @@
 html {
-	font: 62.5%/1.65 "Open Sans", sans-serif;
-	height: 100%;
+	font: 62.5%/1.65 "Open Sans", sans-serif
 }
 body {
-	font-size: 1.3rem;
-	height: 90%;
+	font-size: 1.3rem
 }
 .CodeMirror {
 	font-family: monospace;
@@ -286,10 +284,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 }
 
-.features, .features .editor, .features .editor .outer {
+.features, .editor, .outer {
 	height: 100%;
 }
-
 @media (max-width: 860px), (max-width: 860px) {
 .features .editor .outer {
 	padding: 0 40px
@@ -306,7 +303,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 }
 .features .editor .editorwrap {
-	padding: 40px 0;
+	max-width: 1180px;
 	margin: 0 auto;
 	position: relative;
 	height: 100%;
@@ -549,7 +546,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	left: 0;
 	padding: 60px 40px 40px 30px;
 	overflow: auto;
-	font-size: 1em;
+	font-size: 0.95em
 }
 @media (max-width: 860px), (max-width: 860px) {
 .features .editor .entry-preview-content {

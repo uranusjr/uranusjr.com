@@ -11,6 +11,10 @@ h1, h2, h3, h4, ul.pager {
     .heading;
     text-transform: uppercase;
     font-weight:700 !important;
+
+    code {
+        text-transform: none;
+    }
 }
 p {
     margin: 0 0 1em;
@@ -369,6 +373,9 @@ html,body,.container {
                     &:hover, &:focus{
                         text-decoration:none;
                         color:@grey-6;
+                    }
+                    code {
+                        text-transform: none;
                     }
                 }
                 hr{

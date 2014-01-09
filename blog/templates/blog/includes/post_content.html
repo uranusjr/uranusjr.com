@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n base_tags %}
 
 <h1>{{ post.title }}</h1>
 <h1 class="spacer">___</h1>
@@ -41,3 +41,5 @@
 </ul>
 {% endwith %}
 <hr>
+
+{% disqus post.pk %}

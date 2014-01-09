@@ -38,6 +38,11 @@ def sidebar_tabs(context):
     return context
 
 
+@register.inclusion_tag('base/includes/disqus.html')
+def disqus(unique_id):
+    return {'unique_id': unique_id}
+
+
 class ExtraPathNode(Node):
     def __init__(self, file_type, link_type, obj, template_name):
         self.file_type = file_type

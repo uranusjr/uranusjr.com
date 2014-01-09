@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.contrib import admin
 from django.contrib.contenttypes.generic import GenericTabularInline
+from ghostdown.forms.widgets import GhostdownWidget
 from .models import ExtraPath
 
 
@@ -13,6 +14,7 @@ class ExtraPathInline(GenericTabularInline):
     ct_field = 'owner_type'
     ct_fk_field = 'owner_id'
     extra = 0
+    classes = ('grp-collapse', 'grp-closed')
 
 
 class TagAdmin(admin.ModelAdmin):
@@ -26,7 +28,8 @@ class ElementAdmin(admin.ModelAdmin):
 class DisplayableAdminForm(forms.ModelForm):
     class Meta:
         widgets = {
-            'short_description': forms.Textarea
+            'short_description': forms.Textarea,
+            'content': GhostdownWidget,
         }
 
 

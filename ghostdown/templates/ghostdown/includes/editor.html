@@ -1,0 +1,22 @@
+{% load i18n %}
+
+<a id="ghostdown_editor_trigger" href="#">{% trans 'Open editor' %}</a>
+
+<div id="ghostdown_editor_dialog" class="features">
+  <section class="editor">
+    <div class="outer">
+      <div class="editorwrap">
+        <section class="entry-markdown">
+          <section class="entry-markdown-content">
+            {{ textarea|safe }}
+          </section>
+        </section>
+        <section class="entry-preview active">
+          <section class="entry-preview-content">
+            <div class="rendered-markdown"></div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>

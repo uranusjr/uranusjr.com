@@ -9,7 +9,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.contrib.contenttypes.generic import GenericForeignKey
 from filebrowser.fields import FileBrowseField
-from markitup.fields import MarkupField
+from ghostdown.models.fields import GhostdownField
 from .utils import get_concrete_base_model
 
 
@@ -144,7 +144,7 @@ class Displayable(Element):
     state = models.CharField(max_length=7, choices=STATES, default=STATE_DRAFT)
     published_at = models.DateTimeField(default=now)
     short_description = models.CharField(max_length=200)
-    content = MarkupField(blank=True)
+    content = GhostdownField(blank=True)
 
     objects = DisplayableManager()
 

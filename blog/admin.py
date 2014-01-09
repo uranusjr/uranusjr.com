@@ -13,10 +13,16 @@ class PostAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at')
     fieldsets = (
         (None, {'fields': (
-            ('title', 'category'), 'short_description', 'tags', 'content',
+            ('title', 'category'), 'short_description', 'content',
         )}),
-        ('Publishing options', {'fields': ('state', 'published_at')}),
-        ('Page options', {'fields': ('slug',)})
+        ('Page options', {
+            'fields': ('slug', 'state', 'published_at'),
+            'classes': ('grp-collapse', 'grp-open'),
+        }),
+        ('Tags', {
+            'fields': ('tags',),
+            'classes': ('grp-collapse', 'grp-closed'),
+        })
     )
     filter_horizontal = ('tags',)
     ordering = ('-published_at',)

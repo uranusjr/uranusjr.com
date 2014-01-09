@@ -15,11 +15,20 @@ class WorkAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at', 'work_type', 'order')
     fieldsets = (
         (None, {'fields': (
-            ('title', 'category'), 'short_description', 'url',
-            'tags', 'image', 'content',
+            ('title', 'category'), 'short_description',
         )}),
-        ('Publishing options', {'fields': ('state', 'published_at')}),
-        ('Page options', {'fields': ('slug', 'order')})
+        ('Content', {
+            'fields': ('url', 'content'),
+            'classes': ('grp-collapse', 'grp-open'),
+        }),
+        ('Publishing options', {
+            'fields': ('slug', 'state', 'published_at'),
+            'classes': ('grp-collapse', 'grp-open'),
+        }),
+        ('Optional', {
+            'fields': ('tags', 'image'),
+            'classes': ('grp-collapse', 'grp-closed'),
+        }),
     )
     filter_horizontal = ('tags',)
 

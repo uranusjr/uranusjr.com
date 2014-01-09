@@ -18,13 +18,13 @@
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 mix {{ work.tag_slugs|join:' ' }}">
     <div class="panel panel-default item">
       <div class="panel-heading">
-        <a href="{{ work.get_absolute_url }}">
+        <a href="{{ work.get_link }}">
           <img class="img-responsive item-img" alt="{{ work.title }}"
             src="{{ work.get_icon_url }}">
         </a>
       </div>
       <div class="panel-body">
-        <a href="{{ work.get_absolute_url }}">
+        <a href="{{ work.get_link }}">
           <h4 class="item-title">{{ work.title }}</h4>
         </a>
         <p class="item-category">{{ work.category.title }}</p>

@@ -49,6 +49,9 @@ class Work(Orderable, Displayable):
     def get_absolute_url(self):
         return reverse('works:work', kwargs={'slug': self.slug})
 
+    def get_link(self):
+        return self.url or self.get_absolute_url()
+
     def tag_slugs(self):
         return [tag.slug for tag in self.tags.all()]
 

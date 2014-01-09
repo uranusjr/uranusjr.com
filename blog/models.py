@@ -49,11 +49,13 @@ class Post(Displayable):
 
     def after(self):
         p = self.get_after_query()
-        return Post.objects.filter(p['filter']).order_by(*p['order_by'])
+        public = Post.objects.public()
+        return public.filter(p['filter']).order_by(*p['order_by'])
 
     def before(self):
         p = self.get_before_query()
-        return Post.objects.filter(p['filter']).order_by(*p['order_by'])
+        public = Post.objects.public()
+        return public.filter(p['filter']).order_by(*p['order_by'])
 
     def next(self):
         try:

@@ -28,16 +28,29 @@
 <!--navigation-->
 {% with previous=post.previous next=post.next %}
 <ul class="pager">
-  <li class="previous{% if not next %} disabled{% endif %}">
-    <a href="{% if next %}{{ next.get_absolute_url }}{% else %}#{% endif %}">
+
+  {% if next %}
+  <li class="previous">
+    <a href="{{ next.get_absolute_url }}" title="{{ next.title }}">
+  {% else %}
+  <li class="previous disabled">
+    <a href="#">
+  {% endif %}
       &lt; {% trans 'Next' %}
     </a>
   </li>
-  <li class="next{% if not previous %} disabled{% endif %}">
-    <a href="{% if previous %}{{ previous.get_absolute_url }}{% else %}#{% endif %}">
+
+  {% if previous %}
+  <li class="next">
+    <a href="{{ previous.get_absolute_url }}" title="{{ previous.title }}">
+  {% else %}
+  <li class="next disabled">
+    <a href="#">
+  {% endif %}
       {% trans 'Prev' %} &gt;
     </a>
   </li>
+
 </ul>
 {% endwith %}
 <hr>

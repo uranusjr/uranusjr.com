@@ -580,3 +580,6 @@ body,
     z-index: 4;
   }
 }
+.MathJax span {
+  color: inherit;
+}

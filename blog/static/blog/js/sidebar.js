@@ -71,13 +71,20 @@ $('.load-more').click(function (e) {
 });
 
 // Hover filter block
-$('.item-choice').each(function () {
-  var autoHeight = $(this).height() + 10;
-  $(this).data('height-auto', autoHeight).height(50).data('height', 50);
-}).mouseenter(function () {
-  $(this).animate({'height': $(this).data('height-auto')}, 300);
-}).mouseleave(function () {
-  $(this).delay(100).animate({'height': $(this).data('height')}, 300);
+$(window).load(function () {
+  $('.item-choice').each(function () {
+    var autoHeight = $(this).height() + 10;
+    $(this).data({
+      'height-auto': autoHeight,
+      'height': 50
+    }).animate({'height': 50}, 600);
+  }).mouseenter(function () {
+    $(this).stop(true).animate({'height': $(this).data('height-auto')}, 300);
+  }).mouseleave(function () {
+    $(this).delay(100).stop(true).animate({
+      'height': $(this).data('height')
+    }, 300);
+  });
 });
 
 // Hover article block expands title
@@ -88,10 +95,14 @@ $('.blog').on('mouseenter', '.media', function () {
   ele.css('white-space', 'normal');
   if (ele.data('normal-height') === undefined)
     ele.data('normal-height', ele.height());
-  ele.height(ele.data('nowrap-height')).animate({'height': ele.data('normal-height')});
+  ele.height(ele.data('nowrap-height')).stop(true).animate({
+    'height': ele.data('normal-height')
+  });
 }).on('mouseleave', '.media', function () {
   var ele = $('.media-heading', this);
-  ele.animate({'height': ele.data('nowrap-height')}, function () {
+  ele.delay(100).stop(true).animate({
+    'height': ele.data('nowrap-height')
+  }, function () {
     $(this).css('white-space', 'nowrap');
   });
 });

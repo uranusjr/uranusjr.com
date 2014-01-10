@@ -12,6 +12,9 @@
 <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+<meta propery="og-image"
+    content="{{ block og_image }}{% static 'base/img/uranusjr.png' %}{{ endblock }}">
+
 {% compress css %}
 <link href="{% static '3rdparty/bootstrap/css/bootstrap.min.css' %}"
     charset="utf-8" media="screen" rel="stylesheet" type="text/css">

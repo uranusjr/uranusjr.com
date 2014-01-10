@@ -107,21 +107,21 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
                 self.build_bundle(request), pk=kwargs['pk'],
             )
         except ObjectDoesNotExist:
-            raise ImmediateHttpResponse(response=HttpNotFound())
-
-        limit = self._meta.limit
-        half_limit = limit // 2
-        tail_count = post.before().count()
-        front_count = post.after().count()
-        if front_count <= half_limit:  # Not enough entries at front
             offset = 0
-        elif tail_count < half_limit:  # Not enough entries at tail
-            offset = front_count - tail_count - 1
         else:
-            offset = front_count - half_limit
+            limit = self._meta.limit
+            half_limit = limit // 2
+            tail_count = post.before().count()
+            front_count = post.after().count()
+            if front_count <= half_limit:  # Not enough entries at front
+                offset = 0
+            elif tail_count < half_limit:  # Not enough entries at tail
+                offset = front_count - tail_count - 1
+            else:
+                offset = front_count - half_limit
 
-        # Floor offset to multiple of limit so that we can get complete pages
-        offset = offset // limit * limit
+            # Floor offset to multiple of limit to get complete pages
+            offset = offset // limit * limit
 
         GET = request.GET.copy()
         GET['offset'] = offset

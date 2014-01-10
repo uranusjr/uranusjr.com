@@ -123,7 +123,13 @@ MEDIA_URL = '/media/'
 # MarkItUp!
 
 MARKITUP_FILTER = ('markdown2.markdown', {'extras': [
-    'pyshell', 'fenced-code-blocks', 'wiki-tables', 'smarty-pants'
+    'pyshell',              # Lines start with >>> are automatically Python
+    'fenced-code-blocks',   # GitHub-flavored ``` code blocks
+    'code-friendly',        # No _ and __ emphases
+    'cuddled-lists',        # No need to blank lines around lists
+    'footnotes',            # [^footnote-id] syntax
+    'wiki-tables',          # Google Code Wiki table syntax
+    'smarty-pants',         # Typographers' quotes
 ]})
 
 MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER

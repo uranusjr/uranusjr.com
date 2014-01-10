@@ -43,6 +43,11 @@ def disqus(unique_id):
     return {'unique_id': unique_id}
 
 
+@register.simple_tag(takes_context=True)
+def absolute_uri(context, path):
+    return context['request'].build_absolute_uri(path)
+
+
 class ExtraPathNode(Node):
     def __init__(self, file_type, link_type, obj, template_name):
         self.file_type = file_type

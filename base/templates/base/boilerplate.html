@@ -1,4 +1,4 @@
-{% load staticfiles compress %}
+{% load staticfiles compress base_tags %}
 
 <!DOCTYPE html>
 
@@ -8,12 +8,14 @@
 
 <meta charset="utf-8">
 <title>{% block title %}{{ title }}{% endblock %}</title>
+<link rel="shortcut icon" href="{% static 'base/img/favicon.ico' %}">
 <link rel="icon" type="image/png" href="{% static 'base/img/favicon.png' %}">
 <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+{% static 'base/img/uranus.png' as og_image_url %}
 <meta property="og:image"
-    content="{% block og_image %}{% static 'base/img/uranus.png' %}{% endblock %}">
+    content="{% block og_image %}{% absolute_uri og_image_url %}{% endblock %}">
 
 {% compress css %}
 <link href="{% static '3rdparty/bootstrap/css/bootstrap.min.css' %}"

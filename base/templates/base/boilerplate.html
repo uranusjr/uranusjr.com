@@ -1,4 +1,4 @@
-{% load static compress %}
+{% load staticfiles compress %}
 
 <!DOCTYPE html>
 
@@ -13,8 +13,8 @@
   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 {% compress css %}
-<link rel="stylesheet" media="screen"
-  href="{% static '3rdparty/bootstrap/css/bootstrap.min.css' %}">
+<link href="{% static '3rdparty/bootstrap/css/bootstrap.min.css' %}"
+     charset="utf-8" media="screen" rel="stylesheet" type="text/css">
 {% block extra_css %}{% endblock %}
 {% endcompress %}
 

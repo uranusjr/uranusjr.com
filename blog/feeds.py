@@ -34,7 +34,7 @@ class PostsFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.short_description
+        return item.content.rendered
 
     def item_link(self, item):
         return item.get_absolute_url()

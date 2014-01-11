@@ -7,4 +7,5 @@ from ghostdown.forms.widgets import GhostdownInput
 
 
 class PopupGhostdownInput(GhostdownInput):
-    template = get_template('base/includes/ghostdown_editor.html')
+    def get_template(self):
+        return get_template('base/includes/ghostdown_editor.html')

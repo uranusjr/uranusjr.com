@@ -26,3 +26,12 @@ def get_concrete_base_model(model_class, base_class):
     for klass in reversed(model_class.mro()):
         if issubclass(klass, base_class) and not klass._meta.abstract:
             return klass
+
+
+def resolve_value(value):
+    """Resolve value from GhostdownField to GhostdownInput
+    """
+    try:
+        return value.raw
+    except AttributeError:
+        return value or ''

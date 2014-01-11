@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.contrib import admin
 from django.contrib.contenttypes.generic import GenericTabularInline
-from ghostdown.forms.widgets import GhostdownWidget
+from .forms.widgets import PopupGhostdownInput
 from .models import ExtraPath
 
 
@@ -29,7 +29,7 @@ class DisplayableAdminForm(forms.ModelForm):
     class Meta:
         widgets = {
             'short_description': forms.Textarea,
-            'content': GhostdownWidget,
+            'content': PopupGhostdownInput(value_key='raw'),
         }
 
 
@@ -37,11 +37,3 @@ class DisplayableAdmin(admin.ModelAdmin):
 
     form = DisplayableAdminForm
     inlines = (ExtraPathInline,)
-
-    class Media:
-        css = {
-            'all': ('base/css/markitup.css',)
-        }
-        js = (
-            'filebrowser/js/AddFileBrowser.js',
-        )

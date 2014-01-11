@@ -3,12 +3,12 @@
 
 from markitup.fields import MarkupField
 from markitup.widgets import MarkupHiddenWidget
-from ..forms.widgets import GhostdownWidget
+from ghostdown.forms.widgets import GhostdownInput
 
 
 class GhostdownField(MarkupField):
     def formfield(self, **kwargs):
-        defaults = {'widget': GhostdownWidget}
+        defaults = {'widget': GhostdownInput(value_key='raw')}
         defaults.update(kwargs)
         field = super(MarkupField, self).formfield(**defaults)
         field.hidden_widget = MarkupHiddenWidget

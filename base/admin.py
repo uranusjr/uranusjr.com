@@ -3,11 +3,22 @@
 
 from __future__ import unicode_literals
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
 from django.contrib.contenttypes.generic import GenericTabularInline
 from .forms.widgets import PopupGhostdownInput
 from .models import ExtraPath
 from .utils import resolve_value
+
+
+def view_in_site(obj):
+    html_format = '<a href="{url}" target="_blank">{text}</a>'
+    return html_format.format(
+        url=obj.get_absolute_url(), text=view_in_site.short_description,
+    )
+
+view_in_site.short_description = _('View in site')
+view_in_site.allow_tags = True
 
 
 class ExtraPathInline(GenericTabularInline):

@@ -3,13 +3,15 @@
 
 from __future__ import unicode_literals
 from django.contrib import admin
-from base.admin import DisplayableAdmin, TagAdmin, ElementAdmin
+from base.admin import DisplayableAdmin, TagAdmin, ElementAdmin, view_in_site
 from .models import Post, Category, Tag
 
 
 class PostAdmin(DisplayableAdmin):
 
-    list_display = ('title', 'short_description', 'state', 'published_at')
+    list_display = (
+        'title', 'short_description', 'state', 'published_at', view_in_site
+    )
     list_editable = ('state', 'published_at')
     fieldsets = (
         (None, {'fields': (

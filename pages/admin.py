@@ -4,7 +4,7 @@
 from __future__ import unicode_literals
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from base.admin import DisplayableAdmin
+from base.admin import DisplayableAdmin, view_in_site
 from .models import Page
 
 
@@ -25,7 +25,7 @@ class PageAdmin(DisplayableAdmin):
 
     list_display = (
         'title', 'short_description', 'state', 'published_at',
-        _page_parent_link, 'order'
+        _page_parent_link, 'order', view_in_site
     )
     list_editable = ('state', 'published_at', 'order')
     fieldsets = (

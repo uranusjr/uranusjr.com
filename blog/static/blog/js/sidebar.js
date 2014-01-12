@@ -45,6 +45,10 @@ $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
     $('.load-more:first').show();
   else
     $('.load-more:first').hide();
+
+  // Automatically scroll to show the current entry
+  var y = $('div[data-id="' + currentPostId + '"]').offset().top;
+  $('#content_sidebar').scrollTop(y - $('#Grid').offset().top);
 });
 
 // Load more

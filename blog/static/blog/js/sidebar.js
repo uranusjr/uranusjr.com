@@ -47,7 +47,7 @@ $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
     $('.load-more:first').hide();
 
   // Automatically scroll to show the current entry
-  var y = $('div[data-id="' + currentPostId + '"]').offset().top;
+  var y = $('.media[data-id="' + currentPostId + '"]').offset().top;
   $('#content_sidebar').scrollTop(y - $('#Grid').offset().top);
 });
 
@@ -65,12 +65,22 @@ $('.load-more').click(function (e) {
     if (data.objects.length === 0)
       return;
 
+    // Remember the current first element and its position
+    var currentTop = $('.blog').children('.media-href').first();
+    var currentOffset =
+        currentTop.offset().top -
+        $('#content_sidebar').scrollTop() -
+        $('#content_sidebar .item-choice').height();
+
     insertPosts(data.objects, $(that).data('method'));
 
     // Update "load more" button
     $(that).data('anchor', _.last(data.objects).id);
     if (data.meta.next)
       $(that).show();
+
+    // Scroll to match the previous position
+    $('#content_sidebar').scrollTop(currentTop.offset().top - currentOffset);
   });
 });
 

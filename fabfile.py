@@ -24,11 +24,16 @@ def get_uwsgi_config(key):
 
 @task
 def deploy():
-    pid_file_path = get_uwsgi_config('pidfile')
     project_dir = get_uwsgi_config('chdir')
     with cd(project_dir):
         run('git reset HEAD --hard')
         run('git pull')
         run('./manage.py collectstatic --noinput')
-        run('uwsgi --reload {path}'.format(path=pid_file_path))
-        run('service nginx restart')
+        restart()
+
+
+@task
+def restart():
+    pid_file_path = get_uwsgi_config('pidfile')
+    run('uwsgi --reload {path}'.format(path=pid_file_path))
+    run('service nginx restart')

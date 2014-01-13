@@ -8,7 +8,6 @@ from django.contrib import admin
 from django.contrib.contenttypes.generic import GenericTabularInline
 from .forms.widgets import PopupGhostdownInput
 from .models import ExtraPath
-from .utils import resolve_value
 
 
 def view_in_site(obj):
@@ -41,7 +40,7 @@ class DisplayableAdminForm(forms.ModelForm):
     class Meta:
         widgets = {
             'short_description': forms.Textarea,
-            'content': PopupGhostdownInput(resolve_value=resolve_value),
+            'content': PopupGhostdownInput(value_path='raw'),
         }
 
 

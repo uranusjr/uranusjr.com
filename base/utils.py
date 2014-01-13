@@ -31,12 +31,3 @@ def get_concrete_base_model(model_class, base_class):
         if klass._meta.abstract:
             continue
         return klass
-
-
-def resolve_value(value):
-    """Resolve value from GhostdownField to GhostdownInput
-    """
-    try:
-        return value.raw
-    except AttributeError:
-        return value or ''

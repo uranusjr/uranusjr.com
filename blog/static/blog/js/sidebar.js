@@ -85,6 +85,8 @@ $('.load-more').click(function (e) {
     $(that).data('anchor', _.last(data.objects).id);
     if (!data.meta.next)
       $(that).hide();
+    else
+      $(that).show();
     $(that).removeClass('disabled');
     spinner.stop();
     $('.text', that).show();

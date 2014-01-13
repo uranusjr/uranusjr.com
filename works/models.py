@@ -45,6 +45,7 @@ class Work(Orderable, Displayable):
     class Meta:
         verbose_name = _('work')
         verbose_name_plural = _('works')
+        ordering = ['order', 'id']
 
     def get_absolute_url(self):
         return reverse('works:work', kwargs={'slug': self.slug})

@@ -1,3 +1,5 @@
 django-debug-toolbar
 fabric
 six
+django-nose
+coverage

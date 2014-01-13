@@ -57,7 +57,7 @@ $('.load-more').click(function (e) {
   if ($(this).hasClass('disabled'))
     return;
   $(this).addClass('disabled');
-  $('.text', this).hide();
+  $('.text', this).css('visibility', 'hidden');
   var spinner = new Spinner({'radius': 9, 'top': -3, 'width': 4}).spin(this);
 
   var that = this;
@@ -89,7 +89,7 @@ $('.load-more').click(function (e) {
       $(that).show();
     $(that).removeClass('disabled');
     spinner.stop();
-    $('.text', that).show();
+    $('.text', this).css('visibility', 'visible');
   });
 });
 

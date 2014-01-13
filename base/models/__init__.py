@@ -152,3 +152,15 @@ class Displayable(Element):
         abstract = True
         verbose_name = _('displayable')
         verbose_name_plural = _('displayables')
+
+    def is_published(self):
+        return (
+            self.state in (Displayable.STATE_PUBLIC, Displayable.STATE_PRIVATE)
+            and self.published_at <= now()
+        )
+
+    def is_public(self):
+        return (
+            self.state == Displayable.STATE_PUBLIC
+            and self.published_at <= now()
+        )

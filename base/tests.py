@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8
 
-from nose.tools import eq_, assert_raises
 from django.db import models
 from django.test import TestCase
+from nose.tools import eq_, assert_raises
 from . import utils
 from .models import Displayable, ExtraPath
 

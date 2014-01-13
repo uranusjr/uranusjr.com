@@ -132,9 +132,7 @@ MARKITUP_FILTER = ('markdown2.markdown', {'extras': [
     'smarty-pants',         # Typographers' quotes
 ]})
 
-MARKITUP_PREVIEW_FILTER = MARKITUP_FILTER
-
-MARKITUP_AUTO_PREVIEW = True
+MARKITUP_AUTO_PREVIEW = False
 
 MARKITUP_SET = '3rdparty/markitup/sets/markdown-fb'
 

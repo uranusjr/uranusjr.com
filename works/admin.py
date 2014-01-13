@@ -17,16 +17,20 @@ class WorkAdmin(DisplayableAdmin):
         (None, {'fields': (
             ('title', 'category'), 'short_description', 'work_type',
         )}),
+        ('Tags', {
+            'fields': ('tags',),
+            'classes': ('grp-collapse', 'grp-closed'),
+        }),
         ('Content', {
             'fields': ('url', 'content'),
             'classes': ('grp-collapse', 'grp-open'),
         }),
         ('Publishing options', {
-            'fields': ('slug', 'state', 'published_at'),
+            'fields': ('slug', ('state', 'published_at')),
             'classes': ('grp-collapse', 'grp-open'),
         }),
         ('Optional', {
-            'fields': ('tags', 'image'),
+            'fields': ('image',),
             'classes': ('grp-collapse', 'grp-closed'),
         }),
     )

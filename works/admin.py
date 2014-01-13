@@ -15,7 +15,7 @@ class WorkAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at', 'work_type', 'order')
     fieldsets = (
         (None, {'fields': (
-            ('title', 'category'), 'short_description',
+            ('title', 'category'), 'short_description', 'work_type',
         )}),
         ('Content', {
             'fields': ('url', 'content'),

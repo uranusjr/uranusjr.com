@@ -14,8 +14,8 @@ def get_concrete_base_model(model_class, base_class):
     """
     try:
         assert (
-            not model_class._meta.abstract
-            and issubclass(model_class, base_class)
+            issubclass(model_class, base_class)
+            and not model_class._meta.abstract
         )
     except AssertionError:
         raise RuntimeError(
@@ -24,8 +24,13 @@ def get_concrete_base_model(model_class, base_class):
             )
         )
     for klass in reversed(model_class.mro()):
-        if issubclass(klass, base_class) and not klass._meta.abstract:
-            return klass
+        if not issubclass(klass, base_class):
+            continue
+        if not hasattr(klass, '_meta'):
+            continue
+        if klass._meta.abstract:
+            continue
+        return klass
 
 
 def resolve_value(value):

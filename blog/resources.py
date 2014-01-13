@@ -111,11 +111,10 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
         else:
             limit = self._meta.limit
             front_count = post.after().count()
-            if front_count < limit:     # Not enough entries at front
-                offset = 0
-            else:
-                # Floor offset to multiple of limit to get complete pages
-                offset = front_count // limit * limit
+
+            # Offset is floored to multiple of limit so that we can get
+            # complete pages.
+            offset = front_count // limit * limit
 
         GET = request.GET.copy()
         GET['offset'] = offset

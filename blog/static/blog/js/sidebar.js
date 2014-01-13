@@ -1,5 +1,4 @@
 // Clear everything
-$('.load-more').hide();
 $('.blog').empty().removeData('loaded');
 
 $.ajaxSetup({'traditional': true});
@@ -54,7 +53,12 @@ $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
 // Load more
 $('.load-more').click(function (e) {
   e.preventDefault();
-  $(this).hide();
+
+  if ($(this).hasClass('disabled'))
+    return;
+  $(this).addClass('disabled');
+  $('.text', this).hide();
+  var spinner = new Spinner({'radius': 9, 'top': -3, 'width': 4}).spin(this);
 
   var that = this;
   var dir = $(this).data('direction') || '';
@@ -62,25 +66,30 @@ $('.load-more').click(function (e) {
   params[$(this).data('action')] = $(this).data('anchor');
   params.order_by = [dir + 'published_at', dir + 'id'];
   $.getJSON(postListUrl, params).success(function (data) {
-    if (data.objects.length === 0)
-      return;
-
-    // Remember the current first element and its position
-    var currentTop = $('.blog').children('.media-href').first();
-    var currentOffset =
+    if (data.objects.length !== 0) {
+      // Remember the current first element and its position.
+      var currentTop = $('.blog').children('.media-href').first();
+      var currentOffset =
         currentTop.offset().top -
-        $('#content_sidebar').scrollTop() -
-        $('#content_sidebar .item-choice').height();
+        $('#content_sidebar').scrollTop();
 
-    insertPosts(data.objects, $(that).data('method'));
+      insertPosts(data.objects, $(that).data('method'));
 
-    // Update "load more" button
+      // Scroll to match the previous position.
+      $('#content_sidebar').scrollTop(
+        currentTop.offset().top - currentOffset
+      );
+    }
+
+    // Update "load more" button.
     $(that).data('anchor', _.last(data.objects).id);
-    if (data.meta.next)
+    if (!data.meta.next)
+      $(that).hide();
+    else
       $(that).show();
-
-    // Scroll to match the previous position
-    $('#content_sidebar').scrollTop(currentTop.offset().top - currentOffset);
+    $(that).removeClass('disabled');
+    spinner.stop();
+    $('.text', that).show();
   });
 });
 

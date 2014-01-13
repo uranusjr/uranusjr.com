@@ -15,13 +15,15 @@
 {% block sidebar_items %}
 <section id="Grid" class="sidebar-grid">
   <a href="#" class="btn btn-default btn-lg btn-block load-more"
-      data-action="after" data-method="prepend" data-anchor="0" data-direction="">
+      style="display: none;" data-action="after" data-method="prepend"
+      data-anchor="0" data-direction="">
     {% trans 'Load more' %}
   </a>
   <section class="blog"></section>
   <a href="#" class="btn btn-default btn-lg btn-block load-more"
-      data-action="before" data-method="append" data-anchor="0" data-direction="-">
-    {% trans 'Load more' %}
+      style="display: none;" data-action="before" data-method="append"
+      data-anchor="0" data-direction="-">
+    <span class="text">{% trans 'Load more' %}</span>
   </a>
 </section>
 {% endblock %}

@@ -65,22 +65,26 @@ $('.load-more').click(function (e) {
     if (data.objects.length === 0)
       return;
 
-    // Remember the current first element and its position
+    // Remember the current first element and its position.
     var currentTop = $('.blog').children('.media-href').first();
     var currentOffset =
-        currentTop.offset().top -
-        $('#content_sidebar').scrollTop() -
-        $('#content_sidebar .item-choice').height();
+      currentTop.offset().top -
+      $('#content_sidebar').scrollTop();
+
+    // Scroll some extra distance toward the loaded contents.
+    var padding = -100 * parseInt($(that).data('direction') + '1');
 
     insertPosts(data.objects, $(that).data('method'));
 
-    // Update "load more" button
+    // Scroll to match the previous position.
+    $('#content_sidebar').scrollTop(
+      currentTop.offset().top - currentOffset + padding
+    );
+
+    // Update "load more" button.
     $(that).data('anchor', _.last(data.objects).id);
     if (data.meta.next)
       $(that).show();
-
-    // Scroll to match the previous position
-    $('#content_sidebar').scrollTop(currentTop.offset().top - currentOffset);
   });
 });
 

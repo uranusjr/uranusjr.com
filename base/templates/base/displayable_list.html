@@ -20,12 +20,12 @@
 
   <div class="results">
     {% for obj in obj_list %}
-    {% block obj_content %}
+    {% block obj_block %}
     <div data-id="{{ obj.pk }}" class="media">
       <div class="media-body">
-        <h3 class="media-heading">
+        <h2 class="media-heading">
           <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
-        </h3>
+        </h2>
         <p class="article-date">{{ obj.published_at|date:'Y-m-d' }}</p>
         <p class="article-description">{{ obj.short_description }}</p>
         <p class="read-more">

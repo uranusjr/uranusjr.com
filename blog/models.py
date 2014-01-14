@@ -14,11 +14,17 @@ class Category(Element):
         verbose_name = _('blog category')
         verbose_name_plural = _('blog categories')
 
+    def get_absolute_url(self):
+        return reverse('blog:category', kwargs={'slug': self.slug})
+
 
 class Tag(BaseTag):
     class Meta:
         verbose_name = _('blog tag')
         verbose_name_plural = _('blog tags')
+
+    def get_absolute_url(self):
+        return reverse('blog:tag', kwargs={'slug': self.slug})
 
 
 class Post(Displayable):

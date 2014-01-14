@@ -1,0 +1,24 @@
+{% extends 'base/displayable_list.html' %}
+
+{% load i18n %}
+
+{% block obj_content %}
+<div data-id="{{ obj.pk }}" class="media">
+  <div class="media-body">
+    <h3 class="media-heading">
+      <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+    </h3>
+    <p class="article-date">{{ obj.published_at|date:'Y-m-d' }}</p>
+    <p class="article-tags">
+      <a href="{{ obj.category.get_absolute_url }}">{{ obj.category.title }}</a>
+      {% for tag in obj.tags.all %}
+      , <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+      {% endfor %}
+    </p>
+    <p class="article-description">{{ obj.short_description }}</p>
+    <p class="read-more">
+      <a href="{{ obj.get_absolute_url }}">({% trans 'Read more...' %})</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

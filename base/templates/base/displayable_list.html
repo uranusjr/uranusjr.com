@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+
+{% load i18n staticfiles pages_tags %}
+
+{% block extra_css %}
+{{ block.super }}
+<link href="{% static 'base/css/displayable_list.css' %}"
+    charset="utf-8" media="all" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content_main %}
+
+<div class="row">
+  <div class="col-lg-12">
+
+  <div class="text-center">
+    <h1>{{ title }}</h1>
+    <h1 class="spacer">___</h1>
+  </div>
+
+  <div class="results">
+    {% for obj in obj_list %}
+    {% block obj_content %}
+    <div data-id="{{ obj.pk }}" class="media">
+      <div class="media-body">
+        <h3 class="media-heading">
+          <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+        </h3>
+        <p class="article-date">{{ obj.published_at|date:'Y-m-d' }}</p>
+        <p class="article-description">{{ obj.short_description }}</p>
+        <p class="read-more">
+          <a href="{{ obj.get_absolute_url }}">({% trans 'Read more...' %})</a>
+        </p>
+      </div>
+    </div>
+    {% endblock %}
+    {% endfor %}
+  </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block sidebar_content %}
+{% sidebar 'index' %}
+{% endblock %}

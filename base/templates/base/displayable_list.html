@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% load i18n staticfiles pages_tags %}
+{% load i18n staticfiles base_tags pages_tags %}
 
 {% block extra_css %}
 {{ block.super }}
@@ -37,6 +37,8 @@
     {% endfor %}
   </div>
 
+  <div class="row">
+    <div class="col-lg-12 pagination-block">{% pagination page_obj %}</div>
   </div>
 </div>
 

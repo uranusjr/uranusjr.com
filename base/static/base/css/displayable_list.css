@@ -21,3 +21,10 @@
     overflow: hidden;
     text-align: justify;
 }
+.pagination-block {
+    text-align: center;
+    margin-top: 2em;
+}
+.pagination a {
+    color: inherit;
+}

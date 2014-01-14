@@ -8,6 +8,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns(
     'blog.views',
     url(r'^$', 'index', name='index'),
+    url(r'^archive/$', 'post_list', name='post_list'),
     url(r'^category/(?P<slug>.+?)/$', 'category', name='category'),
     url(r'^tag/(?P<slug>.+?)/$', 'tag', name='tag'),
     url(r'^post/(?P<pk>\d+)/$', 'post'),

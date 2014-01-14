@@ -31,10 +31,24 @@ def post(request, pk, slug='', template='blog/post.html'):
     return render(request, template, {'post': post})
 
 
-class CategoryPostListView(DisplayableListView):
+class PostListView(DisplayableListView):
 
     template_name = 'post_list.html'
 
+    def get_queryset(self):
+        posts = Post.objects.published()
+        return posts.order_by('-published_at', '-pk')
+
+    def get_title(self):
+        return _('Blog archive')
+
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        context['title'] = self.get_title()
+        return context
+
+
+class CategoryPostListView(PostListView):
     def get(self, request, *args, **kwargs):
         try:
             self.category = Category.objects.get(slug=kwargs['slug'])
@@ -43,14 +57,12 @@ class CategoryPostListView(DisplayableListView):
         return super(CategoryPostListView, self).get(request, *args, **kwargs)
 
     def get_queryset(self):
-        posts = Post.objects.published().filter(category=self.category)
-        return posts.order_by('-published_at', '-pk')
+        posts = super(CategoryPostListView, self).get_queryset()
+        return posts.filter(category=self.category)
 
-    def get_context_data(self, **kwargs):
-        context = super(CategoryPostListView, self).get_context_data(**kwargs)
+    def get_title(self):
         title_format = _('Posts in category “{title}”')
-        context['title'] = title_format.format(title=self.category.title)
-        return context
+        return title_format.format(title=self.category.title)
 
 
 class TagPostListView(DisplayableListView):
@@ -65,16 +77,15 @@ class TagPostListView(DisplayableListView):
         return super(TagPostListView, self).get(request, *args, **kwargs)
 
     def get_queryset(self):
-        posts = Post.objects.published().filter(tags=self.tag)
-        return posts.order_by('-published_at', '-pk')
+        posts = super(TagPostListView, self).get_queryset()
+        return posts.filter(tags=self.tag)
 
-    def get_context_data(self, **kwargs):
-        context = super(TagPostListView, self).get_context_data(**kwargs)
+    def get_title(self):
         title_format = _('Posts with tag “{name}”')
-        context['title'] = title_format.format(name=self.tag.name)
-        return context
+        return title_format.format(name=self.tag.name)
 
 
+post_list = PostListView.as_view()
 category = CategoryPostListView.as_view()
 tag = TagPostListView.as_view()
 posts_rss201rev2 = feeds.PostsRss201rev2Reed()

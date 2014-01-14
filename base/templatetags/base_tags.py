@@ -64,7 +64,7 @@ def pagination(context, page, page_key='page', max_link_count=9):
     else:
         page.visible_page_range = page.paginator.page_range
     return {
-        'querydict': context['request'].GET.copy(),
+        'querydict': context['request'].GET,
         'page': page,
         'page_key': page_key,
     }
@@ -76,11 +76,11 @@ class QueryStringNode(Node):
 
     def render(self, context):
         if not len(self.args) or '=' in self.args[0]:
-            querydict = QueryDict({})
+            querydict = QueryDict('', mutable=True)
         else:
             first = self.args[0]
             self.args = self.args[1:]
-            querydict = Variable(first).resolve(context)
+            querydict = Variable(first).resolve(context).copy()
         for pair in self.args:
             k, v = [Variable(p).resolve(context) for p in pair.split('=')]
             querydict[k] = v

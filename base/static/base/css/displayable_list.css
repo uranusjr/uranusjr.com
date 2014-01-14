@@ -7,6 +7,10 @@
 .results a {
     color: inherit;
 }
+.results a:hover {
+    text-decoration: none;
+    color: #808080;
+}
 .results .media {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);

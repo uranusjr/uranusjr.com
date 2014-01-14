@@ -69,9 +69,9 @@ class TagPostListView(DisplayableListView):
         return posts.order_by('-published_at', '-pk')
 
     def get_context_data(self, **kwargs):
-        context = super(CategoryPostListView, self).get_context_data(**kwargs)
+        context = super(TagPostListView, self).get_context_data(**kwargs)
         title_format = _('Posts with tag “{name}”')
-        context['title'] = title_format.format(title=self.tag.name)
+        context['title'] = title_format.format(name=self.tag.name)
         return context
 
 

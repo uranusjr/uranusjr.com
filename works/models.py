@@ -4,8 +4,8 @@
 from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.db import models
-from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from filebrowser.fields import FileBrowseField
 from base.models import Element, Orderable, Displayable, Tag as BaseTag
 

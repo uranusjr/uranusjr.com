@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from filebrowser.fields import FileBrowseField
 from base.models import Displayable, Orderable
 
@@ -58,3 +59,9 @@ class Page(Orderable, Displayable):
     @property
     def descendants(self):
         return self.descendants_with_self.exclude(pk=self.pk)
+
+    def get_icon_url(self):
+        if self.image:
+            return self.image.url
+        else:
+            return static('base/img/circle.png')

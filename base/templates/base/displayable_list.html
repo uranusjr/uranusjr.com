@@ -16,6 +16,11 @@
   <div class="text-center">
     <h1>{{ title }}</h1>
     <h1 class="spacer">___</h1>
+    <h3>
+      {% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}
+      Page {{ current }} of {{ total }}
+      {% endblocktrans %}
+    </h3>
   </div>
 
   <div class="results">

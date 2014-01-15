@@ -9,8 +9,9 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.contrib.contenttypes.generic import GenericForeignKey
 from filebrowser.fields import FileBrowseField
-from .fields import GhostdownField
 from ..utils import get_concrete_base_model
+from .fields import GhostdownField
+from .managers import DisplayableManager
 
 
 @python_2_unicode_compatible
@@ -110,23 +111,6 @@ class Orderable(models.Model):
                 max_order = -1
             self.order = max_order + 1
         super(Orderable, self).save(*args, **kwargs)
-
-
-class DisplayableManager(models.Manager):
-
-    use_for_related_fields = True
-
-    def published(self):
-        return self.get_queryset().filter(
-            state__in=(Displayable.STATE_PUBLIC, Displayable.STATE_PRIVATE),
-            published_at__lte=now(),
-        )
-
-    def public(self):
-        return self.get_queryset().filter(
-            state=Displayable.STATE_PUBLIC,
-            published_at__lte=now(),
-        )
 
 
 class Displayable(Element):

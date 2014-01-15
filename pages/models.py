@@ -19,7 +19,8 @@ class Page(Orderable, Displayable):
         'pages.Page', blank=True, null=True, related_name='children',
     )
     _root = models.ForeignKey(
-        'pages.Page', blank=True, null=True, related_name='descendants',
+        'pages.Page', blank=True, null=True,
+        related_name='descendants_with_self',
     )
     image = FileBrowseField(max_length=200, blank=True)
     image_caption = models.TextField(
@@ -37,19 +38,23 @@ class Page(Orderable, Displayable):
     def save(self, *args, **kwargs):
         # Update the page's own, and all its descendants' ``_root``s when the
         # page switches to another parent
+        parent = self.parent
         try:
             old_object = Page.objects.get(pk=self.pk)
         except Page.DoesNotExist:
-            # No match, so this is an INSERT; just set the root
-            self._root = self.parent
-            pass
+            # No match, so this is an INSERT; just set the root.
+            self._root = parent or self
         else:
-            # This is an UPDATE
-            if old_object.parent != self.parent:
-                if self.parent is None:
-                    new_root = None
+            # This is an UPDATE with parent change.
+            if old_object.parent != parent:
+                if parent is None:      # I am the root!
+                    new_root = self
                 else:
                     new_root = self.parent._root
-                self._root = new_root
                 self.descendants.all().update(_root=new_root)
+                self._root = new_root
         return super(Page, self).save(*args, **kwargs)
+
+    @property
+    def descendants(self):
+        return self.descendants_with_self.exclude(pk=self.pk)

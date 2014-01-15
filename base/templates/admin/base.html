@@ -5,3 +5,7 @@
 {% block extrahead %}
 <link rel="icon" type="image/png" href="{% static 'base/img/favicon.png' %}">
 {% endblock %}
+
+{% block admin_title %}
+<a href="{% url 'pages:index' %}" target="_blank">{{ block.super }}</a>
+{% endblock %}

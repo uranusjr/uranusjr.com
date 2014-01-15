@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from base.admin import DisplayableAdmin, view_in_site
+from base.admin import DisplayableAdmin, DisplayableAdminForm, view_in_site
 from .models import Page
 
 
@@ -22,6 +22,16 @@ _page_parent_admin_link.short_description = _('parent')
 _page_parent_admin_link.allow_tags = True
 
 
+class PageAdminForm(DisplayableAdminForm):
+    def __init__(self, *args, **kwargs):
+        super(PageAdminForm, self).__init__(*args, **kwargs)
+        if self.instance:
+            queryset = Page.objects.exclude(pk=self.instance.pk).exclude(
+                pk__in=self.instance.descendants.all()
+            )
+            self.fields['parent'].queryset = queryset
+
+
 class PageAdmin(DisplayableAdmin):
 
     list_display = (
@@ -36,6 +46,7 @@ class PageAdmin(DisplayableAdmin):
         ('Publishing options', {'fields': ('state', 'published_at')}),
         ('Page options', {'fields': ('slug', 'parent', 'order')})
     )
+    form = PageAdminForm
 
 
 admin.site.register(Page, PageAdmin)

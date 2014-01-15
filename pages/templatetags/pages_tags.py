@@ -26,7 +26,7 @@ class SideBarNode(Node):
             pass
         else:
             if isinstance(page, six.string_types):
-                lookup = Q(pk=page) | Q(slug=page)
+                lookup = Q(slug=page)
             else:
                 lookup = Q(pk=page)
             try:

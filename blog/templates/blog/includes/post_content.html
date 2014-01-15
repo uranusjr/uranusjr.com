@@ -10,12 +10,12 @@
 <p class="article-tags">
   {% with category=post.category %}
   {% trans 'Category: ' %}
-  <a href="#" class="filter" data-filter="{{ category.slug }}">{{ category.title }}</a>
+  <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
   {% endwith %}
   <br>
   {% if post.tags.all %}{% trans 'Tags: ' %}{% endif %}
   {% for tag in post.tags.all %}
-  <a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>
+  <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
   {% if not forloop.last %} ,{% endif %}
   {% endfor %}
 </p>
@@ -27,7 +27,7 @@
 
 <!--navigation-->
 {% with previous=post.previous next=post.next %}
-<ul class="pager">
+<ul class="pager post-pager">
 
   {% if next %}
   <li class="previous">

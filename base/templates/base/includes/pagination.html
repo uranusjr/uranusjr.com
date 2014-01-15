@@ -1,0 +1,45 @@
+{% load i18n base_tags %}
+
+{% if page.has_next or page.has_previous %}
+
+<ul class="pagination">
+  {% if page.has_previous %}
+  <li>
+    <a href="?{% querystring querydict page_key=page.previous_page_number %}">
+  {% else %}
+  <li class="disabled">
+    <a href="#">
+  {% endif %}
+      {% trans 'Prev' %}
+    </a>
+  </li>
+
+  {% for page_num in page.visible_page_range %}
+  {% ifequal page_num page.number  %}
+  <li class="disabled">
+    <a href="#">
+      {{ page_num }}
+    </a>
+  </li>
+  {% else %}
+  <li>
+    <a href="?{% querystring querydict page_key=page_num %}">
+      {{ page_num }}
+    </a>
+  </li>
+  {% endifequal %}
+  {% endfor %}
+
+  {% if page.has_next %}
+  <li>
+    <a href="?{% querystring querydict page_key=page.next_page_number %}">
+  {% else %}
+  <li class="disabled">
+    <a href="#">
+  {% endif %}
+      {% trans 'Next' %}
+    </a>
+  </li>
+</ul>
+
+{% endif %}

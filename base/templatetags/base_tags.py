@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+from __future__ import unicode_literals, division
+from django.http.request import QueryDict
 from django.template import (
     Library, Context, Node, Variable, TemplateSyntaxError
 )
@@ -46,6 +47,51 @@ def disqus(unique_id):
 @register.simple_tag(takes_context=True)
 def absolute_uri(context, path):
     return context['request'].build_absolute_uri(path)
+
+
+@register.inclusion_tag('base/includes/pagination.html', takes_context=True)
+def pagination(context, page, page_key='page', max_link_count=9):
+    if max_link_count < 1:
+        raise TemplateSyntaxError(
+            'Template tag pagination requires at least one link.'
+        )
+    page_range = page.paginator.page_range
+    if len(page_range) > max_link_count:
+        half_range = (max_link_count - 1) // 2
+        start = max(page.number - half_range, 0)
+        end = min(start + max_link_count, page.paginator.num_pages)
+        page.visible_page_range = page_range[start:end]
+    else:
+        page.visible_page_range = page.paginator.page_range
+    return {
+        'querydict': context['request'].GET,
+        'page': page,
+        'page_key': page_key,
+    }
+
+
+class QueryStringNode(Node):
+    def __init__(self, *args):
+        self.args = args
+
+    def render(self, context):
+        if not len(self.args) or '=' in self.args[0]:
+            querydict = QueryDict('', mutable=True)
+        else:
+            first = self.args[0]
+            self.args = self.args[1:]
+            querydict = Variable(first).resolve(context).copy()
+        for pair in self.args:
+            k, v = [Variable(p).resolve(context) for p in pair.split('=')]
+            querydict[k] = v
+        return querydict.urlencode()
+
+
+@register.tag
+def querystring(parser, token):
+    tokens = token.split_contents()
+    tokens.pop(0)   # tag_name
+    return QueryStringNode(*tokens)
 
 
 class ExtraPathNode(Node):

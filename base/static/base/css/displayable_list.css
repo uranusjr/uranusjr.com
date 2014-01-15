@@ -1,0 +1,34 @@
+.results {
+    margin-top: 2em;
+}
+.results p {
+    margin-bottom: 5.5px;
+}
+.results a {
+    color: inherit;
+}
+.results a:hover {
+    text-decoration: none;
+    color: #808080;
+}
+.results .media {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    padding: 1em;
+}
+.row.bottom .col-left .results .article-date {
+    font-size: 20px;
+}
+.results .article-description {
+    max-height: 44px;   /* line-height * 2 */
+    overflow: hidden;
+    text-align: justify;
+}
+.pagination-block {
+    text-align: center;
+    margin-top: 2em;
+}
+.pagination a {
+    color: inherit;
+}

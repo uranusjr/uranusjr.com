@@ -18,7 +18,10 @@ class CustomIndexDashboard(Dashboard):
             _('Applications'),
             collapsible=False,
             column=1,
-            exclude=('django.contrib.auth.*', 'blog.*', 'works.*', 'pages.*'),
+            exclude=(
+                'django.contrib.auth.*',
+                'blog.*', 'works.*', 'pages.*', 'talks.*',
+            ),
         ))
 
         # append an app list module for "Administration"
@@ -31,18 +34,26 @@ class CustomIndexDashboard(Dashboard):
 
         # append an app list module for "Administration"
         self.children.append(modules.ModelList(
-            _('Works'),
-            column=1,
-            collapsible=False,
-            models=('works.*',),
-        ))
-
-        # append an app list module for "Administration"
-        self.children.append(modules.ModelList(
             _('Pages'),
             column=1,
             collapsible=False,
             models=('pages.*',),
+        ))
+
+        # append an app list module for "Administration"
+        self.children.append(modules.ModelList(
+            _('Talks'),
+            column=1,
+            collapsible=False,
+            models=('talks.*',),
+        ))
+
+        # append an app list module for "Administration"
+        self.children.append(modules.ModelList(
+            _('Works'),
+            column=1,
+            collapsible=False,
+            models=('works.*',),
         ))
 
         # append an app list module for "Administration"

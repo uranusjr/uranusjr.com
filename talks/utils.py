@@ -3,35 +3,38 @@
 
 from __future__ import unicode_literals
 from django.utils.six.moves import html_parser, urllib
+from django.utils.six.moves.urllib.error import URLError
 
 
 class ForcedEnd(Exception):
-    pass
+    def __init__(self, og_image='', message=''):
+        super(ForcedEnd, self).__init__(message)
+        self.og_image = og_image
 
 
 class OpenGraphImageParser(html_parser.HTMLParser):
     def parse_from_url(self, url):
-        self.og_image = None
         try:
             response = urllib.request.urlopen(url)
-        except urllib.error.URLError:
-            return
+        except URLError:
+            raise
         else:
             try:
                 self.feed(response.read())
-            except ForcedEnd:
-                pass
+            except ForcedEnd as e:
+                return e.og_image
+        return ''
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'meta' and attrs.get('property') == 'og:image':
             try:
-                self.og_image = attrs['content']
+                og_image = attrs['content']
             except KeyError:    # Not a complete og:image tag; ignore.
                 pass
             else:
-                raise ForcedEnd
+                raise ForcedEnd(og_image)
 
     def handle_endtag(self, tag):
         if tag == 'head':   # Give up when we reached the end of head tags.
-            raise ForcedEnd
+            raise ForcedEnd()

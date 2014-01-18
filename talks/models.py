@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from base.models import Displayable, Tag as BaseTag
-from .utils import OpenGraphImageParser
+from .utils import OpenGraphImageParser, URLError
 
 
 class Tag(BaseTag):
@@ -46,5 +46,8 @@ class Talk(Displayable):
     def scrape_image_from_url(self):
         # Try to scrape the presentation hosting site for og:image
         parser = OpenGraphImageParser()
-        parser.parse_from_url(self.url)
-        return parser.og_image or ''
+        try:
+            image_url = parser.parse_from_url(self.url)
+        except URLError:
+            image_url = ''
+        return image_url

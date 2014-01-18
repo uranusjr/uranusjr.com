@@ -19,7 +19,7 @@ INSTALLED_APPS += (
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
-    '--cover-package=base,blog,pages,works',
+    '--cover-package=base,blog,pages,talks,works',
     '--with-coverage',
     '--cover-erase',
 ]

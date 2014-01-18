@@ -42,11 +42,6 @@ class PostListView(DisplayableListView):
     def get_title(self):
         return _('Blog archive')
 
-    def get_context_data(self, **kwargs):
-        context = super(PostListView, self).get_context_data(**kwargs)
-        context['title'] = self.get_title()
-        return context
-
 
 class CategoryPostListView(PostListView):
     def get(self, request, *args, **kwargs):
@@ -65,10 +60,7 @@ class CategoryPostListView(PostListView):
         return title_format.format(title=self.category.title)
 
 
-class TagPostListView(DisplayableListView):
-
-    template_name = 'post_list.html'
-
+class TagPostListView(PostListView):
     def get(self, request, *args, **kwargs):
         try:
             self.tag = Tag.objects.get(slug=kwargs['slug'])

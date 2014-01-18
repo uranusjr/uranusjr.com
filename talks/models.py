@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from base.models import Displayable, Tag as BaseTag
@@ -12,6 +13,9 @@ class Tag(BaseTag):
     class Meta:
         verbose_name = _('talk tag')
         verbose_name_plural = _('talk tags')
+
+    def get_absolute_url(self):
+        return reverse('talks:tag', kwargs={'slug': self.slug})
 
 
 class Talk(Displayable):

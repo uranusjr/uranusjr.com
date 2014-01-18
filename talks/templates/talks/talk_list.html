@@ -21,9 +21,12 @@
       <a href="{{ obj.url }}">
         <h3 class="item-title">{{ obj.title }}</h3>
       </a>
-      <p class="item-category">
+      <p class="item-tags">
         {% for tag in obj.tags.all %}
-        {{ tag.name }}{% if not forloop.last %}, {% endif %}
+        <a href="{{ tag.get_absolute_url }}">
+          {{ tag.name }}
+        </a>
+        {% if not forloop.last %}, {% endif %}
         {% endfor %}
       </p>
       <div class="item-description">

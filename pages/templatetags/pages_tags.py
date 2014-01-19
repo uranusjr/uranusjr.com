@@ -21,34 +21,40 @@ class SideBarNode(Node):
 
     def render(self, context):
         # Determine search criteria
-        page = Variable(self.page).resolve(context)
-        if isinstance(page, Page):
-            pass
+        current_page = Variable(self.page).resolve(context)
+        if isinstance(current_page, Page):
+            page = current_page._root
         else:
-            if isinstance(page, six.string_types):
-                lookup = Q(slug=page)
+            if isinstance(current_page, six.string_types):
+                lookup = Q(slug=current_page)
             else:
-                lookup = Q(pk=page)
+                lookup = Q(pk=current_page)
             try:
-                page = Page.objects.get(lookup)
+                current_page = Page.objects.get(lookup)
             except Page.DoesNotExist:
                 page = None
+            else:
+                page = current_page._root
+
+        context['page'] = page      # This is what the sidebar is base on.
+
+        # Find template to use with the folowing order:
+        # 1. If the template tag is invoked with a specific path, try it.
+        # 2. If there are templates named {page_slug}_sidebar.html, try it.
+        # 3. sidebar.html, which should always exist.
+        template_paths = ['pages/includes/sidebar.html']
 
         if page is not None:
-            root = page._root or page
-            context['page'] = root
-
-        # Find template to use
-        template_paths = [
-            'pages/includes/{slug}_sidebar.html'.format(slug=root.slug),
-            'pages/includes/sidebar.html'
-        ]
-        if self.template_path is not None:
-            template_paths.insert(
-                0, Variable(self.template_path).resolve(context)
+            template_paths.append(
+                'pages/includes/{slug}_sidebar.html'.format(slug=page.slug),
             )
 
-        for template_path in template_paths:
+        if self.template_path is not None:
+            template_paths.append(
+                Variable(self.template_path).resolve(context),
+            )
+
+        for template_path in reversed(template_paths):
             try:
                 template = get_template(template_path)
                 break

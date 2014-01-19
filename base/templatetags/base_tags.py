@@ -24,10 +24,15 @@ def sidebar_tabs(context):
         'slug', 'title'
     ).filter(parent=None).exclude(slug='index')
 
+    try:
+        index_page = Page.objects.get(slug='index')
+    except Page.DoesNotExist:
+        index_page = Page(title='')
+
     # slug, name, is_active
     TABS = [{
         'slug': '',
-        'title': Page.objects.get(slug='index').title,
+        'title': index_page.title,
         'is_active': (request.path == '/'),
     }]
     TABS += [{

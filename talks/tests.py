@@ -3,9 +3,10 @@
 
 from __future__ import unicode_literals, print_function
 import warnings
-from django.test import TestCase
-from nose.tools import assert_not_equal
+from django.test import TestCase, Client
+from nose.tools import eq_, assert_not_equal
 from .utils import OpenGraphImageParser, URLError
+from .models import Tag
 
 
 class UtilsTests(TestCase):
@@ -23,3 +24,24 @@ class UtilsTests(TestCase):
                 warnings.warn(msg_form.format(url=url), RuntimeWarning)
             else:
                 assert_not_equal(len(image_url), 0)
+
+
+class ViewTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    def test_talk_list(self):
+        response = self.client.get('/talk/')
+        eq_(response.status_code, 200)
+
+    def test_talk_tag(self):
+        tags = Tag.objects.all()
+        # TODO: Generate a fixture to make this test pass
+        # assert_not_equal(tags.count(), 0)
+        for tag in tags:
+            if tag.is_public():
+                expected = 200
+            else:
+                expected = 404
+            response = self.client.get(tag.get_absolute_url())
+            eq_(response.status_code, expected)

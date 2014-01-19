@@ -14,7 +14,7 @@ class TalkAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at')
     fieldsets = (
         (None, {'fields': (
-            'title', 'short_description', 'url', 'tags'
+            'title', 'short_description', 'url', 'tags', 'image_url',
         )}),
         ('Page options', {
             'fields': ('slug', 'state', 'published_at'),

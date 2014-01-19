@@ -40,10 +40,17 @@ class Talk(Displayable):
             old_object = Talk.objects.get(pk=self.pk)
         except Talk.DoesNotExist:
             # No match; this is an INSERT.
-            self.image_url = self.scrape_image_from_url()
+            if not self.image_url:
+                # Only scrape for a image when the user has left the field
+                # blank. If the user has provided a value, we should honor it.
+                self.image_url = self.scrape_image_from_url()
         else:
-            # This is an UPDATE
-            if self.url != old_object.url:
+            # This is an UPDATE.
+            if (self.url != old_object.url
+                    and self.image_url == old_object.image_url):
+                # URL has changed but the image has not (which makes it
+                # obsolute). If the image has changed the user probably knows
+                # what's going on, so we leave it be.
                 self.image_url = self.scrape_image_from_url()
         super(Talk, self).save(*args, **kwargs)
 

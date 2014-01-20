@@ -1,0 +1,38 @@
+{% extends 'base/displayable_list.html' %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'talks/css/talk_list.css' %}"
+    charset="utf-8" media="all" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block obj_block %}
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <div class="panel panel-default item">
+    <div class="panel-heading">
+      <a href="{{ obj.url }}">
+        <img class="img-responsive item-img" alt="{{ obj.title }}"
+          src="{{ obj.image_url }}">
+      </a>
+    </div>
+    <div class="panel-body">
+      <a href="{{ obj.url }}">
+        <h3 class="item-title">{{ obj.title }}</h3>
+      </a>
+      <p class="item-tags">
+        {% for tag in obj.tags.all %}
+        <a href="{{ tag.get_absolute_url }}">
+          {{ tag.name }}
+        </a>
+        {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+      </p>
+      <div class="item-description">
+        <a href="{{ obj.url }}">{{ obj.short_description }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

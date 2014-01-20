@@ -20,6 +20,7 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(v1.urls)),
     url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^talk/', include('talks.urls', namespace='talks')),
     url(r'^work/', include('works.urls', namespace='works')),
     url(r'^', include('pages.urls', namespace='pages')),
 )

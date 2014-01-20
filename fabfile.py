@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 import os.path
+from contextlib import wraps
 from six.moves import configparser
 from fabric.api import cd, run
 from fabric.decorators import task
@@ -22,14 +23,31 @@ def get_uwsgi_config(key):
     return get_uwsgi_config._config.get('uwsgi', key)
 
 
+def project(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        with cd(get_uwsgi_config('chdir')):
+            func(*args, **kwargs)
+
+    return wrapper
+
+
 @task
-def deploy():
-    project_dir = get_uwsgi_config('chdir')
-    with cd(project_dir):
-        run('git reset HEAD --hard')
-        run('git pull')
-        run('./manage.py collectstatic --noinput')
+@project
+def deploy(with_restart=True):
+    run('git reset HEAD --hard')
+    run('git pull')
+    run('./manage.py collectstatic --noinput')
+    if with_restart:
         restart()
+
+
+@task
+@project
+def migrate():
+    run('./manage.py syncdb')
+    run('./manage.py migrate')
 
 
 @task

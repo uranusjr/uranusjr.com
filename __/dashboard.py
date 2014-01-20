@@ -24,15 +24,17 @@ class CustomIndexDashboard(Dashboard):
             ),
         ))
 
-        # append an app list module for "Administration"
         self.children.append(modules.ModelList(
-            _('Blog'),
+            _('Contents'),
             column=1,
             collapsible=False,
-            models=('blog.*',),
+            models=(
+                'blog.models.Post',
+                'talks.models.Talk',
+                'works.models.Work',
+            ),
         ))
 
-        # append an app list module for "Administration"
         self.children.append(modules.ModelList(
             _('Pages'),
             column=1,
@@ -40,12 +42,22 @@ class CustomIndexDashboard(Dashboard):
             models=('pages.*',),
         ))
 
+        self.children.append(modules.ModelList(
+            _('Blog'),
+            column=1,
+            collapsible=False,
+            models=(
+                'blog.models.Category',
+                'blog.models.Tag',
+            ),
+        ))
+
         # append an app list module for "Administration"
         self.children.append(modules.ModelList(
             _('Talks'),
             column=1,
             collapsible=False,
-            models=('talks.*',),
+            models=('talks.models.Tag',),
         ))
 
         # append an app list module for "Administration"
@@ -53,7 +65,7 @@ class CustomIndexDashboard(Dashboard):
             _('Works'),
             column=1,
             collapsible=False,
-            models=('works.*',),
+            models=('works.models.Category', 'works.models.Tag'),
         ))
 
         # append an app list module for "Administration"

@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+from __future__ import unicode_literals, print_function
 import os.path
 from contextlib import wraps
+from distutils.util import strtobool
 from six.moves import configparser
 from fabric.api import cd, run
 from fabric.decorators import task
+from fabric.operations import prompt
 
 
 try:
@@ -35,12 +37,50 @@ def project(func):
 
 @task
 @project
-def deploy(with_restart=True):
+def deploy(extras='restart'):
+    """General deploy task
+
+    The extra argument goes like this:
+
+        fab deploy:extras=migrate,restart
+
+    Which will be roughly equivalent to
+
+        deploy()
+        migrate()
+        restart()
+
+    By default "restart" will be invoked. Passing an string overrides it.
+    """
+    # Parse extra tasks
+    funcs = []
+    failed_lookups = []
+    for func_name in extras.split(' '):
+        try:
+            func = globals()[func_name]
+        except KeyError:
+            failed_lookups.append(func_name)
+        else:
+            funcs.append(func)
+    if failed_lookups:
+        msg_form = (
+            'The following tasks does not seem to exist: {names}. Continue '
+            'anyway? '
+        )
+        should_continue = prompt(
+            msg_form.format(names=', '.join(failed_lookups)),
+            default='n',
+            validate=strtobool
+        )
+        if not bool(strtobool(should_continue)):
+            print('Aborting.')
+            return
+
     run('git reset HEAD --hard')
     run('git pull')
     run('./manage.py collectstatic --noinput')
-    if with_restart:
-        restart()
+    for func in funcs:
+        func()
 
 
 @task

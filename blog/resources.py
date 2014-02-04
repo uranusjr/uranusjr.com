@@ -4,8 +4,6 @@
 from __future__ import division, unicode_literals
 from django.core.exceptions import ObjectDoesNotExist
 from tastypie import resources, fields
-from tastypie.exceptions import ImmediateHttpResponse
-from tastypie.http import HttpNotFound
 from tastycrust.resources import ActionResourceMixin, action
 from .models import Post, Category, Tag
 

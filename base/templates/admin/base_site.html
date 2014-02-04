@@ -1,0 +1,12 @@
+{% extends 'admin/base_site_.html' %}
+
+{% load grp_tags %}
+
+{% block title %}
+{{ title }} |
+{% if grappelli_admin_title %}
+{{ grappelli_admin_title }}
+{% else %}
+{% get_admin_title %}
+{% endif %}
+{% endblock %}

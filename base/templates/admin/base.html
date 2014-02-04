@@ -6,14 +6,6 @@
 <link rel="icon" type="image/png" href="{% static 'base/img/favicon.png' %}">
 {% endblock %}
 
-{% block title %}
-{% if grappelli_admin_title %}
-{{ grappelli_admin_title }}
-{% else %}
-{% get_admin_title %}
-{% endif %}
-{% endblock %}
-
 {% block admin_title %}
 <a href="{% url 'pages:index' %}" target="_blank">{{ block.super }}</a>
 {% endblock %}

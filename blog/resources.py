@@ -100,10 +100,9 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
 
     @action
     def near(self, request, *args, **kwargs):
+        bundle = self.build_bundle(request)
         try:
-            post = self.cached_obj_get(
-                self.build_bundle(request), pk=kwargs['pk'],
-            )
+            post = self.cached_obj_get(bundle, pk=kwargs['pk'])
         except ObjectDoesNotExist:
             offset = 0
         else:

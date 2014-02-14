@@ -46,11 +46,11 @@ $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
     $('.load-more:first').hide();
 
   // Automatically scroll to show the current entry
-  var currentPostMedia = $('.media[data-id="' + currentPostId + '"]');
-  if (currentPostMedia)
+  var currentOffset = $('.media[data-id="' + currentPostId + '"]').offset();
+  if (currentOffset)
   {
-    var y = currentPostMedia.offset().top;
-    $('#content_sidebar').scrollTop(y - $('#Grid').offset().top);
+    var y = currentOffset.top - $('#Grid').offset().top;
+    $('#content_sidebar').scrollTop(y);
   }
 });
 

@@ -46,8 +46,12 @@ $.getJSON(postListUrl + currentPostId + '/near/').success(function (data) {
     $('.load-more:first').hide();
 
   // Automatically scroll to show the current entry
-  var y = $('.media[data-id="' + currentPostId + '"]').offset().top;
-  $('#content_sidebar').scrollTop(y - $('#Grid').offset().top);
+  var currentPostMedia = $('.media[data-id="' + currentPostId + '"]');
+  if (currentPostMedia)
+  {
+    var y = currentPostMedia.offset().top;
+    $('#content_sidebar').scrollTop(y - $('#Grid').offset().top);
+  }
 });
 
 // Load more

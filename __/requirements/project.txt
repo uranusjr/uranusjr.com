@@ -4,7 +4,7 @@ django-compressor
 south
 pillow
 django-markitup
-markdown2
+markdown
 pygments
 pytz
 django-tastypie

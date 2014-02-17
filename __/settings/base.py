@@ -127,15 +127,17 @@ MEDIA_URL = '/media/'
 
 # MarkItUp!
 
-MARKITUP_FILTER = ('markdown2.markdown', {'extras': [
-    'pyshell',              # Lines start with >>> are automatically Python
-    'fenced-code-blocks',   # GitHub-flavored ``` code blocks
-    'code-friendly',        # No _ and __ emphases
-    'cuddled-lists',        # No need to blank lines around lists
-    'footnotes',            # [^footnote-id] syntax
-    'wiki-tables',          # Google Code Wiki table syntax
-    'smarty-pants',         # Typographers' quotes
-]})
+MARKITUP_FILTER = ('markdown.markdown', {
+    'lazy_ol': False,           # Disable auto-sanitasation on ordered lists
+    'output_format': 'html5',   # Outputs HTML5
+    'extras': [
+        'fenced-code',          # GitHub-flavored ``` code blocks.
+        'footnotes',            # [^footnote-id] syntax.
+        'smarty',               # Typographers' quotes (and others).
+        'smart-strong',         # Intra-word double-underscore detection.
+        'tables',               # Table syntax.
+    ],
+})
 
 MARKITUP_AUTO_PREVIEW = False
 

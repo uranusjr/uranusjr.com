@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-from __future__ import unicode_literals
 import os
 from django.core.exceptions import ImproperlyConfigured
 
@@ -130,11 +129,11 @@ MEDIA_URL = '/media/'
 MARKITUP_FILTER = ('markdown.markdown', {
     'lazy_ol': False,           # Disable auto-sanitasation on ordered lists
     'output_format': 'html5',   # Outputs HTML5
-    'extras': [
-        'fenced-code',          # GitHub-flavored ``` code blocks.
+    'extensions': [
+        'fenced_code',          # GitHub-flavored ``` code blocks.
         'footnotes',            # [^footnote-id] syntax.
         'smarty',               # Typographers' quotes (and others).
-        'smart-strong',         # Intra-word double-underscore detection.
+        'smart_strong',         # Intra-word double-underscore detection.
         'tables',               # Table syntax.
     ],
 })

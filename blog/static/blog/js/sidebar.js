@@ -93,7 +93,7 @@ $('.load-more').click(function (e) {
       $(that).show();
     $(that).removeClass('disabled');
     spinner.stop();
-    $('.text', this).css('visibility', 'visible');
+    $('.text', that).css('visibility', 'visible');
   });
 });
 

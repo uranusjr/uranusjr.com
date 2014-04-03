@@ -26,7 +26,11 @@
     if (!ghostdownTextArea)
       return;
     var editor = CodeMirror.fromTextArea(ghostdownTextArea, {
-      'mode': 'markdown',
+      'mode': {
+        'name': 'markdown',
+        'fencedCodeBlocks': true,
+        'underscoresBreakWords': false
+      },
       'tabMode': 'indent',
       'lineWrapping': true
     });

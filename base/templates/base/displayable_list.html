@@ -13,37 +13,45 @@
 <div class="row">
   <div class="col-lg-12">
 
-  <div class="text-center">
-    <h1>{{ title }}</h1>
-    <h1 class="spacer">___</h1>
-    <h3>
-      {% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}
-      Page {{ current }} of {{ total }}
-      {% endblocktrans %}
-    </h3>
-  </div>
+    <div class="text-center">
 
-  <div class="results">
-    {% for obj in obj_list %}
-    {% block obj_block %}
-    <div data-id="{{ obj.pk }}" class="media">
-      <div class="media-body">
-        <h2 class="media-heading">
-          <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
-        </h2>
-        <p class="article-date">{{ obj.published_at|date:'Y-m-d' }}</p>
-        <p class="article-description">{{ obj.short_description }}</p>
-        <p class="read-more">
-          <a href="{{ obj.get_absolute_url }}">({% trans 'Read more...' %})</a>
-        </p>
-      </div>
+      <h1>{{ title }}</h1>
+      <h1 class="spacer">___</h1>
+
+      {% block content_detail %}
+      <div class="text-justify">{{ page.content }}</div>
+      {% endblock %}
+
+      <h3>
+        {% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}
+        Page {{ current }} of {{ total }}
+        {% endblocktrans %}
+      </h3>
+
     </div>
-    {% endblock %}
-    {% endfor %}
-  </div>
 
-  <div class="row">
-    <div class="col-lg-12 pagination-block">{% pagination page_obj %}</div>
+    <div class="results">
+      {% for obj in obj_list %}
+      {% block obj_block %}
+      <div data-id="{{ obj.pk }}" class="media">
+        <div class="media-body">
+          <h2 class="media-heading">
+            <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+          </h2>
+          <p class="article-date">{{ obj.published_at|date:'Y-m-d' }}</p>
+          <p class="article-description">{{ obj.short_description }}</p>
+          <p class="read-more">
+            <a href="{{ obj.get_absolute_url }}">({% trans 'Read more...' %})</a>
+          </p>
+        </div>
+      </div>
+      {% endblock %}
+      {% endfor %}
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 pagination-block">{% pagination page_obj %}</div>
+    </div>
   </div>
 </div>
 

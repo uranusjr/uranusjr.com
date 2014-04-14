@@ -4,3 +4,6 @@
 .col-left .item {
     padding-bottom: 2em;
 }
+.col-left .item-description {
+    text-align: justify;
+}

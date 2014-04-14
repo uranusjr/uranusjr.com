@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from django.conf import settings
 from django.utils.six.moves import html_parser, urllib
 from django.utils.six.moves.urllib.error import URLError
 
@@ -13,6 +14,16 @@ class ForcedEnd(Exception):
 
 
 class OpenGraphImageParser(html_parser.HTMLParser):
+    def get_charset(self, response):
+        content_type = response.info()['content-type']
+        tokens = content_type.split('charset=')
+        try:
+            if len(tokens) < 2:
+                raise KeyError
+            return tokens[-1].split(';')[0]
+        except KeyError:
+            return settings.DEFAULT_CHARSET
+
     def parse_from_url(self, url):
         try:
             response = urllib.request.urlopen(url)
@@ -20,7 +31,7 @@ class OpenGraphImageParser(html_parser.HTMLParser):
             raise
         else:
             try:
-                self.feed(response.read())
+                self.feed(response.read().decode(self.get_charset(response)))
             except ForcedEnd as e:
                 return e.og_image
         return ''

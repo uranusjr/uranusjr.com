@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 from django.conf import settings
+from django.contrib.sites.models import get_current_site
 
 
 def static(request):
@@ -11,3 +12,7 @@ def static(request):
         'JQUERY_URL': settings.JQUERY_URL,
         'LESS_DEBUG': less_debug,
     }
+
+
+def site(request):
+    return {'current_site': get_current_site(request)}

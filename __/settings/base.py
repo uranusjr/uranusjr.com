@@ -28,6 +28,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = []
 INTERNAL_IPS = ('127.0.0.1',)
+SITE_ID = 1
 
 
 # Application definition
@@ -50,6 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 )
 
@@ -72,6 +74,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'base.context_processors.static',
+    'base.context_processors.site',
 )
 
 ROOT_URLCONF = '__.urls'

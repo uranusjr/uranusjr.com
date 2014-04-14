@@ -2,6 +2,10 @@
 
 {% load i18n staticfiles base_tags %}
 
+{% block title_tag %}
+<title>{% block title %}{{ title }}{% endblock %} | {{ current_site.name }}</title>
+{% endblock %}
+
 {% block extra_css %}
 {{ block.super }}
 {% if LESS_DEBUG %}

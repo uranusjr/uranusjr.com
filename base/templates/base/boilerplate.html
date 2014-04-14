@@ -7,7 +7,9 @@
 <head>
 
 <meta charset="utf-8">
+{% block title_tag %}
 <title>{% block title %}{{ title }}{% endblock %}</title>
+{% endblock %}
 <link rel="shortcut icon" href="{% static 'base/img/favicon.ico' %}">
 <link rel="icon" type="image/png" href="{% static 'base/img/favicon.png' %}">
 <meta name="viewport"

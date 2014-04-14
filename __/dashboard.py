@@ -19,7 +19,7 @@ class CustomIndexDashboard(Dashboard):
             collapsible=False,
             column=1,
             exclude=(
-                'django.contrib.auth.*',
+                'django.contrib.*',
                 'blog.*', 'works.*', 'pages.*', 'talks.*',
             ),
         ))

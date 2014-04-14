@@ -17,7 +17,7 @@ def _page_image_upload_to(obj, filename):
 class Page(Orderable, Displayable):
 
     parent = models.ForeignKey(
-        'pages.Page', blank=True, null=True, related_name='children',
+        'pages.Page', blank=True, null=True, related_name='descendants',
     )
     _root = models.ForeignKey(
         'pages.Page', blank=True, null=True,

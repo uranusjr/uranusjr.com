@@ -2,6 +2,8 @@
 
 {% load staticfiles base_tags works_tags %}
 
+{% block sidebar_title %}{% trans 'My Work' %}{% endblock %}
+
 {% block sidebar_content %}
 {% work_sidebar %}
 {% endblock %}

@@ -507,6 +507,10 @@ body,
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.panel.item.standalone {
+  padding: 20px;
+  padding-bottom: 50px;
+}
 .panel.item a {
   color: #333333;
 }

@@ -30,7 +30,7 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
     )
 
     class Meta:
-        queryset = Post.objects.published()
+        queryset = Post.objects.all()
         resource_name = 'blog/post'
         fields = [
             'id', 'title', 'short_description', 'category', 'tags',
@@ -43,6 +43,11 @@ class PostResource(ActionResourceMixin, resources.ModelResource):
         }
         ordering = ['id', 'published_at']
         limit = 10
+
+    def get_object_list(self, request):
+        queryset = super(PostResource, self).get_object_list(request)
+        queryset = queryset.published()
+        return queryset
 
     def build_filters(self, filters=None):
         """Override to apply custom filters

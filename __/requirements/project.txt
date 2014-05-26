@@ -3,11 +3,10 @@ django-grappelli
 django-compressor
 south
 pillow
-django-markitup
 markdown
 pygments
 pytz
 django-tastypie
 django-tastypie-crust
 django-filebrowser>=3.5.3
-django-ghostdown>=0.1.6.1
+django-ghostdown>=0.3

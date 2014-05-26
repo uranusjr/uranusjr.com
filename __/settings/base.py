@@ -126,26 +126,6 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
 MEDIA_URL = '/media/'
 
-
-# MarkItUp!
-
-MARKITUP_FILTER = ('markdown.markdown', {
-    'lazy_ol': False,           # Disable auto-sanitasation on ordered lists.
-    'output_format': 'html5',   # Outputs HTML5.
-    'extensions': [
-        'codehilite',           # Enable syntax hilighting in code blocks.
-        'fenced_code',          # GitHub-flavored ``` code blocks.
-        'footnotes',            # [^footnote-id] syntax.
-        'smarty',               # Typographers' quotes (and others).
-        'smart_strong',         # Intra-word double-underscore detection.
-        'tables',               # Table syntax.
-    ],
-})
-
-MARKITUP_AUTO_PREVIEW = False
-
-MARKITUP_SET = '3rdparty/markitup/sets/markdown-fb'
-
 JQUERY_URL = '3rdparty/jquery/js/jquery-1.10.2.js'
 
 
@@ -164,3 +144,23 @@ FILEBROWSER_DIRECTORY = ''
 # Tastypie
 
 TASTYPIE_DEFAULT_FORMATS = ["json"]
+
+
+# Ghostdown
+
+GHOSTDOWN_MARKDOWN_RENDERER = {
+    'path': 'markdown.markdown',
+    'args': (),
+    'kwargs': {
+        'lazy_ol': False,           # Disable auto-sanitasation on OL.
+        'output_format': 'html5',   # Outputs HTML5.
+        'extensions': [
+            'codehilite',           # Enable syntax hilighting in code blocks.
+            'fenced_code',          # GitHub-flavored ``` code blocks.
+            'footnotes',            # [^footnote-id] syntax.
+            'smarty',               # Typographers' quotes (and others).
+            'smart_strong',         # Intra-word double-underscore detection.
+            'tables',               # Table syntax.
+        ],
+    },
+}

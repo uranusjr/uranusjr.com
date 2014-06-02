@@ -42,7 +42,7 @@ def deploy(extras='restart'):
 
     The extra argument goes like this:
 
-        fab deploy:extras=migrate,restart
+        fab deploy:extras=migrate.restart
 
     Which will be roughly equivalent to
 
@@ -55,7 +55,7 @@ def deploy(extras='restart'):
     # Parse extra tasks
     funcs = []
     failed_lookups = []
-    for func_name in extras.split(' '):
+    for func_name in extras.split('.'):
         try:
             func = globals()[func_name]
         except KeyError:
@@ -81,6 +81,13 @@ def deploy(extras='restart'):
     run('./manage.py collectstatic --noinput')
     for func in funcs:
         func()
+
+
+@task
+@project
+def update():
+    run('pip install -U -r __/requirements/project.txt')
+    run('pip install -U -r __/requirements/deploy.txt')
 
 
 @task

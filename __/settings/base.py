@@ -44,7 +44,6 @@ INSTALLED_APPS = (
     'grappelli.dashboard',
     'grappelli',
     'filebrowser',
-    'markitup',
     'ghostdown',
     'django.contrib.admin',
     'django.contrib.auth',

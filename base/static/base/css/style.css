@@ -28,7 +28,7 @@ code,
 pre {
   color: inherit;
   font-family: "Monaco", "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
-  overflow-x: scroll;
+  overflow-x: auto;
   word-wrap: normal;    /* Override Bootstrap */
 }
 blockquote p {

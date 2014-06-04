@@ -29,7 +29,10 @@ pre {
   color: inherit;
   font-family: "Monaco", "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
   overflow-x: auto;
-  word-wrap: normal;    /* Override Bootstrap */
+
+  /* Override Bootstrap */
+  word-wrap: normal;
+  white-space: pre;
 }
 blockquote p {
   font-size: 16px;

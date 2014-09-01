@@ -40,11 +40,7 @@
 
 {% block body %}{% endblock %}
 
-{% if request.is_secure %}
-<script src="//c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-{% else %}
 <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-{% endif %}
 {% compress js %}
 <script src="{% static '3rdparty/fastclick/js/fastclick.js' %}"></script>
 <script src="{% static '3rdparty/spin/js/spin.min.js' %}"></script>

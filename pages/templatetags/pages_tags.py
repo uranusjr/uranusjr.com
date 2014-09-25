@@ -35,6 +35,8 @@ class SideBarNode(Node):
                 page = None
             else:
                 page = current_page._root
+        if page is None:
+            page = current_page
 
         context['page'] = page      # This is what the sidebar is base on.
 

@@ -39,19 +39,19 @@ class Page(Orderable, Displayable):
     def save(self, *args, **kwargs):
         # Update the page's own, and all its descendants' ``_root``s when the
         # page switches to another parent
-        parent = self.parent
         try:
             old_object = Page.objects.get(pk=self.pk)
         except Page.DoesNotExist:
             # No match, so this is an INSERT; just set the root.
-            self._root = parent or self
+            self._root = self.parent._root or self
         else:
             # This is an UPDATE with parent change.
+            parent = self.parent
             if old_object.parent != parent:
                 if parent is None:      # I am the root!
                     new_root = self
                 else:
-                    new_root = self.parent._root
+                    new_root = parent._root
                 self.descendants.all().update(_root=new_root)
                 self._root = new_root
         return super(Page, self).save(*args, **kwargs)

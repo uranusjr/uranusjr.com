@@ -177,6 +177,7 @@ body,
   width: 100%;
   text-align: center;
   margin-bottom: 0;
+  margin-left: 0;
 }
 .row.top .col-right nav .list-inline li {
   display: table-cell;

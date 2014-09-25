@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'talks',
     'works',
     'base',
-    'south',
     'compressor',
     'grappelli.dashboard',
     'grappelli',

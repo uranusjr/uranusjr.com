@@ -93,7 +93,6 @@ def update():
 @task
 @project
 def migrate():
-    run('./manage.py syncdb')
     run('./manage.py migrate')
 
 

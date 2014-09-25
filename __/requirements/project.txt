@@ -1,4 +1,4 @@
-django<1.7
+django
 django-grappelli
 django-compressor
 south

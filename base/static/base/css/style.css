@@ -29,8 +29,6 @@ pre {
   color: inherit;
   font-family: "Monaco", "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
   overflow-x: auto;
-
-  /* Override Bootstrap */
   word-wrap: normal;
   white-space: pre;
 }

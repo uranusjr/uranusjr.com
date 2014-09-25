@@ -86,7 +86,6 @@ def deploy(extras='restart'):
 @task
 @project
 def update():
-    run('pip install -U -r __/requirements/project.txt')
     run('pip install -U -r __/requirements/deploy.txt')
 
 

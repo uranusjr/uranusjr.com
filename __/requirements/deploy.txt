@@ -1,2 +1,3 @@
+-r project.txt
 uwsgi
 psycopg2

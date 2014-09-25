@@ -1,3 +1,4 @@
+-r project.txt
 django-debug-toolbar
 fabric
 six

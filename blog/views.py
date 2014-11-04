@@ -20,9 +20,13 @@ def index(request):
 
 
 def post(request, pk, slug='', template='blog/post.html'):
+    if request.user.is_superuser:
+        published = Post.objects.all()
+    else:
+        published = Post.objects.published()
+    published = published.prefetch_related('tags').select_related('category')
     try:
-        post = Post.objects.published(
-        ).prefetch_related('tags').select_related('category').get(pk=pk)
+        post = published.get(pk=pk)
     except Post.DoesNotExist:
         raise Http404
 

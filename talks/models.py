@@ -10,7 +10,7 @@ from .utils import OpenGraphImageParser, URLError
 
 
 class Tag(BaseTag):
-    class Meta:
+    class Meta(BaseTag.Meta):
         verbose_name = _('talk tag')
         verbose_name_plural = _('talk tags')
 

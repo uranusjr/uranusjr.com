@@ -63,6 +63,7 @@ class Tag(models.Model):
 
     class Meta:
         abstract = True
+        ordering = ('slug',)
         verbose_name = _('tag')
         verbose_name_plural = _('tags')
 

@@ -17,7 +17,7 @@ class Category(Element):
 
 
 class Tag(BaseTag):
-    class Meta:
+    class Meta(BaseTag.Meta):
         verbose_name = _('work tag')
         verbose_name_plural = _('work tags')
 

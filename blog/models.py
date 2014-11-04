@@ -19,7 +19,7 @@ class Category(Element):
 
 
 class Tag(BaseTag):
-    class Meta:
+    class Meta(BaseTag.Meta):
         verbose_name = _('blog tag')
         verbose_name_plural = _('blog tags')
 

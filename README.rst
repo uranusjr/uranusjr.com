@@ -24,12 +24,7 @@ license. Therefore, redistribution of all resources in this project is hereby
 *disallowed*. You are not allowed to redistribute anything without a proper
 legal permission.
 
-The Ghostdown editor component is based on the editor from the Ghost_ project.
-Used under the conditions of the MIT license. You can find a copy of the
-license in the ``LEGAL`` directionry.
-
 
 .. _`uranusjr.com`: http://uranusjr.com
 .. _`issues section`: https://github.com/uranusjr/uranusjr.com/issues
 .. _WrapBootstrap: https://wrapbootstrap.com/
-.. _Ghost: http://ghost.org/

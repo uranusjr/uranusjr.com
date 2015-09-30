@@ -3,13 +3,19 @@
 
 from __future__ import unicode_literals
 
+from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.template import TemplateDoesNotExist
 from django.template.loader import get_template
 from django.shortcuts import redirect, render
-from django.core.urlresolvers import reverse
+from django.views.generic import RedirectView
 
 from .models import Page
+
+
+class TalkListRedirectView(RedirectView):
+    url = 'https://speakerdeck.com/uranusjr'
+    permanent = False
 
 
 def page(request, slug, template='pages/page.html'):
@@ -30,3 +36,6 @@ def page(request, slug, template='pages/page.html'):
         template = custom_template
 
     return render(request, template, {'page': page})
+
+
+talk_list = TalkListRedirectView.as_view()

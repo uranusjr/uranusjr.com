@@ -81,7 +81,7 @@ func sendMailWithTitle(
 ~~~swift
 sendMailWithTitle("Hello",
           content:"This is a test message.",
-                           from:me,
+             from:me,
                to:[user1, user2])
 ~~~
 

@@ -22,7 +22,7 @@ class PostsFeed(Feed):
         except Post.DoesNotExist:
             return ''
         else:
-            return index_page.content.rendered
+            return index_page.content
 
     def link(self):
         return reverse('blog:index')
@@ -34,7 +34,7 @@ class PostsFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.content.rendered
+        return item.content
 
     def item_link(self, item):
         return item.get_absolute_url()

@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import os
 
+from django.contrib.staticfiles import finders
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
 from filebrowser.fields import FileBrowseField
-from six.moves.urllib.parse import urlparse
 
 from base.models import Element, Orderable, Displayable, Tag as BaseTag
 
@@ -61,8 +62,16 @@ class Work(Orderable, Displayable):
         return [tag.slug for tag in self.tags.all()]
 
     def get_icon_url(self):
+        # If a custom image is set, use it.
         if self.image:
             return self.image.url
-        else:
-            path_format = 'base/img/work/work-{work_type}.png'
-            return static(path_format.format(work_type=self.work_type))
+
+        # Automatically find the image based on the slug.
+        path_comps = ['works', 'img', self.slug + '.png']
+        relpath = os.path.join(*path_comps)
+        if finders.find(relpath):
+            return static('/'.join(path_comps))
+
+        # Use one of the default images.
+        path_format = 'base/img/work/work-{work_type}.png'
+        return static(path_format.format(work_type=self.work_type))

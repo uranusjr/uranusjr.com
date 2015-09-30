@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'grappelli.dashboard',
     'grappelli',
     'filebrowser',
-    'ghostdown',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,23 +141,3 @@ FILEBROWSER_DIRECTORY = ''
 # Tastypie
 
 TASTYPIE_DEFAULT_FORMATS = ["json"]
-
-
-# Ghostdown
-
-GHOSTDOWN_MARKDOWN_RENDERER = {
-    'path': 'markdown.markdown',
-    'args': (),
-    'kwargs': {
-        'lazy_ol': False,           # Disable auto-sanitasation on OL.
-        'output_format': 'html5',   # Outputs HTML5.
-        'extensions': [
-            'codehilite',           # Enable syntax hilighting in code blocks.
-            'fenced_code',          # GitHub-flavored ``` code blocks.
-            'footnotes',            # [^footnote-id] syntax.
-            'smarty',               # Typographers' quotes (and others).
-            'smart_strong',         # Intra-word double-underscore detection.
-            'tables',               # Table syntax.
-        ],
-    },
-}

@@ -3,6 +3,8 @@
 
 from __future__ import unicode_literals
 
+import markdown
+
 
 def get_concrete_base_model(model_class, base_class):
     """Find the concrete base class of a given Django model class
@@ -31,3 +33,12 @@ def get_concrete_base_model(model_class, base_class):
         if klass._meta.abstract:
             continue
         return klass
+
+
+def render_content(raw):
+    return markdown.markdown(
+        raw, lazy_ol=False, output_format='html5', extensions=[
+            'codehilite', 'fenced_code', 'footnotes', 'smarty', 'smart_strong',
+            'tables',
+        ],
+    )

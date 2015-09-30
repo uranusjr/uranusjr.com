@@ -2,11 +2,18 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import codecs
+import os
+
+from django.contrib.staticfiles import finders
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models import Q
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+
 from base.models import Element, Displayable, Tag as BaseTag
+from base.utils import render_content
 
 
 class Category(Element):
@@ -37,6 +44,13 @@ class Post(Displayable):
         verbose_name_plural = _('blog posts')
         ordering = ['published_at', 'pk']
         get_latest_by = 'published_at'
+
+    @property
+    def content(self):
+        path = finders.find(os.path.join('blog', 'posts', self.slug + '.md'))
+        with codecs.open(path, encoding='utf8') as f:
+            raw = f.read()
+        return mark_safe(render_content(raw))
 
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={'pk': self.pk, 'slug': self.slug})

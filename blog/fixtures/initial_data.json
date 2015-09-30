@@ -1,115 +1,1037 @@
 [
 {
-    "pk": 1,
-    "model": "blog.category",
     "fields": {
         "slug": "programming",
         "title": "Programming"
-    }
+    },
+    "model": "blog.category",
+    "pk": 1
 },
 {
-    "pk": 2,
-    "model": "blog.category",
     "fields": {
         "slug": "release",
         "title": "Release"
-    }
+    },
+    "model": "blog.category",
+    "pk": 2
 },
 {
-    "pk": 1,
-    "model": "blog.tag",
+    "fields": {
+        "slug": "baseball",
+        "title": "Baseball"
+    },
+    "model": "blog.category",
+    "pk": 3
+},
+{
+    "fields": {
+        "slug": "technology",
+        "title": "Technology"
+    },
+    "model": "blog.category",
+    "pk": 4
+},
+{
+    "fields": {
+        "slug": "miscellaneous",
+        "title": "Miscellaneous"
+    },
+    "model": "blog.category",
+    "pk": 5
+},
+{
     "fields": {
         "name": "Python",
         "slug": "python"
-    }
+    },
+    "model": "blog.tag",
+    "pk": 1
 },
 {
-    "pk": 2,
-    "model": "blog.tag",
     "fields": {
         "name": "Python 3",
         "slug": "python-3"
-    }
+    },
+    "model": "blog.tag",
+    "pk": 2
 },
 {
-    "pk": 1,
-    "model": "blog.post",
+    "fields": {
+        "name": "MLB",
+        "slug": "mlb"
+    },
+    "model": "blog.tag",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "Mets",
+        "slug": "mets"
+    },
+    "model": "blog.tag",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "OS X",
+        "slug": "os-x"
+    },
+    "model": "blog.tag",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "Windows",
+        "slug": "windows"
+    },
+    "model": "blog.tag",
+    "pk": 6
+},
+{
+    "fields": {
+        "name": "iTunes",
+        "slug": "itunes"
+    },
+    "model": "blog.tag",
+    "pk": 7
+},
+{
+    "fields": {
+        "name": "Django",
+        "slug": "django"
+    },
+    "model": "blog.tag",
+    "pk": 8
+},
+{
+    "fields": {
+        "name": "C++",
+        "slug": "cpp"
+    },
+    "model": "blog.tag",
+    "pk": 9
+},
+{
+    "fields": {
+        "name": "Qt",
+        "slug": "qt"
+    },
+    "model": "blog.tag",
+    "pk": 10
+},
+{
+    "fields": {
+        "name": "JavaScript",
+        "slug": "javascript"
+    },
+    "model": "blog.tag",
+    "pk": 11
+},
+{
+    "fields": {
+        "name": "jQuery",
+        "slug": "jquery"
+    },
+    "model": "blog.tag",
+    "pk": 12
+},
+{
+    "fields": {
+        "name": "Objective-C",
+        "slug": "objective-c"
+    },
+    "model": "blog.tag",
+    "pk": 13
+},
+{
+    "fields": {
+        "name": "iOS",
+        "slug": "ios"
+    },
+    "model": "blog.tag",
+    "pk": 14
+},
+{
+    "fields": {
+        "name": "Cocoa",
+        "slug": "cocoa"
+    },
+    "model": "blog.tag",
+    "pk": 15
+},
+{
+    "fields": {
+        "name": "QuickTime",
+        "slug": "quicktime"
+    },
+    "model": "blog.tag",
+    "pk": 16
+},
+{
+    "fields": {
+        "name": "English",
+        "slug": "english"
+    },
+    "model": "blog.tag",
+    "pk": 17
+},
+{
+    "fields": {
+        "name": "Safari",
+        "slug": "safari"
+    },
+    "model": "blog.tag",
+    "pk": 18
+},
+{
+    "fields": {
+        "name": "AppleScript",
+        "slug": "applescript"
+    },
+    "model": "blog.tag",
+    "pk": 19
+},
+{
+    "fields": {
+        "name": "Font",
+        "slug": "font"
+    },
+    "model": "blog.tag",
+    "pk": 20
+},
+{
+    "fields": {
+        "name": "Bridge",
+        "slug": "bridge"
+    },
+    "model": "blog.tag",
+    "pk": 21
+},
+{
     "fields": {
         "category": 1,
         "title": "\u5beb\u51fa\u80fd\u5728 Python 2 \u76f4\u8b6f\u5668\u57f7\u884c\u7684 Python 3 \u7a0b\u5f0f",
-        "_content_rendered": "<p>\u6211\u524d\u9663\u5b50\u5728 Facebook \u767c\u4e86\u4e00\u500b\u52d5\u614b</p>\n\n<p><img src=\"http://user-image.logdown.io/user/3184/blog/3218/post/168318/CXI0YAsnSqqdUM7SjxAJ_six_is_good.png\" alt=\"Six is good.\" /></p>\n\n<p>\u7136\u5f8c <a href=\"https://www.facebook.com/wenchang.hsu\">Tim Hsu</a> \u5c31\u5728\u4e0b\u9762\u7559\u8a00\u8868\u793a\u60f3\u807d <a href=\"http://pythonhosted.org/six/\">six</a> \u7684\u6771\u897f\u3002six \u662f\u500b\u597d\u6771\u897f\uff08\u5f88\u91cd\u8981\u6240\u4ee5\u518d\u8aaa\u4e00\u904d\uff09\uff0c\u6211\u4e0d\u6392\u65a5\u5206\u4eab\u4e00\u4e9b\u5fc3\u5f97\uff0c\u4e0d\u904e\u4e00\u4f86 six \u5f88\u77ed\uff0c\u4e8c\u4f86\u8981\u6e96\u5099 talk \u5f88\u9ebb\u7169\uff0c\u4e09\u4f86\u6c92\u4ec0\u9ebc\u6a5f\u6703\u53ef\u4ee5\u8b1b\uff0c\u56db\u4f86\u53ef\u80fd\u4e5f\u6c92\u6709\u592a\u591a\u4eba\u60f3\u807d\u6211\u8b1b\u8a71\uff0c\u6240\u4ee5\u6700\u5f8c\u6c7a\u5b9a\u4e0d\u5982\u66f4\u65b0\u4e00\u4e0b\u597d\u4e45\u6c92\u52d5\u7684 blog\u3002</p>\n\n<p>\u53ef\u662f\u9084\u6709\u4e00\u500b\u554f\u984c\uff1asix \u5f88\u77ed\u3002\u5982\u679c\u5149\u8b1b\u5b83\uff0c\u9019\u7bc7\u6587\u7ae0\u6703\u6c92\u4ec0\u9ebc\u5167\u5bb9\u3002\u6240\u4ee5\u4e0d\u5982\u5c31\u628a\u4e3b\u984c\u5b9a\u5f97\u5ee3\u4e00\u9ede\uff0c\u4e5f\u6703\u5c0d\u6bd4\u8f03\u591a\u4eba\u6709\u7528\u3002:)</p>\n\n<!-- more -->\n\n<h2>Python 3 Is Brilliant</h2>\n\n<p>Python 3 \u5f88\u68d2\u3002Python 3 \u662f <a href=\"https://www.dropbox.com/s/83ppa5iykqmr14z/Py2v3Hackers2013.pptx\">Guido \u7684\u771f\u611b</a>\u3002\u53ef\u662f\u5927\u5bb6\u9084\u662f\u6b7b\u5b88 Python 2.7\uff0c<a href=\"http://zh.wikipedia.org/wiki/Python#Python_3.0\">\u6700\u5f8c\u7684 Python 2</a> \u5821\u58d8\u2014\u2014\u70ba\u4e86\u7b2c\u4e09\u65b9\u5957\u4ef6\u3002\u300c\u7b2c\u4e09\u65b9\u5957\u4ef6\u7121\u6cd5\u652f\u63f4\u300d\u61c9\u8a72\u662f\u7d55\u5927\u591a\u6578\u4eba\u7121\u6cd5\u9806\u5229\u8f49\u79fb\u81f3 Python 3 \u7684\u539f\u56e0\uff1b\u76f4\u5230\u73fe\u5728\uff0c\u4ecd\u7136\u6709\u5f88\u591a\u53d7\u6b61\u8fce\u7684\u5957\u4ef6\u4e0d\u652f\u63f4 Python 3\uff0c\u5305\u62ec\uff1a</p>\n\n<ul>\n<li><a href=\"http://wxpython.org/\">wxPython</a></li>\n<li><a href=\"http://www.py2exe.org/\">py2exe</a></li>\n<li><a href=\"http://twistedmatrix.com/trac/\">Twisted</a></li>\n<li><a href=\"http://www.pygtk.org/\">PyGTK</a></li>\n<li><a href=\"http://web2py.com/init/default/index\">web2py</a></li>\n</ul>\n\n<p>\u53ef\u662f Python 3 \u771f\u7684\u5f88\u68d2\uff01\u5b83\u7d42\u65bc\u89e3\u6c7a\u4e86\u60f1\u4eba\u7684 <a href=\"http://pythonhosted.org/kitchen/unicode-frustrations.html\">Unicode \u554f\u984c</a>\uff0c\u5927\u5e45\u5ea6\u4fee\u6b63\u547d\u540d\u6163\u4f8b\u4e0d\u4e00\u81f4\u7684\u554f\u984c\uff0c\u66f4\u53bb\u9664\u4e86\u4e00\u4e9b\u539f\u672c\u56e0\u70ba\u5411\u5f8c\u76f8\u5bb9\u6027\u800c\u5b58\u5728\u7684<a href=\"http://python-history.blogspot.tw/2013/11/the-history-of-bool-true-and-false.html\">\u6f5b\u5728\u554f\u984c</a>\u3002\u800c\u4e14\uff0c\u96d6\u7136 Python 2.7 \u64c1\u6709<a href=\"http://www.python.org/dev/peps/pep-0373/\">\u300c\u5ef6\u9577\u7dad\u8b77\u671f\u300d\u7279\u6b0a</a>\uff0c\u7e3d\u6709\u4e00\u5929\u5b98\u65b9\u9084\u662f\u6703\u653e\u68c4\u652f\u63f4\u3002\u8207\u5176\u5230\u6642\u5019\u518d\u5927\u5e45\u6539\u5beb\u6211\u5011\u7684\u7a0b\u5f0f\uff0c\u4e0d\u5982\u53ca\u65e9\u958b\u59cb\u300c<a href=\"http://en.wikipedia.org/wiki/Forward_compatibility\">\u5411\u524d\u76f8\u5bb9</a>\u300d\u3002</p>\n\n<p>\u9019\u7bc7\u6587\u7ae0\u7684\u76ee\u7684\uff0c\u5c31\u662f\u8981\u8b93\u4f60\u53ef\u4ee5\u5beb\u51fa\u540c\u6642\u80fd\u5728 Python 2 \u8207 Python 3 \u9806\u5229\u57f7\u884c\u7684\u7a0b\u5f0f\u3002\u4f60\u9084\u662f\u53ef\u4ee5\u4f7f\u7528 Python 2 \u76f4\u8b6f\u5668\uff0c\u6240\u4ee5\u4e0d\u6703\u6709\u7b2c\u4e09\u65b9\u5957\u4ef6\u4e0d\u652f\u63f4\u7684\u7169\u60f1\uff1b\u53ef\u662f\u4f60\u6703\u5beb\u51fa\u5b8c\u5168\u5408\u6cd5\u7684 Python 3 \u7a0b\u5f0f\u78bc\uff0c\u6240\u4ee5\u4e5f\u4e0d\u5fc5\u7169\u60f1\u672a\u4f86\u6703\u4e0d\u6703\u9700\u8981\u984d\u5916\u7dad\u8b77\uff01</p>\n\n<h2>What&#8217;s New in Python 3</h2>\n\n<p>\u9996\u5148\uff0c\u6211\u5011\u5f97\u5148\u6574\u7406\u4e00\u4e0b Python 3 \u7a76\u7adf\u6709\u4ec0\u9ebc\u8207 Python 2 \u4e0d\u76f8\u5bb9\u7684\u5730\u65b9\u3002Guido \u5728 2009 \u7684<a href=\"http://docs.python.org/3.0/whatsnew/3.0.html\">\u6587\u7ae0</a>\u4e2d\u6709\u8a73\u76e1\u7684\u6574\u7406\u3002\u6211\u628a\u4e3b\u8981\u7684\u9805\u76ee\u5217\u5728\u4e0b\u9762\uff1a</p>\n\n<ol>\n<li><code>file</code> \u5167\u5efa\u578b\u5225\u88ab\u79fb\u81f3 <code>io</code> module \u5167\uff08\u4e26\u6539\u540d\uff09\u3002</li>\n<li>\u8a31\u591a\u539f\u672c\u56de\u50b3 <code>list</code> \u7684\u5167\u5efa\u51fd\u5f0f/\u65b9\u6cd5\u6539\u6210\u56de\u50b3 iterator\uff08\u5b98\u65b9\u7684\u540d\u7a31\u662f <em>view</em>\uff09\u3002</li>\n<li><code>True</code>\u3001<code>False</code> \u8207 <code>None</code> \u6210\u70ba\u4fdd\u7559\u5b57\u5143\u3002</li>\n<li>\u5728\u6355\u6349 exception \u6642\u82e5\u60f3\u70ba\u8a72\u5176\u8ce6\u540d\uff0c\u5fc5\u9808\u4f7f\u7528 <code>as</code> \u95dc\u9375\u5b57\uff08\u4f8b\u5982 <code>except TypeError as e</code>\uff1b\u820a\u5beb\u6cd5\u662f <code>except TypeError e</code>\uff09\u3002</li>\n<li>\u820a\u5f0f\u985e\u5225\u88ab\u79fb\u9664\u3002\u6240\u6709\u81ea\u8a02\u578b\u5225\u90fd\u5fc5\u9808\u7e7c\u627f\u81ea\u4e00\u500b\u578b\u5225\u3002</li>\n<li>\u516b\u9032\u4f4d\u5b57\u9762\u503c\u5fc5\u9808\u5beb\u6210 <code>0o10</code> \u800c\u975e <code>010</code>\uff08\u8a9e\u6cd5\u932f\u8aa4\uff09\u3002</li>\n<li>\u6574\u6578\u9664\u6cd5\u5fc5\u9808\u4f7f\u7528 <code>//</code>\uff0c\u539f\u672c\u7684 <code>/</code> \u904b\u7b97\u5b50\u6703\u81ea\u52d5\u8f49\u578b\u81f3\u6d6e\u9ede\u6578\u3002</li>\n<li><code>print</code> \u6210\u70ba\u51fd\u5f0f\uff0c\u800c\u975e statement\u3002</li>\n<li><code>str</code> \u7b49\u540c Python 2 \u7684 <code>unicode</code>\uff1b\u539f\u672c\u7684 <code>str</code> \u6539\u540d <code>bytes</code>\u3002<code>basestring</code> \u88ab\u79fb\u9664\u3002</li>\n<li><code>long</code> \u5167\u5efa\u578b\u5225\u6d88\u5931\uff0c\u7d71\u4e00\u70ba <code>int</code> \u4e14\u7121\u4e0a\u9650\u503c\uff08\u8207\u539f\u672c <code>long</code> \u7684\u884c\u70ba\u76f8\u540c\uff09\u3002<code>sys.maxint</code> \u5e38\u6578\u79fb\u9664\u3002</li>\n<li>Metaclass \u8a9e\u6cd5\u4fee\u6539\u3002</li>\n<li>\u8a31\u591a\u5167\u5efa\u6a21\u7d44\u8207\u578b\u5225\u88ab\u6539\u540d\u3001\u5408\u4f75\u3001\u6216\u8005\u79fb\u9664\u3002</li>\n</ol>\n\n<p>\u5927\u6982\u53ef\u4ee5\u628a\u9019\u4e9b\u9805\u76ee\u5206\u6210\u4e09\u985e\uff1a</p>\n\n<ol>\n<li>\u7b2c 1. \u81f3 6. \u9805\u3002\u9019\u4e9b\u9805\u76ee\u53ef\u4ee5\u85c9\u7531\u5efa\u7acb\u826f\u597d\u7684 coding style \u9054\u5230\u8a9e\u6cd5\u4e0a\uff08syntactic\uff09\u5b8c\u5168\u76f8\u5bb9\u3002\u67d0\u4e9b\u72c0\u6cc1\uff08\u4f8b\u5982 2.\uff09\u5176\u5be6\u5728\u5169\u8005\u9593\u4ecd\u7136\u6709\u8a9e\u610f\u4e0a\uff08semantic\uff09\u7684\u5dee\u7570\uff0c\u4f46\u53ef\u4ee5\u7528\u5176\u4ed6\u65b9\u5f0f\u89e3\u6c7a\u3002</li>\n<li>\u7b2c 7. \u81f3 10. \u9805\u3002\u9019\u4e9b\u9805\u76ee\u53ef\u4ee5\u85c9\u7531\u4e00\u4e9b\u7c21\u55ae\u7684\u624b\u6bb5\u9054\u5230\u5b8c\u5168\u76f8\u5bb9\u3002</li>\n<li>\u5176\u4ed6\u3002\u9019\u4e9b\u9805\u76ee\u6c92\u6709\u7c21\u55ae\u7684\u65b9\u6cd5\u53ef\u4ee5\u8655\u7406\u2014\u2014\u53ef\u662f\u9084\u662f\u6709\u65b9\u6cd5\u3002</li>\n</ol>\n\n<p>\u6240\u4ee5\u4ee5\u4e0a\u6240\u6709\u7684\u9805\u76ee\u5176\u5be6\u90fd\u6709\u89e3\uff01\u5728\u4e0b\u4e00\u7bc7\u6587\u7ae0\u4e2d\uff0c\u6211\u6703\u628a\u4e0a\u9762\u7684\u9805\u76ee\u8d70\u904e\u4e00\u904d\uff0c\u8aaa\u660e\u8981\u600e\u9ebc\u5beb\uff0c\u624d\u80fd\u540c\u6642\u7b26\u5408 Python 2 \u8207 Python 3 \u7684\u8a9e\u6cd5\u3002</p>\n\n<h2>\u66f4\u65b0</h2>\n\n<ul>\n<li><a href=\"http://uranusjr.logdown.com/posts/2013/12/20/write-python-3-codes-that-run-on-the-python-2-interpreter-2\">(2) \u826f\u597d\u7684 Coding Style</a></li>\n</ul>\n",
-        "published_at": "2013-12-20T03:34:00Z",
-        "content": "\u6211\u524d\u9663\u5b50\u5728 Facebook \u767c\u4e86\u4e00\u500b\u52d5\u614b\r\n\r\n![Six is good.](http://user-image.logdown.io/user/3184/blog/3218/post/168318/CXI0YAsnSqqdUM7SjxAJ_six_is_good.png)\r\n\r\n\u7136\u5f8c [Tim Hsu](https://www.facebook.com/wenchang.hsu) \u5c31\u5728\u4e0b\u9762\u7559\u8a00\u8868\u793a\u60f3\u807d [six](http://pythonhosted.org/six/) \u7684\u6771\u897f\u3002six \u662f\u500b\u597d\u6771\u897f\uff08\u5f88\u91cd\u8981\u6240\u4ee5\u518d\u8aaa\u4e00\u904d\uff09\uff0c\u6211\u4e0d\u6392\u65a5\u5206\u4eab\u4e00\u4e9b\u5fc3\u5f97\uff0c\u4e0d\u904e\u4e00\u4f86 six \u5f88\u77ed\uff0c\u4e8c\u4f86\u8981\u6e96\u5099 talk \u5f88\u9ebb\u7169\uff0c\u4e09\u4f86\u6c92\u4ec0\u9ebc\u6a5f\u6703\u53ef\u4ee5\u8b1b\uff0c\u56db\u4f86\u53ef\u80fd\u4e5f\u6c92\u6709\u592a\u591a\u4eba\u60f3\u807d\u6211\u8b1b\u8a71\uff0c\u6240\u4ee5\u6700\u5f8c\u6c7a\u5b9a\u4e0d\u5982\u66f4\u65b0\u4e00\u4e0b\u597d\u4e45\u6c92\u52d5\u7684 blog\u3002\r\n\r\n\u53ef\u662f\u9084\u6709\u4e00\u500b\u554f\u984c\uff1asix \u5f88\u77ed\u3002\u5982\u679c\u5149\u8b1b\u5b83\uff0c\u9019\u7bc7\u6587\u7ae0\u6703\u6c92\u4ec0\u9ebc\u5167\u5bb9\u3002\u6240\u4ee5\u4e0d\u5982\u5c31\u628a\u4e3b\u984c\u5b9a\u5f97\u5ee3\u4e00\u9ede\uff0c\u4e5f\u6703\u5c0d\u6bd4\u8f03\u591a\u4eba\u6709\u7528\u3002:)\r\n\r\n<!-- more -->\r\n\r\n## Python 3 Is Brilliant\r\n\r\nPython 3 \u5f88\u68d2\u3002Python 3 \u662f [Guido \u7684\u771f\u611b](https://www.dropbox.com/s/83ppa5iykqmr14z/Py2v3Hackers2013.pptx)\u3002\u53ef\u662f\u5927\u5bb6\u9084\u662f\u6b7b\u5b88 Python 2.7\uff0c[\u6700\u5f8c\u7684 Python 2](http://zh.wikipedia.org/wiki/Python#Python_3.0) \u5821\u58d8\u2014\u2014\u70ba\u4e86\u7b2c\u4e09\u65b9\u5957\u4ef6\u3002\u300c\u7b2c\u4e09\u65b9\u5957\u4ef6\u7121\u6cd5\u652f\u63f4\u300d\u61c9\u8a72\u662f\u7d55\u5927\u591a\u6578\u4eba\u7121\u6cd5\u9806\u5229\u8f49\u79fb\u81f3 Python 3 \u7684\u539f\u56e0\uff1b\u76f4\u5230\u73fe\u5728\uff0c\u4ecd\u7136\u6709\u5f88\u591a\u53d7\u6b61\u8fce\u7684\u5957\u4ef6\u4e0d\u652f\u63f4 Python 3\uff0c\u5305\u62ec\uff1a\r\n\r\n* [wxPython](http://wxpython.org/)\r\n* [py2exe](http://www.py2exe.org/)\r\n* [Twisted](http://twistedmatrix.com/trac/)\r\n* [PyGTK](http://www.pygtk.org/)\r\n* [web2py](http://web2py.com/init/default/index)\r\n\r\n\u53ef\u662f Python 3 \u771f\u7684\u5f88\u68d2\uff01\u5b83\u7d42\u65bc\u89e3\u6c7a\u4e86\u60f1\u4eba\u7684 [Unicode \u554f\u984c](http://pythonhosted.org/kitchen/unicode-frustrations.html)\uff0c\u5927\u5e45\u5ea6\u4fee\u6b63\u547d\u540d\u6163\u4f8b\u4e0d\u4e00\u81f4\u7684\u554f\u984c\uff0c\u66f4\u53bb\u9664\u4e86\u4e00\u4e9b\u539f\u672c\u56e0\u70ba\u5411\u5f8c\u76f8\u5bb9\u6027\u800c\u5b58\u5728\u7684[\u6f5b\u5728\u554f\u984c](http://python-history.blogspot.tw/2013/11/the-history-of-bool-true-and-false.html)\u3002\u800c\u4e14\uff0c\u96d6\u7136 Python 2.7 \u64c1\u6709[\u300c\u5ef6\u9577\u7dad\u8b77\u671f\u300d\u7279\u6b0a](http://www.python.org/dev/peps/pep-0373/)\uff0c\u7e3d\u6709\u4e00\u5929\u5b98\u65b9\u9084\u662f\u6703\u653e\u68c4\u652f\u63f4\u3002\u8207\u5176\u5230\u6642\u5019\u518d\u5927\u5e45\u6539\u5beb\u6211\u5011\u7684\u7a0b\u5f0f\uff0c\u4e0d\u5982\u53ca\u65e9\u958b\u59cb\u300c[\u5411\u524d\u76f8\u5bb9](http://en.wikipedia.org/wiki/Forward_compatibility)\u300d\u3002\r\n\r\n\u9019\u7bc7\u6587\u7ae0\u7684\u76ee\u7684\uff0c\u5c31\u662f\u8981\u8b93\u4f60\u53ef\u4ee5\u5beb\u51fa\u540c\u6642\u80fd\u5728 Python 2 \u8207 Python 3 \u9806\u5229\u57f7\u884c\u7684\u7a0b\u5f0f\u3002\u4f60\u9084\u662f\u53ef\u4ee5\u4f7f\u7528 Python 2 \u76f4\u8b6f\u5668\uff0c\u6240\u4ee5\u4e0d\u6703\u6709\u7b2c\u4e09\u65b9\u5957\u4ef6\u4e0d\u652f\u63f4\u7684\u7169\u60f1\uff1b\u53ef\u662f\u4f60\u6703\u5beb\u51fa\u5b8c\u5168\u5408\u6cd5\u7684 Python 3 \u7a0b\u5f0f\u78bc\uff0c\u6240\u4ee5\u4e5f\u4e0d\u5fc5\u7169\u60f1\u672a\u4f86\u6703\u4e0d\u6703\u9700\u8981\u984d\u5916\u7dad\u8b77\uff01\r\n\r\n## What's New in Python 3\r\n\r\n\u9996\u5148\uff0c\u6211\u5011\u5f97\u5148\u6574\u7406\u4e00\u4e0b Python 3 \u7a76\u7adf\u6709\u4ec0\u9ebc\u8207 Python 2 \u4e0d\u76f8\u5bb9\u7684\u5730\u65b9\u3002Guido \u5728 2009 \u7684[\u6587\u7ae0](http://docs.python.org/3.0/whatsnew/3.0.html)\u4e2d\u6709\u8a73\u76e1\u7684\u6574\u7406\u3002\u6211\u628a\u4e3b\u8981\u7684\u9805\u76ee\u5217\u5728\u4e0b\u9762\uff1a\r\n\r\n1. `file` \u5167\u5efa\u578b\u5225\u88ab\u79fb\u81f3 `io` module \u5167\uff08\u4e26\u6539\u540d\uff09\u3002\r\n2. \u8a31\u591a\u539f\u672c\u56de\u50b3 `list` \u7684\u5167\u5efa\u51fd\u5f0f/\u65b9\u6cd5\u6539\u6210\u56de\u50b3 iterator\uff08\u5b98\u65b9\u7684\u540d\u7a31\u662f *view*\uff09\u3002\r\n3. `True`\u3001`False` \u8207 `None` \u6210\u70ba\u4fdd\u7559\u5b57\u5143\u3002\r\n4. \u5728\u6355\u6349 exception \u6642\u82e5\u60f3\u70ba\u8a72\u5176\u8ce6\u540d\uff0c\u5fc5\u9808\u4f7f\u7528 `as` \u95dc\u9375\u5b57\uff08\u4f8b\u5982 `except TypeError as e`\uff1b\u820a\u5beb\u6cd5\u662f `except TypeError e`\uff09\u3002\r\n5. \u820a\u5f0f\u985e\u5225\u88ab\u79fb\u9664\u3002\u6240\u6709\u81ea\u8a02\u578b\u5225\u90fd\u5fc5\u9808\u7e7c\u627f\u81ea\u4e00\u500b\u578b\u5225\u3002\r\n6. \u516b\u9032\u4f4d\u5b57\u9762\u503c\u5fc5\u9808\u5beb\u6210 `0o10` \u800c\u975e `010`\uff08\u8a9e\u6cd5\u932f\u8aa4\uff09\u3002\r\n7. \u6574\u6578\u9664\u6cd5\u5fc5\u9808\u4f7f\u7528 `//`\uff0c\u539f\u672c\u7684 `/` \u904b\u7b97\u5b50\u6703\u81ea\u52d5\u8f49\u578b\u81f3\u6d6e\u9ede\u6578\u3002\r\n8. `print` \u6210\u70ba\u51fd\u5f0f\uff0c\u800c\u975e statement\u3002\r\n9. `str` \u7b49\u540c Python 2 \u7684 `unicode`\uff1b\u539f\u672c\u7684 `str` \u6539\u540d `bytes`\u3002`basestring` \u88ab\u79fb\u9664\u3002\r\n10. `long` \u5167\u5efa\u578b\u5225\u6d88\u5931\uff0c\u7d71\u4e00\u70ba `int` \u4e14\u7121\u4e0a\u9650\u503c\uff08\u8207\u539f\u672c `long` \u7684\u884c\u70ba\u76f8\u540c\uff09\u3002`sys.maxint` \u5e38\u6578\u79fb\u9664\u3002\r\n11. Metaclass \u8a9e\u6cd5\u4fee\u6539\u3002\r\n12. \u8a31\u591a\u5167\u5efa\u6a21\u7d44\u8207\u578b\u5225\u88ab\u6539\u540d\u3001\u5408\u4f75\u3001\u6216\u8005\u79fb\u9664\u3002\r\n\r\n\u5927\u6982\u53ef\u4ee5\u628a\u9019\u4e9b\u9805\u76ee\u5206\u6210\u4e09\u985e\uff1a\r\n\r\n1. \u7b2c 1. \u81f3 6. \u9805\u3002\u9019\u4e9b\u9805\u76ee\u53ef\u4ee5\u85c9\u7531\u5efa\u7acb\u826f\u597d\u7684 coding style \u9054\u5230\u8a9e\u6cd5\u4e0a\uff08syntactic\uff09\u5b8c\u5168\u76f8\u5bb9\u3002\u67d0\u4e9b\u72c0\u6cc1\uff08\u4f8b\u5982 2.\uff09\u5176\u5be6\u5728\u5169\u8005\u9593\u4ecd\u7136\u6709\u8a9e\u610f\u4e0a\uff08semantic\uff09\u7684\u5dee\u7570\uff0c\u4f46\u53ef\u4ee5\u7528\u5176\u4ed6\u65b9\u5f0f\u89e3\u6c7a\u3002\r\n2. \u7b2c 7. \u81f3 10. \u9805\u3002\u9019\u4e9b\u9805\u76ee\u53ef\u4ee5\u85c9\u7531\u4e00\u4e9b\u7c21\u55ae\u7684\u624b\u6bb5\u9054\u5230\u5b8c\u5168\u76f8\u5bb9\u3002\r\n3. \u5176\u4ed6\u3002\u9019\u4e9b\u9805\u76ee\u6c92\u6709\u7c21\u55ae\u7684\u65b9\u6cd5\u53ef\u4ee5\u8655\u7406\u2014\u2014\u53ef\u662f\u9084\u662f\u6709\u65b9\u6cd5\u3002\r\n\r\n\u6240\u4ee5\u4ee5\u4e0a\u6240\u6709\u7684\u9805\u76ee\u5176\u5be6\u90fd\u6709\u89e3\uff01\u5728\u4e0b\u4e00\u7bc7\u6587\u7ae0\u4e2d\uff0c\u6211\u6703\u628a\u4e0a\u9762\u7684\u9805\u76ee\u8d70\u904e\u4e00\u904d\uff0c\u8aaa\u660e\u8981\u600e\u9ebc\u5beb\uff0c\u624d\u80fd\u540c\u6642\u7b26\u5408 Python 2 \u8207 Python 3 \u7684\u8a9e\u6cd5\u3002\r\n\r\n## \u66f4\u65b0\r\n\r\n* [(2) \u826f\u597d\u7684 Coding Style](http://uranusjr.logdown.com/posts/2013/12/20/write-python-3-codes-that-run-on-the-python-2-interpreter-2)",
-        "state": "public",
-        "short_description": "\u6211\u524d\u9663\u5b50\u5728 Facebook \u767c\u4e86\u4e00\u500b\u52d5\u614b\uff0c\u7136\u5f8c Tim Hsu \u5c31\u5728\u4e0b\u9762\u7559\u8a00\u8868\u793a\u60f3\u807d six \u7684\u6771\u897f\u3002six \u662f\u500b\u597d\u6771\u897f\uff08\u5f88\u91cd\u8981\u6240\u4ee5\u518d\u8aaa\u4e00\u904d\uff09\uff0c\u6211\u4e0d\u6392\u65a5\u5206\u4eab\u4e00\u4e9b\u5fc3\u5f97\uff0c\u4e0d\u904e\u4e00\u4f86 six \u5f88\u77ed\uff0c\u4e8c\u4f86\u8981\u6e96\u5099 talk \u5f88\u9ebb\u7169\uff0c\u4e09\u4f86\u6c92\u4ec0\u9ebc\u6a5f\u6703\u53ef\u4ee5\u8b1b\uff0c\u56db\u4f86\u53ef\u80fd\u4e5f\u6c92\u6709\u592a\u591a\u4eba\u60f3\u807d\u6211\u8b1b\u8a71\uff0c\u6240\u4ee5\u6700\u5f8c\u6c7a\u5b9a\u4e0d\u5982\u66f4\u65b0\u4e00\u4e0b\u597d\u4e45\u6c92\u52d5\u7684 blog\u3002",
-        "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter",
         "tags": [
             1,
             2
-        ]
-    }
+        ],
+        "published_at": "2013-12-20T03:34:00Z",
+        "state": "public",
+        "short_description": "\u6211\u524d\u9663\u5b50\u5728 Facebook \u767c\u4e86\u4e00\u500b\u52d5\u614b\uff0c\u7136\u5f8c Tim Hsu \u5c31\u5728\u4e0b\u9762\u7559\u8a00\u8868\u793a\u60f3\u807d six \u7684\u6771\u897f\u3002six \u662f\u500b\u597d\u6771\u897f\uff08\u5f88\u91cd\u8981\u6240\u4ee5\u518d\u8aaa\u4e00\u904d\uff09\uff0c\u6211\u4e0d\u6392\u65a5\u5206\u4eab\u4e00\u4e9b\u5fc3\u5f97\uff0c\u4e0d\u904e\u4e00\u4f86 six \u5f88\u77ed\uff0c\u4e8c\u4f86\u8981\u6e96\u5099 talk \u5f88\u9ebb\u7169\uff0c\u4e09\u4f86\u6c92\u4ec0\u9ebc\u6a5f\u6703\u53ef\u4ee5\u8b1b\uff0c\u56db\u4f86\u53ef\u80fd\u4e5f\u6c92\u6709\u592a\u591a\u4eba\u60f3\u807d\u6211\u8b1b\u8a71\uff0c\u6240\u4ee5\u6700\u5f8c\u6c7a\u5b9a\u4e0d\u5982\u66f4\u65b0\u4e00\u4e0b\u597d\u4e45\u6c92\u52d5\u7684 blog\u3002",
+        "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter"
+    },
+    "model": "blog.post",
+    "pk": 1
 },
 {
-    "pk": 2,
-    "model": "blog.post",
     "fields": {
         "category": 1,
         "title": "\u5beb\u51fa\u80fd\u5728 Python 2 \u76f4\u8b6f\u5668\u57f7\u884c\u7684 Python 3 \u7a0b\u5f0f\uff1a\u826f\u597d\u7684 Coding Style",
-        "_content_rendered": "<p>\u5728<a href=\"http://uranusjr.logdown.com/posts/2013/12/20/write-python-3-codes-that-run-on-the-python-2-interpreter\">\u4e0a\u4e00\u7bc7\u6587\u7ae0</a>\u7d50\u675f\u524d\uff0c\u6211\u5217\u51fa\u4e86 Python 3 \u8207 Python 2 \u4e0d\u76f8\u5bb9\u7684\u4e3b\u8981\u539f\u56e0\uff0c\u4e26\u5c07\u5b83\u5011\u5206\u6210\u4e09\u985e\uff1a</p>\n\n<ol>\n<li>\u53ef\u4ee5\u85c9\u7531\u5efa\u7acb coding style \u9054\u5230\u8a9e\u6cd5\u4e0a\uff08syntactic\uff09\u5b8c\u5168\u76f8\u5bb9\u3002</li>\n<li>\u53ef\u4ee5\u85c9\u7531\u7c21\u55ae\u7684\u624b\u6bb5\u9054\u5230\u5b8c\u5168\u76f8\u5bb9\u3002</li>\n<li>\u6c92\u6709\u7c21\u55ae\u7684\u65b9\u6cd5\u53ef\u4ee5\u8655\u7406\u3002</li>\n</ol>\n\n<p>\u5728\u9019\u7bc7\u6587\u7ae0\u4e2d\uff0c\u6211\u6703\u8a0e\u8ad6\u7b2c\u4e00\u7a2e\u985e\u578b\uff0c\u4e5f\u5c31\u662f\u53ef\u4ee5\u76f4\u63a5\u85c9\u7531\u826f\u597d\u7684 coding style \u89e3\u6c7a\u7684\u554f\u984c\u3002Python 3 \u7684\u5f88\u591a\u65b0\u529f\u80fd\u5176\u5be6\u90fd\u6709\u88ab backport \u56de Python 2.6 \u8207 2.7\u3002\u53ea\u8981\u6ce8\u610f\u4f7f\u7528\u65b0\u7684\u5beb\u6cd5\uff0c\u5c31\u53ef\u4ee5\u89e3\u6c7a\u5f88\u591a Python 3 \u7684\u4e0d\u76f8\u5bb9\u554f\u984c\u3002\u4e8b\u5be6\u4e0a\uff0c <strong>\u5373\u4f7f\u4f60\u5b8c\u5168\u6c92\u6709\u7528 Python 3 \u7684\u6253\u7b97\uff0c\u65b0\u5beb\u6cd5\u9084\u662f\u6bd4\u8f03\u597d</strong>\uff0c\u56e0\u70ba\u5b83\u5011\u901a\u5e38\u66f4\u70ba\u6e05\u6670\uff0c\u4e5f\u88ab\u5927\u591a\u6578\u4eba\u6240\u559c\u611b\u3002</p>\n\n<!--more-->\n\n<h2><code>file</code> \u578b\u5225</h2>\n\n<p>\u5728 Python 2 \u4e2d\uff0c\u7576\u4f60\u958b\u555f\u4e00\u500b\u6a94\u6848\uff0c\u7372\u5f97\u7684 handle \u5c31\u6703\u5c6c\u65bc <code>file</code> \u5167\u5efa\u578b\u5225\u3002\u5728\u6700\u539f\u59cb\u7684 Python \u98a8\u683c\u4e2d\uff0c\u958b\u555f\u6a94\u6848\u7684\u8a9e\u6cd5\u5c31\u662f\u5efa\u69cb\u4e00\u500b\u65b0\u7684 <code>file</code> instance\uff1a</p>\n\n<div class=\"codehilite\"><pre><code>    <span class=\"n\">f</span> <span class=\"o\">=</span> <span class=\"nb\">file</span><span class=\"p\">(</span><span class=\"s\">&#39;/path/to/a/file&#39;</span><span class=\"p\">)</span>\n    <span class=\"c\"># Do things with the file</span>\n    <span class=\"n\">f</span><span class=\"o\">.</span><span class=\"n\">close</span><span class=\"p\">()</span>\n</code></pre></div>\n\n<p>\u4f46\u73fe\u5728\u7684 style \u63a8\u85a6\u4f7f\u7528\u5167\u5efa\u7684 <code>open</code> \u51fd\u5f0f\uff0c\u800c\u4e0d\u8981\u76f4\u63a5\u547c\u53eb <code>file</code>\u3002\u8acb\u628a\u7b2c\u4e00\u884c\u6539\u6210</p>\n\n<div class=\"codehilite\"><pre><code>    <span class=\"n\">f</span> <span class=\"o\">=</span> <span class=\"nb\">open</span><span class=\"p\">(</span><span class=\"s\">&#39;/path/to/a/file&#39;</span><span class=\"p\">)</span>\n</code></pre></div>\n\n<h2>\u56de\u50b3 iterator \u6216 sequence \u7684\u51fd\u5f0f</h2>\n\n<p>\u5728\u5f88\u591a\u72c0\u6cc1\u4e0b\uff0c\u56de\u50b3 iterator \u9084\u662f sequence\uff08<code>list</code> \u6216 <code>tuple</code> \u7b49\u985e\u5225\u7684 instance\uff09\u5176\u5be6\u6c92\u6709\u592a\u5927\u5dee\u7570\u3002\u5982\u679c\u4f60\u6709\u500b\u8ff4\u5708</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"n\">fruit_counts</span> <span class=\"o\">=</span> <span class=\"p\">{</span><span class=\"s\">&#39;apple&#39;</span><span class=\"p\">:</span> <span class=\"mi\">4</span><span class=\"p\">,</span> <span class=\"s\">&#39;orange&#39;</span><span class=\"p\">:</span> <span class=\"mi\">6</span><span class=\"p\">}</span>\n\n<span class=\"k\">for</span> <span class=\"n\">fruit</span><span class=\"p\">,</span> <span class=\"n\">count</span> <span class=\"ow\">in</span> <span class=\"n\">fruit_counts</span><span class=\"o\">.</span><span class=\"n\">keys</span><span class=\"p\">():</span>\n    <span class=\"c\"># Do some things...</span>\n</code></pre></div>\n\n<p>\u90a3\u9ebc\u4e0d\u8ad6 <code>keys</code> \u56de\u50b3\u7684\u662f <code>list</code>, iterator, <em>view</em> \u9084\u662f\u4ec0\u9ebc\u5176\u4ed6\u9b3c\u6771\u897f\uff0c\u53ea\u8981\u5b83\u662f iterable\uff0c\u5176\u5be6\u90fd\u6c92\u6709\u95dc\u4fc2\u3002\u53ea\u8981\u5805\u6301\u5728 Python 2 \u4f7f\u7528\u300c\u7121\u5370\u300d\u7684\u7248\u672c\uff08\u4f8b\u5982 <code>dict</code> \u7684 <code>keys</code>\u3001<code>values</code>\u3001<code>items</code>\uff0c\u4ee5\u53ca\u5167\u5efa\u7684 <code>range</code> \u7b49\u7b49\uff09\uff0c\u800c\u4e0d\u8981\u7528\u56de\u50b3 iterator \u7684\u300c\u52a0\u5f37\u7248\u300d\uff08<code>iterkeys</code>\u3001<code>itervalues</code>\u3001<code>iteritems</code>\u3001<code>xrange</code> \u7b49\u7b49\uff09\uff0c\u5c31\u53ef\u4ee5\u4fdd\u8b49\u8f49\u79fb\u5230 Python 3 \u6642\u4e0d\u6703\u51fa\u932f\uff08\u5167\u90e8\u5be6\u4f5c\u6709\u8b8a\uff0c\u56e0\u70ba\u6539\u56de\u50b3 iterator\uff0c\u4e0d\u904e\u5728\u8a9e\u6cd5\u4e0a\u4e0d\u5f71\u97ff\uff09\u3002</p>\n\n<p>\u9019\u4e0d\u662f\u842c\u5168\u7684\u89e3\u3002\u5982\u679c\u4f60\u5fc5\u9808\u4fdd\u8b49\u5f97\u5230\u7684\u662f sequence\uff0c\u90a3\u9ebc\u5c31\u8981\u7a0d\u5fae\u6ce8\u610f\uff1a</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"c\"># \u5728 Python 2 \u662f list, \u4f46 Python 3 \u662f iterator</span>\n<span class=\"n\">counts1</span> <span class=\"o\">=</span> <span class=\"n\">fruit_counts</span><span class=\"o\">.</span><span class=\"n\">values</span><span class=\"p\">()</span>\n\n<span class=\"c\"># \u4fdd\u8b49\u662f list</span>\n<span class=\"n\">counts2</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"p\">(</span><span class=\"n\">counts1</span><span class=\"p\">)</span>\n</code></pre></div>\n\n<p>\u7576\u7136\uff0c\u9019\u6703\u5f71\u97ff\u6548\u80fd\u3002\u5982\u679c\u4f60\u5fc5\u9808\u5728 Python 2 \u4f7f\u7528\u56de\u50b3 iterator \u7684\u51fd\u5f0f\uff0c\u5c31\u9700\u8981\u984d\u5916\u7684\u8f14\u52a9\u3002\u6211\u5011\u4e4b\u5f8c\u6703\u518d\u8655\u7406\u9019\u500b\u554f\u984c\u3002</p>\n\n<h2>\u65b0\u7684\u4fdd\u7559\u5b57\u5143</h2>\n\n<p>\u5728 Python 2 \u4e2d\uff0c\u7531\u65bc\u6b77\u53f2\u56e0\u7d20\uff0c\u6709\u4e9b\u770b\u8d77\u4f86\u50cf\u7cfb\u7d71\u5e38\u6578\u7684\u540d\u7a31\u5176\u5be6 <strong>\u4e0d\u662f\u4fdd\u7559\u5b57</strong>\u3002\u9019\u4ee3\u8868\u4f60\u5728 Python 2 \u5176\u5be6\u53ef\u4ee5\u9019\u6a23\u80e1\u641e\uff1a</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"bp\">True</span> <span class=\"o\">=</span> <span class=\"mi\">0</span>\n\n<span class=\"k\">if</span> <span class=\"bp\">True</span><span class=\"p\">:</span>\n    <span class=\"c\"># \u4e0d\u6703\u88ab\u57f7\u884c\uff01</span>\n    <span class=\"k\">pass</span>\n</code></pre></div>\n\n<p>Python 3 \u6253\u7834\u4e86\u5411\u5f8c\u76f8\u5bb9\uff0c\u6240\u4ee5\u53ef\u4ee5\u8d81\u6a5f\u628a\u9019\u4e9b\u6b77\u53f2\u907a\u6bd2\u6e05\u6389\uff0c\u4f7f\u4e0a\u9762\u7684\u7a0b\u5f0f\u8b8a\u5f97\u4e0d\u5408\u6cd5\u3002\u4f46\u4e0d\u8ad6\u5728\u4ec0\u9ebc\u7248\u672c\uff0c\u4f60\u90fd\u4e0d\u61c9\u8a72\u5beb\u51fa\u9019\u7a2e\u6771\u897f\uff0c\u6240\u4ee5\u9019\u57fa\u672c\u4e0a\u4e0d\u662f\u554f\u984c\u3002</p>\n\n<h2>\u65b0\u7684\u4f8b\u5916\u8ce6\u540d\u8a9e\u6cd5</h2>\n\n<p>\u65b0\u7684\u8a9e\u6cd5</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"n\">values</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"s\">&#39;a&#39;</span><span class=\"p\">]</span>\n<span class=\"k\">try</span><span class=\"p\">:</span>\n    <span class=\"n\">integer_value</span> <span class=\"o\">=</span> <span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"n\">values</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">])</span>\n<span class=\"k\">except</span> <span class=\"ne\">ValueError</span> <span class=\"k\">as</span> <span class=\"n\">e</span><span class=\"p\">:</span>\n    <span class=\"n\">log_error</span><span class=\"p\">(</span><span class=\"n\">e</span><span class=\"p\">)</span>\n</code></pre></div>\n\n<p>\u5f9e Python 2.6 \u5c31\u5b58\u5728\u4e86\uff0c\u5982\u679c\u4f60\u73fe\u5728\u5c1a\u672a\u63a1\u7528\uff0c\u8acb\u7acb\u523b\u4fee\u6b63\u3002\u820a\u7684\u8a9e\u6cd5</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"n\">values</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"s\">&#39;a&#39;</span><span class=\"p\">]</span>\n<span class=\"k\">try</span><span class=\"p\">:</span>\n    <span class=\"n\">integer_value</span> <span class=\"o\">=</span> <span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"n\">values</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">])</span>\n<span class=\"k\">except</span> <span class=\"ne\">ValueError</span><span class=\"p\">,</span> <span class=\"n\">e</span><span class=\"p\">:</span>\n    <span class=\"n\">log_error</span><span class=\"p\">(</span><span class=\"n\">e</span><span class=\"p\">)</span>\n</code></pre></div>\n\n<p>\u5728 Python 2 \u8207\u4e0a\u9762\u7684\u65b0\u8a9e\u6cd5\u5b8c\u5168\u5c0d\u7b49\uff0c\u4f46\u662f\u76f8\u5c0d\u8d77\u4f86\u8f03\u4e0d\u660e\u78ba\uff0c\u800c\u4e14\u5bb9\u6613\u548c\u540c\u6642\u6355\u6349\u591a\u7a2e\u4f8b\u5916\u7684\u8a9e\u6cd5\u641e\u6df7\uff1a</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"n\">values</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"s\">&#39;a&#39;</span><span class=\"p\">]</span>\n<span class=\"k\">try</span><span class=\"p\">:</span>\n    <span class=\"n\">integer_value</span> <span class=\"o\">=</span> <span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"n\">values</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">])</span>\n<span class=\"k\">except</span> <span class=\"p\">(</span><span class=\"ne\">ValueError</span><span class=\"p\">,</span> <span class=\"ne\">IndexError</span><span class=\"p\">):</span>\n    <span class=\"k\">pass</span>\n</code></pre></div>\n\n<p>\u6240\u4ee5\u7121\u8ad6\u5982\u4f55\uff0c\u8acb\u907f\u514d\u4f7f\u7528\u820a\u8a9e\u6cd5\uff0c\u63a1\u7528\u65b0\u7684 <code>as</code> \u95dc\u9375\u5b57\u3002</p>\n\n<h2>\u820a\u5f0f\u985e\u5225\u88ab\u79fb\u9664</h2>\n\n<p>\u820a\u5f0f\u985e\u5225\u6307\u7684\u662f\u6c92\u6709 parent class \u7684\u81ea\u8a02\u578b\u5225\uff0c\u4ee5\u53ca\u7e7c\u627f\u9019\u985e\u985e\u5225\u7684 child classes\u3002\u4f8b\u5982\uff1a</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"k\">class</span> <span class=\"nc\">MyClass</span><span class=\"p\">:</span>\n    <span class=\"k\">pass</span>\n</code></pre></div>\n\n<p>\u9019\u500b\u8a9e\u6cd5\u5f9e\u61c9\u8a72\u662f 2.2 \u958b\u59cb\u5c31\u88ab\u6368\u68c4\u4e86\uff0c\u5b58\u6d3b\u5230\u4eca\u5929\u7d14\u7cb9\u53ea\u662f\u6b77\u53f2\u56e0\u7d20\u3002\u4e0d\u8ad6\u5728\u4efb\u4f55\u72c0\u6cc1\uff0c\u8acb\u7e7c\u627f\u81ea\u5167\u5efa\u578b\u5225\u6216\u5176\u4ed6\u81ea\u8a02\u578b\u5225\uff1b\u5982\u679c\u4f60\u4e0d\u77e5\u9053\u8981\u7e7c\u627f\u4ec0\u9ebc\uff0c\u8acb\u7e7c\u627f <code>object</code>\uff1a</p>\n\n<div class=\"codehilite\"><pre><code><span class=\"k\">class</span> <span class=\"nc\">MyClass</span><span class=\"p\">(</span><span class=\"nb\">object</span><span class=\"p\">):</span>\n    <span class=\"k\">pass</span>\n</code></pre></div>\n\n<p>\u65b0\u5f0f\u985e\u5225<a href=\"https://wiki.python.org/moin/NewClassVsClassicClass\">\u597d\u8655\u591a\u591a</a>\uff0c\u4e0d\u904e\u5169\u8005\u4e4b\u9593\u7684\u5dee\u5225\u4e0d\u5728\u672c\u6587\u7bc4\u7587\uff0c\u8acb\u81ea\u884c\u7814\u7a76\u3002:)</p>\n\n<h2>\u5176\u4ed6\u65b0\u8a9e\u6cd5\uff0c\u4ee5\u53ca Python 3 \u79fb\u9664\u7684\u820a\u8a9e\u6cd5</h2>\n\n<p>\u6bd4\u8d77\u4e0a\u9762\u7684\u9805\u76ee\uff0c\u5176\u4ed6\u7684\u8a9e\u6cd5\u4fee\u6b63\u5176\u5be6\u4e0d\u898b\u5f97\u6709\u5176\u4ed6\u597d\u8655\uff0c\u53ea\u662f\u7fd2\u6163\u554f\u984c\u3002</p>\n\n<p>\u4ee5\u516b\u9032\u4f4d\u6574\u6578\u70ba\u4f8b\uff0c\u820a\u7684\u8a9e\u6cd5\u627f\u8972 C \u7684\u6e96\u5247\uff0c\u5728\u6574\u6578\u524d\u52a0 <code>0</code> \u4ee3\u8868\u516b\u9032\u4f4d\uff08\u6240\u4ee5 <code>012</code> \u662f\u5341\u9032\u4f4d\u7684 10\uff09\u3002\u70ba\u4e86\u6e05\u6670\u8d77\u898b\uff0cPython 3 \u53ea\u63a5\u53d7 <code>0o</code>\uff08\u4e00\u500b\u96f6\uff0c\u7136\u5f8c\u4e00\u500b\u5c0f\u5beb o\uff09\u524d\u7db4\uff0c\u6240\u4ee5 10 \u8981\u5beb\u6210 <code>0o12</code>\uff0c\u820a\u5beb\u6cd5\u6703\u62cb\u51fa <code>SyntaxError</code>\u3002\u4f46\u662f\u65b0\u5beb\u6cd5\u5df2\u7d93 backport \u56de 2.6 \u4ee5\u4e0a\u7248\u672c\u4e86\uff0c\u6240\u4ee5\u53ea\u8981\u8a18\u5f97\u4f7f\u7528\u65b0\u5beb\u6cd5\u5c31\u4e0d\u6703\u6709\u554f\u984c\uff01</p>\n\n<p>\u53e6\u4e00\u500b\u6bd4\u8f03\u5e38\u898b\u7684\u8a9e\u6cd5\u662f <code>b''</code> \u5b57\u9762\u503c\u3002\u5728 Python 3 \u4e2d\uff0c<code>''</code>\u5b57\u9762\u503c\u6703\u7522\u751f\u4e00\u500b Unicode \u6587\u5b57\u7269\u4ef6\uff08\u5c0d\u61c9\u5230 Python 2 \u7684 <code>unicode</code>\uff09\uff0c\u6240\u4ee5\u539f\u672c\u7684 8-bit byte array \u7269\u4ef6\uff08\u5c0d\u61c9\u5230 Python 2 <code>str</code>\uff09\u5c31\u6539\u7528\u524d\u7db4 <code>b</code> \u7684\u6a19\u8a18\u3002\u9019\u500b\u8a9e\u6cd5\u540c\u6a23\u6709 backport \u56de 2.6 \u4ee5\u4e0a\uff0c\u6240\u4ee5\u5982\u679c\u4f60\u9700\u8981\u8868\u793a\u7684\u662f encoded byte array \u800c\u975e text\uff08\u5728\u6578\u64da\u50b3\u8f38\u7b49\u61c9\u7528\u4e0a\u9700\u8981\uff09\uff0c\u53ef\u4ee5\u76e1\u91cf\u6539\u7528\u65b0\u5beb\u6cd5\u4ee5\u907f\u514d\u8a9e\u610f\u6a21\u7cca\u7684\u554f\u984c\u3002</p>\n\n<p>\u53e6\u4e00\u65b9\u9762\uff0c\u539f\u672c Python 2 \u7528\u4f86\u7522\u751f Unicode literal \u7684\u8a9e\u6cd5 <code>u''</code> \u5728 Python 3.0 \u958b\u59cb\u88ab\u522a\u9664\u3002\u4f46\u7531\u65bc\u53cd\u5f48\u8072\u6d6a\u904e\u5927\uff0c\u5f9e Python 3.3 \u8d77\u9019\u500b\u8a9e\u6cd5\u91cd\u65b0\u6210\u70ba\u5408\u6cd5\uff0c\u5728 Python 3 \u4e2d\u7522\u751f <code>str</code> \u7269\u4ef6\u3002\u5982\u679c\u4f60\u5df2\u7d93\u5728\u8655\u7406 text contents \u6642\u4f7f\u7528 <code>u''</code>\uff0c\u5f88\u597d\uff0c\u8acb\u7e7c\u7e8c\u9019\u9ebc\u505a\uff01</p>\n\n<p>\u611f\u8b1d Python \u6838\u5fc3\u793e\u7fa4\u5728 backporting \u4e0a\u6295\u6ce8\u7684\u5fc3\u529b\uff0c\u4f60\u53ea\u8981\u7a0d\u5fae\u4fee\u6b63\u4e00\u4e9b coding convention\uff0c\u5c31\u53ef\u4ee5\u5728\u7c21\u55ae\u7684\u7a0b\u5f0f\u4e2d\u5b8c\u5168\u76f8\u5bb9 Python 3 \u8207 Python 2.6/2.7\u3002\u5728\u4e0b\u4e00\u7bc7\u4e2d\uff0c\u6211\u6703\u4ecb\u7d39\u4e00\u4e9b Python\u300c\u5167\u5efa\u300d\u7684\u5de5\u5177\uff0c\u8b93\u5176\u4ed6\u57fa\u672c\u529f\u80fd\u4e5f\u80fd\u96d9\u9762\u76f8\u5bb9\u3002\u5b57\u4e32\u578b\u614b\u5728 Python \u4e2d\u662f\u975e\u5e38\u91cd\u8981\u7684\u578b\u5225\uff0c\u6240\u4ee5 Python 3 \u7684\u5b57\u4e32\u578b\u614b\u4fee\u6b63\u5f71\u97ff\u975e\u5e38\u5927\uff0c\u6240\u4ee5\u4e5f\u7576\u7136\u6709\u5167\u5efa\u7684\u5de5\u5177\u53ef\u4ee5\u5354\u52a9\u4f60\u8655\u7406\u3002\u5728\u4e0b\u4e00\u7bc7\u4e2d\uff0c\u4e5f\u6703\u56de\u904e\u982d\u4f86\u9032\u4e00\u6b65\u8a0e\u8ad6\u5b57\u4e32\u578b\u614b\u76f8\u5bb9\u6027\u554f\u984c\u3002</p>\n",
-        "published_at": "2013-12-20T05:28:00Z",
-        "content": "\u5728[\u4e0a\u4e00\u7bc7\u6587\u7ae0](http://uranusjr.logdown.com/posts/2013/12/20/write-python-3-codes-that-run-on-the-python-2-interpreter)\u7d50\u675f\u524d\uff0c\u6211\u5217\u51fa\u4e86 Python 3 \u8207 Python 2 \u4e0d\u76f8\u5bb9\u7684\u4e3b\u8981\u539f\u56e0\uff0c\u4e26\u5c07\u5b83\u5011\u5206\u6210\u4e09\u985e\uff1a\r\n\r\n1. \u53ef\u4ee5\u85c9\u7531\u5efa\u7acb coding style \u9054\u5230\u8a9e\u6cd5\u4e0a\uff08syntactic\uff09\u5b8c\u5168\u76f8\u5bb9\u3002\r\n2. \u53ef\u4ee5\u85c9\u7531\u7c21\u55ae\u7684\u624b\u6bb5\u9054\u5230\u5b8c\u5168\u76f8\u5bb9\u3002\r\n3. \u6c92\u6709\u7c21\u55ae\u7684\u65b9\u6cd5\u53ef\u4ee5\u8655\u7406\u3002\r\n\r\n\u5728\u9019\u7bc7\u6587\u7ae0\u4e2d\uff0c\u6211\u6703\u8a0e\u8ad6\u7b2c\u4e00\u7a2e\u985e\u578b\uff0c\u4e5f\u5c31\u662f\u53ef\u4ee5\u76f4\u63a5\u85c9\u7531\u826f\u597d\u7684 coding style \u89e3\u6c7a\u7684\u554f\u984c\u3002Python 3 \u7684\u5f88\u591a\u65b0\u529f\u80fd\u5176\u5be6\u90fd\u6709\u88ab backport \u56de Python 2.6 \u8207 2.7\u3002\u53ea\u8981\u6ce8\u610f\u4f7f\u7528\u65b0\u7684\u5beb\u6cd5\uff0c\u5c31\u53ef\u4ee5\u89e3\u6c7a\u5f88\u591a Python 3 \u7684\u4e0d\u76f8\u5bb9\u554f\u984c\u3002\u4e8b\u5be6\u4e0a\uff0c **\u5373\u4f7f\u4f60\u5b8c\u5168\u6c92\u6709\u7528 Python 3 \u7684\u6253\u7b97\uff0c\u65b0\u5beb\u6cd5\u9084\u662f\u6bd4\u8f03\u597d**\uff0c\u56e0\u70ba\u5b83\u5011\u901a\u5e38\u66f4\u70ba\u6e05\u6670\uff0c\u4e5f\u88ab\u5927\u591a\u6578\u4eba\u6240\u559c\u611b\u3002\r\n\r\n<!--more-->\r\n\r\n## `file` \u578b\u5225\r\n\r\n\u5728 Python 2 \u4e2d\uff0c\u7576\u4f60\u958b\u555f\u4e00\u500b\u6a94\u6848\uff0c\u7372\u5f97\u7684 handle \u5c31\u6703\u5c6c\u65bc `file` \u5167\u5efa\u578b\u5225\u3002\u5728\u6700\u539f\u59cb\u7684 Python \u98a8\u683c\u4e2d\uff0c\u958b\u555f\u6a94\u6848\u7684\u8a9e\u6cd5\u5c31\u662f\u5efa\u69cb\u4e00\u500b\u65b0\u7684 `file` instance\uff1a\r\n\r\n```python\r\n    f = file('/path/to/a/file')\r\n    # Do things with the file\r\n    f.close()\r\n```\r\n    \r\n\u4f46\u73fe\u5728\u7684 style \u63a8\u85a6\u4f7f\u7528\u5167\u5efa\u7684 `open` \u51fd\u5f0f\uff0c\u800c\u4e0d\u8981\u76f4\u63a5\u547c\u53eb `file`\u3002\u8acb\u628a\u7b2c\u4e00\u884c\u6539\u6210\r\n\r\n```python\r\n    f = open('/path/to/a/file')\r\n```\r\n\r\n## \u56de\u50b3 iterator \u6216 sequence \u7684\u51fd\u5f0f\r\n\r\n\u5728\u5f88\u591a\u72c0\u6cc1\u4e0b\uff0c\u56de\u50b3 iterator \u9084\u662f sequence\uff08`list` \u6216 `tuple` \u7b49\u985e\u5225\u7684 instance\uff09\u5176\u5be6\u6c92\u6709\u592a\u5927\u5dee\u7570\u3002\u5982\u679c\u4f60\u6709\u500b\u8ff4\u5708\r\n\r\n```python\r\nfruit_counts = {'apple': 4, 'orange': 6}\r\n\r\nfor fruit, count in fruit_counts.keys():\r\n    # Do some things...\r\n```\r\n\r\n\u90a3\u9ebc\u4e0d\u8ad6 `keys` \u56de\u50b3\u7684\u662f `list`, iterator, *view* \u9084\u662f\u4ec0\u9ebc\u5176\u4ed6\u9b3c\u6771\u897f\uff0c\u53ea\u8981\u5b83\u662f iterable\uff0c\u5176\u5be6\u90fd\u6c92\u6709\u95dc\u4fc2\u3002\u53ea\u8981\u5805\u6301\u5728 Python 2 \u4f7f\u7528\u300c\u7121\u5370\u300d\u7684\u7248\u672c\uff08\u4f8b\u5982 `dict` \u7684 `keys`\u3001`values`\u3001`items`\uff0c\u4ee5\u53ca\u5167\u5efa\u7684 `range` \u7b49\u7b49\uff09\uff0c\u800c\u4e0d\u8981\u7528\u56de\u50b3 iterator \u7684\u300c\u52a0\u5f37\u7248\u300d\uff08`iterkeys`\u3001`itervalues`\u3001`iteritems`\u3001`xrange` \u7b49\u7b49\uff09\uff0c\u5c31\u53ef\u4ee5\u4fdd\u8b49\u8f49\u79fb\u5230 Python 3 \u6642\u4e0d\u6703\u51fa\u932f\uff08\u5167\u90e8\u5be6\u4f5c\u6709\u8b8a\uff0c\u56e0\u70ba\u6539\u56de\u50b3 iterator\uff0c\u4e0d\u904e\u5728\u8a9e\u6cd5\u4e0a\u4e0d\u5f71\u97ff\uff09\u3002\r\n\r\n\u9019\u4e0d\u662f\u842c\u5168\u7684\u89e3\u3002\u5982\u679c\u4f60\u5fc5\u9808\u4fdd\u8b49\u5f97\u5230\u7684\u662f sequence\uff0c\u90a3\u9ebc\u5c31\u8981\u7a0d\u5fae\u6ce8\u610f\uff1a\r\n\r\n```python\r\n# \u5728 Python 2 \u662f list, \u4f46 Python 3 \u662f iterator\r\ncounts1 = fruit_counts.values()\r\n\r\n# \u4fdd\u8b49\u662f list\r\ncounts2 = list(counts1)\r\n```\r\n\r\n\u7576\u7136\uff0c\u9019\u6703\u5f71\u97ff\u6548\u80fd\u3002\u5982\u679c\u4f60\u5fc5\u9808\u5728 Python 2 \u4f7f\u7528\u56de\u50b3 iterator \u7684\u51fd\u5f0f\uff0c\u5c31\u9700\u8981\u984d\u5916\u7684\u8f14\u52a9\u3002\u6211\u5011\u4e4b\u5f8c\u6703\u518d\u8655\u7406\u9019\u500b\u554f\u984c\u3002\r\n\r\n## \u65b0\u7684\u4fdd\u7559\u5b57\u5143\r\n\r\n\u5728 Python 2 \u4e2d\uff0c\u7531\u65bc\u6b77\u53f2\u56e0\u7d20\uff0c\u6709\u4e9b\u770b\u8d77\u4f86\u50cf\u7cfb\u7d71\u5e38\u6578\u7684\u540d\u7a31\u5176\u5be6 **\u4e0d\u662f\u4fdd\u7559\u5b57**\u3002\u9019\u4ee3\u8868\u4f60\u5728 Python 2 \u5176\u5be6\u53ef\u4ee5\u9019\u6a23\u80e1\u641e\uff1a\r\n\r\n```python\r\nTrue = 0\r\n\r\nif True:\r\n    # \u4e0d\u6703\u88ab\u57f7\u884c\uff01\r\n    pass\r\n```\r\n\r\nPython 3 \u6253\u7834\u4e86\u5411\u5f8c\u76f8\u5bb9\uff0c\u6240\u4ee5\u53ef\u4ee5\u8d81\u6a5f\u628a\u9019\u4e9b\u6b77\u53f2\u907a\u6bd2\u6e05\u6389\uff0c\u4f7f\u4e0a\u9762\u7684\u7a0b\u5f0f\u8b8a\u5f97\u4e0d\u5408\u6cd5\u3002\u4f46\u4e0d\u8ad6\u5728\u4ec0\u9ebc\u7248\u672c\uff0c\u4f60\u90fd\u4e0d\u61c9\u8a72\u5beb\u51fa\u9019\u7a2e\u6771\u897f\uff0c\u6240\u4ee5\u9019\u57fa\u672c\u4e0a\u4e0d\u662f\u554f\u984c\u3002\r\n\r\n## \u65b0\u7684\u4f8b\u5916\u8ce6\u540d\u8a9e\u6cd5\r\n\r\n\u65b0\u7684\u8a9e\u6cd5\r\n\r\n```python\r\nvalues = ['a']\r\ntry:\r\n    integer_value = int(values[0])\r\nexcept ValueError as e:\r\n    log_error(e)\r\n```\r\n\r\n\u5f9e Python 2.6 \u5c31\u5b58\u5728\u4e86\uff0c\u5982\u679c\u4f60\u73fe\u5728\u5c1a\u672a\u63a1\u7528\uff0c\u8acb\u7acb\u523b\u4fee\u6b63\u3002\u820a\u7684\u8a9e\u6cd5\r\n\r\n```python\r\nvalues = ['a']\r\ntry:\r\n    integer_value = int(values[0])\r\nexcept ValueError, e:\r\n    log_error(e)\r\n```\r\n\r\n\u5728 Python 2 \u8207\u4e0a\u9762\u7684\u65b0\u8a9e\u6cd5\u5b8c\u5168\u5c0d\u7b49\uff0c\u4f46\u662f\u76f8\u5c0d\u8d77\u4f86\u8f03\u4e0d\u660e\u78ba\uff0c\u800c\u4e14\u5bb9\u6613\u548c\u540c\u6642\u6355\u6349\u591a\u7a2e\u4f8b\u5916\u7684\u8a9e\u6cd5\u641e\u6df7\uff1a\r\n\r\n```python\r\nvalues = ['a']\r\ntry:\r\n    integer_value = int(values[0])\r\nexcept (ValueError, IndexError):\r\n    pass\r\n```\r\n\r\n\u6240\u4ee5\u7121\u8ad6\u5982\u4f55\uff0c\u8acb\u907f\u514d\u4f7f\u7528\u820a\u8a9e\u6cd5\uff0c\u63a1\u7528\u65b0\u7684 `as` \u95dc\u9375\u5b57\u3002\r\n\r\n## \u820a\u5f0f\u985e\u5225\u88ab\u79fb\u9664\r\n\r\n\u820a\u5f0f\u985e\u5225\u6307\u7684\u662f\u6c92\u6709 parent class \u7684\u81ea\u8a02\u578b\u5225\uff0c\u4ee5\u53ca\u7e7c\u627f\u9019\u985e\u985e\u5225\u7684 child classes\u3002\u4f8b\u5982\uff1a\r\n\r\n```python\r\nclass MyClass:\r\n    pass\r\n```\r\n\r\n\u9019\u500b\u8a9e\u6cd5\u5f9e\u61c9\u8a72\u662f 2.2 \u958b\u59cb\u5c31\u88ab\u6368\u68c4\u4e86\uff0c\u5b58\u6d3b\u5230\u4eca\u5929\u7d14\u7cb9\u53ea\u662f\u6b77\u53f2\u56e0\u7d20\u3002\u4e0d\u8ad6\u5728\u4efb\u4f55\u72c0\u6cc1\uff0c\u8acb\u7e7c\u627f\u81ea\u5167\u5efa\u578b\u5225\u6216\u5176\u4ed6\u81ea\u8a02\u578b\u5225\uff1b\u5982\u679c\u4f60\u4e0d\u77e5\u9053\u8981\u7e7c\u627f\u4ec0\u9ebc\uff0c\u8acb\u7e7c\u627f `object`\uff1a\r\n\r\n```python\r\nclass MyClass(object):\r\n    pass\r\n```\r\n\r\n\u65b0\u5f0f\u985e\u5225[\u597d\u8655\u591a\u591a](https://wiki.python.org/moin/NewClassVsClassicClass)\uff0c\u4e0d\u904e\u5169\u8005\u4e4b\u9593\u7684\u5dee\u5225\u4e0d\u5728\u672c\u6587\u7bc4\u7587\uff0c\u8acb\u81ea\u884c\u7814\u7a76\u3002:)\r\n\r\n## \u5176\u4ed6\u65b0\u8a9e\u6cd5\uff0c\u4ee5\u53ca Python 3 \u79fb\u9664\u7684\u820a\u8a9e\u6cd5\r\n\r\n\u6bd4\u8d77\u4e0a\u9762\u7684\u9805\u76ee\uff0c\u5176\u4ed6\u7684\u8a9e\u6cd5\u4fee\u6b63\u5176\u5be6\u4e0d\u898b\u5f97\u6709\u5176\u4ed6\u597d\u8655\uff0c\u53ea\u662f\u7fd2\u6163\u554f\u984c\u3002\r\n\r\n\u4ee5\u516b\u9032\u4f4d\u6574\u6578\u70ba\u4f8b\uff0c\u820a\u7684\u8a9e\u6cd5\u627f\u8972 C \u7684\u6e96\u5247\uff0c\u5728\u6574\u6578\u524d\u52a0 `0` \u4ee3\u8868\u516b\u9032\u4f4d\uff08\u6240\u4ee5 `012` \u662f\u5341\u9032\u4f4d\u7684 10\uff09\u3002\u70ba\u4e86\u6e05\u6670\u8d77\u898b\uff0cPython 3 \u53ea\u63a5\u53d7 `0o`\uff08\u4e00\u500b\u96f6\uff0c\u7136\u5f8c\u4e00\u500b\u5c0f\u5beb o\uff09\u524d\u7db4\uff0c\u6240\u4ee5 10 \u8981\u5beb\u6210 `0o12`\uff0c\u820a\u5beb\u6cd5\u6703\u62cb\u51fa `SyntaxError`\u3002\u4f46\u662f\u65b0\u5beb\u6cd5\u5df2\u7d93 backport \u56de 2.6 \u4ee5\u4e0a\u7248\u672c\u4e86\uff0c\u6240\u4ee5\u53ea\u8981\u8a18\u5f97\u4f7f\u7528\u65b0\u5beb\u6cd5\u5c31\u4e0d\u6703\u6709\u554f\u984c\uff01\r\n\r\n\u53e6\u4e00\u500b\u6bd4\u8f03\u5e38\u898b\u7684\u8a9e\u6cd5\u662f `b''` \u5b57\u9762\u503c\u3002\u5728 Python 3 \u4e2d\uff0c`''`\u5b57\u9762\u503c\u6703\u7522\u751f\u4e00\u500b Unicode \u6587\u5b57\u7269\u4ef6\uff08\u5c0d\u61c9\u5230 Python 2 \u7684 `unicode`\uff09\uff0c\u6240\u4ee5\u539f\u672c\u7684 8-bit byte array \u7269\u4ef6\uff08\u5c0d\u61c9\u5230 Python 2 `str`\uff09\u5c31\u6539\u7528\u524d\u7db4 `b` \u7684\u6a19\u8a18\u3002\u9019\u500b\u8a9e\u6cd5\u540c\u6a23\u6709 backport \u56de 2.6 \u4ee5\u4e0a\uff0c\u6240\u4ee5\u5982\u679c\u4f60\u9700\u8981\u8868\u793a\u7684\u662f encoded byte array \u800c\u975e text\uff08\u5728\u6578\u64da\u50b3\u8f38\u7b49\u61c9\u7528\u4e0a\u9700\u8981\uff09\uff0c\u53ef\u4ee5\u76e1\u91cf\u6539\u7528\u65b0\u5beb\u6cd5\u4ee5\u907f\u514d\u8a9e\u610f\u6a21\u7cca\u7684\u554f\u984c\u3002\r\n\r\n\u53e6\u4e00\u65b9\u9762\uff0c\u539f\u672c Python 2 \u7528\u4f86\u7522\u751f Unicode literal \u7684\u8a9e\u6cd5 `u''` \u5728 Python 3.0 \u958b\u59cb\u88ab\u522a\u9664\u3002\u4f46\u7531\u65bc\u53cd\u5f48\u8072\u6d6a\u904e\u5927\uff0c\u5f9e Python 3.3 \u8d77\u9019\u500b\u8a9e\u6cd5\u91cd\u65b0\u6210\u70ba\u5408\u6cd5\uff0c\u5728 Python 3 \u4e2d\u7522\u751f `str` \u7269\u4ef6\u3002\u5982\u679c\u4f60\u5df2\u7d93\u5728\u8655\u7406 text contents \u6642\u4f7f\u7528 `u''`\uff0c\u5f88\u597d\uff0c\u8acb\u7e7c\u7e8c\u9019\u9ebc\u505a\uff01\r\n\r\n\u611f\u8b1d Python \u6838\u5fc3\u793e\u7fa4\u5728 backporting \u4e0a\u6295\u6ce8\u7684\u5fc3\u529b\uff0c\u4f60\u53ea\u8981\u7a0d\u5fae\u4fee\u6b63\u4e00\u4e9b coding convention\uff0c\u5c31\u53ef\u4ee5\u5728\u7c21\u55ae\u7684\u7a0b\u5f0f\u4e2d\u5b8c\u5168\u76f8\u5bb9 Python 3 \u8207 Python 2.6/2.7\u3002\u5728\u4e0b\u4e00\u7bc7\u4e2d\uff0c\u6211\u6703\u4ecb\u7d39\u4e00\u4e9b Python\u300c\u5167\u5efa\u300d\u7684\u5de5\u5177\uff0c\u8b93\u5176\u4ed6\u57fa\u672c\u529f\u80fd\u4e5f\u80fd\u96d9\u9762\u76f8\u5bb9\u3002\u5b57\u4e32\u578b\u614b\u5728 Python \u4e2d\u662f\u975e\u5e38\u91cd\u8981\u7684\u578b\u5225\uff0c\u6240\u4ee5 Python 3 \u7684\u5b57\u4e32\u578b\u614b\u4fee\u6b63\u5f71\u97ff\u975e\u5e38\u5927\uff0c\u6240\u4ee5\u4e5f\u7576\u7136\u6709\u5167\u5efa\u7684\u5de5\u5177\u53ef\u4ee5\u5354\u52a9\u4f60\u8655\u7406\u3002\u5728\u4e0b\u4e00\u7bc7\u4e2d\uff0c\u4e5f\u6703\u56de\u904e\u982d\u4f86\u9032\u4e00\u6b65\u8a0e\u8ad6\u5b57\u4e32\u578b\u614b\u76f8\u5bb9\u6027\u554f\u984c\u3002",
-        "state": "public",
-        "short_description": "\u5728\u4e0a\u4e00\u7bc7\u6587\u7ae0\u7d50\u675f\u524d\uff0c\u6211\u5217\u51fa\u4e86 Python 3 \u8207 Python 2 \u4e0d\u76f8\u5bb9\u7684\u4e3b\u8981\u539f\u56e0\uff0c\u4e26\u5c07\u5b83\u5011\u5206\u6210\u4e09\u985e\uff1a",
-        "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter-2",
         "tags": [
             1,
             2
-        ]
-    }
+        ],
+        "published_at": "2013-12-20T05:28:00Z",
+        "state": "public",
+        "short_description": "\u5728\u4e0a\u4e00\u7bc7\u6587\u7ae0\u7d50\u675f\u524d\uff0c\u6211\u5217\u51fa\u4e86 Python 3 \u8207 Python 2 \u4e0d\u76f8\u5bb9\u7684\u4e3b\u8981\u539f\u56e0\uff0c\u4e26\u5c07\u5b83\u5011\u5206\u6210\u4e09\u985e\uff1a",
+        "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter-2"
+    },
+    "model": "blog.post",
+    "pk": 2
 },
 {
-    "pk": 3,
-    "model": "blog.post",
     "fields": {
         "category": 2,
         "title": " Qelly 1.0 alpha 3 \u767b\u5834",
-        "_content_rendered": "<p>\u62b1\u6b49\u9019\u5e7e\u5929\u56e0\u70ba\u79c1\u4eba\u554f\u984c\uff0c\u6240\u4ee5\u9072\u5230\u4eca\u5929\u624d\u80fd\u628a\u66f4\u65b0\u653e\u51fa\u4f86\u3002\u9084\u662f\u611f\u8b1d\u5927\u5bb6\u7684\u5354\u52a9\uff0c\u9019\u6b21\u7684\u554f\u984c\u4fee\u6b63\u5e7e\u4e4e\u5168\u90e8\u90fd\u662f\u7db2\u53cb\u56de\u5831\uff0c\u6c92\u6709\u5927\u5bb6<del>\u7576\u767d\u8001\u9f20</del>\u5e6b\u5fd9\u6e2c\u8a66\u9019\u4e9b\u554f\u984c\u90fd\u4e0d\u53ef\u80fd\u88ab\u627e\u51fa\u4f86\u3002</p>\n\n<p>\u8001\u6a23\u5b50\uff0c\u539f\u78bc\u8207 Windows \u7248 binary \u4ecd\u7136\u53ef\u4ee5\u5f9e GitHub <a href=\"https://github.com/uranusjr/Qelly/releases\">\u767c\u4f48\u5340</a>\u53d6\u5f97\u3002\u82e5\u6709\u4efb\u4f55\u554f\u984c\u8207\u5efa\u8b70\u540c\u6a23\u8acb\u9ebb\u7169<a href=\"https://github.com/uranusjr/Qelly/issues\">\u56de\u5831</a>\u3002\u9019\u500b\u7248\u672c\u57fa\u672c\u4e0a\u5df2\u7d93\u6c92\u6709\u589e\u52a0\u4ec0\u9ebc\u65b0\u529f\u80fd\u4e86\uff0c\u5982\u679c\u6c92\u6709\u610f\u5916\u4e0b\u4e00\u500b\u7248\u672c\u5c31\u6703\u9032\u884c feature freeze \u9032\u5165 beta\u3002\u4e4b\u524d\u7b54\u61c9\u7684\u81ea\u52d5\u5b57\u578b\u8abf\u6574\u76ee\u524d\u9084\u6709\u554f\u984c\uff0c\u6211\u6703\u6301\u7e8c\u770b\u770b\u80fd\u4e0d\u80fd\u8d95\u4e0a\u4e0b\u4e00\u7248\uff0c\u5426\u5247\u5c31\u7b49 2.0 \u5427\u3002:(</p>\n\n<p>\u9019\u500b\u7248\u672c\u4e3b\u8981\u91dd\u5c0d\u5c0f\u87a2\u5e55\u7684\u986f\u793a\u72c0\u614b\u9032\u884c\u4fee\u6b63\uff0c\u4e3b\u8981\u662f\u8b93\u5de5\u5177\u5217\u88ab\u96b1\u85cf\u6642\u4ecd\u7136\u53ef\u4ee5\uff08\u4ee5\u5f48\u51fa\u8996\u7a97\uff09\u986f\u793a\u4f4d\u5740\u5217\u3002\u53e6\u4e00\u500b\u529f\u80fd\u662f\u6211\u79c1\u5fc3\u5e0c\u671b\u7684\uff0c\u53c3\u8003\u5e38\u898b terminal \u8edf\u9ad4\u7684\u4f5c\u6cd5\uff0c\u628a\u6ed1\u9f20\u4e2d\u9375\u5c0d\u61c9\u5230\uff08\u7d14\u6587\u5b57\uff09\u8cbc\u4e0a\u3002\u5176\u4ed6\u5c31\u662f\u4e00\u4e9b UI \u554f\u984c\u8207\u81ed\u87f2\u4fee\u6b63\u3002\n<!&#8211; more &#8211;>\n\u4ee5\u4e0b\u662f 1.0 alpha 3 \u4fee\u6539\u5217\u8868\uff1a</p>\n\n<ul>\n<li><p>\u554f\u984c\u4fee\u6b63</p>\n\n<ul>\n<li>\u7576\u9078\u64c7\u300c\u555f\u52d5\u6642\u9084\u539f\u4e0a\u6b21\u9023\u7dda\u300d\uff0c\u53ea\u6709\u4e00\u500b\u9023\u7dda\u6703\u88ab\u9084\u539f\u3002</li>\n<li>\u7ffb\u8b6f\u6a94\u5728 Linux (\u642d\u914d LilyTerm \u6642) \u8207 OS X \u7121\u6cd5\u8b80\u5165\u3002</li>\n<li>\u53f3\u9375\u9078\u55ae\u7a7a\u767d\u6642\u7684\u986f\u793a\u554f\u984c\u3002</li>\n<li>\u672a\u9023\u7dda\u6642\u9032\u884c UI \u4e92\u52d5\u53ef\u80fd\u9020\u6210\u7576\u6a5f\u3002</li>\n<li>\u4f7f\u7528 Qt 4 \u7de8\u8b6f\u6642\u7684\u7de8\u78bc\u554f\u984c\u3002</li>\n</ul></li>\n<li><p>\u65b0\u529f\u80fd</p>\n\n<ul>\n<li>\u6ed1\u9f20\u4e2d\u9375\u8cbc\u4e0a\u3002</li>\n<li>\u5373\u4f7f\u5de5\u5177\u5217\u96b1\u85cf\uff0c\u4ecd\u7136\u53ef\u4ee5\u958b\u555f\u65b0\u9023\u7dda\u3002\u5728\u5de5\u5177\u5217\u672a\u986f\u793a\u7684\u72c0\u6cc1\u4e0b\uff0c\u4f4d\u5740\u5217\u6703\u4ee5\u5f48\u51fa\u8996\u7a97\u5448\u73fe\u3002\u5c0d\u5c0f\u87a2\u5e55\u4f7f\u7528\u8005\u5f88\u6709\u7528\u3002</li>\n</ul></li>\n<li><p>\u6539\u826f</p>\n\n<ul>\n<li>\u5c07\u5de5\u5177\u5217\u6587\u5b57\u6a19\u7c64\u7684\u5b57\u578b\u7d71\u4e00\u3002</li>\n<li>\u7ffb\u8b6f\u6a94\u6539\u70ba\u76f4\u63a5\u5305\u5165\u57f7\u884c\u6a94\uff0c\u65b9\u4fbf\u4f7f\u7528\u3002</li>\n<li>\u6539\u5584 resizing \u908f\u8f2f\u3002</li>\n<li>\u5728\u975e Windows \u4f5c\u696d\u7cfb\u7d71\u4e0a\u9810\u8a2d\u95dc\u9589\u300c\u81ea\u52d5\u8abf\u6574\u5927\u5c0f\u300d\u529f\u80fd\uff0c\u4ee5\u89e3\u6c7a\u4e00\u4e9b\u986f\u793a\u554f\u984c\u3002</li>\n</ul></li>\n</ul>\n\n<p>Enjoy! :)</p>\n",
+        "tags": [],
         "published_at": "2013-12-24T14:43:12Z",
-        "content": "\u62b1\u6b49\u9019\u5e7e\u5929\u56e0\u70ba\u79c1\u4eba\u554f\u984c\uff0c\u6240\u4ee5\u9072\u5230\u4eca\u5929\u624d\u80fd\u628a\u66f4\u65b0\u653e\u51fa\u4f86\u3002\u9084\u662f\u611f\u8b1d\u5927\u5bb6\u7684\u5354\u52a9\uff0c\u9019\u6b21\u7684\u554f\u984c\u4fee\u6b63\u5e7e\u4e4e\u5168\u90e8\u90fd\u662f\u7db2\u53cb\u56de\u5831\uff0c\u6c92\u6709\u5927\u5bb6<del>\u7576\u767d\u8001\u9f20</del>\u5e6b\u5fd9\u6e2c\u8a66\u9019\u4e9b\u554f\u984c\u90fd\u4e0d\u53ef\u80fd\u88ab\u627e\u51fa\u4f86\u3002\r\n\r\n\u8001\u6a23\u5b50\uff0c\u539f\u78bc\u8207 Windows \u7248 binary \u4ecd\u7136\u53ef\u4ee5\u5f9e GitHub [\u767c\u4f48\u5340](https://github.com/uranusjr/Qelly/releases)\u53d6\u5f97\u3002\u82e5\u6709\u4efb\u4f55\u554f\u984c\u8207\u5efa\u8b70\u540c\u6a23\u8acb\u9ebb\u7169[\u56de\u5831](https://github.com/uranusjr/Qelly/issues)\u3002\u9019\u500b\u7248\u672c\u57fa\u672c\u4e0a\u5df2\u7d93\u6c92\u6709\u589e\u52a0\u4ec0\u9ebc\u65b0\u529f\u80fd\u4e86\uff0c\u5982\u679c\u6c92\u6709\u610f\u5916\u4e0b\u4e00\u500b\u7248\u672c\u5c31\u6703\u9032\u884c feature freeze \u9032\u5165 beta\u3002\u4e4b\u524d\u7b54\u61c9\u7684\u81ea\u52d5\u5b57\u578b\u8abf\u6574\u76ee\u524d\u9084\u6709\u554f\u984c\uff0c\u6211\u6703\u6301\u7e8c\u770b\u770b\u80fd\u4e0d\u80fd\u8d95\u4e0a\u4e0b\u4e00\u7248\uff0c\u5426\u5247\u5c31\u7b49 2.0 \u5427\u3002:(\r\n\r\n\u9019\u500b\u7248\u672c\u4e3b\u8981\u91dd\u5c0d\u5c0f\u87a2\u5e55\u7684\u986f\u793a\u72c0\u614b\u9032\u884c\u4fee\u6b63\uff0c\u4e3b\u8981\u662f\u8b93\u5de5\u5177\u5217\u88ab\u96b1\u85cf\u6642\u4ecd\u7136\u53ef\u4ee5\uff08\u4ee5\u5f48\u51fa\u8996\u7a97\uff09\u986f\u793a\u4f4d\u5740\u5217\u3002\u53e6\u4e00\u500b\u529f\u80fd\u662f\u6211\u79c1\u5fc3\u5e0c\u671b\u7684\uff0c\u53c3\u8003\u5e38\u898b terminal \u8edf\u9ad4\u7684\u4f5c\u6cd5\uff0c\u628a\u6ed1\u9f20\u4e2d\u9375\u5c0d\u61c9\u5230\uff08\u7d14\u6587\u5b57\uff09\u8cbc\u4e0a\u3002\u5176\u4ed6\u5c31\u662f\u4e00\u4e9b UI \u554f\u984c\u8207\u81ed\u87f2\u4fee\u6b63\u3002\r\n<!-- more -->\r\n\u4ee5\u4e0b\u662f 1.0 alpha 3 \u4fee\u6539\u5217\u8868\uff1a\r\n\r\n- \u554f\u984c\u4fee\u6b63\r\n    * \u7576\u9078\u64c7\u300c\u555f\u52d5\u6642\u9084\u539f\u4e0a\u6b21\u9023\u7dda\u300d\uff0c\u53ea\u6709\u4e00\u500b\u9023\u7dda\u6703\u88ab\u9084\u539f\u3002\r\n    * \u7ffb\u8b6f\u6a94\u5728 Linux (\u642d\u914d LilyTerm \u6642) \u8207 OS X \u7121\u6cd5\u8b80\u5165\u3002\r\n    * \u53f3\u9375\u9078\u55ae\u7a7a\u767d\u6642\u7684\u986f\u793a\u554f\u984c\u3002\r\n    * \u672a\u9023\u7dda\u6642\u9032\u884c UI \u4e92\u52d5\u53ef\u80fd\u9020\u6210\u7576\u6a5f\u3002\r\n    * \u4f7f\u7528 Qt 4 \u7de8\u8b6f\u6642\u7684\u7de8\u78bc\u554f\u984c\u3002\r\n\r\n- \u65b0\u529f\u80fd\r\n    * \u6ed1\u9f20\u4e2d\u9375\u8cbc\u4e0a\u3002\r\n    * \u5373\u4f7f\u5de5\u5177\u5217\u96b1\u85cf\uff0c\u4ecd\u7136\u53ef\u4ee5\u958b\u555f\u65b0\u9023\u7dda\u3002\u5728\u5de5\u5177\u5217\u672a\u986f\u793a\u7684\u72c0\u6cc1\u4e0b\uff0c\u4f4d\u5740\u5217\u6703\u4ee5\u5f48\u51fa\u8996\u7a97\u5448\u73fe\u3002\u5c0d\u5c0f\u87a2\u5e55\u4f7f\u7528\u8005\u5f88\u6709\u7528\u3002\r\n\r\n- \u6539\u826f\r\n    * \u5c07\u5de5\u5177\u5217\u6587\u5b57\u6a19\u7c64\u7684\u5b57\u578b\u7d71\u4e00\u3002\r\n    * \u7ffb\u8b6f\u6a94\u6539\u70ba\u76f4\u63a5\u5305\u5165\u57f7\u884c\u6a94\uff0c\u65b9\u4fbf\u4f7f\u7528\u3002\r\n    * \u6539\u5584 resizing \u908f\u8f2f\u3002\r\n    * \u5728\u975e Windows \u4f5c\u696d\u7cfb\u7d71\u4e0a\u9810\u8a2d\u95dc\u9589\u300c\u81ea\u52d5\u8abf\u6574\u5927\u5c0f\u300d\u529f\u80fd\uff0c\u4ee5\u89e3\u6c7a\u4e00\u4e9b\u986f\u793a\u554f\u984c\u3002\r\n    \r\nEnjoy! :)",
         "state": "public",
         "short_description": "here-comes-qelly-10-alpha-3",
-        "slug": "here-comes-qelly-10-alpha-3",
-        "tags": []
-    }
+        "slug": "here-comes-qelly-10-alpha-3"
+    },
+    "model": "blog.post",
+    "pk": 3
 },
 {
-    "pk": 4,
-    "model": "blog.post",
     "fields": {
         "category": 2,
         "title": "Qelly 1.0 alpha 2 \u767c\u4f48",
-        "_content_rendered": "<p>Qelly 1.0 alpha 2 \u767c\u4f48\uff01\u611f\u8b1d\u5927\u5bb6\u63d0\u4f9b\u7684\u554f\u984c\u56de\u5831\u548c\u5176\u4ed6\u5efa\u8b70\uff0c\u5f88\u591a\u6771\u897f\u5982\u679c\u6c92\u6709\u5927\u5bb6\u63d0\u51fa\u4f86\u6211\u61c9\u8a72\u5f88\u96e3\u81ea\u5df1\u60f3\u5230\u3002</p>\n\n<p>Windows binary \u8207\u539f\u78bc\u540c\u6a23\u7531 GitHub \u767c\u4f48\uff0c\u8acb\u81f3<a href=\"https://github.com/uranusjr/Qelly/releases\">\u767c\u4f48\u5340</a>\u4e0b\u8f09\u3002\u65b0\u7684\u529f\u80fd\u5df2\u7d93\u8457\u624b\u9032\u884c\u4e2d\uff0c\u76ee\u6a19\u662f\u5b8c\u6210\u81ea\u52d5\u5b57\u578b\u8abf\u6574\uff08<a href=\"https://github.com/uranusjr/Qelly/issues/45\">#45</a>\uff09\uff0c\u7576\u7136\u5982\u679c\u672c\u7248\u767c\u4f48\u5f8c\u51fa\u73fe\u65b0\u7684\u554f\u984c\u4e5f\u6703\u4e00\u4f75\u4fee\u6b63\u3002</p>\n\n<p>\u9019\u500b\u7248\u672c\u6700\u91cd\u8981\u4fee\u6539\u662f\u65b0\u589e\u4e86\u8a31\u591a\u4eba\u60f3\u8981\u7684\u300c<a href=\"https://github.com/uranusjr/Qelly/issues/44\">\u53ef\u651c\u7248</a>\u300d\u529f\u80fd\u3002\u5be6\u4f5c\u65b9\u6cd5\u63a1\u7528\u4e86 <a href=\"https://github.com/Wcw5504\">@Wcw5504</a> \u7684\u5efa\u8b70\uff0c\u7576 Qelly \u57f7\u884c\u6a94\u7684\u76f8\u540c\u76ee\u9304\u4e0b\u5b58\u5728\u4e00\u500b\u540d\u7a31\u70ba <code>PORTABLE</code> \u7684\u6a94\u6848\uff08\u6ce8\u610f\u4e0d\u53ef\u6709\u526f\u6a94\u540d\uff09\u6642\uff0c\u4fbf\u6703\u9032\u5165\u53ef\u651c\u6a21\u5f0f\u3002\u5728\u53ef\u651c\u6a21\u5f0f\u4e0b\uff0cQelly \u7684\u8a2d\u5b9a\uff08\u542b\u7ad9\u53f0\u8207\u8868\u60c5\u7b26\u865f\uff09\u6703\u5b58\u653e\u65bc\u4e00\u500b\u53eb <code>data</code> \u7684\u5b50\u76ee\u9304\uff0c\u800c\u4e0d\u662f\u4f7f\u7528\u8005\u7684\u500b\u4eba\u76ee\u9304\u3002\n<!&#8211;more&#8211;>\n\u70ba\u4e86\u4fdd\u6301\u7a0b\u5f0f\u904b\u884c\u6642\u7684\u6574\u9ad4\u6027\uff0c\u53ef\u651c\u6a21\u5f0f\u7684\u5207\u63db\u5fc5\u9808\u91cd\u65b0\u555f\u52d5 Qelly \u624d\u6703\u751f\u6548\u3002\u53e6\u5916\uff0c\u7531\u65bc\u53ef\u651c\u7248\u5728\u591a\u4f7f\u7528\u8005\u4f7f\u7528\u540c\u4e00\u96fb\u8166\u6642\u6709\u8cc7\u6599\u5171\u7528\u7684\u554f\u984c\uff0c\u65bc\u53ef\u651c\u548c\u4e00\u822c\u6a21\u5f0f\u4e4b\u9593\u5207\u63db\u6642\uff0c\u8acb\u81ea\u884c\u5c07 Qelly \u6240\u9700\u4e4b\u8cc7\u6599\u6a94\u79fb\u81f3\u5c0d\u61c9\u4f4d\u7f6e\uff1b\u5982\u679c\u516c\u5728\u7528\u96fb\u8166\u4e0a\u4f7f\u7528\uff0c\u8acb\u591a\u6ce8\u610f\u500b\u4eba\u8cc7\u8a0a\u5b89\u5168\u3002</p>\n\n<p><strong>\u6ce8\u610f\uff1a</strong>\u70ba\u4e86\u4fdd\u6301\u53ef\u651c\u6a21\u5f0f\u8207\u4e00\u822c\u6a21\u5f0f\u4e4b\u9593\u7684\u76f8\u5c0d\u8def\u5f91\uff0c\u6211\u5728\u65b0\u7248\u672c\u4e2d\u628a <code>qelly.ini</code> \u8a2d\u5b9a\u6a94\u5728\u4e00\u822c\u6a21\u5f0f\u4e0b\u7684\u4f4d\u7f6e\u79fb\u81f3\u8207 <code>sites.json</code> \u548c <code>emoticons.json</code> \u76f8\u540c\u7684\u76ee\u9304\u3002\u4ee5 Windows \u70ba\u4f8b\uff08\u8a73\u898b <a href=\"http://uranusjr.logdown.com/posts/2013/10/04/qelly-yet-another-bbs-client\">1.0a \u7684\u767c\u4f48\u6587</a>\uff09\uff0c\u539f\u672c\u653e\u5728 <code>AppData\\Roaming\\uranusjr.org\\qelly.ini</code> \u7684\u6a94\u6848\u73fe\u5728\u5fc5\u9808\u79fb\u81f3 <code>AppData\\Local\\Qelly\\qelly.ini</code>\u3002\u539f\u672c\u7684\u4f7f\u7528\u8005 <strong>\u5fc5\u9808\u81ea\u884c\u5c07 <code>qelly.ini</code> \u6a94\u79fb\u904e\u53bb</strong>\u3002\u82e5\u9020\u6210\u4e0d\u4fbf\uff0c\u656c\u8acb\u898b\u8ad2\u3002</p>\n\n<p>\u6211\u9019\u5169\u5929\u4e3b\u8981\u5728\u7814\u7a76\u5728 Qelly \u672c\u8eab\u76f4\u63a5\u5be6\u4f5c SSH \u9023\u7dda\u7684\u529f\u80fd\uff0c\u5df2\u7d93\u5728\u6982\u5ff5\u4e0a\u5b8c\u6210\u4e86\u3002\u76ee\u524d\u4e3b\u8981\u7684\u554f\u984c\u662f\u9047\u5230\u7d93\u4e0a\u6e38\u51fd\u5f0f\u5eab\uff08LibQxt\uff09\u7684\u4e00\u4e9b\u554f\u984c\uff0c\u76ee\u524d<a href=\"https://bitbucket.org/libqxt/libqxt/issue/55/qxtsshclient-stucks-if-the-ssh-host-does\">\u6d3d\u8a62\u4e2d</a>\uff0c\u5982\u679c\u6709\u89e3\u7684\u8a71\u8aaa\u4e0d\u5b9a\u5728 1.0 \u6b63\u5f0f\u7248\u5c31\u53ef\u4ee5\u6539\u7528\u65b0\u7684\u5be6\u4f5c\u3002\u4ee5\u5f8c Windows \u5c31\u53ef\u4ee5\u548c\u5927\u5bb6\u4e00\u6a23\u9023 ssh://bbs@ptt.cc \u4e0d\u7528\u7e7c\u7e8c\u7528\u5f31\u5f31\u7684 telnet \u4e86\u3002\u65b0\u7248 SSH \u5be6\u4f5c\u5728 <a href=\"https://github.com/uranusjr/Qelly/tree/ssh_libqxt\">ssh_libqxt</a> \u9019\u500b branch \u4e0a\uff0c\u4e0d\u904e\u9700\u8981\u4e0d\u5c11\u82e6\u5de5\u624d\u80fd\u7de8\u51fa\u80fd\u7528\u7684\u7248\u672c\uff0c\u5982\u679c\u6709\u4eba\u6709\u8208\u8da3\u5408\u4f5c\u518d\u53e6\u5916\u8a0e\u8ad6\u3002</p>\n\n<p>\u4ee5\u4e0b\u662f 1.0 alpha 2 \u7684\u4fee\u6539\u5217\u8868\uff1a</p>\n\n<ul>\n<li><p>\u554f\u984c\u4fee\u6b63</p>\n\n<ul>\n<li>\u91cd\u65b0\u9023\u7dda\u9020\u6210\u7576\u6a5f\u3002</li>\n<li>\u52fe\u9078\u5132\u5b58\u9023\u7dda\u6642\uff0c\u91cd\u65b0\u555f\u52d5\u5f8c\u7121\u6cd5\u91cd\u65b0\u9023\u7dda\u3002</li>\n<li>\u7e6a\u5716\u554f\u984c\u9020\u6210\u67d0\u4e9b\u5e95\u8272\u7121\u6cd5\u6b63\u78ba\u986f\u793a\u3002</li>\n</ul></li>\n<li><p>\u65b0\u529f\u80fd</p>\n\n<ul>\n<li>\u7e41\u9ad4\u4e2d\u6587\u7ffb\u8b6f\u3002</li>\n<li>goo.gl \u77ed\u7db2\u5740\u5075\u6e2c\u3002</li>\n<li>\u5132\u5b58\u5de5\u5177\u5217\u96b1\u85cf\u72c0\u614b\u3002</li>\n<li>\u300c\u53ef\u651c\u300d\u6a21\u5f0f\u3002</li>\n<li>\u53f3\u9375\u9078\u55ae\u65b0\u589e\u300c\u8cbc\u4e0a\u300d\u9805\u76ee\u3002</li>\n</ul></li>\n<li><p>\u6539\u826f</p>\n\n<ul>\n<li>\u65b0\u7248\u672c\u4e2d UI \u76f8\u95dc\u7684\u8a2d\u5b9a\uff08\u5b57\u578b\u3001\u984f\u8272\u7b49\uff09\u53ef\u4ee5\u7acb\u5373\u770b\u5230\u756b\u9762\u91cd\u7e6a\uff0c\u800c\u4e0d\u7528\u91cd\u65b0\u9023\u7dda\u3002</li>\n<li>\u8a2d\u5b9a\u8996\u7a97\u65b0\u589e\u4e86\u300c\u5957\u7528\u300d\u9375\uff0c\u53ef\u4ee5\u5728\u4e0d\u95dc\u9589\u8996\u7a97\u7684\u60c5\u6cc1\u4e0b\u555f\u7528\u65b0\u8a2d\u5b9a\u3002\u914d\u5408\u524d\u9805\u4fee\u6b63\u5341\u5206\u65b9\u4fbf\u3002</li>\n<li>\u65b0\u589e\u5c07 SSH \u5b8c\u5168\u95dc\u9589\u7684\u9078\u9805\uff08\u9810\u8a2d\u70ba\u95dc\u9589\uff09\u3002\u5982\u679c\u4e0d\u60f3\u8981 SSH \u529f\u80fd\uff0c\u95dc\u9589\u5f8c\u5c31\u4e0d\u6703\u770b\u5230\u8b66\u544a\u8996\u7a97\u3002</li>\n</ul></li>\n</ul>\n\n<p>Enjoy!</p>\n",
+        "tags": [],
         "published_at": "2013-12-24T14:44:02Z",
-        "content": "Qelly 1.0 alpha 2 \u767c\u4f48\uff01\u611f\u8b1d\u5927\u5bb6\u63d0\u4f9b\u7684\u554f\u984c\u56de\u5831\u548c\u5176\u4ed6\u5efa\u8b70\uff0c\u5f88\u591a\u6771\u897f\u5982\u679c\u6c92\u6709\u5927\u5bb6\u63d0\u51fa\u4f86\u6211\u61c9\u8a72\u5f88\u96e3\u81ea\u5df1\u60f3\u5230\u3002\r\n\r\nWindows binary \u8207\u539f\u78bc\u540c\u6a23\u7531 GitHub \u767c\u4f48\uff0c\u8acb\u81f3[\u767c\u4f48\u5340](https://github.com/uranusjr/Qelly/releases)\u4e0b\u8f09\u3002\u65b0\u7684\u529f\u80fd\u5df2\u7d93\u8457\u624b\u9032\u884c\u4e2d\uff0c\u76ee\u6a19\u662f\u5b8c\u6210\u81ea\u52d5\u5b57\u578b\u8abf\u6574\uff08[#45](https://github.com/uranusjr/Qelly/issues/45)\uff09\uff0c\u7576\u7136\u5982\u679c\u672c\u7248\u767c\u4f48\u5f8c\u51fa\u73fe\u65b0\u7684\u554f\u984c\u4e5f\u6703\u4e00\u4f75\u4fee\u6b63\u3002\r\n\r\n\u9019\u500b\u7248\u672c\u6700\u91cd\u8981\u4fee\u6539\u662f\u65b0\u589e\u4e86\u8a31\u591a\u4eba\u60f3\u8981\u7684\u300c[\u53ef\u651c\u7248](https://github.com/uranusjr/Qelly/issues/44)\u300d\u529f\u80fd\u3002\u5be6\u4f5c\u65b9\u6cd5\u63a1\u7528\u4e86 [@Wcw5504](https://github.com/Wcw5504) \u7684\u5efa\u8b70\uff0c\u7576 Qelly \u57f7\u884c\u6a94\u7684\u76f8\u540c\u76ee\u9304\u4e0b\u5b58\u5728\u4e00\u500b\u540d\u7a31\u70ba `PORTABLE` \u7684\u6a94\u6848\uff08\u6ce8\u610f\u4e0d\u53ef\u6709\u526f\u6a94\u540d\uff09\u6642\uff0c\u4fbf\u6703\u9032\u5165\u53ef\u651c\u6a21\u5f0f\u3002\u5728\u53ef\u651c\u6a21\u5f0f\u4e0b\uff0cQelly \u7684\u8a2d\u5b9a\uff08\u542b\u7ad9\u53f0\u8207\u8868\u60c5\u7b26\u865f\uff09\u6703\u5b58\u653e\u65bc\u4e00\u500b\u53eb `data` \u7684\u5b50\u76ee\u9304\uff0c\u800c\u4e0d\u662f\u4f7f\u7528\u8005\u7684\u500b\u4eba\u76ee\u9304\u3002\r\n<!--more-->\r\n\u70ba\u4e86\u4fdd\u6301\u7a0b\u5f0f\u904b\u884c\u6642\u7684\u6574\u9ad4\u6027\uff0c\u53ef\u651c\u6a21\u5f0f\u7684\u5207\u63db\u5fc5\u9808\u91cd\u65b0\u555f\u52d5 Qelly \u624d\u6703\u751f\u6548\u3002\u53e6\u5916\uff0c\u7531\u65bc\u53ef\u651c\u7248\u5728\u591a\u4f7f\u7528\u8005\u4f7f\u7528\u540c\u4e00\u96fb\u8166\u6642\u6709\u8cc7\u6599\u5171\u7528\u7684\u554f\u984c\uff0c\u65bc\u53ef\u651c\u548c\u4e00\u822c\u6a21\u5f0f\u4e4b\u9593\u5207\u63db\u6642\uff0c\u8acb\u81ea\u884c\u5c07 Qelly \u6240\u9700\u4e4b\u8cc7\u6599\u6a94\u79fb\u81f3\u5c0d\u61c9\u4f4d\u7f6e\uff1b\u5982\u679c\u516c\u5728\u7528\u96fb\u8166\u4e0a\u4f7f\u7528\uff0c\u8acb\u591a\u6ce8\u610f\u500b\u4eba\u8cc7\u8a0a\u5b89\u5168\u3002\r\n\r\n**\u6ce8\u610f\uff1a**\u70ba\u4e86\u4fdd\u6301\u53ef\u651c\u6a21\u5f0f\u8207\u4e00\u822c\u6a21\u5f0f\u4e4b\u9593\u7684\u76f8\u5c0d\u8def\u5f91\uff0c\u6211\u5728\u65b0\u7248\u672c\u4e2d\u628a `qelly.ini` \u8a2d\u5b9a\u6a94\u5728\u4e00\u822c\u6a21\u5f0f\u4e0b\u7684\u4f4d\u7f6e\u79fb\u81f3\u8207 `sites.json` \u548c `emoticons.json` \u76f8\u540c\u7684\u76ee\u9304\u3002\u4ee5 Windows \u70ba\u4f8b\uff08\u8a73\u898b [1.0a \u7684\u767c\u4f48\u6587](http://uranusjr.logdown.com/posts/2013/10/04/qelly-yet-another-bbs-client)\uff09\uff0c\u539f\u672c\u653e\u5728 `AppData\\Roaming\\uranusjr.org\\qelly.ini` \u7684\u6a94\u6848\u73fe\u5728\u5fc5\u9808\u79fb\u81f3 `AppData\\Local\\Qelly\\qelly.ini`\u3002\u539f\u672c\u7684\u4f7f\u7528\u8005 **\u5fc5\u9808\u81ea\u884c\u5c07 `qelly.ini` \u6a94\u79fb\u904e\u53bb**\u3002\u82e5\u9020\u6210\u4e0d\u4fbf\uff0c\u656c\u8acb\u898b\u8ad2\u3002\r\n\r\n\u6211\u9019\u5169\u5929\u4e3b\u8981\u5728\u7814\u7a76\u5728 Qelly \u672c\u8eab\u76f4\u63a5\u5be6\u4f5c SSH \u9023\u7dda\u7684\u529f\u80fd\uff0c\u5df2\u7d93\u5728\u6982\u5ff5\u4e0a\u5b8c\u6210\u4e86\u3002\u76ee\u524d\u4e3b\u8981\u7684\u554f\u984c\u662f\u9047\u5230\u7d93\u4e0a\u6e38\u51fd\u5f0f\u5eab\uff08LibQxt\uff09\u7684\u4e00\u4e9b\u554f\u984c\uff0c\u76ee\u524d[\u6d3d\u8a62\u4e2d](https://bitbucket.org/libqxt/libqxt/issue/55/qxtsshclient-stucks-if-the-ssh-host-does)\uff0c\u5982\u679c\u6709\u89e3\u7684\u8a71\u8aaa\u4e0d\u5b9a\u5728 1.0 \u6b63\u5f0f\u7248\u5c31\u53ef\u4ee5\u6539\u7528\u65b0\u7684\u5be6\u4f5c\u3002\u4ee5\u5f8c Windows \u5c31\u53ef\u4ee5\u548c\u5927\u5bb6\u4e00\u6a23\u9023 ssh://bbs@ptt.cc \u4e0d\u7528\u7e7c\u7e8c\u7528\u5f31\u5f31\u7684 telnet \u4e86\u3002\u65b0\u7248 SSH \u5be6\u4f5c\u5728 [ssh\\_libqxt](https://github.com/uranusjr/Qelly/tree/ssh_libqxt) \u9019\u500b branch \u4e0a\uff0c\u4e0d\u904e\u9700\u8981\u4e0d\u5c11\u82e6\u5de5\u624d\u80fd\u7de8\u51fa\u80fd\u7528\u7684\u7248\u672c\uff0c\u5982\u679c\u6709\u4eba\u6709\u8208\u8da3\u5408\u4f5c\u518d\u53e6\u5916\u8a0e\u8ad6\u3002\r\n\r\n\u4ee5\u4e0b\u662f 1.0 alpha 2 \u7684\u4fee\u6539\u5217\u8868\uff1a\r\n\r\n* \u554f\u984c\u4fee\u6b63\r\n\t- \u91cd\u65b0\u9023\u7dda\u9020\u6210\u7576\u6a5f\u3002\r\n  - \u52fe\u9078\u5132\u5b58\u9023\u7dda\u6642\uff0c\u91cd\u65b0\u555f\u52d5\u5f8c\u7121\u6cd5\u91cd\u65b0\u9023\u7dda\u3002\r\n  - \u7e6a\u5716\u554f\u984c\u9020\u6210\u67d0\u4e9b\u5e95\u8272\u7121\u6cd5\u6b63\u78ba\u986f\u793a\u3002\r\n  \r\n* \u65b0\u529f\u80fd\r\n\t- \u7e41\u9ad4\u4e2d\u6587\u7ffb\u8b6f\u3002\r\n  - goo.gl \u77ed\u7db2\u5740\u5075\u6e2c\u3002\r\n  - \u5132\u5b58\u5de5\u5177\u5217\u96b1\u85cf\u72c0\u614b\u3002\r\n  - \u300c\u53ef\u651c\u300d\u6a21\u5f0f\u3002\r\n  - \u53f3\u9375\u9078\u55ae\u65b0\u589e\u300c\u8cbc\u4e0a\u300d\u9805\u76ee\u3002\r\n  \r\n* \u6539\u826f\r\n\t- \u65b0\u7248\u672c\u4e2d UI \u76f8\u95dc\u7684\u8a2d\u5b9a\uff08\u5b57\u578b\u3001\u984f\u8272\u7b49\uff09\u53ef\u4ee5\u7acb\u5373\u770b\u5230\u756b\u9762\u91cd\u7e6a\uff0c\u800c\u4e0d\u7528\u91cd\u65b0\u9023\u7dda\u3002\r\n\t- \u8a2d\u5b9a\u8996\u7a97\u65b0\u589e\u4e86\u300c\u5957\u7528\u300d\u9375\uff0c\u53ef\u4ee5\u5728\u4e0d\u95dc\u9589\u8996\u7a97\u7684\u60c5\u6cc1\u4e0b\u555f\u7528\u65b0\u8a2d\u5b9a\u3002\u914d\u5408\u524d\u9805\u4fee\u6b63\u5341\u5206\u65b9\u4fbf\u3002\r\n  - \u65b0\u589e\u5c07 SSH \u5b8c\u5168\u95dc\u9589\u7684\u9078\u9805\uff08\u9810\u8a2d\u70ba\u95dc\u9589\uff09\u3002\u5982\u679c\u4e0d\u60f3\u8981 SSH \u529f\u80fd\uff0c\u95dc\u9589\u5f8c\u5c31\u4e0d\u6703\u770b\u5230\u8b66\u544a\u8996\u7a97\u3002\r\n  \r\nEnjoy!",
         "state": "public",
         "short_description": "qelly-10-alpha-2-released",
-        "slug": "qelly-10-alpha-2-released",
-        "tags": []
-    }
+        "slug": "qelly-10-alpha-2-released"
+    },
+    "model": "blog.post",
+    "pk": 4
 },
 {
-    "pk": 5,
-    "model": "blog.post",
     "fields": {
         "category": 2,
         "title": "Qelly: Yet another BBS client",
-        "_content_rendered": "<p><a href=\"https://github.com/uranusjr/Qelly\">Qelly</a> 1.0 alpha \u7248\u767c\u4f48\uff01\u53ef\u4ee5\u5f9e<a href=\"https://github.com/uranusjr/Qelly/releases\">\u9019\u88e1</a>\u627e\u5230 Windows binary \u8f09\u9ede\u3002</p>\n\n<p>Qelly (\u767c\u97f3\u540c\u82f1\u6587\u540d Kelly) \u662f\u6211\u6700\u8fd1\u5728\u73a9\u7684 BBS client project\u3002\u672c\u4f86\u662f\u6211\u7b49\u7576\u5175\u7684\u6642\u5019 (2011) \u7121\u804a\u5beb\u7684\u6771\u897f\uff0c\u6700\u8fd1\u56e0\u70ba\u5e38\u7528 Windows \u89ba\u5f97 PCMan \u4e0d\u5408\u7528\u624d\u6316\u51fa\u4f86\u7e7c\u7e8c\uff0c\u4e00\u4e9b\u529f\u80fd\u88dc\u5b8c\u4e4b\u5f8c\u73fe\u5728\u57fa\u672c\u4e0a\u544a\u4e00\u500b\u6bb5\u843d\u4e86\uff0c\u6240\u4ee5\u62ff\u51fa\u4f86\u5206\u4eab\u4e00\u4e0b<strike>\u9806\u4fbf\u62d0\u6e2c\u8a66\u54e1</strike>\u3002</p>\n\n<p>\u4e0d\u7528\u5b89\u88dd\uff0c\u6c92\u6709 (Windows) registry\uff0c\u53ea\u6703\u5728\u4f60\u7684\u500b\u4eba\u8cc7\u6599\u593e\u88e1\u653e\u4e09\u500b\u6587\u5b57\u6a94\u5132\u5b58\u8cc7\u6599 (\u898b\u6587\u672b\u8aaa\u660e)\u3002\u9664\u4e86 Windows \u5916\u7684\u5176\u4ed6\u5e73\u53f0\u57fa\u672c\u4e0a\u53ea\u8981\u80fd\u7de8 Qt \u5927\u6982\u90fd\u80fd\u81ea\u5df1\u7de8 dependency \u548c\u672c\u9ad4\uff0c\u6709\u8208\u8da3\u7684\u4e5f\u53ef\u4ee5\u81ea\u5df1\u7de8\u4f86\u73a9\uff0c\u6211\u6e2c\u904e\u7528 Qt 4 \u6216 5 \u90fd\u53ef\u4ee5\uff0c\u53ea\u662f\u8981\u6ce8\u610f LibQxt \u7528\u7684 Qt \u7248\u672c\u8981\u76f8\u7b26\u3002\n<!&#8211;more&#8211;>\n\u4e3b\u8981\u7279\u9ede:</p>\n\n<ul>\n<li><p>\u61c9\u7528\u7a0b\u5f0f\u5feb\u6377\u9375\u5168\u90e8\u90fd\u662f Alt \u5c0e\u5411 (Mac \u9664\u5916)\uff0c\u4f8b\u5982</p>\n\n<ul>\n<li>\u8907\u88fd -> Alt+C</li>\n<li>\u8cbc\u4e0a -> Alt+V</li>\n<li>\u79fb\u5230\u7db2\u5740\u5217 -> Alt+L</li>\n<li>\u52a0\u5165\u66f8\u7c64 -> Alt+D</li>\n</ul>\n\n<p><p>\u6240\u4ee5\u4e0d\u7528\u7279\u5225\u80cc\u4e00\u7d44 (\u5f88\u96e3\u6309\u7684) \u5feb\u6377\u9375\uff0c\u800c\u662f\u53ef\u4ee5\u771f\u6b63\u6d3b\u7528\u9375\u76e4</p></li>\n<li><p>\u7d14\u6587\u5b57\u8207 ASCII color \u8907\u88fd\u529f\u80fd\u505a\u5728\u4e00\u8d77\uff0c\u65b9\u4fbf copy-paste (\u5f9e Nally \u6284\u4f86\u7684)</p></li>\n<li><p>\u5728\u7de8\u8f2f\u6587\u7ae0\u6642\u6309\u4f4f Alt (\u6216 Cmd) \u9ede\u6ed1\u9f20\u5de6\u9375\u53ef\u4ee5\u76f4\u63a5\u8df3\u5230\u6587\u7ae0\u7279\u5b9a\u4f4d\u7f6e (\u540c\u6a23\u5f9e Nally \u6284\u4f86\u7684)</p></li>\n<li><p>\u4e2d\u82f1\u6587\u5b57\u578b\u8207\u756b\u9762\u5927\u5c0f\u901a\u901a\u90fd\u53ef\u4ee5\u5206\u958b\u8a2d\u5b9a\uff0c\u4f60\u53ef\u4ee5\u8abf\u51fa\u4f60\u6700\u559c\u6b61\u7684\u7d44\u5408\u3002\u518d\u4e5f\u4e0d\u7528\u76ef\u8457\u919c\u4e0d\u62c9\u57fa\u7684\u7d30\u660e\u9ad4\u6216\u6a19\u6977\u9ad4\u82f1\u6587\u5b57\u578b (\u4ecd\u7136\u662f\u6284 Nally)</p></li>\n<li><p>\u5e7e\u4f55\u5716\u5f62\u662f\u76f4\u63a5\u756b\u51fa\u4f86\u7684\uff0c\u4e0d\u662f\u7279\u6b8a\u5b57\u5143\uff0c\u6240\u4ee5 ASCII art \u518d\u4e5f\u4e0d\u6703\u56e0\u70ba\u5b57\u578b\u800c\u7834\u5f97\u4e82\u4e03\u516b\u7cdf\u3002\u8b93\u4f60\u53ef\u4ee5\u6709\u66f4\u591a\u7684\u5b57\u578b\u9078\u64c7 (\u9084\u662f\u6284\u7684&#8230;)</p></li>\n<li><p>\u81ea\u52d5\u958b\u71c8 (\u6284\u5f88\u5927\u6284\u4e0d\u7528\u9322)</p></li>\n<li><p>\u7ad9\u53f0\u7ba1\u7406\u54e1\u8207\u5e38\u7528\u7b26\u865f\u8868</p></li>\n<li><p>\u81ea\u52d5\u7db2\u5740\u5075\u6e2c</p></li>\n<li><p>\u9078\u53d6\u5b57\u4e32\u5f8c\u53f3\u9375: Google \u641c\u5c0b\uff0c\u81ea\u52d5\u77ed\u7db2\u5740\u5075\u6e2c (PTT \u4e3b\u6d41\u7684\u77ed\u7db2\u5740\u548c\u7e2e\u78bc\u61c9\u8a72\u90fd\u53ef\u4ee5\uff0c\u6709\u7f3a\u53ef\u4ee5\u56de\u5831)\u3002\u6bd4\u8f03\u7279\u5225\u7684\u662f\u53ef\u4ee5\u4e00\u6b21\u9078\u5f88\u591a\u500b\u7db2\u5740\u5f8c\u53f3\u9375\u901a\u901a\u958b\u555f\uff0c\u96d6\u7136\u9084\u662f\u6bd4\u4e0d\u4e0a\u597d\u8b80\u7248\u4e0d\u904e\u5df2\u7d93\u5dee\u4e0d\u591a\u4e86\u3002</p></li>\n<li><p>\u8a2d\u5b9a Plink (Windows) \u6216 OpenSSH (Linux/OS X) \u8def\u5f91\u5f8c\u53ef\u4ee5\u4f7f\u7528 SSH \u9023\u7dda!!</p></li>\n</ul></p>\n\n<p>\u9644\u500b\u7cbe\u7f8e ASCII art \u622a\u5716\u8207 PCMan \u5c0d\u7167\u7d44\u6bd4\u8f03 (Windows 8\uff0cQelly \u662f\u7528 Consolas \u548c\u5fae\u8edf\u6b63\u9ed1\u9ad4\uff0cPCMan \u662f\u7d30\u660e\u9ad4)\nhttp://d.pr/i/yR35\nhttp://d.pr/i/GF53   PCMan \u5c0d\u7167\u7d44</p>\n\n<p>\u5982\u679c\u6709\u4efb\u4f55\u8edf\u9ad4\u4e0a\u7684\u554f\u984c\uff0c\u53ef\u4ee5\u5230 Issues \u5340\u584a\u76f4\u63a5\u63d0\u51fa\u3002\u96d6\u7136\u4e0a\u9762\u90fd\u662f\u82f1\u6587\u4e0d\u904e\u4f60 issue \u5167\u5bb9\u5beb\u4e2d\u6587\u4e5f OK \u7684\u3002</p>\n\n<p>\u672a\u4f86\u9664\u4e86\u4e2d\u6587\u7ffb\u8b6f\u4e4b\u5916\uff0c\u8003\u616e\u76f4\u63a5\u7528 OpenSSH (\u5728 Windows \u4e0a) \u5be6\u4f5c SSH client\u3002\u4e5f\u6709\u6253\u7b97\u505a\u985e\u4f3c\u597d\u8b80\u7248\u7684\u6771\u897f\uff0c\u4e0d\u904e\u76ee\u524d\u9084\u5728\u60f3\u8981\u600e\u9ebc\u6392\u7248\u6bd4\u8f03\u597d\u2500\u2500\u6709\u4efb\u4f55\u5efa\u8b70\u6b61\u8fce\u63d0\u51fa\u3002</p>\n\n<p>\u4e0d\u904e\u6211\u4e0d\u6253\u7b97\u505a\u7db2\u9801 BBS \u4e8c\u5408\u4e00\u7684\u5408\u9ad4\u7378 (\u50cf PCMan Combo \u4e4b\u985e\u7684\u6771\u897f)\u3002\u5982\u679c\u4f60\u771f\u7684\u4e0d\u60f3 BBS \u8207\u7db2\u9801\u700f\u89bd\u5668\u5206\u958b\uff0c\u8acb\u627e\u5225\u5bb6\u8b1d\u8b1d&#8230;</p>\n\n<p>Enjoy!</p>\n\n<blockquote>\n  <p>\u5982\u679c\u4f60\u771f\u7684\u6709\u7cfb\u7d71\u6f54\u7656\uff0c\u6703\u7528\u5230\u7684\u8a2d\u5b9a\u6a94\u662f (\u5728\u6211\u7684 Windows 8 \u4e0a)\n    \u4e3b\u8981\u8a2d\u5b9a\uff1a<code>AppData\\Roaming\\uranusjr.org\\qelly.ini</code>\n  \u8868\u60c5\u7b26\u865f\u5217\u8868\uff1a<code>AppData\\Local\\Qelly\\emoticons.json</code>\n  \u7ad9\u53f0\u5217\u8868\uff1a<code>AppData\\Local\\Qelly\\sites.json</code>\n  Windows XP \u8def\u5f91\u6703\u4e0d\u4e00\u6a23\uff0c\u4e0d\u904e\u6211\u6c92\u6709 XP \u6a5f\u61f6\u5f97\u6e2c\uff0c\u61c9\u8a72\u4e0d\u6703\u5f88\u96e3\u627e</p>\n</blockquote>\n",
+        "tags": [],
         "published_at": "2013-12-24T14:45:11Z",
-        "content": "[Qelly](https://github.com/uranusjr/Qelly) 1.0 alpha \u7248\u767c\u4f48\uff01\u53ef\u4ee5\u5f9e[\u9019\u88e1](https://github.com/uranusjr/Qelly/releases)\u627e\u5230 Windows binary \u8f09\u9ede\u3002\r\n\r\nQelly (\u767c\u97f3\u540c\u82f1\u6587\u540d Kelly) \u662f\u6211\u6700\u8fd1\u5728\u73a9\u7684 BBS client project\u3002\u672c\u4f86\u662f\u6211\u7b49\u7576\u5175\u7684\u6642\u5019 (2011) \u7121\u804a\u5beb\u7684\u6771\u897f\uff0c\u6700\u8fd1\u56e0\u70ba\u5e38\u7528 Windows \u89ba\u5f97 PCMan \u4e0d\u5408\u7528\u624d\u6316\u51fa\u4f86\u7e7c\u7e8c\uff0c\u4e00\u4e9b\u529f\u80fd\u88dc\u5b8c\u4e4b\u5f8c\u73fe\u5728\u57fa\u672c\u4e0a\u544a\u4e00\u500b\u6bb5\u843d\u4e86\uff0c\u6240\u4ee5\u62ff\u51fa\u4f86\u5206\u4eab\u4e00\u4e0b<strike>\u9806\u4fbf\u62d0\u6e2c\u8a66\u54e1</strike>\u3002\r\n\r\n\u4e0d\u7528\u5b89\u88dd\uff0c\u6c92\u6709 (Windows) registry\uff0c\u53ea\u6703\u5728\u4f60\u7684\u500b\u4eba\u8cc7\u6599\u593e\u88e1\u653e\u4e09\u500b\u6587\u5b57\u6a94\u5132\u5b58\u8cc7\u6599 (\u898b\u6587\u672b\u8aaa\u660e)\u3002\u9664\u4e86 Windows \u5916\u7684\u5176\u4ed6\u5e73\u53f0\u57fa\u672c\u4e0a\u53ea\u8981\u80fd\u7de8 Qt \u5927\u6982\u90fd\u80fd\u81ea\u5df1\u7de8 dependency \u548c\u672c\u9ad4\uff0c\u6709\u8208\u8da3\u7684\u4e5f\u53ef\u4ee5\u81ea\u5df1\u7de8\u4f86\u73a9\uff0c\u6211\u6e2c\u904e\u7528 Qt 4 \u6216 5 \u90fd\u53ef\u4ee5\uff0c\u53ea\u662f\u8981\u6ce8\u610f LibQxt \u7528\u7684 Qt \u7248\u672c\u8981\u76f8\u7b26\u3002\r\n<!--more-->\r\n\u4e3b\u8981\u7279\u9ede:\r\n\r\n* \u61c9\u7528\u7a0b\u5f0f\u5feb\u6377\u9375\u5168\u90e8\u90fd\u662f Alt \u5c0e\u5411 (Mac \u9664\u5916)\uff0c\u4f8b\u5982\r\n\r\n\t- \u8907\u88fd -> Alt+C\r\n  - \u8cbc\u4e0a -> Alt+V\r\n  - \u79fb\u5230\u7db2\u5740\u5217 -> Alt+L\r\n  - \u52a0\u5165\u66f8\u7c64 -> Alt+D\r\n  \r\n  \u6240\u4ee5\u4e0d\u7528\u7279\u5225\u80cc\u4e00\u7d44 (\u5f88\u96e3\u6309\u7684) \u5feb\u6377\u9375\uff0c\u800c\u662f\u53ef\u4ee5\u771f\u6b63\u6d3b\u7528\u9375\u76e4\r\n\r\n* \u7d14\u6587\u5b57\u8207 ASCII color \u8907\u88fd\u529f\u80fd\u505a\u5728\u4e00\u8d77\uff0c\u65b9\u4fbf copy-paste (\u5f9e Nally \u6284\u4f86\u7684)\r\n\r\n* \u5728\u7de8\u8f2f\u6587\u7ae0\u6642\u6309\u4f4f Alt (\u6216 Cmd) \u9ede\u6ed1\u9f20\u5de6\u9375\u53ef\u4ee5\u76f4\u63a5\u8df3\u5230\u6587\u7ae0\u7279\u5b9a\u4f4d\u7f6e (\u540c\u6a23\u5f9e Nally \u6284\u4f86\u7684)\r\n\r\n* \u4e2d\u82f1\u6587\u5b57\u578b\u8207\u756b\u9762\u5927\u5c0f\u901a\u901a\u90fd\u53ef\u4ee5\u5206\u958b\u8a2d\u5b9a\uff0c\u4f60\u53ef\u4ee5\u8abf\u51fa\u4f60\u6700\u559c\u6b61\u7684\u7d44\u5408\u3002\u518d\u4e5f\u4e0d\u7528\u76ef\u8457\u919c\u4e0d\u62c9\u57fa\u7684\u7d30\u660e\u9ad4\u6216\u6a19\u6977\u9ad4\u82f1\u6587\u5b57\u578b (\u4ecd\u7136\u662f\u6284 Nally)\r\n\r\n* \u5e7e\u4f55\u5716\u5f62\u662f\u76f4\u63a5\u756b\u51fa\u4f86\u7684\uff0c\u4e0d\u662f\u7279\u6b8a\u5b57\u5143\uff0c\u6240\u4ee5 ASCII art \u518d\u4e5f\u4e0d\u6703\u56e0\u70ba\u5b57\u578b\u800c\u7834\u5f97\u4e82\u4e03\u516b\u7cdf\u3002\u8b93\u4f60\u53ef\u4ee5\u6709\u66f4\u591a\u7684\u5b57\u578b\u9078\u64c7 (\u9084\u662f\u6284\u7684...)\r\n\r\n* \u81ea\u52d5\u958b\u71c8 (\u6284\u5f88\u5927\u6284\u4e0d\u7528\u9322)\r\n\r\n* \u7ad9\u53f0\u7ba1\u7406\u54e1\u8207\u5e38\u7528\u7b26\u865f\u8868\r\n\r\n* \u81ea\u52d5\u7db2\u5740\u5075\u6e2c\r\n\r\n* \u9078\u53d6\u5b57\u4e32\u5f8c\u53f3\u9375: Google \u641c\u5c0b\uff0c\u81ea\u52d5\u77ed\u7db2\u5740\u5075\u6e2c (PTT \u4e3b\u6d41\u7684\u77ed\u7db2\u5740\u548c\u7e2e\u78bc\u61c9\u8a72\u90fd\u53ef\u4ee5\uff0c\u6709\u7f3a\u53ef\u4ee5\u56de\u5831)\u3002\u6bd4\u8f03\u7279\u5225\u7684\u662f\u53ef\u4ee5\u4e00\u6b21\u9078\u5f88\u591a\u500b\u7db2\u5740\u5f8c\u53f3\u9375\u901a\u901a\u958b\u555f\uff0c\u96d6\u7136\u9084\u662f\u6bd4\u4e0d\u4e0a\u597d\u8b80\u7248\u4e0d\u904e\u5df2\u7d93\u5dee\u4e0d\u591a\u4e86\u3002\r\n\r\n* \u8a2d\u5b9a Plink (Windows) \u6216 OpenSSH (Linux/OS X) \u8def\u5f91\u5f8c\u53ef\u4ee5\u4f7f\u7528 SSH \u9023\u7dda!!\r\n\r\n\u9644\u500b\u7cbe\u7f8e ASCII art \u622a\u5716\u8207 PCMan \u5c0d\u7167\u7d44\u6bd4\u8f03 (Windows 8\uff0cQelly \u662f\u7528 Consolas \u548c\u5fae\u8edf\u6b63\u9ed1\u9ad4\uff0cPCMan \u662f\u7d30\u660e\u9ad4)\r\nhttp://d.pr/i/yR35\r\nhttp://d.pr/i/GF53   PCMan \u5c0d\u7167\u7d44\r\n\r\n\u5982\u679c\u6709\u4efb\u4f55\u8edf\u9ad4\u4e0a\u7684\u554f\u984c\uff0c\u53ef\u4ee5\u5230 Issues \u5340\u584a\u76f4\u63a5\u63d0\u51fa\u3002\u96d6\u7136\u4e0a\u9762\u90fd\u662f\u82f1\u6587\u4e0d\u904e\u4f60 issue \u5167\u5bb9\u5beb\u4e2d\u6587\u4e5f OK \u7684\u3002\r\n\r\n\u672a\u4f86\u9664\u4e86\u4e2d\u6587\u7ffb\u8b6f\u4e4b\u5916\uff0c\u8003\u616e\u76f4\u63a5\u7528 OpenSSH (\u5728 Windows \u4e0a) \u5be6\u4f5c SSH client\u3002\u4e5f\u6709\u6253\u7b97\u505a\u985e\u4f3c\u597d\u8b80\u7248\u7684\u6771\u897f\uff0c\u4e0d\u904e\u76ee\u524d\u9084\u5728\u60f3\u8981\u600e\u9ebc\u6392\u7248\u6bd4\u8f03\u597d\u2500\u2500\u6709\u4efb\u4f55\u5efa\u8b70\u6b61\u8fce\u63d0\u51fa\u3002\r\n\r\n\u4e0d\u904e\u6211\u4e0d\u6253\u7b97\u505a\u7db2\u9801 BBS \u4e8c\u5408\u4e00\u7684\u5408\u9ad4\u7378 (\u50cf PCMan Combo \u4e4b\u985e\u7684\u6771\u897f)\u3002\u5982\u679c\u4f60\u771f\u7684\u4e0d\u60f3 BBS \u8207\u7db2\u9801\u700f\u89bd\u5668\u5206\u958b\uff0c\u8acb\u627e\u5225\u5bb6\u8b1d\u8b1d...\r\n\r\nEnjoy!\r\n\r\n> \u5982\u679c\u4f60\u771f\u7684\u6709\u7cfb\u7d71\u6f54\u7656\uff0c\u6703\u7528\u5230\u7684\u8a2d\u5b9a\u6a94\u662f (\u5728\u6211\u7684 Windows 8 \u4e0a)\r\n>\t\u4e3b\u8981\u8a2d\u5b9a\uff1a`AppData\\Roaming\\uranusjr.org\\qelly.ini`\r\n> \u8868\u60c5\u7b26\u865f\u5217\u8868\uff1a`AppData\\Local\\Qelly\\emoticons.json`\r\n> \u7ad9\u53f0\u5217\u8868\uff1a`AppData\\Local\\Qelly\\sites.json`\r\n> Windows XP \u8def\u5f91\u6703\u4e0d\u4e00\u6a23\uff0c\u4e0d\u904e\u6211\u6c92\u6709 XP \u6a5f\u61f6\u5f97\u6e2c\uff0c\u61c9\u8a72\u4e0d\u6703\u5f88\u96e3\u627e",
         "state": "public",
         "short_description": "qelly-yet-another-bbs-client",
-        "slug": "qelly-yet-another-bbs-client",
-        "tags": []
-    }
+        "slug": "qelly-yet-another-bbs-client"
+    },
+    "model": "blog.post",
+    "pk": 5
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Aaron Heilman \u600e\u9ebc\u4e86\uff1f",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2008-04-06T04:03:00Z",
+        "state": "public",
+        "short_description": "In the coming years, mothers in Queens would tell their children that if they didn't eat their greens to grow up big and strong, Aaron Heilman would come to their house and PITCH.",
+        "slug": "whats-wrong-with-aaron-heilman"
+    },
+    "model": "blog.post",
+    "pk": 6
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "Mac OS X \u8207 Windows \u5171\u4eab iTunes \u8cc7\u6599\u5eab",
+        "tags": [
+            7,
+            5,
+            6
+        ],
+        "published_at": "2008-09-28T14:36:00Z",
+        "state": "public",
+        "short_description": "\u7db2\u53cb cooleric323 \u5728 Ptt \u4e0a\u554f\u4e86\u500b\u6709\u8da3\u7684\u554f\u984c\u3002\u96d6\u7136\u6211\u500b\u4eba\u6c92\u6709\u5728\u7528 Boot Camp\uff0c\u4e0d\u904e\u5982\u4f55\u5171\u4eab Mac OS \u8207 Windows \u7684 iTunes \u8cc7\u6599\u5eab\u78ba\u5be6\u503c\u5f97\u7814\u7a76\u3002",
+        "slug": "share-a-itunes-library-between-os-x-and-windows"
+    },
+    "model": "blog.post",
+    "pk": 7
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "\u52d5\u614b\u6b04\u4f4d\u7684 Reusable Search Mixin View",
+        "tags": [
+            8,
+            1
+        ],
+        "published_at": "2013-12-25T12:19:00Z",
+        "state": "public",
+        "short_description": "\u672c\u5468\u7684 Django Workshop\uff082013-12-24\uff09 \u8b1b\u5230\u4e86 Common Patterns of Forms\u3002",
+        "slug": "reusable-search-mixin-view-with-dynamic-field-names"
+    },
+    "model": "blog.post",
+    "pk": 8
+},
+{
+    "fields": {
+        "category": 5,
+        "title": "\u4f60\u4e0d\u77e5\u9053\u7684\u82f1\u6587\uff1a\u767c\u97f3\u7bc7",
+        "tags": [],
+        "published_at": "2013-09-28T05:26:00Z",
+        "state": "public",
+        "short_description": "\u56e0\u70ba\u5be6\u5728\u592a\u591a\u4eba\u4e82\u767c\u97f3\u4e86\uff0c\u628a\u6211\u76ee\u524d\u60f3\u5230\u7684\u5beb\u4e0b\u4f86\u4ee5\u6b63\u8996\u807d\u3002",
+        "slug": "english-you-did-not-know-pronunciation"
+    },
+    "model": "blog.post",
+    "pk": 9
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Note: Triggering \u201cclick\u201d in jQuery",
+        "tags": [
+            11,
+            12
+        ],
+        "published_at": "2013-08-18T16:58:00Z",
+        "state": "public",
+        "short_description": "\u5176\u5be6\u6211\u4e5f\u4e0d\u77e5\u9053\u70ba\u4ec0\u9ebc\u2026",
+        "slug": "note-triggering-click-in-jquery"
+    },
+    "model": "blog.post",
+    "pk": 10
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Note: Slugify Unicode Strings in Django",
+        "tags": [
+            8,
+            1
+        ],
+        "published_at": "2013-08-11T13:01:00Z",
+        "state": "public",
+        "short_description": "Django \u7684 `slugify` filter \u4e0d\u652f\u63f4 Unicode\u3002\u9019\u88e1\u7b46\u8a18\u4e86\u53ef\u80fd\u7684\u8f14\u52a9\u5de5\u5177\u3002",
+        "slug": "note-slugify-unicode-strings-in-django"
+    },
+    "model": "blog.post",
+    "pk": 11
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Python \u6709 zip\uff0c\u90a3\u9ebc\u6709\u6c92\u6709 unzip\uff1f",
+        "tags": [
+            1
+        ],
+        "published_at": "2013-08-10T16:16:00Z",
+        "state": "public",
+        "short_description": "\u6211\u5011\u90fd\u77e5\u9053 Pyhton \u5167\u5efa\u7684 `zip` \u51fd\u5f0f\u53ef\u4ee5\u5c07\u591a\u500b lists \u5408\u6210\u3002\u53ef\u662f\u5982\u679c\u6211\u5011\u4eca\u5929\u60f3\u505a\u7684\u4e8b\u60c5\u76f8\u53cd\u8981\u600e\u9ebc\u8fa6\uff1f",
+        "slug": "python-has-zip-how-about-unzip"
+    },
+    "model": "blog.post",
+    "pk": 12
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Things Alike Are Not Things the Same",
+        "tags": [
+            9,
+            13
+        ],
+        "published_at": "2010-09-20T09:40:00Z",
+        "state": "public",
+        "short_description": "\u6628\u5929\u5728 PTT \u9047\u5230\u4e86\u4e00\u500b\u554f\u984c\uff0c\u6709\u4eba\u60f3\u77e5\u9053\u70ba\u4ec0\u9ebc Objective-C \u7684\u5b57\u4e32 assignment \u884c\u70ba\u4e0d\u7b26\u9810\u671f\u3002",
+        "slug": "things-alike-are-not-things-the-same"
+    },
+    "model": "blog.post",
+    "pk": 13
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "\u8acb\u4e0d\u8981\u7528 Dev-C++",
+        "tags": [
+            9
+        ],
+        "published_at": "2010-09-19T15:46:00Z",
+        "state": "public",
+        "short_description": "\u8acb\u5927\u5bb6\u5e6b\u5fd9\u9802\u9019\u7bc7\uff0cDev-C++ \u771f\u7684\u8a72\u88ab\u6642\u4ee3\u6dd8\u6c70\u4e86\u2026 orz",
+        "slug": "do-not-use-dev-cpp"
+    },
+    "model": "blog.post",
+    "pk": 14
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Xcode + Qt",
+        "tags": [
+            9,
+            10
+        ],
+        "published_at": "2010-09-12T22:33:00Z",
+        "state": "public",
+        "short_description": "\u6700\u8fd1\u90fd\u5728\u7814\u7a76 Qt\uff0c\u672c\u4f86\u90fd\u662f\u5728 Linux \u4e0a\u73a9\uff0c\u4e0d\u904e\u9019\u5e7e\u5929\u7a81\u7136\u60f3\u628a\u7a0b\u5f0f\u653e\u5230 Mac OS X \u4e0a\u8dd1\uff0c\u6240\u4ee5\u5c31\u7814\u7a76\u4e86\u4e00\u4e0b\u7de8\u8b6f\u74b0\u5883\u3002",
+        "slug": "qt-xcode"
+    },
+    "model": "blog.post",
+    "pk": 15
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "Why We Don't Enter But Return",
+        "tags": [
+            14
+        ],
+        "published_at": "2010-03-14T08:09:00Z",
+        "state": "public",
+        "short_description": "\u6709\u7528\u904e iPhone \u7684\u4eba\u61c9\u8a72\u6703\u77e5\u9053\uff0ciPhone \u7684\u9375\u76e4\u4e0a\u6c92\u6709 Enter \u9375\uff0c\u53ea\u6709\u4e00\u500b Return\uff0c\u4f46\u529f\u80fd\u662f\u4e00\u6a23\u7684\u3002",
+        "slug": "why-we-dont-enter-but-return"
+    },
+    "model": "blog.post",
+    "pk": 16
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u5728 Mac OS X \u4e0b\u4f7f\u7528 7-Zip \u58d3\u7e2e",
+        "tags": [
+            5
+        ],
+        "published_at": "2010-02-24T12:15:00Z",
+        "state": "public",
+        "short_description": "OS X \u5167\u5efa\u58d3\u7e2e\u5de5\u5177\u4e0d\u4f46\u6703\u5305\u9032\u4e00\u4e9b\u83ab\u540d\u5176\u5999\u7684\u6771\u897f\uff0c\u9084\u4f7f\u7528\u8001\u820a\u7684 ZIP \u683c\u5f0f\uff0c\u6240\u4ee5\u6211\u4e00\u76f4\u4e0d\u559c\u6b61\u7528\u3002",
+        "slug": "7-zip-archiving-under-mac-os-x"
+    },
+    "model": "blog.post",
+    "pk": 17
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u5728 Mac OS X \u4f7f\u7528 HFS \u5171\u4eab\u6a94\u6848",
+        "tags": [
+            5,
+            1
+        ],
+        "published_at": "2010-02-20T11:54:00Z",
+        "state": "public",
+        "short_description": "\u9019\u500b HFS \u4e0d\u662f\u860b\u679c\u958b\u767c\u7684\u90a3\u500b\u78c1\u789f\u683c\u5f0f\uff08Hierarchical File System\uff09\uff0c\u800c\u662f\u4e00\u7a2e\u6a94\u6848\u5171\u4eab\u5e73\u53f0\uff0cHTTP File Server \u7684\u7e2e\u5beb\u3002",
+        "slug": "file-sharing-through-hfs-under-os-x"
+    },
+    "model": "blog.post",
+    "pk": 18
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "New York Mets Yahoo Roster Report",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2010-02-19T13:50:00Z",
+        "state": "public",
+        "short_description": "\u61f6\u5f97\u81ea\u5df1\u5beb\uff0c\u6240\u4ee5\u628a\u524d\u5e7e\u5929\u7ffb\u8b6f\u7684\u6771\u897f\u589e\u52a0\u9ede\u5167\u5bb9\u4e1f\u4e0a\u4f86\u4e86\u4e8b (\u8aa4\u5f88\u5927",
+        "slug": "new-york-mets-yahoo-roster-report"
+    },
+    "model": "blog.post",
+    "pk": 19
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u795e\u79d8\u7684 Mac OS X \u526a\u8cbc\u7c3f",
+        "tags": [
+            15,
+            13,
+            5
+        ],
+        "published_at": "2009-08-07T09:18:00Z",
+        "state": "public",
+        "short_description": "Mac OS X \u7684\u526a\u8cbc\u7c3f\u4e00\u76f4\u90fd\u6709\u9a5a\u4eba\u7684\u529f\u80fd\u3002\u70ba\u4ec0\u9ebc\u4e00\u500b\u526a\u8cbc\u529f\u80fd\u53ef\u4ee5\u641e\u5f97\u9019\u9ebc\u53b2\u5bb3\uff1f",
+        "slug": "the-curious-os-x-clipboard"
+    },
+    "model": "blog.post",
+    "pk": 20
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "iTunes \u8207 QuickTime \u5408\u4f5c\u7121\u9593",
+        "tags": [
+            19,
+            7,
+            5,
+            16
+        ],
+        "published_at": "2009-08-03T16:18:00Z",
+        "state": "public",
+        "short_description": "\u4e0a\u6b21\u6211\u8a66\u8457\u5229\u7528 Perian \u7684\u529f\u80fd\uff0c\u7e5e\u904e iTunes \u7684\u6a94\u6848\u683c\u5f0f\u8fa8\u8a8d\uff0c\u4ee5\u5728 iTunes \u88e1\u6574\u7406\u5f71\u7247\u3002\u4f46\u5f88\u5feb\u6211\u5c31\u9047\u5230\u53e6\u4e00\u500b\u554f\u984c\uff1aiTunes \u7684\u5f71\u7247\u63a7\u5236\u529f\u80fd\u6709\u5920\u721b\u3002",
+        "slug": "let-itunes-and-quicktime-co-operate-seamlessly"
+    },
+    "model": "blog.post",
+    "pk": 21
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u68d2\u7403\u82f1\u6587\uff1aNon-tender",
+        "tags": [
+            17,
+            3
+        ],
+        "published_at": "2009-07-28T16:22:00Z",
+        "state": "public",
+        "short_description": "\u6700\u8fd1 non-tender \u6b63\u592f\uff0c\u6240\u4ee5\u4eca\u5929\u4f86\u8ac7 non-tender\u3002",
+        "slug": "baseball-english-non-tender"
+    },
+    "model": "blog.post",
+    "pk": 22
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u8f15\u9b06\u7ba1\u7406\u4f60\u7684\u5f71\u7247\uff0c\u5982\u540c\u7ba1\u7406\u4f60\u7684\u97f3\u6a02",
+        "tags": [
+            19,
+            7,
+            5,
+            16,
+            6
+        ],
+        "published_at": "2009-06-15T04:33:00Z",
+        "state": "public",
+        "short_description": "\u6211\u4e00\u76f4\u60f3\u627e\u5230\u4e00\u500b\u80fd\u50cf iTunes \u4e00\u6a23\u65b9\u4fbf\u7684\u8edf\u9ad4\u3002\u53ef\u662f\u9019\u9084\u771f\u662f\u4e0d\u7c21\u55ae\uff0c\u627e\u4e86\u597d\u4e45\u5c31\u662f\u6c92\u4e00\u500b\u8edf\u9ad4\u5408\u7528\u2026",
+        "slug": "manage-your-videos-easily-like-your-music"
+    },
+    "model": "blog.post",
+    "pk": 23
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u6b61\u8fce\u56de\u4f86\uff0cSafari 4",
+        "tags": [
+            5,
+            18,
+            6
+        ],
+        "published_at": "2009-06-09T12:00:00Z",
+        "state": "public",
+        "short_description": "Safari 4 \u6b63\u5f0f\u7248\u4e5f\u7d42\u65bc\u767c\u4f48\u4e86\uff0c\u540c\u6642\u63d0\u4f9b Mac \u8207 Windows \u7248\u672c\uff0c\u53e6\u5916\u7576\u7136\u5305\u62ec\u7e41\u9ad4\u4e2d\u6587\u3002",
+        "slug": "welcome-back-safari-4"
+    },
+    "model": "blog.post",
+    "pk": 24
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "Again, Apple wins out.",
+        "tags": [
+            5,
+            6
+        ],
+        "published_at": "2009-05-31T10:15:00Z",
+        "state": "public",
+        "short_description": "\u4eca\u5e74\u7684 WWDC \u7d50\u675f\u4e86\u3002",
+        "slug": "again-apple-wins-out"
+    },
+    "model": "blog.post",
+    "pk": 25
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\"Go one level up\" in Finder",
+        "tags": [
+            19,
+            5
+        ],
+        "published_at": "2009-05-31T10:15:00Z",
+        "state": "public",
+        "short_description": "\u5feb\u6377\u9375\u6c38\u9060\u6bd4\u9ede\u9078\u55ae\u8981\u5feb\u591a\u4e86\u554a\uff0c\u5373\u4f7f\u5beb\u7a0b\u5f0f\u4e5f\u4e0d\u4f8b\u5916\uff0c\u54c7\u54c8\u54c8\u54c8\u54c8\uff5e",
+        "slug": "go-one-level-up-in-finder"
+    },
+    "model": "blog.post",
+    "pk": 26
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Ramon Castro \u524d\u5f80\u767d\u896a",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-05-30T19:10:00Z",
+        "state": "public",
+        "short_description": "Brian Schneider \u5728\u5c0d\u99ac\u6797\u9b5a\u9996\u6230\u5df2\u7d93\u6b78\u968a\u5750\u5728\u4f11\u606f\u5340\uff0c\u4e0d\u904e\u6c92\u6709\u88ab\u767b\u9304\u3002\u5927\u90fd\u6703\u628a Ramon Castro \u4ea4\u6613\u5230\u767d\u896a\uff0c\u4ee3\u8868 Omir Santos \u61c9\u8a72\u6703\u64d4\u4efb\u4e8c\u865f\u6355\u624b\u3002",
+        "slug": "ramon-castro-to-white-sox"
+    },
+    "model": "blog.post",
+    "pk": 27
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u8abf\u6574 Mac OS X \u7a0b\u5f0f\u8a9e\u7cfb",
+        "tags": [
+            15,
+            5
+        ],
+        "published_at": "2009-05-01T09:49:00Z",
+        "state": "public",
+        "short_description": "\u8acb\u554f\u6709\u4eba\u6709\u67d0\u67d0\u8edf\u9ad4\u7684\u82f1\u6587\u7248\u55ce\uff1f\u6211\u53bb\u5b98\u7db2\u4e0b\u8f09\u56de\u4f86\u958b\u90fd\u662f\u7c21\u9ad4\u4e2d\u6587\uff0c\u4e5f\u627e\u4e0d\u5230\u53ef\u4ee5\u8abf\u7684\u5730\u65b9\uff0c\u600e\u9ebc\u8fa6\u554a\uff1f",
+        "slug": "switching-os-x-application-locale"
+    },
+    "model": "blog.post",
+    "pk": 28
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u958b\u5e55\u6230\u4e4b\u524d",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-04-06T16:38:00Z",
+        "state": "public",
+        "short_description": "\u524d\u9663\u5b50\u751f\u65e5\u535a\u5ba2\u4f86\u9001\u4e86\u55ae\u66f8\u6298\u50f9\u5238\uff0c\u5c31\u53bb\u8cb7\u4e86\u672c\u66f8\uff0c\u9806\u4fbf\u652f\u6301\u4e00\u4e0b\u4e16\u754c\u8077\u68d2\u89c0\u6230\u6307\u5357\u3002",
+        "slug": "before-opening-day"
+    },
+    "model": "blog.post",
+    "pk": 29
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u56de\u61c9\u3001\u5fc3\u5f97\u8207\u5176\u4ed6",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-04-09T16:14:00Z",
+        "state": "public",
+        "short_description": "\u6c92\u60f3\u5230\u96a8\u4fbf\u5beb\u5beb\u7adf\u7136\u53ef\u4ee5\u8acb\u51fa Anakin \u56de\u61c9\u3002>/////<",
+        "slug": "response-thoughts-and-more"
+    },
+    "model": "blog.post",
+    "pk": 30
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u5927\u90fd\u6703\u7c3d\u4e0b Gary Sheffield",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-04-06T10:18:00Z",
+        "state": "public",
+        "short_description": "\u5927\u90fd\u6703\u548c\u53bb\u5e74\u5728\u8001\u864e\u7684 Sheffield \u7c3d\u4e0b\u4e00\u5e74\u5927\u806f\u76df\u5408\u7d04\uff0c\u85aa\u8cc7 $400K\u3002",
+        "slug": "mets-signed-gary-sheffield"
+    },
+    "model": "blog.post",
+    "pk": 31
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "On the Surface 2009: Position Players",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-03-31T17:02:00Z",
+        "state": "public",
+        "short_description": "\u4eca\u5e74\u548c\u53bb\u5e74\u7684\u5148\u767c\u6709\u5169\u500b\u8b8a\u52d5\uff0c\u4f46\u5176\u5be6\u90fd\u4e0d\u91cd\u8981\u3002",
+        "slug": "on-the-surface-2009-position-players"
+    },
+    "model": "blog.post",
+    "pk": 32
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Five Questions: Washington Nationals",
+        "tags": [
+            3
+        ],
+        "published_at": "2009-03-30T10:26:00Z",
+        "state": "public",
+        "short_description": "\u54a6\uff1f\u570b\u6c11\uff1fXD \u6709\u5f88\u591a\u539f\u56e0\u5566\uff0c\u4f8b\u5982\u570b\u6c11\u7403\u8ff7\u771f\u7684\u2026\u5443\uff0c\u5b58\u5728\u55ce\uff0c\u53f0\u7063\u7684\u570b\u6c11\u7403\u8ff7\uff1f",
+        "slug": "five-questions-washington-nationals"
+    },
+    "model": "blog.post",
+    "pk": 33
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "On the Surface 2009: Pitchers, part 2",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-03-29T17:10:00Z",
+        "state": "public",
+        "short_description": "\u96d6\u7136\u6709\u4eba\u89ba\u5f97\u592a\u6fc0\u70c8\uff0c\u4f46 Omar Minaya \u4eca\u5e74\u4f11\u5175\u671f\u7684\u6700\u5927\u52d5\u4f5c\u5f88\u7b26\u5408\u9810\u671f \u2014 \u7ffb\u4fee\u725b\u68da\u3002",
+        "slug": "on-the-surface-2009-pitchers-part-2"
+    },
+    "model": "blog.post",
+    "pk": 34
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Goodbye, Mr Brattain.",
+        "tags": [
+            3
+        ],
+        "published_at": "2009-03-27T18:17:00Z",
+        "state": "public",
+        "short_description": "\u6628\u5929\u5f88\u8a1d\u7570\u5730\u807d\u8aaa\uff0c\u68d2\u7403\u4f5c\u5bb6 John Brattain \u904e\u4e16\u3002",
+        "slug": "goodbye-mr-brittain"
+    },
+    "model": "blog.post",
+    "pk": 35
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "On the Surface 2009: Pitchers, part 1",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-03-25T15:10:00Z",
+        "state": "public",
+        "short_description": "\u4eca\u5e74\u6625\u8a13\u5927\u90fd\u6703\u6700\u7cbe\u5f69\uff08\uff1f\uff09\u7684\u722d\u596a\u6230\u5c31\u662f\u4e94\u865f\u6295\u624b\uff0c\u5728\u4e00\u500b\u6708\u5c0d\u6c7a\u4e4b\u5f8c\u73fe\u5728\u4e5f\u6162\u6162\u6709\u7d50\u679c\u4e86\u3002",
+        "slug": "on-the-surface-2009-pitchers-part-1"
+    },
+    "model": "blog.post",
+    "pk": 36
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "On the Surface 2009: Overview",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-03-23T15:37:00Z",
+        "state": "public",
+        "short_description": "\u4eca\u5e74\u5927\u90fd\u6703\u5f88\u591a\u4f4d\u7f6e\u90fd\u5df2\u7d93\u5361\u597d\u4eba\u4e86\uff0c\u4e0d\u50cf\u53bb\u9ecf\u5230\u9019\u500b\u6642\u5019\u672a\u77e5\u6578\u9084\u4e00\u5927\u5806\uff0c\u50cf\u90a3\u500b\u4e94\u865f\u5148\u767c\u4eba\u9078\u5c31\u53ef\u4ee5\u770b\u51fa\u4f86\u3002",
+        "slug": "on-the-surface-2009-overview"
+    },
+    "model": "blog.post",
+    "pk": 37
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Five Questions: New York Mets",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-03-22T15:00:00Z",
+        "state": "public",
+        "short_description": "Five Questions: New York Mets 2009 by John Walsh, The Hardball Times.",
+        "slug": "five-questions-new-york-mets"
+    },
+    "model": "blog.post",
+    "pk": 38
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "MLB.com Minors Moniker Madness",
+        "tags": [
+            3
+        ],
+        "published_at": "2009-03-21T18:03:00Z",
+        "state": "public",
+        "short_description": "MLB.com \u8fa6\u7684\u4e00\u500b\u6beb\u7121\u610f\u7fa9\u6d3b\u52d5\uff0c\u4eca\u5e74\u7adf\u7136\u5802\u5802\u9081\u5165\u7b2c\u4e09\u5c46\u3002",
+        "slug": "mlb-com-minors-moniker-madness"
+    },
+    "model": "blog.post",
+    "pk": 39
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "On the Surface: 2008 Look-back",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-03-21T12:43:00Z",
+        "state": "public",
+        "short_description": "\u7d04\u5b9a\u7684\u7cfb\u5217\uff0c\u4e0d\u904e\u958b\u59cb\u4e4b\u524d\uff0c\u5148\u56de\u9867\u4e00\u4e0b\u53bb\u5e74\u7684\u5167\u5bb9\u597d\u4e86\u3002\u8aaa\u5230\u53bb\u5e74\uff0c\u4e0a\u6b21\u56e0\u70ba\u4e00\u4e9b\u72c0\u6cc1\u6700\u5f8c\u6709\u9ede\u534a\u8170\u65ac\uff0c\u4eca\u5e74\u8981\u60f3\u8fa6\u6cd5\u907f\u514d\u2026",
+        "slug": "on-the-surface-2008-look-back"
+    },
+    "model": "blog.post",
+    "pk": 40
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u6709\u6642\u6211\u5e7e\u4e4e\u89ba\u5f97\u4ed6\u5011\u662f\u6545\u610f\u7684",
+        "tags": [
+            3
+        ],
+        "published_at": "2009-02-23T18:30:00Z",
+        "state": "public",
+        "short_description": "\u798f\u65af\u65b0\u805e\u7db2\u6628\u5929\u6709\u5169\u7bc7\u6587\u7ae0\uff0c\u5c0d\u6700\u8fd1\u5927\u806f\u76df\u7403\u968a\u72c0\u6cc1\u505a\u4e86\u7e3d\u7d50\uff0c\u800c NOWNews \u8a18\u8005\u9673\u6d5a\u9321\u5831\u5c0e\u4e86\u7b2c\u4e00\u7bc7\u3002",
+        "slug": "sometimes-i-almost-feel-they-do-this-on-purpose"
+    },
+    "model": "blog.post",
+    "pk": 41
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "2009 \u5e74\u503c\u5f97\u95dc\u6ce8\u7684\u5341\u500b\u5927\u90fd\u6703\u8fb2\u5834\u4f5c\u7269",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-02-22T15:19:00Z",
+        "state": "public",
+        "short_description": "\u6625\u5929\u5230\u4e86\uff01\u4eca\u5e74\u6625\u8a13\u6211\u9084\u662f\u6253\u7b97\u548c\u53bb\u5e74\u4e00\u6a23\u76e1\u91cf\u591a\u770b\u5e7e\u5834\u71b1\u8eab\u8cfd\uff0c\u6ce8\u610f\u4e00\u4e9b\u5c0f\u7d30\u7bc0\uff0c\u5927\u6982\u4e09\u6708\u4e2d\u958b\u59cb\u5beb On the Surface \u7cfb\u5217\u3002",
+        "slug": "10-mets-prospects-to-pay-attention-to-in-2009"
+    },
+    "model": "blog.post",
+    "pk": 42
+},
+{
+    "fields": {
+        "category": 5,
+        "title": "\u5728\u6377\u904b\u4e0a",
+        "tags": [],
+        "published_at": "2009-02-20T15:16:00Z",
+        "state": "public",
+        "short_description": "\u770b\u5230\u4e86\u4e2d\u5c71\u8db3\u7403\u5834\u3002\u6216\u8005\uff0c\u770b\u5230\u4e86\u4e2d\u5c71\u300c\u5df2\u7d93\u4e0d\u662f\u8db3\u7403\u5834\u300d\u3002",
+        "slug": "on-the-mrt"
+    },
+    "model": "blog.post",
+    "pk": 43
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Breaking Down: Brad Holt",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-01-29T10:20:00Z",
+        "state": "public",
+        "short_description": "\u6253\u7b97\u7a0d\u5fae\u7528\u9ede\u6642\u9593\uff0c\u63d0\u4f9b\u4e00\u4e0b\u6211\u76ee\u524d\u89c0\u5bdf\u5230\u7684\u8868\u73fe\u7279\u9ede\uff0c\u5e0c\u671b\u9019\u6703\u5c0d\u5927\u5bb6\u6709\u5e6b\u52a9\u3002",
+        "slug": "breaking-down-brad-holt"
+    },
+    "model": "blog.post",
+    "pk": 44
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u81ea\u7531\u7403\u54e1\u9650\u984d\uff1f",
+        "tags": [
+            3
+        ],
+        "published_at": "2009-01-31T15:08:00Z",
+        "state": "public",
+        "short_description": "MLB.com \u7684 Barry M. Bloom \u8072\u7a31\u6d0b\u57fa\u56e0\u70ba\u5df2\u7d93\u9054\u5230\u81ea\u7531\u7403\u54e1\u9650\u984d\uff0c\u6240\u4ee5\u4eca\u5e74\u5df2\u7d93\u4e0d\u80fd\u518d\u7c3d\u4efb\u4f55\u7684 A \u7d1a\u6216 B \u7d1a\u81ea\u7531\u7403\u54e1\u3002",
+        "slug": "free-agent-quota"
+    },
+    "model": "blog.post",
+    "pk": 45
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "A Closer Look: Bryce Harper",
+        "tags": [
+            3
+        ],
+        "published_at": "2009-02-03T16:55:00Z",
+        "state": "public",
+        "short_description": "\u8ab0\u662f Bryce Harper\uff1fHomura \u5728 ptt \u4e0a\u7ffb\u8b6f\u4e86\u4e00\u7bc7 Rich Lederer \u7684\u6587\u7ae0 Revisiting Bryce Harper\uff0c\u4ee5\u4e0b\u7bc0\u9304\u8b6f\u6587\uff1a",
+        "slug": "a-closer-look-bryce-harper"
+    },
+    "model": "blog.post",
+    "pk": 46
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "\u9632\u5b88\u6578\u64da\u8207 MOSCITO",
+        "tags": [
+            21
+        ],
+        "published_at": "2009-02-05T13:47:00Z",
+        "state": "public",
+        "short_description": "\u4eca\u5929\u53bb\u770b\u4e86\u4e00\u4e0b\u53f0\u5927\u76c3\u3002\u53bb\u770b\u7684\u539f\u56e0\u5305\u62ec\u56db\u5f37\u6709\u4e00\u5806\u719f\u4eba\uff0c\u526f\u76c3\u4e5f\u6709\u4e0d\u5c11\u8a8d\u8b58\u7684\uff0c\u9084\u6709\u53cd\u6b63\u6211\u5728\u90a3\u9644\u8fd1\u7b49\u7b49\u3002",
+        "slug": "moscito-and-defense-metrics"
+    },
+    "model": "blog.post",
+    "pk": 47
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "\u6dfa\u8ac7\u6a94\u6848\u593e\u52d5\u4f5c",
+        "tags": [
+            19,
+            5
+        ],
+        "published_at": "2009-02-09T13:51:00Z",
+        "state": "public",
+        "short_description": "\u5f88\u591a\u4eba\u4e0d\u77e5\u9053 Mac OS X \u4e5f\u6709\u8a31\u591a\u975e\u5e38\u597d\u7528\u7684\u300cpower feature\u300d\u4f9b\u4f7f\u7528\u8005\u52a0\u901f\u81ea\u5df1\u7684\u65e5\u5e38\u5de5\u4f5c\u3002",
+        "slug": "on-folder-actions"
+    },
+    "model": "blog.post",
+    "pk": 48
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Graphing Beltran... Again",
+        "tags": [
+            4,
+            3
+        ],
+        "published_at": "2009-02-09T18:57:00Z",
+        "state": "public",
+        "short_description": "2006 \u5e74\u7403\u5b63\u4e2d\uff0c\u786c\u7403\u6642\u5831\u4f5c\u5bb6 Dave Studeman \u66fe\u7d93\u767c\u8868\u6587\u7ae0 Graphing Beltran\uff0c\u63cf\u8ff0\u4e86\u5927\u90fd\u6703\u4e2d\u5916\u91ce\u624b Carlos Beltran \u5728\u6253\u64ca\u578b\u614b\u7684\u8f49\u8b8a\u3002",
+        "slug": "graphing-beltran-again"
+    },
+    "model": "blog.post",
+    "pk": 49
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "iTunes \u6b4c\u66f2\u540d\u7a31\u7e41\u7c21\u8f49\u63db",
+        "tags": [
+            19,
+            5
+        ],
+        "published_at": "2009-02-10T12:14:00Z",
+        "state": "public",
+        "short_description": "\u9019\u662f\u6211\u5f9e Yorkxin\uff08duckseven @ ptt.cc\uff09\u90a3\u908a\u5077\u4f86\u7684\u3002\u4ed6\u7528 AppleScript \u548c\u5169\u500b\u547d\u4ee4\u5217\u7a0b\u5f0f\u5beb\u4e86\u4e00\u500b\u7e41\u7c21\u8f49\u63db\u7a0b\u5f0f\uff0c\u4f46\u8a8d\u70ba\u9084\u9700\u8981\u6539\u5584\u3002",
+        "slug": "traditional-simplified-chinese-convesion-for-itunes"
+    },
+    "model": "blog.post",
+    "pk": 50
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Cocoa Programming for Mac OS X",
+        "tags": [
+            15,
+            13
+        ],
+        "published_at": "2009-02-12T10:32:00Z",
+        "state": "public",
+        "short_description": "\u770b\u5230\u4fe1\u7bb1\u88e1\u51fa\u73fe\u4e86\u500b\u5305\u88f9\u3002\u5594\u5594\u2026\u770b\u4f86\u662f\u5bc4\u5230\u4e86\u3002",
+        "slug": "cocoa-programming-for-mac-os-x"
+    },
+    "model": "blog.post",
+    "pk": 51
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "\u5beb\u51fa\u80fd\u5728 Python 2 \u76f4\u8b6f\u5668\u57f7\u884c\u7684 Python 3 \u7a0b\u5f0f\uff1a\u5167\u5efa\u6a21\u7d44",
+        "tags": [
+            1,
+            2
+        ],
+        "published_at": "2014-01-10T14:38:02Z",
+        "state": "public",
+        "short_description": "\u5982\u679c\u8a9e\u6cd5\u4f7f\u7528\u7684 token\uff0c\u4f8b\u5982\u95dc\u9375\u5b57\u3001\u7b26\u865f\u7b49\u7b49\u5728\u5169\u500b\u7248\u672c\u9593\u885d\u7a81\uff0c\u5c31\u4e0d\u53ef\u80fd\u6709\u76f4\u63a5\u5728\u8a9e\u6cd5\u4e0a\u5c0d\u7b49\u7684\u6298\u8877\u89e3\u3002",
+        "slug": "write-python-3-codes-that-run-on-the-python-2-interpreter-3"
+    },
+    "model": "blog.post",
+    "pk": 52
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "ta",
+        "tags": [],
+        "published_at": "2014-02-17T02:46:13Z",
+        "state": "public",
+        "short_description": "sd",
+        "slug": "ta"
+    },
+    "model": "blog.post",
+    "pk": 53
 }
 ]

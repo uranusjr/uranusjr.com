@@ -10,9 +10,7 @@
             "slug": "index",
             "state": "public",
             "order": 0,
-            "published_at": "2013-12-24T05:40:12Z",
-            "content": "<p class=\"work\">aka @uranusjr</p>\r\nThe first question I get whenever I meet someone who know me as my Internet alias for the first time in person is always the same: *How do I pronounce your alias?* Well, this is my answer:\r\n\r\n**Don't.**\r\n\r\nI started using **uranusjr** as my Internet alias since high school because I like Uranus, the seventh planet in the solar system. Uranus is one of the darker, slower, and low-profile planet in our system, but is \"quietly eccentric,\" being the only planet of the eight that rotates *vertically*. (I can talk all day about cool things about Uranus, but let's stop here.)\r\n\r\nI decided to take that name, but was disappointed when I found that the alias was taken (of course) in the largest BBS in my high school. I added *jr*, and have been using it ever since.\r\n\r\nSo, as you can see, uranusjr is not really a name made to be pronounced. If you really bother to call me a name, just use **TP**, my initials. I like that.\r\n\r\nAnd you can find me just about everywhere on the Internet by searching for user **uranusjr**\u2014I'm sure that I am not famous enough to have fake accounts.",
-            "_content_rendered": "<p class=\"work\">aka @uranusjr</p>\r\n<p>The first question I get whenever I meet someone who know me as my Internet alias for the first time in person is always the same: <em>How do I pronounce your alias?</em> Well, this is my answer:</p>\n\n<p><strong>Don&#8217;t.</strong></p>\n\n<p>I started using <strong>uranusjr</strong> as my Internet alias since high school because I like Uranus, the seventh planet in the solar system. Uranus is one of the darker, slower, and low-profile planet in our system, but is &#8220;quietly eccentric,&#8221; being the only planet of the eight that rotates <em>vertically</em>. (I can talk all day about cool things about Uranus, but let&#8217;s stop here.)</p>\n\n<p>I decided to take that name, but was disappointed when I found that the alias was taken (of course) in the largest BBS in my high school. I added <em>jr</em>, and have been using it ever since.</p>\n\n<p>So, as you can see, uranusjr is not really a name made to be pronounced. If you really bother to call me a name, just use <strong>TP</strong>, my initials. I like that.</p>\n\n<p>And you can find me just about everywhere on the Internet by searching for user <strong>uranusjr</strong>\u2014I&#8217;m sure that I am not famous enough to have fake accounts.</p>\n"
+            "published_at": "2013-12-24T05:40:12Z"
         }
     },
     {
@@ -26,9 +24,7 @@
             "slug": "work",
             "state": "public",
             "order": 2,
-            "published_at": "2013-12-24T05:40:12Z",
-            "content": "I work at BIMETEK, a company set up by some friends of mine during graduate school. I am currently a C++ and Qt programmer during my work hours, but am actually more prolific with Objective-C and Python (especially Django).\r\n\r\nI spend most of my off time participating in opensource communities and contributing to opensource projects. I host [Qelly](https://github.com/uranusjr/Qelly), a cross-platform BBS client written in C++ upon Qt.",
-            "_content_rendered": "<p>I work at BIMETEK, a company set up by some friends of mine during graduate school. I am currently a C++ and Qt programmer during my work hours, but am actually more prolific with Objective-C and Python (especially Django).</p>\n\n<p>I spend most of my off time participating in opensource communities and contributing to opensource projects. I host <a href=\"https://github.com/uranusjr/Qelly\">Qelly</a>, a cross-platform BBS client written in C++ upon Qt.</p>\n"
+            "published_at": "2013-12-24T05:40:12Z"
         }
     },
     {

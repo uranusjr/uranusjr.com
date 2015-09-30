@@ -1,0 +1,3 @@
+I work at BIMETEK, a company set up by some friends of mine during graduate school. I am currently a C++ and Qt programmer during my work hours, but am actually more prolific with Objective-C and Python (especially Django).
+
+I spend most of my off time participating in opensource communities and contributing to opensource projects. I host [Qelly](https://github.com/uranusjr/Qelly), a cross-platform BBS client written in C++ upon Qt.

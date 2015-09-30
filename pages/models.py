@@ -2,12 +2,19 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import codecs
+import os
+
+from django.contrib.staticfiles import finders
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.utils.safestring import mark_safe
+
 from filebrowser.fields import FileBrowseField
+
 from base.models import Displayable, Orderable
+from base.utils import render_content
 
 
 def _page_image_upload_to(obj, filename):
@@ -32,6 +39,13 @@ class Page(Orderable, Displayable):
         verbose_name = _('page')
         verbose_name_plural = _('pages')
         ordering = ['parent__order', 'parent__pk', 'order', 'pk']
+
+    @property
+    def content(self):
+        path = finders.find(os.path.join('pages', 'posts', self.slug + '.md'))
+        with codecs.open(path, encoding='utf8') as f:
+            raw = f.read()
+        return mark_safe(render_content(raw))
 
     def get_absolute_url(self):
         return reverse('pages:page', kwargs={'slug': self.slug})
@@ -64,4 +78,4 @@ class Page(Orderable, Displayable):
         if self.image:
             return self.image.url
         else:
-            return static('base/img/circle.png')
+            return finders.find(os.path.join('base', 'img', 'circle.png'))

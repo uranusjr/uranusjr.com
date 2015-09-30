@@ -41,7 +41,7 @@ class PageAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at', 'order')
     fieldsets = (
         (None, {'fields': (
-            'title', 'short_description', 'image', 'image_caption', 'content'
+            'title', 'short_description', 'image', 'image_caption',
         )}),
         ('Publishing options', {'fields': ('state', 'published_at')}),
         ('Page options', {'fields': ('slug', 'parent', 'order')})

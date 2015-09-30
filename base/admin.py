@@ -38,10 +38,7 @@ class ElementAdmin(admin.ModelAdmin):
 
 class DisplayableAdminForm(forms.ModelForm):
     class Meta:
-        widgets = {
-            'short_description': forms.Textarea,
-            'content': PopupGhostdownInput(value_path='raw'),
-        }
+        widgets = {'short_description': forms.Textarea}
 
 
 class DisplayableAdmin(admin.ModelAdmin):

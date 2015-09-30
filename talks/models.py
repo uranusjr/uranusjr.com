@@ -2,10 +2,13 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+
 from base.models import Displayable, Tag as BaseTag
+
 from .utils import OpenGraphImageParser, URLError
 
 

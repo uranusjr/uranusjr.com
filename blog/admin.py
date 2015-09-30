@@ -15,7 +15,7 @@ class PostAdmin(DisplayableAdmin):
     list_editable = ('state', 'published_at')
     fieldsets = (
         (None, {'fields': (
-            ('title', 'category'), 'short_description', 'content',
+            ('title', 'category'), 'short_description',
         )}),
         ('Page options', {
             'fields': ('slug', 'state', 'published_at'),

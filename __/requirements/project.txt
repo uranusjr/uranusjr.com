@@ -1,4 +1,4 @@
-django
+django<1.8
 django-grappelli
 django-compressor
 south
@@ -9,4 +9,3 @@ pytz
 django-tastypie
 django-tastypie-crust
 django-filebrowser>=3.5.3
-django-ghostdown>=0.3

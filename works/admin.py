@@ -22,7 +22,7 @@ class WorkAdmin(DisplayableAdmin):
             'classes': ('grp-collapse', 'grp-closed'),
         }),
         ('Content', {
-            'fields': ('url', 'content'),
+            'fields': ('url',),
             'classes': ('grp-collapse', 'grp-open'),
         }),
         ('Publishing options', {

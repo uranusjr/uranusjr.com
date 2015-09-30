@@ -2,6 +2,11 @@
 
 {% load i18n staticfiles base_tags works_tags %}
 
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'works/css/sidebar.css' %}">
+{% endblock extra_css %}
+
 {% block sidebar_title %}{% trans 'My Work' %}{% endblock %}
 
 {% block sidebar_content %}

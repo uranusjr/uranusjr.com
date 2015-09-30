@@ -6,6 +6,7 @@
 
 {% block extra_css %}
 {{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'works/css/sidebar.css' %}">
 {% stylesheets header work %}
 {% endblock %}
 
@@ -24,7 +25,6 @@
     <!--activity descritpion-->
     <p class="work">{{ work.short_description }}</p>
     <div class="text-justify">{{ work.content }}</div>
-
   </div>
 </div>
 

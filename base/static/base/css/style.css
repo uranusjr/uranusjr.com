@@ -96,7 +96,7 @@ textarea:focus {
   display: none;
 }
 a.scroll-top {
-  background: #ffffff;
+  background: #fff;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -448,7 +448,7 @@ body,
   margin: 0;
 }
 .row.bottom .col-right section .media:hover {
-  background: #ffffff;
+  background: #fff;
 }
 .row.bottom .col-right section .media-body h4 {
   font-size: 24px;
@@ -531,7 +531,7 @@ body,
   background: #cccccc;
 }
 .panel.item .panel-body {
-  background: #ffffff;
+  background: #fff;
   padding: 0 10px;
 }
 .panel.item .item-img {

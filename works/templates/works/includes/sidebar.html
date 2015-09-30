@@ -32,11 +32,7 @@
           {{ work.short_description }}
         </div>
         <hr>
-        <p class="item-tags">
-          {% for tag in work.tags.all %}
-          <a href="#">{{ tag.name }}</a>{% if not forloop.last %} ,{% endif %}
-          {% endfor %}
-        </p>
+        <p class="item-tags">{% for tag in work.tags.all %}<a href="#" class="filter" data-filter="{{ tag.slug }}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</p>
       </div>
     </div>
   </div>

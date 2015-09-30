@@ -2,11 +2,12 @@
 # -*- coding: utf-8
 
 from __future__ import unicode_literals
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+
+from . import views
 
 
-urlpatterns = patterns(
-    'talks.views',
-    url(r'^$', 'talk_list', name='talk_list'),
-    url(r'^tag/(?P<slug>.+?)/$', 'tag', name='tag'),
-)
+urlpatterns = [
+    url(r'^$', views.talk_list, name='talk_list'),
+    url(r'^tag/(?P<slug>.+?)/$', views.tag, name='tag'),
+]

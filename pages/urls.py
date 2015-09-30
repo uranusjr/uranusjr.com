@@ -2,11 +2,12 @@
 # -*- coding: utf-8
 
 from __future__ import unicode_literals
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+
+from . import views
 
 
-urlpatterns = patterns(
-    'pages.views',
-    url(r'^$', 'page', kwargs={'slug': 'index'}, name='index'),
-    url(r'^(?P<slug>.+?)/$', 'page', name='page'),
-)
+urlpatterns = [
+    url(r'^$', views.page, kwargs={'slug': 'index'}, name='index'),
+    url(r'^(?P<slug>.+?)/$', views.page, name='page'),
+]

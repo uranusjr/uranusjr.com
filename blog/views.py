@@ -84,5 +84,5 @@ class TagPostListView(PostListView):
 post_list = PostListView.as_view()
 category = CategoryPostListView.as_view()
 tag = TagPostListView.as_view()
-posts_rss201rev2 = feeds.PostsRss201rev2Reed()
+posts_rss201r2 = feeds.PostsRss201rev2Reed()
 posts_atom1 = feeds.PostsAtom1Feed()

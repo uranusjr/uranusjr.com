@@ -19,11 +19,15 @@ class ViewTests(TestCase):
         for page in pages:
             if not page.is_public():
                 expected = 404
-            elif page.slug == 'blog':
+            elif page.slug in ('blog', 'index',):
                 # Blog front page is explicitly redirected to the latest post.
                 # We test this is the blog app, so this is just special-cased.
+                # The index page is special-cased to redirect to pages:index.
                 expected = 302
             else:
                 expected = 200
             response = self.client.get(page.get_absolute_url())
             eq_(response.status_code, expected)
+
+    def test_index(self):
+        eq_(self.client.get('/').status_code, 200)

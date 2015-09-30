@@ -3,17 +3,14 @@
 
 from __future__ import unicode_literals
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from filebrowser import sites as filebrowser
 from .api import v1
 
 
-admin.autodiscover()
-
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/filebrowser/', include(filebrowser.site.urls)),
     url(r'^admin/', include(admin.site.urls)),
@@ -22,7 +19,7 @@ urlpatterns = patterns(
     url(r'^talk/', include('talks.urls', namespace='talks')),
     url(r'^work/', include('works.urls', namespace='works')),
     url(r'^', include('pages.urls', namespace='pages')),
-)
+]
 
 
 if settings.DEBUG:

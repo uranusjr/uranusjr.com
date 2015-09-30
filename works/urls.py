@@ -2,10 +2,11 @@
 # -*- coding: utf-8
 
 from __future__ import unicode_literals
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+
+from . import views
 
 
-urlpatterns = patterns(
-    'works.views',
-    url(r'^(?P<slug>.+?)/$', 'work', name='work'),
-)
+urlpatterns = [
+    url(r'^(?P<slug>.+?)/$', views.work, name='work'),
+]

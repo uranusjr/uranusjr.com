@@ -7,7 +7,7 @@ from django.db.models import Max
 from django.utils.timezone import now
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
-from django.contrib.contenttypes.generic import GenericForeignKey
+from django.contrib.contenttypes.fields import GenericForeignKey
 from filebrowser.fields import FileBrowseField
 from ..utils import get_concrete_base_model
 from .managers import DisplayableManager

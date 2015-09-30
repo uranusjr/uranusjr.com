@@ -5,8 +5,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from django.contrib.contenttypes.generic import GenericTabularInline
-from .forms.widgets import PopupGhostdownInput
+from django.contrib.contenttypes.admin import GenericTabularInline
 from .models import ExtraPath
 
 

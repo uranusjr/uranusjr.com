@@ -34,18 +34,22 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = (
+    # This needs to come first so we can use it in our apps.
+    'django.contrib.contenttypes',
+
     'blog',
     'pages',
     'talks',
     'works',
     'base',
+
     'compressor',
     'grappelli.dashboard',
     'grappelli',
     'filebrowser',
+
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',

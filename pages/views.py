@@ -4,7 +4,7 @@
 from __future__ import unicode_literals
 from django.http import Http404
 from django.template import TemplateDoesNotExist
-from django.template.loader import find_template
+from django.template.loader import select_template
 from django.shortcuts import render
 from .models import Page
 
@@ -17,7 +17,7 @@ def page(request, slug, template='pages/page.html'):
 
     custom_template = 'pages/{slug}.html'.format(slug=page.slug)
     try:
-        find_template(custom_template)
+        select_template(custom_template)
     except TemplateDoesNotExist:
         pass
     else:

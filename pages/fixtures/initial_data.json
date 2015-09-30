@@ -1,41 +1,82 @@
 [
-    {
-        "pk": 1,
-        "model": "pages.page",
-        "fields": {
-            "title": "About",
-            "short_description": "Hi, I'm Tzu-ping Chung",
-            "image": "pages/uranus.png",
-            "image_caption": "<strong>Uranus</strong>, taken in 1986 during the NASA/JPL/<em>Voyager 2</em> mission.",
-            "slug": "index",
-            "state": "public",
-            "order": 0,
-            "published_at": "2013-12-24T05:40:12Z"
-        }
+{
+    "fields": {
+        "image_caption": "<strong>Uranus</strong>, taken in 1986 during the NASA/JPL/<em>Voyager 2</em> mission.",
+        "parent": null,
+        "title": "About",
+        "_root": 1,
+        "published_at": "2013-12-24T05:40:12Z",
+        "slug": "index",
+        "state": "public",
+        "image": "pages/uranus.png",
+        "short_description": "Hi, I'm Tzu-ping Chung",
+        "order": 0
     },
-    {
-        "pk": 2,
-        "model": "pages.page",
-        "fields": {
-            "title": "Work",
-            "short_description": "What I Do",
-            "image": "pages/taipei.py-dec-2013.png",
-            "image_caption": "<em>We Buy Cheese at a Cheese Shop</em>, <a href=\"http://www.meetup.com/Taipei-py/events/150006542/\" target=\"_blank\">Taipei.py, December 2013</a>. Courtesy <a href=\"http://www.meetup.com/Taipei-py/members/35922882/\" target=\"_blank\">Andy Dai</a>.",
-            "slug": "work",
-            "state": "public",
-            "order": 2,
-            "published_at": "2013-12-24T05:40:12Z"
-        }
+    "model": "pages.page",
+    "pk": 1
+},
+{
+    "fields": {
+        "image_caption": "<em>We Buy Cheese at a Cheese Shop</em>, <a href=\"http://www.meetup.com/Taipei-py/events/150006542/\" target=\"_blank\">Taipei.py, December 2013</a>. Courtesy <a href=\"http://www.meetup.com/Taipei-py/members/35922882/\" target=\"_blank\">Andy Dai</a>.",
+        "parent": null,
+        "title": "Work",
+        "_root": 2,
+        "published_at": "2013-12-24T05:40:12Z",
+        "slug": "work",
+        "state": "public",
+        "image": "static/pages/img/taipei.py-dec-2013.png",
+        "short_description": "What I Do",
+        "order": 2
     },
-    {
-        "pk": 3,
-        "model": "pages.page",
-        "fields": {
-            "title": "Blog",
-            "slug": "blog",
-            "state": "public",
-            "order": 1,
-            "published_at": "2013-12-24T05:40:12Z"
-        }
-    }
+    "model": "pages.page",
+    "pk": 2
+},
+{
+    "fields": {
+        "image_caption": "",
+        "parent": null,
+        "title": "Blog",
+        "_root": 3,
+        "published_at": "2013-12-24T05:40:12Z",
+        "slug": "blog",
+        "state": "public",
+        "image": "",
+        "short_description": "",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 3
+},
+{
+    "fields": {
+        "image_caption": "",
+        "parent": 1,
+        "title": "Blog Archive",
+        "_root": 1,
+        "published_at": "2015-09-30T06:43:43Z",
+        "slug": "blog/archive",
+        "state": "public",
+        "image": "",
+        "short_description": "All blog posts in chronicle order.",
+        "order": 0
+    },
+    "model": "pages.page",
+    "pk": 4
+},
+{
+    "fields": {
+        "image_caption": "",
+        "parent": 1,
+        "title": "Talk",
+        "_root": 1,
+        "published_at": "2015-09-30T06:43:43Z",
+        "slug": "talk",
+        "state": "public",
+        "image": "",
+        "short_description": "Things I talked about publicly.",
+        "order": 1
+    },
+    "model": "pages.page",
+    "pk": 5
+}
 ]

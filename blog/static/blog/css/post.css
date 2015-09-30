@@ -1,3 +1,7 @@
 .article-description {
     margin-top: 30px;
 }
+.article-description img {
+  max-width: 100%;
+  text-align: center;
+}

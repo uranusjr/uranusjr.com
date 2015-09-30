@@ -2,11 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals, division
+
+from six.moves.urllib.parse import urlparse
+
 from django.http.request import QueryDict
 from django.template import (
     Library, Context, Node, Variable, TemplateSyntaxError
 )
 from django.template.loader import get_template
+
 from base.models import ExtraPath
 from pages.models import Page
 
@@ -52,6 +56,15 @@ def disqus(unique_id):
 @register.simple_tag(takes_context=True)
 def absolute_uri(context, path):
     return context['request'].build_absolute_uri(path)
+
+
+@register.simple_tag(takes_context=True)
+def hyperlink_target(context, url):
+    current_domain = context['current_site'].domain
+    target_domain = urlparse(url).netloc
+    if target_domain and target_domain != current_domain:
+        return '_blank'
+    return '_self'
 
 
 @register.inclusion_tag('base/includes/pagination.html', takes_context=True)

@@ -1,6 +1,6 @@
 {% extends 'base/includes/sidebar.html' %}
 
-{% load i18n staticfiles %}
+{% load i18n staticfiles base_tags %}
 
 {% block sidebar_filter %}
 
@@ -18,7 +18,7 @@
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 mix {{ work.tag_slugs|join:' ' }}">
     <div class="panel panel-default item">
       <div class="panel-heading">
-        <a href="{{ work.get_link }}">
+        <a href="{{ work.get_link }}" target="{% hyperlink_target work.get_link %}">
           <img class="img-responsive item-img" alt="{{ work.title }}"
             src="{{ work.get_icon_url }}">
         </a>

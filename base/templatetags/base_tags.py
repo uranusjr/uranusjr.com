@@ -34,17 +34,17 @@ def sidebar_tabs(context):
         index_page = Page(title='')
 
     # slug, name, is_active
-    TABS = [{
+    tabs = [{
         'slug': '',
         'title': index_page.title,
         'is_active': (request.path == '/'),
     }]
-    TABS += [{
+    tabs += [{
         'slug': '{slug}/'.format(slug=p['slug']),
         'title': p['title'],
         'is_active': is_active(p['slug'])
     } for p in root_pages]
-    context['tabs'] = TABS
+    context['tabs'] = tabs
     return context
 
 

@@ -1,76 +1,269 @@
 [
-    {
-        "model": "works.category",
-        "pk": 1,
-        "fields": {
-            "title": "Desktop Application",
-            "slug": "desktop-application"
-        }
+{
+    "fields": {
+        "slug": "desktop-application",
+        "title": "Desktop Application"
     },
-    {
-        "model": "works.category",
-        "pk": 2,
-        "fields": {
-            "title": "Library",
-            "slug": "library"
-        }
+    "model": "works.category",
+    "pk": 1
+},
+{
+    "fields": {
+        "slug": "library",
+        "title": "Library"
     },
-    {
-        "model": "works.Tag",
-        "pk": 1,
-        "fields": {
-            "name": "C++",
-            "slug": "cpp"
-        }
+    "model": "works.category",
+    "pk": 2
+},
+{
+    "fields": {
+        "slug": "utility",
+        "title": "Utility"
     },
-    {
-        "model": "works.Tag",
-        "pk": 2,
-        "fields": {
-            "name": "Qt",
-            "slug": "qt"
-        }
+    "model": "works.category",
+    "pk": 3
+},
+{
+    "fields": {
+        "slug": "tutorial",
+        "title": "Tutorial"
     },
-    {
-        "model": "works.Tag",
-        "pk": 3,
-        "fields": {
-            "name": "Python",
-            "slug": "python"
-        }
+    "model": "works.category",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "C++",
+        "slug": "cpp"
     },
-    {
-        "model": "works.Tag",
-        "pk": 4,
-        "fields": {
-            "name": "Django",
-            "slug": "django"
-        }
+    "model": "works.tag",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Qt",
+        "slug": "qt"
     },
-    {
-        "model": "works.work",
-        "pk": 1,
-        "fields": {
-            "category": 1,
-            "tags": [1, 2],
-            "work_type": "github",
-            "title": "Qelly",
-            "slug": "qelly",
-            "state": "public",
-            "short_description": "Beautiful cross-platform BBS client."
-        }
+    "model": "works.tag",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Python",
+        "slug": "python"
     },
-    {
-        "model": "works.work",
-        "pk": 2,
-        "fields": {
-            "category": 2,
-            "tags": [3, 4],
-            "work_type": "github",
-            "title": "Django MoSQL",
-            "slug": "django-mosql",
-            "state": "public",
-            "short_description": "Do what Django's ORM can't."
-        }
-    }
+    "model": "works.tag",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "Django",
+        "slug": "django"
+    },
+    "model": "works.tag",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "OS X",
+        "slug": "os-x"
+    },
+    "model": "works.tag",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "Objective-C",
+        "slug": "objective-c"
+    },
+    "model": "works.tag",
+    "pk": 6
+},
+{
+    "fields": {
+        "name": "JavaScript",
+        "slug": "javascript"
+    },
+    "model": "works.tag",
+    "pk": 8
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "Qelly",
+        "url": "",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T04:44:40Z",
+        "slug": "qelly",
+        "state": "public",
+        "short_description": "Beautiful cross-platform BBS client.",
+        "order": 8,
+        "tags": [
+            1,
+            2
+        ]
+    },
+    "model": "works.work",
+    "pk": 1
+},
+{
+    "fields": {
+        "category": 2,
+        "title": "Django MoSQL",
+        "url": "",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T04:44:40Z",
+        "slug": "django-mosql",
+        "state": "public",
+        "short_description": "Do what Django's ORM can't.",
+        "order": 6,
+        "tags": [
+            4,
+            3
+        ]
+    },
+    "model": "works.work",
+    "pk": 2
+},
+{
+    "fields": {
+        "category": 1,
+        "title": "MacDown",
+        "url": "http://macdown.uranusjr.com/",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:18:33Z",
+        "slug": "macdown",
+        "state": "public",
+        "short_description": "Free Markdown editor for OS X.",
+        "order": 0,
+        "tags": [
+            6,
+            5
+        ]
+    },
+    "model": "works.work",
+    "pk": 3
+},
+{
+    "fields": {
+        "category": 2,
+        "title": "CTypes-EJDB",
+        "url": "https://github.com/uranusjr/ctypes-ejdb",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:21:01Z",
+        "slug": "ctypes-ejdb",
+        "state": "public",
+        "short_description": "Python binding for EJDB built upon ctypes.",
+        "order": 2,
+        "tags": [
+            3
+        ]
+    },
+    "model": "works.work",
+    "pk": 4
+},
+{
+    "fields": {
+        "category": 3,
+        "title": "Cuteshop",
+        "url": "https://github.com/uranusjr/cuteshop",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:23:44Z",
+        "slug": "cuteshop",
+        "state": "public",
+        "short_description": "Package manager for Qt projects.",
+        "order": 4,
+        "tags": [
+            3,
+            2
+        ]
+    },
+    "model": "works.work",
+    "pk": 5
+},
+{
+    "fields": {
+        "category": 2,
+        "title": "PyStandardPaths",
+        "url": "https://github.com/uranusjr/pystandardpaths",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:25:08Z",
+        "slug": "pystandardpaths",
+        "state": "public",
+        "short_description": "Cross-platform standard paths access in pure Python.",
+        "order": 3,
+        "tags": [
+            3,
+            2
+        ]
+    },
+    "model": "works.work",
+    "pk": 6
+},
+{
+    "fields": {
+        "category": 4,
+        "title": "Django Tutorial for Programmers",
+        "url": "https://github.com/uranusjr/django-tutorial-for-programmers",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:25:59Z",
+        "slug": "django-tutorial-for-programmers",
+        "state": "public",
+        "short_description": "Django Tutoria for Programmers.",
+        "order": 1,
+        "tags": [
+            4
+        ]
+    },
+    "model": "works.work",
+    "pk": 7
+},
+{
+    "fields": {
+        "category": 2,
+        "title": "QtMapKit",
+        "url": "https://github.com/uranusjr/QtMapKit",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:27:43Z",
+        "slug": "qtmapkit",
+        "state": "public",
+        "short_description": "Google Map API for Qt (C++).",
+        "order": 5,
+        "tags": [
+            1,
+            8,
+            2
+        ]
+    },
+    "model": "works.work",
+    "pk": 8
+},
+{
+    "fields": {
+        "category": 2,
+        "title": "Django Tastypie Crust",
+        "url": "https://github.com/uranusjr/django-tastypie-crust",
+        "image": "",
+        "work_type": "github",
+        "published_at": "2015-09-30T07:28:45Z",
+        "slug": "django-tastypie-crust",
+        "state": "public",
+        "short_description": "A collection of goodies that can be used with Tastypie.",
+        "order": 7,
+        "tags": [
+            4,
+            3
+        ]
+    },
+    "model": "works.work",
+    "pk": 9
+}
 ]

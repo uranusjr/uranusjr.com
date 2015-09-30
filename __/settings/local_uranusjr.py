@@ -9,10 +9,10 @@ DEBUG = True
 
 SECRET_KEY = 'i=sp#p$s^dwm6etgercjjo4$0t77#^=!t6v4sb61ad+^tcy@)i'
 
-INSTALLED_APPS += (
+INSTALLED_APPS += [
     'debug_toolbar',
     'django_nose',
-)
+]
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 

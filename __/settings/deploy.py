@@ -12,9 +12,9 @@ except ImproperlyConfigured:
 else:
     ALLOWED_HOSTS.append(server_ip)
 
-ADMINS = (
+ADMINS = [
     ('Tzu-ping Chung', 'uranusjr@gmail.com'),
-)
+]
 
 SECRET_KEY = get_env_var('SECRET_KEY')
 

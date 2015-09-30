@@ -25,15 +25,14 @@ def get_env_var(key):
 
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = []
-INTERNAL_IPS = ('127.0.0.1',)
+INTERNAL_IPS = ['127.0.0.1']
 SITE_ID = 1
 
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     # This needs to come first so we can use it in our apps.
     'django.contrib.contenttypes',
 
@@ -54,29 +53,37 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-)
+]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'base.context_processors.static',
-    'base.context_processors.site',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.request',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
+                'django.core.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                'base.context_processors.static',
+                'base.context_processors.site',
+            ]
+        },
+    }
+]
 
 ROOT_URLCONF = '__.urls'
 
@@ -114,11 +121,11 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 STATIC_URL = '/static/'
 
-STATICFILES_FINDERS = (
+STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
-)
+]
 
 
 # Meddia files
@@ -144,4 +151,4 @@ FILEBROWSER_DIRECTORY = ''
 
 # Tastypie
 
-TASTYPIE_DEFAULT_FORMATS = ["json"]
+TASTYPIE_DEFAULT_FORMATS = ['json']

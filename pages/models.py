@@ -6,6 +6,7 @@ import codecs
 import os
 
 from django.contrib.staticfiles import finders
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -19,6 +20,9 @@ from base.utils import render_content
 
 def _page_image_upload_to(obj, filename):
     return '_'.join([obj.slug, filename])
+
+
+EMPTY = object()
 
 
 class Page(Orderable, Displayable):
@@ -40,35 +44,38 @@ class Page(Orderable, Displayable):
         verbose_name_plural = _('pages')
         ordering = ['parent__order', 'parent__pk', 'order', 'pk']
 
-    @property
-    def content(self):
-        path = finders.find(os.path.join('pages', 'posts', self.slug + '.md'))
-        with codecs.open(path, encoding='utf8') as f:
-            raw = f.read()
-        return mark_safe(render_content(raw))
-
     def get_absolute_url(self):
         return reverse('pages:page', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         # Update the page's own, and all its descendants' ``_root``s when the
-        # page switches to another parent
+        # page switches to another parent.
+        new_root = EMPTY
         try:
             old_object = Page.objects.get(pk=self.pk)
         except Page.DoesNotExist:
             # No match, so this is an INSERT; just set the root.
-            self._root = self.parent._root or self
+            new_root = self.parent._root or self
         else:
             # This is an UPDATE with parent change.
             parent = self.parent
+            print(parent, old_object.parent)
             if old_object.parent != parent:
                 if parent is None:      # I am the root!
                     new_root = self
                 else:
                     new_root = parent._root
                 self.descendants.all().update(_root=new_root)
-                self._root = new_root
-        return super(Page, self).save(*args, **kwargs)
+        super(Page, self).save(*args, **kwargs)
+        if new_root is not EMPTY:
+            Page.objects.filter(pk=self.pk).update(_root=new_root)
+
+    @property
+    def content(self):
+        path = finders.find(os.path.join('pages', 'posts', self.slug + '.md'))
+        with codecs.open(path, encoding='utf8') as f:
+            raw = f.read()
+        return mark_safe(render_content(raw))
 
     @property
     def descendants(self):
@@ -78,4 +85,4 @@ class Page(Orderable, Displayable):
         if self.image:
             return self.image.url
         else:
-            return finders.find(os.path.join('base', 'img', 'circle.png'))
+            return static(os.path.join('base', 'img', 'circle.png'))

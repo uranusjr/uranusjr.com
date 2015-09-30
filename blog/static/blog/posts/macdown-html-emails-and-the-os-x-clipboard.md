@@ -6,7 +6,7 @@
 
 <blockquote class="twitter-tweet" lang="en-gb"><p lang="en" dir="ltr">Protip: compose your email in Macdown and copy/paste from the preview pane to your email.</p>&mdash; Justin Sternberg (@Jtsternberg) <a href="https://twitter.com/Jtsternberg/status/647109186799730688">September 24, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-我個人通常是用 OS X 內建的 Mail.app 寫 email，所以不太用這個。但是似乎真的有不少人會用 Markdown 寫 email，然後再貼到 Gmail 的編輯器裡面。
+我個人通常是用 OS X 內建的 Mail.app 寫 email，所以不太用這個。不過似乎不少人會用 Markdown 寫 email，然後再貼到 Gmail 的編輯器裡面。
 
 但這個功能背後其實有點故事。
 

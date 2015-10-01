@@ -31,9 +31,11 @@ class ViewTests(TestCase):
         self.client = Client()
 
     def test_talk_list(self):
-        response = self.client.get('/talk/')
+        # response = self.client.get('/talk/')
         # eq_(response.status_code, 200)
-        eq_(response.status_code, 304)  # TODO: Implement talks page.
+        # TODO: Implement talks page.
+        response = self.client.get('/talk/', follow=True)
+        eq_(response.redirect_chain[0][0], 'https://speakerdeck.com/uranusjr')
 
     def test_talk_tag(self):
         tags = Tag.objects.all()

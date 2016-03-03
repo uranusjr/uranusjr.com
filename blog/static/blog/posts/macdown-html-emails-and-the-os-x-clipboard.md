@@ -26,7 +26,7 @@
 
 在這個例子中，決定使用者期望行為的關鍵，其實不是由拷貝決定，而是**貼上**的目標。所以 OS X 的處理方法是「都拷貝」，等到貼上時再選擇合適的資料送出。繼續以網頁文字為例，當使用者從 Safari 拷貝一段文字時，OS X 剪貼簿會寫入高達 7 種資料格式。這些內容可以用 Clipboard Viewer 來檢視：[^1]
 
-![Clipboard Viewer screenshot with text from Safari.](http://d.pr/i/12ZjP+)
+![Clipboard Viewer screenshot with text from Safari.](https://d.pr/i/12ZjP+)
 
 [^1]: Clipboard Viewer 包含在 Auxiliary Tools for Xcode 裡面。有 Apple 開發者帳號的人可以從[這裡](https://developer.apple.com/downloads/)下載。
 

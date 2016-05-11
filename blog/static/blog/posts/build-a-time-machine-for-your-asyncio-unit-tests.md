@@ -60,9 +60,9 @@ def test_start_doing_thing(event_loop):
 
 首先我們必須了解 `asyncio` 的 delay 原理（其實所有的 async framework 應該都差不多）。在寫 synchronous 程式時，如果我們想要「等待一段時間，然後執行一個工作」，只要簡單用一個等待指令（Python 通常是 `time.sleep()`），然後再跑下一個指令；但在 asynchronous 程式中，你的等待指令會阻塞 event loop，使原本異步的其他工作無法執行。
 
-在 `asyncio` 中，解決方法是 `asyncio.call_later()`： 當你用它新增一個 task 時，event loop 會紀錄目前的時間 $t_0$， 並根據你需要的 delay $\Delta t$，知道它應該在時鐘走到 $t_0 + \Delta t$ 之後執行 task。當 event loop 處理事件時，會不斷檢查時鐘，在發現 scheduled task 的時間已到時執行它。
+在 `asyncio` 中，解決方法是 `asyncio.call_later()`： 當你用它新增一個 task 時，event loop 會紀錄目前的時間 \\(t_0\\)， 並根據你需要的 delay \\(\Delta t\\)，知道它應該在時鐘走到 \\(t_0 + \Delta t\\) 之後執行 task。當 event loop 處理事件時，會不斷檢查時鐘，在發現 scheduled task 的時間已到時執行它。
 
-> 敏銳的人可能已經發現：我不是說「當」走到 $t_0 + \Delta t$，而是走到「之後」。對，異步程式並無法保證 task 何時執行，而只能保證之後會執行——如果時間到的時候 event loop 正忙著做其他事情，則 task 必須先等它完成。這和例如硬體的 interrupt 不太一樣。在絕大多數狀況下這個差異很小，但還是需要記得。
+> 敏銳的人可能已經發現：我不是說「當」走到 \\(t_0 + \Delta t\\)，而是走到「之後」。對，異步程式並無法保證 task 何時執行，而只能保證之後會執行——如果時間到的時候 event loop 正忙著做其他事情，則 task 必須先等它完成。這和例如硬體的 interrupt 不太一樣。在絕大多數狀況下這個差異很小，但還是需要記得。
 
 
 ## 解法

@@ -38,7 +38,7 @@ loop.run_forever()
 
 第一個部分很簡單，只要用 `pytest-asyncio` 搭配 `unittest.mock`（我通常會用 `pytest-mock`，不過為了簡單起見，這裡就拿掉了）即可：
 
-~~~python
+~~~python3
 import unittest.mock
 import pytest
 import myapp
@@ -71,7 +71,7 @@ def test_start_doing_thing(event_loop):
 
 我的解法是這樣：
 
-~~~python
+~~~python3
 import asyncio
 
 class FastForwardableEventLoop(type(asyncio.new_event_loop())):
@@ -91,7 +91,7 @@ class FastForwardableEventLoop(type(asyncio.new_event_loop())):
 
 有了這個，我們就可以在測試中跳過一段時間：
 
-~~~python
+~~~python3
 @pytest.fixture
 def event_loop():
     """Shadow pytest-asyncio's fixture to use our own event loop.

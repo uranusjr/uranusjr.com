@@ -6,7 +6,7 @@
 
 我的 service 需要每隔一段時間（例如一小時）執行一個 coroutine。大概是這樣：
 
-~~~python
+~~~python3
 import asyncio
 import functools
 
@@ -15,7 +15,7 @@ from .somewhere import do_thing
 
 async def do_periodical_thing():
     await do_thing()
-    
+
 def schedule_periodical_thing(loop):
     loop.call_later(60 * 60, do_periodical_thing)
 

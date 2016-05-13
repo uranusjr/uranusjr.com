@@ -111,17 +111,22 @@ def test_start_doing_thing_periodically(event_loop):
         await asyncio.sleep(0)
         mock_somewhere.assert_called_once_with()
 
-        # Wait for an hour (plus a little to avoid resolution error).
-        event_loop.fast_forward(60 * 60 + 0.1)
+        # Wait for an hour. We yield before dialing the clock to make sure
+        # the call_later task is really scheduled.
         await asyncio.sleep(0)
+        event_loop.fast_forward(60 * 60)
+
+        await asyncio.sleep(0.1)    # Delay a little to avoid resolution error.
         assert mock_somewhere.method_calls == [
             unittest.mock.call(),
             unittest.mock.call(),
         ]
 
         # Wait again.
-        event_loop.fast_forward(60 * 60 + 0.1)
         await asyncio.sleep(0)
+        event_loop.fast_forward(60 * 60)
+
+        await asyncio.sleep(0.1)
         assert mock_somewhere.method_calls == [
             unittest.mock.call(),
             unittest.mock.call(),

@@ -11,7 +11,7 @@
 
 [^desktop-only-gesture]: 例如 hover。
 
-我在今年網站也第一次用了[新發現的 breakpoint 邏輯](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862)。不是這篇的重點，不過我還是想推薦這篇，請務必讀連結內文。總之我在找合適 breakpoint 時發現，在 2018 年根本沒辦法找到明確的 tablet-desktop 分界點。即使不論 Windows 觸控筆電，iPad Pro 直拿的寬度就已經是 1024px，更不要說橫拿高達 1366px，已經比我自己平時在筆電慣用的設定還寬[^browser-width]！在這個寬的介面使用 mobile navigation 完全不合理，而我們也不方便維護三種互動介面。我們別無選擇，只能讓這個介面同時適用於滑鼠與觸控。
+我在今年網站也第一次用了[新發現的 breakpoint 邏輯](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862)。不是這篇的重點，不過我還是想推薦這篇，請務必讀連結內文。總之我在找合適 breakpoint 時發現，在 2018 年根本沒辦法找到明確的 tablet-desktop 分界點。即使不論 Windows 觸控筆電，iPad Pro 直拿的寬度就已經是 1024px，更不要說橫拿高達 1366px，比我自己平時在筆電慣用的設定還寬[^browser-width]！在這麼寬的介面使用 mobile navigation 完全不合理，而我們也不方便維護三種互動介面。別無選擇，只能讓這個介面同時適用於滑鼠與觸控。
 
 [^browser-width]: 我通常把瀏覽器固定在 1235px。
 
@@ -55,7 +55,7 @@ PyCon Taiwan 網站用 [Stimulus] 這個 framework，不過這裡為了簡單起
 
 [Stimulus]: https://stimulusjs.org
 
-<div data-height="265" data-theme-id="0" data-slug-hash="PQLBZE" data-default-tab="css,result" data-user="uranusjr" data-embed-version="2" data-pen-title="Clicked-based Dropdown with Exclusive Selection" class="codepen">See the Pen <a href="https://codepen.io/uranusjr/pen/PQLBZE/">Clicked-based Dropdown with Exclusive Selection</a> by Tzu-ping Chung (<a href="https://codepen.io/uranusjr">@uranusjr</a>) on <a href="https://codepen.io">CodePen</a>.</div>
+<div data-height="265" data-theme-id="0" data-slug-hash="LQaBaz" data-default-tab="css,result" data-user="uranusjr" data-embed-version="2" data-pen-title="Clicked-based Dropdown with Exclusive Selection" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/uranusjr/pen/LQaBaz/">Clicked-based Dropdown with Exclusive Selection</a> by Tzu-ping Chung (<a href="https://codepen.io/uranusjr">@uranusjr</a>) on <a href="https://codepen.io">CodePen</a>.</div>
 
 注意 label 的事件在這裡被特別濾掉了。這是因為按 label 本來就會取消勾選 `for` target（HTML 原生行為），我們不需要手動再做一次。如果我們太雞婆，反而會讓 `for` target 的狀態不符預期，而無法取消勾選狀態（你可以自己試試看）。
 

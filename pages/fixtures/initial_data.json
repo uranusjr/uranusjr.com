@@ -57,7 +57,7 @@
         "slug": "blog/archive",
         "state": "public",
         "image": "",
-        "short_description": "All blog posts in chronicle order.",
+        "short_description": "All blog posts in chronological order.",
         "order": 0
     },
     "model": "pages.page",
